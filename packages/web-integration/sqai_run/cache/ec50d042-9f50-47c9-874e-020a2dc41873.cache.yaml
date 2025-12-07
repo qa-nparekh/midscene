@@ -1,0 +1,6 @@
+midsceneVersion: 0.30.9
+cacheId: ec50d042-9f50-47c9-874e-020a2dc41873
+caches:
+  - type: plan
+    prompt: fresh-write-only
+    yamlWorkflow: fresh-workflow

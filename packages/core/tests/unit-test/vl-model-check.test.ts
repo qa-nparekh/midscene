@@ -3,7 +3,7 @@ import type { AbstractInterface } from '@/types';
 import { describe, expect, it, vi } from 'vitest';
 
 // Mock dependencies
-vi.mock('@midscene/core/utils', () => ({
+vi.mock('@sqai/core/utils', () => ({
   writeLogFile: vi.fn(() => null),
   reportHTMLContent: vi.fn(() => ''),
   stringifyDumpData: vi.fn(() => '{}'),
@@ -12,13 +12,13 @@ vi.mock('@midscene/core/utils', () => ({
   sleep: vi.fn(() => Promise.resolve()),
 }));
 
-vi.mock('@midscene/shared/logger', () => ({
+vi.mock('@sqai/shared/logger', () => ({
   getDebug: vi.fn(() => vi.fn()),
   logMsg: vi.fn(),
 }));
 
-vi.mock('@midscene/core', async () => {
-  const actual = await vi.importActual('@midscene/core');
+vi.mock('@sqai/core', async () => {
+  const actual = await vi.importActual('@sqai/core');
   return {
     ...actual,
     Insight: vi.fn().mockImplementation(() => ({})),
@@ -26,9 +26,9 @@ vi.mock('@midscene/core', async () => {
 });
 
 const mockedModelConfigFnResult = {
-  MIDSCENE_MODEL_NAME: 'gpt-4o',
-  MIDSCENE_OPENAI_API_KEY: 'mock-api-key',
-  MIDSCENE_OPENAI_BASE_URL: 'mock-base-url',
+  SQAI_MODEL_NAME: 'gpt-4o',
+  SQAI_OPENAI_API_KEY: 'mock-api-key',
+  SQAI_OPENAI_BASE_URL: 'mock-base-url',
 };
 
 describe('VL Model Check for Different Interface Types', () => {
@@ -132,10 +132,10 @@ describe('VL Model Check for Different Interface Types', () => {
     } as unknown as AbstractInterface;
 
     const modelConfigWithVL = {
-      MIDSCENE_MODEL_NAME: 'gemini-2.0-flash-exp',
-      MIDSCENE_OPENAI_API_KEY: 'mock-api-key',
-      MIDSCENE_OPENAI_BASE_URL: 'mock-base-url',
-      MIDSCENE_VL_MODE: 'gemini',
+      SQAI_MODEL_NAME: 'gemini-2.0-flash-exp',
+      SQAI_OPENAI_API_KEY: 'mock-api-key',
+      SQAI_OPENAI_BASE_URL: 'mock-base-url',
+      SQAI_VL_MODE: 'gemini',
     };
 
     expect(() => {

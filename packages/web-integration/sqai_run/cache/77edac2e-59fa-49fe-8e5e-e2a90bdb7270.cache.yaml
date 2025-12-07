@@ -1,0 +1,8 @@
+midsceneVersion: 0.30.9
+cacheId: 77edac2e-59fa-49fe-8e5e-e2a90bdb7270
+caches:
+  - type: locate
+    prompt: update-locate
+    cache:
+      xpaths:
+        - new-xpath

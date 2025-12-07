@@ -13,19 +13,19 @@ import type {
   UIContext,
 } from '@/types';
 import { uploadTestInfoToServer } from '@/utils';
-import { NodeType } from '@midscene/shared/constants';
+import { NodeType } from '@sqai/shared/constants';
 import {
-  MIDSCENE_REPORT_TAG_NAME,
+  SQAI_REPORT_TAG_NAME,
   globalConfigManager,
-} from '@midscene/shared/env';
+} from '@sqai/shared/env';
 import {
   generateElementByPosition,
   getNodeFromCacheList,
-} from '@midscene/shared/extractor';
-import { resizeImgBase64 } from '@midscene/shared/img';
-import { getDebug } from '@midscene/shared/logger';
-import { _keyDefinitions } from '@midscene/shared/us-keyboard-layout';
-import { assert, logMsg, uuid } from '@midscene/shared/utils';
+} from '@sqai/shared/extractor';
+import { resizeImgBase64 } from '@sqai/shared/img';
+import { getDebug } from '@sqai/shared/logger';
+import { _keyDefinitions } from '@sqai/shared/us-keyboard-layout';
+import { assert, logMsg, uuid } from '@sqai/shared/utils';
 import dayjs from 'dayjs';
 import { debug as cacheDebug } from './task-cache';
 import type { TaskExecutor } from './tasks';
@@ -67,7 +67,7 @@ export async function commonContextParser(
 
 export function getReportFileName(tag = 'web') {
   const reportTagName = globalConfigManager.getEnvConfigValue(
-    MIDSCENE_REPORT_TAG_NAME,
+    SQAI_REPORT_TAG_NAME,
   );
   const dateTimeInFileName = dayjs().format('YYYY-MM-DD_HH-mm-ss');
   // ensure uniqueness at the same time

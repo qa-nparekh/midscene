@@ -1,5 +1,5 @@
 import path from 'node:path';
-import { createPlaygroundCopyPlugin } from '@midscene/shared';
+import { createPlaygroundCopyPlugin } from '@sqai/shared';
 import { defineConfig } from '@rsbuild/core';
 import { pluginLess } from '@rsbuild/plugin-less';
 import { pluginNodePolyfill } from '@rsbuild/plugin-node-polyfill';

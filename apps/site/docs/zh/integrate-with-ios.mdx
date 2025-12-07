@@ -97,7 +97,7 @@ WebDriver 是一套由 W3C 制定的用于浏览器自动化的标准协议，�
 
 ### 第一步：安装依赖
 
-<PackageManagerTabs command="install @midscene/ios --save-dev" />
+<PackageManagerTabs command="install @sqai/ios --save-dev" />
 
 ### 第二步：编写脚本
 
@@ -110,7 +110,7 @@ import {
   IOSAgent,
   IOSDevice,
   agentFromWebDriverAgent,
-} from '@midscene/ios';
+} from '@sqai/ios';
 
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 Promise.resolve(
@@ -226,7 +226,7 @@ function launch(uri: string): Promise<void>;
 - 示例：
 
 ```typescript
-import { IOSAgent, IOSDevice, agentFromWebDriverAgent } from '@midscene/ios';
+import { IOSAgent, IOSDevice, agentFromWebDriverAgent } from '@sqai/ios';
 
 // 方法一：手动创建设备和代理
 const page = new IOSDevice();
@@ -267,7 +267,7 @@ function agentFromWebDriverAgent(
 - 示例：
 
 ```typescript
-import { agentFromWebDriverAgent } from '@midscene/ios';
+import { agentFromWebDriverAgent } from '@sqai/ios';
 
 // 使用默认 WebDriverAgent 地址 (localhost:8100)
 const agent = await agentFromWebDriverAgent();
@@ -287,9 +287,9 @@ const agent = await agentFromWebDriverAgent({
 使用 `customActions` 选项，结合 `defineAction` 定义的自定义交互动作，可以扩展 Agent 的动作空间。这些动作会追加在内置动作之后，方便 Agent 在规划阶段调用。
 
 ```typescript
-import { getMidsceneLocationSchema, z } from '@midscene/core';
-import { defineAction } from '@midscene/core/device';
-import { IOSAgent, IOSDevice } from '@midscene/ios';
+import { getMidsceneLocationSchema, z } from '@sqai/core';
+import { defineAction } from '@sqai/core/device';
+import { IOSAgent, IOSDevice } from '@sqai/ios';
 
 const ContinuousClick = defineAction({
   name: 'continuousClick',

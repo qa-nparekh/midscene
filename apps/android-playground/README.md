@@ -1,5 +1,5 @@
-# Midscene Android Playground
+# SQAI Android Playground
 
-Playground tool for Android cli @midscene/android.
+Playground tool for Android cli @SQAI/android.
 
-See https://midscenejs.com/ for details.
+See https://SQAIjs.com/ for details.

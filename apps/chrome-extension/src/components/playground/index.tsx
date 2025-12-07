@@ -1,10 +1,10 @@
-import { PlaygroundSDK } from '@midscene/playground';
+import { PlaygroundSDK } from '@sqai/playground';
 import {
   UniversalPlayground,
   createStorageProvider,
   detectBestStorageType,
-} from '@midscene/visualizer';
-import { useEnvConfig } from '@midscene/visualizer';
+} from '@sqai/visualizer';
+import { useEnvConfig } from '@sqai/visualizer';
 import { useCallback, useEffect, useMemo, useRef } from 'react';
 import { getExtensionVersion } from '../../utils/chrome';
 import './index.less';

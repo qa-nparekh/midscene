@@ -1,13 +1,13 @@
-// import { generatePlaywrightTest as coreGeneratePlaywrightTest } from '@midscene/core/ai-model';
-import type { ChromeRecordedEvent } from '@midscene/recorder';
+// import { generatePlaywrightTest as coreGeneratePlaywrightTest } from '@sqai/core/ai-model';
+import type { ChromeRecordedEvent } from '@sqai/recorder';
 
 import type {
   StreamingAIResponse,
   StreamingCodeGenerationOptions,
-} from '@midscene/core';
+} from '@sqai/core';
 // Note: Streaming support will be added once the core package exports are updated
-import { generatePlaywrightTestStream as coreGeneratePlaywrightTestStream } from '@midscene/core/ai-model';
-import type { IModelConfig } from '@midscene/shared/env';
+import { generatePlaywrightTestStream as coreGeneratePlaywrightTestStream } from '@sqai/core/ai-model';
+import type { IModelConfig } from '@sqai/shared/env';
 import { recordLogger } from '../logger';
 import { handleTestGenerationError } from './shared/testGenerationUtils';
 

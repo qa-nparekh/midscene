@@ -6,10 +6,10 @@ import {
 import { buildYamlFlowFromPlans } from '@/ai-model/common';
 import { descriptionForAction } from '@/ai-model/prompt/llm-planning';
 import {
-  MIDSCENE_USE_DOUBAO_VISION,
+  SQAI_USE_DOUBAO_VISION,
   OPENAI_API_KEY,
   OPENAI_BASE_URL,
-} from '@midscene/shared/env';
+} from '@sqai/shared/env';
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 import { z } from 'zod';
 
@@ -43,7 +43,7 @@ describe('llm planning - doubao', () => {
   beforeEach(() => {
     vi.stubEnv(OPENAI_BASE_URL, 'http://mock');
     vi.stubEnv(OPENAI_API_KEY, 'mock');
-    vi.stubEnv(MIDSCENE_USE_DOUBAO_VISION, 'true');
+    vi.stubEnv(SQAI_USE_DOUBAO_VISION, 'true');
   });
 
   afterEach(() => {

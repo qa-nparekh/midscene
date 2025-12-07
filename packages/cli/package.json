@@ -1,13 +1,13 @@
 {
-  "name": "@midscene/cli",
-  "description": "An AI-powered automation SDK can control the page, perform assertions, and extract data in JSON format using natural language. See https://midscenejs.com/ for details.",
+  "name": "@sqai/cli",
+  "description": "An AI-powered automation SDK can control the page, perform assertions, and extract data in JSON format using natural language. See https://sqai.tech/ for details.",
   "version": "0.30.9",
-  "repository": "https://github.com/web-infra-dev/midscene",
-  "homepage": "https://midscenejs.com/",
+  "repository": "https://github.com/qa-nparekh/midscene",
+  "homepage": "https://sqai.tech/",
   "main": "./dist/lib/index.js",
   "module": "./dist/es/index.mjs",
   "bin": {
-    "midscene": "./bin/midscene"
+    "sqai": "./bin/sqai"
   },
   "files": ["dist", "README.md", "bin"],
   "scripts": {
@@ -19,11 +19,11 @@
     "test:ai:temp": "AITEST=true BRIDGE_MODE=true vitest tests/bridge.test.ts"
   },
   "dependencies": {
-    "@midscene/android": "workspace:*",
-    "@midscene/core": "workspace:*",
-    "@midscene/ios": "workspace:*",
-    "@midscene/shared": "workspace:*",
-    "@midscene/web": "workspace:*",
+    "@sqai/android": "workspace:*",
+    "@sqai/core": "workspace:*",
+    "@sqai/ios": "workspace:*",
+    "@sqai/shared": "workspace:*",
+    "@sqai/web": "workspace:*",
     "http-server": "14.1.1",
     "lodash.merge": "4.6.2",
     "puppeteer": "24.2.0"

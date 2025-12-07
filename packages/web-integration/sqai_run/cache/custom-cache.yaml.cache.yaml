@@ -1,0 +1,23 @@
+midsceneVersion: 0.30.9
+cacheId: custom-cache.yaml
+caches:
+  - type: locate
+    prompt: test-locate
+    cache:
+      xpaths:
+        - test-xpath
+  - type: locate
+    prompt: test-locate
+    cache:
+      xpaths:
+        - test-xpath
+  - type: locate
+    prompt: test-locate
+    cache:
+      xpaths:
+        - test-xpath
+  - type: locate
+    prompt: test-locate
+    cache:
+      xpaths:
+        - test-xpath

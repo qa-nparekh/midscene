@@ -1,5 +1,5 @@
 import path, { join, resolve } from 'node:path';
-import { assert } from '@midscene/shared/utils';
+import { assert } from '@sqai/shared/utils';
 
 import { existsSync, readFileSync } from 'node:fs';
 import type { PageAgent } from '@/index';
@@ -8,10 +8,10 @@ import type {
   DeviceAction,
   GroupedActionDump,
   MidsceneYamlScriptWebEnv,
-} from '@midscene/core';
-import { ScriptPlayer, buildYaml, parseYamlScript } from '@midscene/core/yaml';
-import { getMidsceneRunSubDir } from '@midscene/shared/common';
-import { uuid } from '@midscene/shared/utils';
+} from '@sqai/core';
+import { ScriptPlayer, buildYaml, parseYamlScript } from '@sqai/core/yaml';
+import { getMidsceneRunSubDir } from '@sqai/shared/common';
+import { uuid } from '@sqai/shared/utils';
 import { type MockedFunction, describe, expect, test, vi } from 'vitest';
 
 const serverRoot = join(__dirname, 'server_root');
@@ -163,7 +163,7 @@ describe.skipIf(!shouldRunAITest)(
   'player - e2e',
   () => {
     test('flush output even if assertion failed', async () => {
-      const outputPath = `./midscene_run/output/${uuid()}.json`;
+      const outputPath = `./sqai_run/output/${uuid()}.json`;
       const yamlString = `
       target:
         url: https://www.bing.com
@@ -188,7 +188,7 @@ describe.skipIf(!shouldRunAITest)(
       const yamlString = `
       target:
         url: https://bing.com
-        output: ./midscene_run/output/abc.json
+        output: ./sqai_run/output/abc.json
       tasks:
         - name: check content
           flow:
@@ -196,13 +196,13 @@ describe.skipIf(!shouldRunAITest)(
       `;
       const { player } = await runYaml(yamlString);
       expect(player.output).toBe(
-        resolve(process.cwd(), './midscene_run/output/abc.json'),
+        resolve(process.cwd(), './sqai_run/output/abc.json'),
       );
 
       const yamlString2 = `
       web:
         url: https://bing.com
-        output: ./midscene_run/output/def.json
+        output: ./sqai_run/output/def.json
       tasks:
         - name: check content
           flow:
@@ -210,7 +210,7 @@ describe.skipIf(!shouldRunAITest)(
       `;
       const { player: player2 } = await runYaml(yamlString2);
       expect(player2.output).toBe(
-        resolve(process.cwd(), './midscene_run/output/def.json'),
+        resolve(process.cwd(), './sqai_run/output/def.json'),
       );
     });
 
@@ -222,7 +222,7 @@ describe.skipIf(!shouldRunAITest)(
       tasks:
         - name: check cookie
           flow:
-            - aiAssert: the value of midscene_foo is "bar"
+            - aiAssert: the value of SQAI_foo is "bar"
     `;
       await runYaml(yamlString);
     });
@@ -960,7 +960,7 @@ tasks:
     const yamlString = `
 target:
   url: "https://example.com"
-  unstableLogContent: ./midscene_run/output/unstableLogContent-custom.json
+  unstableLogContent: ./sqai_run/output/unstableLogContent-custom.json
 tasks:
   - name: test_right_click
     flow:

@@ -1,8 +1,8 @@
 {
-  "name": "@midscene/visualizer",
+  "name": "@sqai/visualizer",
   "version": "0.30.9",
-  "repository": "https://github.com/web-infra-dev/midscene",
-  "homepage": "https://midscenejs.com/",
+  "repository": "https://github.com/qa-nparekh/midscene",
+  "homepage": "https://sqai.tech/",
   "types": "./dist/types/index.d.ts",
   "main": "./dist/lib/index.js",
   "module": "./dist/es/index.mjs",
@@ -62,10 +62,10 @@
   },
   "dependencies": {
     "@ant-design/icons": "^5.3.1",
-    "@midscene/core": "workspace:*",
-    "@midscene/playground": "workspace:*",
-    "@midscene/shared": "workspace:*",
-    "@midscene/web": "workspace:*",
+    "@sqai/core": "workspace:*",
+    "@sqai/playground": "workspace:*",
+    "@sqai/shared": "workspace:*",
+    "@sqai/web": "workspace:*",
     "antd": "^5.21.6",
     "buffer": "6.0.3",
     "dayjs": "^1.11.11"

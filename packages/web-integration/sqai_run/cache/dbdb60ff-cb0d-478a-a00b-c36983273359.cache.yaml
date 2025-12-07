@@ -1,0 +1,6 @@
+midsceneVersion: 0.30.9
+cacheId: dbdb60ff-cb0d-478a-a00b-c36983273359
+caches:
+  - type: plan
+    prompt: write-only-plan
+    yamlWorkflow: write-only-workflow

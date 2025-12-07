@@ -1,10 +1,10 @@
 import './App.less';
-import { SCRCPY_SERVER_PORT } from '@midscene/shared/constants';
+import { SCRCPY_SERVER_PORT } from '@sqai/shared/constants';
 import {
   globalThemeConfig,
   safeOverrideAIConfig,
   useEnvConfig,
-} from '@midscene/visualizer';
+} from '@sqai/visualizer';
 import { ConfigProvider, Layout, message } from 'antd';
 import { useEffect, useRef, useState } from 'react';
 import { Panel, PanelGroup, PanelResizeHandle } from 'react-resizable-panels';

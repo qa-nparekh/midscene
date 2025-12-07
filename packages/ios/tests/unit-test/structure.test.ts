@@ -1,5 +1,5 @@
-import { DEFAULT_WDA_PORT } from '@midscene/shared/constants';
-import { WDAManager } from '@midscene/webdriver';
+import { DEFAULT_WDA_PORT } from '@sqai/shared/constants';
+import { WDAManager } from '@sqai/webdriver';
 import { describe, expect, it } from 'vitest';
 import { IOSAgent } from '../../src/agent';
 import { IOSDevice } from '../../src/device';

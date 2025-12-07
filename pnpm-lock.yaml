@@ -71,22 +71,22 @@ importers:
       '@ant-design/icons':
         specifier: ^5.3.1
         version: 5.5.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      '@midscene/android':
+      '@sqai/android':
         specifier: workspace:*
         version: link:../../packages/android
-      '@midscene/core':
+      '@sqai/core':
         specifier: workspace:*
         version: link:../../packages/core
-      '@midscene/playground':
+      '@sqai/playground':
         specifier: workspace:*
         version: link:../../packages/playground
-      '@midscene/shared':
+      '@sqai/shared':
         specifier: workspace:*
         version: link:../../packages/shared
-      '@midscene/visualizer':
+      '@sqai/visualizer':
         specifier: workspace:*
         version: link:../../packages/visualizer
-      '@midscene/web':
+      '@sqai/web':
         specifier: workspace:*
         version: link:../../packages/web-integration
       '@yume-chan/scrcpy':
@@ -153,25 +153,25 @@ importers:
       '@ant-design/icons':
         specifier: ^5.3.1
         version: 5.5.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      '@midscene/core':
+      '@sqai/core':
         specifier: workspace:*
         version: link:../../packages/core
-      '@midscene/playground':
+      '@sqai/playground':
         specifier: workspace:*
         version: link:../../packages/playground
-      '@midscene/recorder':
+      '@sqai/recorder':
         specifier: workspace:*
         version: link:../../packages/recorder
-      '@midscene/report':
+      '@sqai/report':
         specifier: workspace:*
         version: link:../report
-      '@midscene/shared':
+      '@sqai/shared':
         specifier: workspace:*
         version: link:../../packages/shared
-      '@midscene/visualizer':
+      '@sqai/visualizer':
         specifier: workspace:*
         version: link:../../packages/visualizer
-      '@midscene/web':
+      '@sqai/web':
         specifier: workspace:*
         version: link:../../packages/web-integration
       '@types/file-saver':
@@ -259,16 +259,16 @@ importers:
       '@ant-design/icons':
         specifier: ^5.3.1
         version: 5.5.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      '@midscene/core':
+      '@sqai/core':
         specifier: workspace:*
         version: link:../../packages/core
-      '@midscene/playground':
+      '@sqai/playground':
         specifier: workspace:*
         version: link:../../packages/playground
-      '@midscene/shared':
+      '@sqai/shared':
         specifier: workspace:*
         version: link:../../packages/shared
-      '@midscene/visualizer':
+      '@sqai/visualizer':
         specifier: workspace:*
         version: link:../../packages/visualizer
       antd:
@@ -284,9 +284,6 @@ importers:
         specifier: 2.0.22
         version: 2.0.22(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
     devDependencies:
-      '@midscene/web':
-        specifier: workspace:*
-        version: link:../../packages/web-integration
       '@rsbuild/core':
         specifier: ^1.3.22
         version: 1.4.15
@@ -305,6 +302,9 @@ importers:
       '@rsbuild/plugin-type-check':
         specifier: 1.2.3
         version: 1.2.3(@rsbuild/core@1.4.15)(@rspack/core@1.5.7(@swc/helpers@0.5.17))(typescript@5.8.3)
+      '@sqai/web':
+        specifier: workspace:*
+        version: link:../../packages/web-integration
       '@types/react':
         specifier: ^18.3.1
         version: 18.3.23
@@ -332,7 +332,7 @@ importers:
 
   apps/recorder-form:
     dependencies:
-      '@midscene/recorder':
+      '@sqai/recorder':
         specifier: workspace:*
         version: link:../../packages/recorder
       antd:
@@ -375,21 +375,6 @@ importers:
       '@ant-design/icons':
         specifier: ^5.3.1
         version: 5.5.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      '@midscene/core':
-        specifier: workspace:*
-        version: link:../../packages/core
-      '@midscene/playground':
-        specifier: workspace:*
-        version: link:../../packages/playground
-      '@midscene/shared':
-        specifier: workspace:*
-        version: link:../../packages/shared
-      '@midscene/visualizer':
-        specifier: workspace:*
-        version: link:../../packages/visualizer
-      '@midscene/web':
-        specifier: workspace:*
-        version: link:../../packages/web-integration
       '@rsbuild/core':
         specifier: ^1.3.22
         version: 1.3.22
@@ -402,6 +387,21 @@ importers:
       '@rsbuild/plugin-type-check':
         specifier: 1.2.3
         version: 1.2.3(@rsbuild/core@1.3.22)(@rspack/core@1.5.7(@swc/helpers@0.5.17))(typescript@5.8.3)
+      '@sqai/core':
+        specifier: workspace:*
+        version: link:../../packages/core
+      '@sqai/playground':
+        specifier: workspace:*
+        version: link:../../packages/playground
+      '@sqai/shared':
+        specifier: workspace:*
+        version: link:../../packages/shared
+      '@sqai/visualizer':
+        specifier: workspace:*
+        version: link:../../packages/visualizer
+      '@sqai/web':
+        specifier: workspace:*
+        version: link:../../packages/web-integration
       '@types/chrome':
         specifier: 0.0.279
         version: 0.0.279
@@ -476,22 +476,22 @@ importers:
 
   packages/android:
     dependencies:
-      '@midscene/core':
+      '@sqai/core':
         specifier: workspace:*
         version: link:../core
-      '@midscene/shared':
+      '@sqai/shared':
         specifier: workspace:*
         version: link:../shared
       appium-adb:
         specifier: 12.12.1
         version: 12.12.1
     devDependencies:
-      '@midscene/playground':
-        specifier: workspace:*
-        version: link:../playground
       '@rslib/core':
         specifier: ^0.11.2
         version: 0.11.2(@microsoft/api-extractor@7.52.10(@types/node@18.19.62))(typescript@5.8.3)
+      '@sqai/playground':
+        specifier: workspace:*
+        version: link:../playground
       '@types/node':
         specifier: ^18.0.0
         version: 18.19.62
@@ -513,16 +513,16 @@ importers:
       '@inquirer/prompts':
         specifier: ^7.8.6
         version: 7.8.6(@types/node@18.19.62)
-      '@midscene/android':
+      '@sqai/android':
         specifier: workspace:*
         version: link:../android
-      '@midscene/core':
+      '@sqai/core':
         specifier: workspace:*
         version: link:../core
-      '@midscene/playground':
+      '@sqai/playground':
         specifier: workspace:*
         version: link:../playground
-      '@midscene/shared':
+      '@sqai/shared':
         specifier: workspace:*
         version: link:../shared
       '@yume-chan/adb':
@@ -571,19 +571,19 @@ importers:
 
   packages/cli:
     dependencies:
-      '@midscene/android':
+      '@sqai/android':
         specifier: workspace:*
         version: link:../android
-      '@midscene/core':
+      '@sqai/core':
         specifier: workspace:*
         version: link:../core
-      '@midscene/ios':
+      '@sqai/ios':
         specifier: workspace:*
         version: link:../ios
-      '@midscene/shared':
+      '@sqai/shared':
         specifier: workspace:*
         version: link:../shared
-      '@midscene/web':
+      '@sqai/web':
         specifier: workspace:*
         version: link:../web-integration
       http-server:
@@ -656,10 +656,10 @@ importers:
       '@azure/identity':
         specifier: 4.5.0
         version: 4.5.0
-      '@midscene/recorder':
+      '@sqai/recorder':
         specifier: workspace:*
         version: link:../recorder
-      '@midscene/shared':
+      '@sqai/shared':
         specifier: workspace:*
         version: link:../shared
       '@ui-tars/action-parser':
@@ -717,13 +717,13 @@ importers:
 
   packages/evaluation:
     dependencies:
-      '@midscene/core':
+      '@sqai/core':
         specifier: workspace:*
         version: link:../core
-      '@midscene/shared':
+      '@sqai/shared':
         specifier: workspace:*
         version: link:../shared
-      '@midscene/web':
+      '@sqai/web':
         specifier: workspace:*
         version: link:../web-integration
     devDependencies:
@@ -754,25 +754,25 @@ importers:
       '@inquirer/prompts':
         specifier: ^7.8.6
         version: 7.8.6(@types/node@18.19.118)
-      '@midscene/core':
+      '@sqai/core':
         specifier: workspace:*
         version: link:../core
-      '@midscene/shared':
+      '@sqai/shared':
         specifier: workspace:*
         version: link:../shared
-      '@midscene/webdriver':
+      '@sqai/webdriver':
         specifier: workspace:*
         version: link:../webdriver
       open:
         specifier: 10.1.0
         version: 10.1.0
     devDependencies:
-      '@midscene/playground':
-        specifier: workspace:*
-        version: link:../playground
       '@rslib/core':
         specifier: ^0.11.2
         version: 0.11.2(@microsoft/api-extractor@7.52.10(@types/node@18.19.118))(typescript@5.8.3)
+      '@sqai/playground':
+        specifier: workspace:*
+        version: link:../playground
       '@types/node':
         specifier: ^18.0.0
         version: 18.19.118
@@ -791,7 +791,7 @@ importers:
 
   packages/ios-playground:
     dependencies:
-      '@midscene/ios':
+      '@sqai/ios':
         specifier: workspace:*
         version: link:../ios
     devDependencies:
@@ -823,21 +823,6 @@ importers:
         specifier: 6.0.5
         version: 6.0.5
     devDependencies:
-      '@midscene/android':
-        specifier: workspace:*
-        version: link:../android
-      '@midscene/core':
-        specifier: workspace:*
-        version: link:../core
-      '@midscene/report':
-        specifier: workspace:*
-        version: link:../../apps/report
-      '@midscene/shared':
-        specifier: workspace:*
-        version: link:../shared
-      '@midscene/web':
-        specifier: workspace:*
-        version: link:../web-integration
       '@modelcontextprotocol/inspector':
         specifier: ^0.16.3
         version: 0.16.3(@types/node@18.19.62)(@types/react-dom@19.1.5(@types/react@19.1.5))(@types/react@19.1.5)(bufferutil@4.0.9)(typescript@5.8.3)(utf-8-validate@6.0.5)
@@ -847,6 +832,21 @@ importers:
       '@rslib/core':
         specifier: ^0.11.2
         version: 0.11.2(@microsoft/api-extractor@7.52.10(@types/node@18.19.62))(typescript@5.8.3)
+      '@sqai/android':
+        specifier: workspace:*
+        version: link:../android
+      '@sqai/core':
+        specifier: workspace:*
+        version: link:../core
+      '@sqai/report':
+        specifier: workspace:*
+        version: link:../../apps/report
+      '@sqai/shared':
+        specifier: workspace:*
+        version: link:../shared
+      '@sqai/web':
+        specifier: workspace:*
+        version: link:../web-integration
       '@types/node':
         specifier: ^18.0.0
         version: 18.19.62
@@ -868,10 +868,10 @@ importers:
 
   packages/playground:
     dependencies:
-      '@midscene/core':
+      '@sqai/core':
         specifier: workspace:*
         version: link:../core
-      '@midscene/shared':
+      '@sqai/shared':
         specifier: workspace:*
         version: link:../shared
       cors:
@@ -917,7 +917,7 @@ importers:
       '@ant-design/icons':
         specifier: ^5.3.1
         version: 5.5.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      '@midscene/shared':
+      '@sqai/shared':
         specifier: workspace:*
         version: link:../shared
       antd:
@@ -1000,16 +1000,16 @@ importers:
       '@ant-design/icons':
         specifier: ^5.3.1
         version: 5.5.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      '@midscene/core':
+      '@sqai/core':
         specifier: workspace:*
         version: link:../core
-      '@midscene/playground':
+      '@sqai/playground':
         specifier: workspace:*
         version: link:../playground
-      '@midscene/shared':
+      '@sqai/shared':
         specifier: workspace:*
         version: link:../shared
-      '@midscene/web':
+      '@sqai/web':
         specifier: workspace:*
         version: link:../web-integration
       antd:
@@ -1094,13 +1094,13 @@ importers:
 
   packages/web-integration:
     dependencies:
-      '@midscene/core':
+      '@sqai/core':
         specifier: workspace:*
         version: link:../core
-      '@midscene/playground':
+      '@sqai/playground':
         specifier: workspace:*
         version: link:../playground
-      '@midscene/shared':
+      '@sqai/shared':
         specifier: workspace:*
         version: link:../shared
       cors:
@@ -1167,7 +1167,7 @@ importers:
 
   packages/webdriver:
     dependencies:
-      '@midscene/shared':
+      '@sqai/shared':
         specifier: workspace:*
         version: link:../shared
       node-fetch:

@@ -24,7 +24,7 @@ const allTestData = jsonFiles.map((file) => {
 
 // put back the report template to the core package
 // this is a workaround for the circular dependency issue
-// ERROR: This repository uses pkg in bundler mode. It is necessary to declare @midscene/report in the dependency; otherwise, it may cause packaging order issues and thus lead to the failure of report injection
+// ERROR: This repository uses pkg in bundler mode. It is necessary to declare @sqai/report in the dependency; otherwise, it may cause packaging order issues and thus lead to the failure of report injection
 const copyReportTemplate = () => ({
   name: 'copy-report-template',
   setup(api) {
@@ -50,8 +50,8 @@ const copyReportTemplate = () => ({
         fs.readFileSync(path.join(corePkgDir, 'package.json'), 'utf-8'),
       );
       assert(
-        corePkgJson.name === '@midscene/core',
-        'core package name is not @midscene/core',
+        corePkgJson.name === '@sqai/core',
+        'core package name is not @sqai/core',
       );
       const corePkgDistDir = path.join(corePkgDir, 'dist');
 

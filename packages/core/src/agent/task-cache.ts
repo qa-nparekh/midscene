@@ -4,15 +4,15 @@ import { dirname, join } from 'node:path';
 import { isDeepStrictEqual } from 'node:util';
 import type { TUserPrompt } from '@/ai-model';
 import type { ElementCacheFeature } from '@/types';
-import { getMidsceneRunSubDir } from '@midscene/shared/common';
+import { getMidsceneRunSubDir } from '@sqai/shared/common';
 import {
-  MIDSCENE_CACHE_MAX_FILENAME_LENGTH,
+  SQAI_CACHE_MAX_FILENAME_LENGTH,
   globalConfigManager,
-} from '@midscene/shared/env';
-import { getDebug } from '@midscene/shared/logger';
-import { ifInBrowser, ifInWorker } from '@midscene/shared/utils';
-import { generateHashId } from '@midscene/shared/utils';
-import { replaceIllegalPathCharsAndSpace } from '@midscene/shared/utils';
+} from '@sqai/shared/env';
+import { getDebug } from '@sqai/shared/logger';
+import { ifInBrowser, ifInWorker } from '@sqai/shared/utils';
+import { generateHashId } from '@sqai/shared/utils';
+import { replaceIllegalPathCharsAndSpace } from '@sqai/shared/utils';
 import yaml from 'js-yaml';
 import semver from 'semver';
 import { getMidsceneVersion } from './utils';
@@ -75,7 +75,7 @@ export class TaskCache {
     let safeCacheId = replaceIllegalPathCharsAndSpace(cacheId);
     const cacheMaxFilenameLength =
       globalConfigManager.getEnvConfigInNumber(
-        MIDSCENE_CACHE_MAX_FILENAME_LENGTH,
+        SQAI_CACHE_MAX_FILENAME_LENGTH,
       ) || DEFAULT_CACHE_MAX_FILENAME_LENGTH;
     if (Buffer.byteLength(safeCacheId, 'utf8') > cacheMaxFilenameLength) {
       const prefix = safeCacheId.slice(0, 32);

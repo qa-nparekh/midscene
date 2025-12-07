@@ -1,7 +1,7 @@
 /// <reference types="chrome" />
 
-import { uuid } from '@midscene/shared/utils';
-import type { WebUIContext } from '@midscene/web';
+import { uuid } from '@sqai/shared/utils';
+import type { WebUIContext } from '@sqai/web';
 
 const workerMessageTypes = {
   SAVE_CONTEXT: 'save-context',

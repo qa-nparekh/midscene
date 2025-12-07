@@ -67,7 +67,7 @@ export class GlobalConfigManager {
     }
     if (key === MATCH_BY_POSITION) {
       throw new Error(
-        'MATCH_BY_POSITION is deprecated, use MIDSCENE_USE_VL_MODEL instead',
+        'MATCH_BY_POSITION is deprecated, use SQAI_USE_VL_MODEL instead',
       );
     }
     const value = allConfig[key];

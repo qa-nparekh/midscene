@@ -1,5 +1,5 @@
-import { getDebug } from '@midscene/shared/logger';
-import { WebDriverClient } from '@midscene/webdriver';
+import { getDebug } from '@sqai/shared/logger';
+import { WebDriverClient } from '@sqai/webdriver';
 
 const debugIOS = getDebug('webdriver:ios');
 

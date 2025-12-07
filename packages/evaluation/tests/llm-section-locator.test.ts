@@ -1,9 +1,9 @@
 import { writeFileSync } from 'node:fs';
-import type { Rect } from '@midscene/core';
-import { AiLocateSection } from '@midscene/core/ai-model';
-import { sleep } from '@midscene/core/utils';
-import { globalModelConfigManager } from '@midscene/shared/env';
-import { saveBase64Image } from '@midscene/shared/img';
+import type { Rect } from '@sqai/core';
+import { AiLocateSection } from '@sqai/core/ai-model';
+import { sleep } from '@sqai/core/utils';
+import { globalModelConfigManager } from '@sqai/shared/env';
+import { saveBase64Image } from '@sqai/shared/img';
 import dotenv from 'dotenv';
 import { afterAll, expect, test } from 'vitest';
 import { TestResultCollector } from '../src/test-analyzer';

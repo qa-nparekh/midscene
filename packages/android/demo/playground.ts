@@ -1,4 +1,4 @@
-import { playgroundForAgent } from '@midscene/playground';
+import { playgroundForAgent } from '@sqai/playground';
 import dotenv from 'dotenv';
 import { agentFromAdbDevice, getConnectedDevices } from '../src';
 

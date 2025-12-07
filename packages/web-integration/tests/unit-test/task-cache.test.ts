@@ -5,9 +5,9 @@ import {
   type PlanningCache,
   TaskCache,
   cacheFileExt,
-} from '@midscene/core/agent';
-import { getMidsceneRunSubDir } from '@midscene/shared/common';
-import { uuid } from '@midscene/shared/utils';
+} from '@sqai/core/agent';
+import { getMidsceneRunSubDir } from '@sqai/shared/common';
+import { uuid } from '@sqai/shared/utils';
 import yaml from 'js-yaml';
 import { afterAll, beforeAll, describe, expect, it, vi } from 'vitest';
 
@@ -308,7 +308,7 @@ describe('TaskCache', { timeout: 20000 }, () => {
     const cacheId = uuid();
     const uniqueDir = path.join(
       process.cwd(),
-      'midscene_run',
+      'sqai_run',
       'cache',
       `test-cache-dir-${Date.now()}-${Math.random().toString(36).substring(2, 9)}`,
     );

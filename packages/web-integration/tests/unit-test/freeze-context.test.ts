@@ -1,7 +1,7 @@
 import type { WebPage } from '@/web-element';
 import { WebPageContextParser } from '@/web-element';
-import { Agent as PageAgent } from '@midscene/core/agent';
-import { globalConfigManager } from '@midscene/shared/env';
+import { Agent as PageAgent } from '@sqai/core/agent';
+import { globalConfigManager } from '@sqai/shared/env';
 import { beforeEach, describe, expect, it, vi } from 'vitest';
 import type { WebUIContext } from '../../src';
 
@@ -67,9 +67,9 @@ describe('PageAgent freeze/unfreeze page context', () => {
       autoPrintReportMsg: false,
       modelConfig: () => {
         return {
-          MIDSCENE_MODEL_NAME: 'mock-model',
-          MIDSCENE_OPENAI_API_KEY: 'mock-api-key',
-          MIDSCENE_OPENAI_BASE_URL: 'mock-base-url',
+          SQAI_MODEL_NAME: 'mock-model',
+          SQAI_OPENAI_API_KEY: 'mock-api-key',
+          SQAI_OPENAI_BASE_URL: 'mock-base-url',
         };
       },
     });
@@ -166,9 +166,9 @@ describe('PageAgent freeze/unfreeze page context', () => {
         autoPrintReportMsg: false,
         modelConfig: () => {
           return {
-            MIDSCENE_MODEL_NAME: 'mock-model',
-            MIDSCENE_OPENAI_API_KEY: 'mock-api-key',
-            MIDSCENE_OPENAI_BASE_URL: 'mock-base-url',
+            SQAI_MODEL_NAME: 'mock-model',
+            SQAI_OPENAI_API_KEY: 'mock-api-key',
+            SQAI_OPENAI_BASE_URL: 'mock-base-url',
           };
         },
       });

@@ -53,10 +53,10 @@ import type { AbstractInterface } from '@/device';
 import {
   ModelConfigManager,
   globalModelConfigManager,
-} from '@midscene/shared/env';
-import { imageInfoOfBase64, resizeImgBase64 } from '@midscene/shared/img';
-import { getDebug } from '@midscene/shared/logger';
-import { assert } from '@midscene/shared/utils';
+} from '@sqai/shared/env';
+import { imageInfoOfBase64, resizeImgBase64 } from '@sqai/shared/img';
+import { getDebug } from '@sqai/shared/logger';
+import { assert } from '@sqai/shared/utils';
 // import type { AndroidDeviceInputOpt } from '../device';
 import { TaskCache } from './task-cache';
 import { TaskExecutor, locatePlanForLocate } from './tasks';

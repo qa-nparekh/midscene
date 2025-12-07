@@ -1,5 +1,5 @@
 import type { DeviceAction } from '@/types';
-import type { TVlModeTypes } from '@midscene/shared/env';
+import type { TVlModeTypes } from '@sqai/shared/env';
 import type { ResponseFormatJSONSchema } from 'openai/resources/index';
 import type { ZodObject, z } from 'zod';
 import { ifMidsceneLocatorField } from '../common';
@@ -150,7 +150,7 @@ export const descriptionForAction = (
 
       // Check for MidsceneLocation fields and add description
       if (actualField._def?.typeName === 'ZodObject') {
-        if ('midscene_location_field_flag' in actualField._def.shape()) {
+        if ('SQAI_location_field_flag' in actualField._def.shape()) {
           return 'Location information for the target element';
         }
       }

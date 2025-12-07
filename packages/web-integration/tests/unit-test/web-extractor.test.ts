@@ -1,13 +1,13 @@
 import { join } from 'node:path';
 import { WebPageContextParser } from '@/web-element';
 import type { WebElementInfo } from '@/web-element';
-import { traverseTree, treeToList } from '@midscene/shared/extractor';
+import { traverseTree, treeToList } from '@sqai/shared/extractor';
 import {
   compositeElementInfoImg,
   imageInfoOfBase64,
   saveBase64Image,
-} from '@midscene/shared/img';
-import { getElementInfosScriptContent } from '@midscene/shared/node';
+} from '@sqai/shared/img';
+import { getElementInfosScriptContent } from '@sqai/shared/node';
 import { createServer } from 'http-server';
 import { beforeAll, describe, expect, it } from 'vitest';
 import { launchPage } from '../ai/web/puppeteer/utils';
@@ -201,7 +201,7 @@ describe(
       });
       const elementInfosScriptContent = getElementInfosScriptContent();
       const element = await page.evaluateJavaScript?.(
-        `${elementInfosScriptContent}midscene_element_inspector.getElementInfoByXpath('/html/body/div[2]/div/div/ul/li[1]/span/text()[1]')`,
+        `${elementInfosScriptContent}SQAI_element_inspector.getElementInfoByXpath('/html/body/div[2]/div/div/ul/li[1]/span/text()[1]')`,
       );
       expect(element.content).toBe('English');
       expect(element.nodeType).toBe('TEXT Node');
@@ -220,7 +220,7 @@ describe(
 
       const elementInfosScriptContent = getElementInfosScriptContent();
       const element = await page.evaluateJavaScript?.(
-        `${elementInfosScriptContent}midscene_element_inspector.getElementInfoByXpath('/html/body/button')`,
+        `${elementInfosScriptContent}SQAI_element_inspector.getElementInfoByXpath('/html/body/button')`,
       );
       expect(element.nodeType).toBe('BUTTON Node');
       expect(element.attributes).toMatchSnapshot();
@@ -238,7 +238,7 @@ describe(
 
       const elementInfosScriptContent = getElementInfosScriptContent();
       const description = await page.evaluateJavaScript?.(
-        `${elementInfosScriptContent}midscene_element_inspector.webExtractNodeTreeAsString(document, true)`,
+        `${elementInfosScriptContent}SQAI_element_inspector.webExtractNodeTreeAsString(document, true)`,
       );
       expect(description).not.toContain('This should be collected');
       expect(description.split('\n').length).toBeLessThan(100);
@@ -256,7 +256,7 @@ describe(
 
       const elementInfosScriptContent = getElementInfosScriptContent();
       const description = await page.evaluateJavaScript?.(
-        `${elementInfosScriptContent}midscene_element_inspector.webExtractNodeTreeAsString(document, false)`,
+        `${elementInfosScriptContent}SQAI_element_inspector.webExtractNodeTreeAsString(document, false)`,
       );
       expect(description).toContain('This should be collected');
       expect(description.split('\n').length).toBeGreaterThan(200);
@@ -277,11 +277,11 @@ describe(
 
         // Test clicking on the button element
         const orderSensitiveXpaths = await page.evaluateJavaScript?.(
-          `${elementInfosScriptContent}midscene_element_inspector.getXpathsByPoint({left: 100, top: 400}, true)`,
+          `${elementInfosScriptContent}SQAI_element_inspector.getXpathsByPoint({left: 100, top: 400}, true)`,
         );
 
         const orderInsensitiveXpaths = await page.evaluateJavaScript?.(
-          `${elementInfosScriptContent}midscene_element_inspector.getXpathsByPoint({left: 100, top: 400}, false)`,
+          `${elementInfosScriptContent}SQAI_element_inspector.getXpathsByPoint({left: 100, top: 400}, false)`,
         );
 
         expect(orderSensitiveXpaths).toBeDefined();
@@ -314,7 +314,7 @@ describe(
 
         // Test xpath with normalize-space text matching - this may match the text node
         const elementInfo = await page.evaluateJavaScript?.(
-          `${elementInfosScriptContent}midscene_element_inspector.getElementInfoByXpath('/html/body/div[2]/div/div/ul/li[1]/span[normalize-space()="English"]')`,
+          `${elementInfosScriptContent}SQAI_element_inspector.getElementInfoByXpath('/html/body/div[2]/div/div/ul/li[1]/span[normalize-space()="English"]')`,
         );
 
         expect(elementInfo).toBeDefined();
@@ -338,7 +338,7 @@ describe(
 
         // First, ensure we have extracted element info (which populates the cache)
         await page.evaluateJavaScript?.(
-          `${elementInfosScriptContent}midscene_element_inspector.webExtractNodeTree(document)`,
+          `${elementInfosScriptContent}SQAI_element_inspector.webExtractNodeTree(document)`,
         );
 
         // Try to get xpath by an element id from the cache
@@ -348,7 +348,7 @@ describe(
           const cacheList = window.midsceneNodeHashCacheList;
           if (cacheList && cacheList.length > 0) {
             const firstCachedId = cacheList[0].id;
-            midscene_element_inspector.getXpathsById(firstCachedId);
+            SQAI_element_inspector.getXpathsById(firstCachedId);
           } else {
             null;
           }`,
@@ -375,7 +375,7 @@ describe(
         // Look for elements with Chinese text or special characters
         const point = { left: 600, top: 500 }; // Adjust coordinates as needed
         const xpaths = await page.evaluateJavaScript?.(
-          `${elementInfosScriptContent}midscene_element_inspector.getXpathsByPoint(${JSON.stringify(point)}, false)`,
+          `${elementInfosScriptContent}SQAI_element_inspector.getXpathsByPoint(${JSON.stringify(point)}, false)`,
         );
 
         expect(xpaths[0]).toMatch(/^\/html/);

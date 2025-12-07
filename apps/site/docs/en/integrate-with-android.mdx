@@ -32,7 +32,7 @@ Integrate Vitest for testing: [https://github.com/web-infra-dev/midscene-example
 
 ### Step 1: Install dependencies
 
-<PackageManagerTabs command="install @midscene/android --save-dev" />
+<PackageManagerTabs command="install @sqai/android --save-dev" />
 
 ### Step 2: Write scripts
 
@@ -45,7 +45,7 @@ import {
   AndroidAgent,
   AndroidDevice,
   getConnectedDevices,
-} from '@midscene/android';
+} from '@sqai/android';
 
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 Promise.resolve(
@@ -156,7 +156,7 @@ function launch(uri: string): Promise<void>;
 - Examples:
 
 ```typescript
-import { AndroidAgent, AndroidDevice } from '@midscene/android';
+import { AndroidAgent, AndroidDevice } from '@sqai/android';
 
 const device = new AndroidDevice('s4ey59');
 const agent = new AndroidAgent(device);
@@ -189,7 +189,7 @@ function runAdbShell(command: string): Promise<string>;
 - Examples:
 
 ```typescript
-import { AndroidAgent, AndroidDevice } from '@midscene/android';
+import { AndroidAgent, AndroidDevice } from '@sqai/android';
 
 const device = new AndroidDevice('s4ey59');
 const agent = new AndroidAgent(device);
@@ -225,7 +225,7 @@ function agentFromAdbDevice(
 - Examples:
 
 ```typescript
-import { agentFromAdbDevice } from '@midscene/android';
+import { agentFromAdbDevice } from '@sqai/android';
 
 const agent = await agentFromAdbDevice('s4ey59'); // create a AndroidAgent from a specific adb device
 const agent = await agentFromAdbDevice(); // no deviceId, use the first connected device
@@ -260,7 +260,7 @@ interface Device {
 - Examples:
 
 ```typescript
-import { agentFromAdbDevice, getConnectedDevices } from '@midscene/android';
+import { agentFromAdbDevice, getConnectedDevices } from '@sqai/android';
 
 const devices = await getConnectedDevices();
 console.log(devices);
@@ -272,9 +272,9 @@ const agent = await agentFromAdbDevice(devices[0].udid);
 Use the `customActions` option to extend the agent's action space with your own actions defined via `defineAction`. When provided, these actions will be appended to the built-in ones so the agent can call them during planning.
 
 ```typescript
-import { getMidsceneLocationSchema, z } from '@midscene/core';
-import { defineAction } from '@midscene/core/device';
-import { AndroidAgent, AndroidDevice } from '@midscene/android';
+import { getMidsceneLocationSchema, z } from '@sqai/core';
+import { defineAction } from '@sqai/core/device';
+import { AndroidAgent, AndroidDevice } from '@sqai/android';
 
 const ContinuousClick = defineAction({
   name: 'continuousClick',

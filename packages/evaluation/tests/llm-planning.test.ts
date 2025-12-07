@@ -1,18 +1,18 @@
 import { writeFileSync } from 'node:fs';
-import { type PlanningAIResponse, type Rect, plan } from '@midscene/core';
-import { adaptBboxToRect } from '@midscene/core/ai-model';
+import { type PlanningAIResponse, type Rect, plan } from '@sqai/core';
+import { adaptBboxToRect } from '@sqai/core/ai-model';
 import {
   type DeviceAction,
   defineActionInput,
   defineActionKeyboardPress,
   defineActionTap,
-} from '@midscene/core/device';
-import { sleep } from '@midscene/core/utils';
+} from '@sqai/core/device';
+import { sleep } from '@sqai/core/utils';
 import {
   globalConfigManager,
   globalModelConfigManager,
-} from '@midscene/shared/env';
-import { saveBase64Image } from '@midscene/shared/img';
+} from '@sqai/shared/env';
+import { saveBase64Image } from '@sqai/shared/img';
 import dotenv from 'dotenv';
 import { afterEach, beforeAll, describe, expect, test } from 'vitest';
 import { TestResultCollector } from '../src/test-analyzer';
@@ -35,7 +35,7 @@ beforeAll(async () => {
   const { vlMode } = defaultModelConfig;
   globalVlMode = !!vlMode;
 
-  if (process.env.MIDSCENE_EVALUATION_EXPECT_VL) {
+  if (process.env.SQAI_EVALUATION_EXPECT_VL) {
     expect(globalVlMode).toBeTruthy();
   }
 

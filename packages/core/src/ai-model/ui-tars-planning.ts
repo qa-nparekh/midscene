@@ -4,11 +4,11 @@ import type {
   Size,
   UIContext,
 } from '@/types';
-import { type IModelConfig, UITarsModelVersion } from '@midscene/shared/env';
-import { resizeImgBase64 } from '@midscene/shared/img';
-import { getDebug } from '@midscene/shared/logger';
-import { transformHotkeyInput } from '@midscene/shared/us-keyboard-layout';
-import { assert } from '@midscene/shared/utils';
+import { type IModelConfig, UITarsModelVersion } from '@sqai/shared/env';
+import { resizeImgBase64 } from '@sqai/shared/img';
+import { getDebug } from '@sqai/shared/logger';
+import { transformHotkeyInput } from '@sqai/shared/us-keyboard-layout';
+import { assert } from '@sqai/shared/utils';
 import { actionParser } from '@ui-tars/action-parser';
 import { AIActionType } from './common';
 import type { ConversationHistory } from './conversation-history';

@@ -4,10 +4,10 @@ import type {
   PlanningAIResponse,
   UIContext,
 } from '@/types';
-import type { IModelConfig } from '@midscene/shared/env';
-import { paddingToMatchBlockByBase64 } from '@midscene/shared/img';
-import { getDebug } from '@midscene/shared/logger';
-import { assert } from '@midscene/shared/utils';
+import type { IModelConfig } from '@sqai/shared/env';
+import { paddingToMatchBlockByBase64 } from '@sqai/shared/img';
+import { getDebug } from '@sqai/shared/logger';
+import { assert } from '@sqai/shared/utils';
 import type {
   ChatCompletionContentPart,
   ChatCompletionMessageParam,

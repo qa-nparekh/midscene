@@ -1,4 +1,4 @@
-import { sleep } from '@midscene/core/utils';
+import { sleep } from '@sqai/core/utils';
 import { beforeAll, describe, it, vi } from 'vitest';
 import { agentFromWebDriverAgent, checkIOSEnvironment } from '../../src';
 

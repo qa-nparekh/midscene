@@ -1,5 +1,5 @@
-import { DEFAULT_WDA_PORT } from '@midscene/shared/constants';
-import { WDAManager } from '@midscene/webdriver';
+import { DEFAULT_WDA_PORT } from '@sqai/shared/constants';
+import { WDAManager } from '@sqai/webdriver';
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 import { IOSDevice } from '../../src/device';
 import { IOSWebDriverClient } from '../../src/ios-webdriver-client';
@@ -7,7 +7,7 @@ import { IOSWebDriverClient } from '../../src/ios-webdriver-client';
 // Mock dependencies
 vi.mock('../../src/utils');
 vi.mock('../../src/ios-webdriver-client');
-vi.mock('@midscene/webdriver');
+vi.mock('@sqai/webdriver');
 
 describe('IOSDevice', () => {
   let device: IOSDevice;

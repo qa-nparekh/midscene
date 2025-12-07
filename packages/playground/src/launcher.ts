@@ -1,6 +1,6 @@
 import { spawn } from 'node:child_process';
-import type { Agent, Agent as PageAgent } from '@midscene/core/agent';
-import { PLAYGROUND_SERVER_PORT } from '@midscene/shared/constants';
+import type { Agent, Agent as PageAgent } from '@sqai/core/agent';
+import { PLAYGROUND_SERVER_PORT } from '@sqai/shared/constants';
 import cors from 'cors';
 import PlaygroundServer from './server';
 
@@ -82,8 +82,8 @@ export interface LaunchPlaygroundResult {
  *
  * @example
  * ```typescript
- * import { playgroundForAgent } from '@midscene/playground';
- * import { SampleDevice, Agent } from '@midscene/core';
+ * import { playgroundForAgent } from '@sqai/playground';
+ * import { SampleDevice, Agent } from '@sqai/core';
  *
  * const device = new SampleDevice();
  * const agent = new Agent(device);

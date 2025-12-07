@@ -1,8 +1,8 @@
 {
-  "name": "@midscene/shared",
+  "name": "@sqai/shared",
   "version": "0.30.9",
-  "repository": "https://github.com/web-infra-dev/midscene",
-  "homepage": "https://midscenejs.com/",
+  "repository": "https://github.com/qa-nparekh/midscene",
+  "homepage": "https://sqai.tech/",
   "types": "./dist/types/index.d.ts",
   "main": "./dist/lib/index.js",
   "module": "./dist/es/index.mjs",

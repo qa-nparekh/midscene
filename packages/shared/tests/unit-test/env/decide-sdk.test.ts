@@ -1,13 +1,13 @@
 import { describe, expect, it } from 'vitest';
 import {
-  MIDSCENE_ANTHROPIC_API_KEY,
-  MIDSCENE_AZURE_OPENAI_ENDPOINT,
-  MIDSCENE_AZURE_OPENAI_KEY,
-  MIDSCENE_OPENAI_API_KEY,
-  MIDSCENE_OPENAI_BASE_URL,
-  MIDSCENE_OPENAI_USE_AZURE,
-  MIDSCENE_USE_ANTHROPIC_SDK,
-  MIDSCENE_USE_AZURE_OPENAI,
+  SQAI_ANTHROPIC_API_KEY,
+  SQAI_AZURE_OPENAI_ENDPOINT,
+  SQAI_AZURE_OPENAI_KEY,
+  SQAI_OPENAI_API_KEY,
+  SQAI_OPENAI_BASE_URL,
+  SQAI_OPENAI_USE_AZURE,
+  SQAI_USE_ANTHROPIC_SDK,
+  SQAI_USE_AZURE_OPENAI,
 } from '../../../src/env';
 import { DEFAULT_MODEL_CONFIG_KEYS } from '../../../src/env/constants';
 import { decideOpenaiSdkConfig } from '../../../src/env/decide-model-config';
@@ -19,12 +19,12 @@ describe('decideOpenaiSdkConfig', () => {
       decideOpenaiSdkConfig({
         keys: DEFAULT_MODEL_CONFIG_KEYS,
         provider: {
-          [MIDSCENE_OPENAI_USE_AZURE]: '1',
+          [SQAI_OPENAI_USE_AZURE]: '1',
         },
         valueAssert: createAssert('', 'modelConfig'),
       }),
     ).toThrowErrorMatchingInlineSnapshot(
-      '[Error: The MIDSCENE_OPENAI_API_KEY must be a non-empty string, but got: undefined. Please check your config.]',
+      '[Error: The SQAI_OPENAI_API_KEY must be a non-empty string, but got: undefined. Please check your config.]',
     );
   });
 
@@ -32,9 +32,9 @@ describe('decideOpenaiSdkConfig', () => {
     const result = decideOpenaiSdkConfig({
       keys: DEFAULT_MODEL_CONFIG_KEYS,
       provider: {
-        [MIDSCENE_OPENAI_USE_AZURE]: '1',
-        [MIDSCENE_OPENAI_BASE_URL]: 'mock-url',
-        [MIDSCENE_OPENAI_API_KEY]: 'mock-key',
+        [SQAI_OPENAI_USE_AZURE]: '1',
+        [SQAI_OPENAI_BASE_URL]: 'mock-url',
+        [SQAI_OPENAI_API_KEY]: 'mock-key',
       },
       valueAssert: createAssert('', 'modelConfig'),
     });
@@ -56,21 +56,21 @@ describe('decideOpenaiSdkConfig', () => {
       decideOpenaiSdkConfig({
         keys: DEFAULT_MODEL_CONFIG_KEYS,
         provider: {
-          [MIDSCENE_USE_AZURE_OPENAI]: '1',
+          [SQAI_USE_AZURE_OPENAI]: '1',
         },
         valueAssert: createAssert('', 'modelConfig'),
       }),
     ).toThrowErrorMatchingInlineSnapshot(
-      '[Error: The MIDSCENE_AZURE_OPENAI_KEY must be a non-empty string, but got: undefined. Please check your config.]',
+      '[Error: The SQAI_AZURE_OPENAI_KEY must be a non-empty string, but got: undefined. Please check your config.]',
     );
   });
   it('useAzureOpenai', () => {
     const result = decideOpenaiSdkConfig({
       keys: DEFAULT_MODEL_CONFIG_KEYS,
       provider: {
-        [MIDSCENE_USE_AZURE_OPENAI]: '1',
-        [MIDSCENE_AZURE_OPENAI_ENDPOINT]: 'mock-url',
-        [MIDSCENE_AZURE_OPENAI_KEY]: 'mock-key',
+        [SQAI_USE_AZURE_OPENAI]: '1',
+        [SQAI_AZURE_OPENAI_ENDPOINT]: 'mock-url',
+        [SQAI_AZURE_OPENAI_KEY]: 'mock-key',
       },
       valueAssert: createAssert('', 'modelConfig'),
     });
@@ -96,20 +96,20 @@ describe('decideOpenaiSdkConfig', () => {
       decideOpenaiSdkConfig({
         keys: DEFAULT_MODEL_CONFIG_KEYS,
         provider: {
-          [MIDSCENE_USE_ANTHROPIC_SDK]: '1',
+          [SQAI_USE_ANTHROPIC_SDK]: '1',
         },
         valueAssert: createAssert('', 'modelConfig'),
       }),
     ).toThrowErrorMatchingInlineSnapshot(
-      '[Error: The MIDSCENE_ANTHROPIC_API_KEY must be a non-empty string, but got: undefined. Please check your config.]',
+      '[Error: The SQAI_ANTHROPIC_API_KEY must be a non-empty string, but got: undefined. Please check your config.]',
     );
   });
   it('useAnthropicSdk', () => {
     const result = decideOpenaiSdkConfig({
       keys: DEFAULT_MODEL_CONFIG_KEYS,
       provider: {
-        [MIDSCENE_USE_ANTHROPIC_SDK]: '1',
-        [MIDSCENE_ANTHROPIC_API_KEY]: 'mock-key',
+        [SQAI_USE_ANTHROPIC_SDK]: '1',
+        [SQAI_ANTHROPIC_API_KEY]: 'mock-key',
       },
       valueAssert: createAssert('', 'modelConfig'),
     });
@@ -131,15 +131,15 @@ describe('decideOpenaiSdkConfig', () => {
         valueAssert: createAssert('', 'modelConfig'),
       }),
     ).toThrowErrorMatchingInlineSnapshot(
-      '[Error: The MIDSCENE_OPENAI_API_KEY must be a non-empty string, but got: undefined. Please check your config.]',
+      '[Error: The SQAI_OPENAI_API_KEY must be a non-empty string, but got: undefined. Please check your config.]',
     );
   });
   it('default', () => {
     const result = decideOpenaiSdkConfig({
       keys: DEFAULT_MODEL_CONFIG_KEYS,
       provider: {
-        [MIDSCENE_OPENAI_API_KEY]: 'mock-key',
-        [MIDSCENE_OPENAI_BASE_URL]: 'mock-url',
+        [SQAI_OPENAI_API_KEY]: 'mock-key',
+        [SQAI_OPENAI_BASE_URL]: 'mock-url',
       },
       valueAssert: createAssert('', 'modelConfig'),
     });

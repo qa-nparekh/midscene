@@ -11,9 +11,9 @@ import {
   PushpinOutlined,
   ReloadOutlined,
 } from '@ant-design/icons';
-import type { CodeGenerationChunk, StreamingCallback } from '@midscene/core';
-import type { ChromeRecordedEvent } from '@midscene/recorder';
-import { globalModelConfigManager } from '@midscene/shared/env';
+import type { CodeGenerationChunk, StreamingCallback } from '@sqai/core';
+import type { ChromeRecordedEvent } from '@sqai/recorder';
+import { globalModelConfigManager } from '@sqai/shared/env';
 import { Button, Select, Tooltip, Typography, message } from 'antd';
 import type React from 'react';
 import { useEffect, useState } from 'react';

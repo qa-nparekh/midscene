@@ -9,15 +9,15 @@ assignees: ''
 
 ## Read this before open issue
 
-How to choose and config a model: https://midscenejs.com/model-provider.html
+How to choose and config a model: https://SQAIjs.com/model-provider.html
 
-Use this project to check the connection: https://github.com/web-infra-dev/midscene-example/tree/main/connectivity-test
+Use this project to check the connection: https://github.com/qa-nparekh/SQAI-example/tree/main/connectivity-test
 
 ## If the error persists, tell us these information
 
-- Where are you using Midscene.js (Chrome extension, yaml with cli, Puppeteer,…)
+- Where are you using SQAI.js (Chrome extension, yaml with cli, Puppeteer,…)
 
-- The version of Midscene.js or Extension
+- The version of SQAI.js or Extension
 
 - The error message
 

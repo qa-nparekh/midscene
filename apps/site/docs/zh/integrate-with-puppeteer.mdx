@@ -16,7 +16,7 @@ import { PackageManagerTabs } from '@theme';
 
 ## 第一步：安装依赖
 
-<PackageManagerTabs command="install @midscene/web puppeteer tsx --save-dev" />
+<PackageManagerTabs command="install @sqai/web puppeteer tsx --save-dev" />
 
 ## 第二步：编写脚本
 
@@ -24,7 +24,7 @@ import { PackageManagerTabs } from '@theme';
 
 ```typescript title="./demo.ts"
 import puppeteer from "puppeteer";
-import { PuppeteerAgent } from "@midscene/web/puppeteer";
+import { PuppeteerAgent } from "@sqai/web/puppeteer";
 
 const sleep = (ms: number) => new Promise((r) => setTimeout(r, ms));
 Promise.resolve(
@@ -109,8 +109,8 @@ const mid = new PuppeteerAgent(page, {
 可以使用 `customActions` 选项，通过 `defineAction` 来扩展 Agent 的动作空间。传入该选项后，这些动作会追加到内置动作中，Agent 在规划（Planning）时就可以调用它们。
 
 ```typescript
-import { getMidsceneLocationSchema, z } from '@midscene/core';
-import { defineAction } from '@midscene/core/device';
+import { getMidsceneLocationSchema, z } from '@sqai/core';
+import { defineAction } from '@sqai/core/device';
 
 const ContinuousClick = defineAction({
   name: 'continuousClick',

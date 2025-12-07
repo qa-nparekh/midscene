@@ -2,20 +2,20 @@ import { Page } from '@/puppeteer/base-page';
 import { describe, expect, it, vi } from 'vitest';
 
 // Mock necessary dependencies to avoid loading AI service dependencies
-vi.mock('@midscene/shared/logger', () => ({
+vi.mock('@sqai/shared/logger', () => ({
   getDebug: vi.fn(() => vi.fn()),
   logMsg: vi.fn(),
 }));
 
-vi.mock('@midscene/core/utils', async () => {
-  const actual = await vi.importActual('@midscene/core/utils');
+vi.mock('@sqai/core/utils', async () => {
+  const actual = await vi.importActual('@sqai/core/utils');
   return {
     ...actual,
     sleep: vi.fn(() => Promise.resolve()),
   };
 });
 
-vi.mock('@midscene/shared/node', () => ({
+vi.mock('@sqai/shared/node', () => ({
   getElementInfosScriptContent: vi.fn(() => ''),
   getExtraReturnLogic: vi.fn(() => Promise.resolve('() => ({})')),
 }));

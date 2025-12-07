@@ -1,6 +1,6 @@
 {
-  "name": "@midscene/web",
-  "description": "Automate browser actions, extract data, and perform assertions using AI. It offers JavaScript SDK, Chrome extension, and support for scripting in YAML. See https://midscenejs.com/ for details.",
+  "name": "@sqai/web",
+  "description": "Automate browser actions, extract data, and perform assertions using AI. It offers JavaScript SDK, Chrome extension, and support for scripting in YAML. See https://sqai.tech/ for details.",
   "keywords": [
     "AI UI automation",
     "AI testing",
@@ -9,8 +9,8 @@
     "Android use"
   ],
   "version": "0.30.9",
-  "repository": "https://github.com/web-infra-dev/midscene",
-  "homepage": "https://midscenejs.com/",
+  "repository": "https://github.com/qa-nparekh/midscene",
+  "homepage": "https://sqai.tech/",
   "main": "./dist/lib/index.js",
   "types": "./dist/types/index.d.ts",
   "module": "./dist/es/index.mjs",
@@ -95,28 +95,28 @@
   },
   "scripts": {
     "dev": "npm run build && npx npm-watch",
-    "dev:server": "npm run build && ./bin/midscene-playground",
+    "dev:server": "npm run build && ./bin/sqai-playground",
     "build": "rslib build",
     "build:watch": "rslib build --watch",
-    "playground": "DEBUG=midscene:* tsx demo/playground.ts",
+    "playground": "DEBUG=sqai:* tsx demo/playground.ts",
     "test": "vitest --run",
     "test:u": "vitest --run -u",
     "test:ai": "AI_TEST_TYPE=web npm run test",
-    "test:ai:cache": "MIDSCENE_CACHE=true npm run test:ai",
+    "test:ai:cache": "SQAI_CACHE=true npm run test:ai",
     "e2e": "playwright test --config=tests/playwright.config.ts",
-    "e2e:report": "MIDSCENE_REPORT=true playwright test --config=tests/playwright.config.ts",
-    "e2e:cache": "MIDSCENE_CACHE=true playwright test --config=tests/playwright.config.ts",
+    "e2e:report": "SQAI_REPORT=true playwright test --config=tests/playwright.config.ts",
+    "e2e:cache": "SQAI_CACHE=true playwright test --config=tests/playwright.config.ts",
     "e2e:ui": "playwright test --config=tests/playwright.config.ts --ui",
-    "e2e:ui:cache": "MIDSCENE_CACHE=true playwright test --config=tests/playwright.config.ts --ui"
+    "e2e:ui:cache": "SQAI_CACHE=true playwright test --config=tests/playwright.config.ts --ui"
   },
   "bin": {
-    "midscene-playground": "./bin/midscene-playground"
+    "sqai-playground": "./bin/sqai-playground"
   },
   "files": ["static", "dist", "iife-script", "README.md", "bin"],
   "dependencies": {
-    "@midscene/core": "workspace:*",
-    "@midscene/playground": "workspace:*",
-    "@midscene/shared": "workspace:*",
+    "@sqai/core": "workspace:*",
+    "@sqai/playground": "workspace:*",
+    "@sqai/shared": "workspace:*",
     "cors": "^2.8.5",
     "dayjs": "^1.11.11",
     "dotenv": "^16.4.5",

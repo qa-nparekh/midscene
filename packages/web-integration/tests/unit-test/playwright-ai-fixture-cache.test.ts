@@ -1,16 +1,16 @@
 import { PlaywrightAiFixture } from '@/playwright/ai-fixture';
-import { processCacheConfig } from '@midscene/core/utils';
+import { processCacheConfig } from '@sqai/core/utils';
 import { beforeEach, describe, expect, it, vi } from 'vitest';
 
 // Mock the global config manager to control environment variables
-vi.mock('@midscene/shared/env', () => ({
-  MIDSCENE_CACHE: 'MIDSCENE_CACHE',
+vi.mock('@sqai/shared/env', () => ({
+  SQAI_CACHE: 'SQAI_CACHE',
   globalConfigManager: {
     getEnvConfigInBoolean: vi.fn(),
   },
 }));
 
-import { globalConfigManager } from '@midscene/shared/env';
+import { globalConfigManager } from '@sqai/shared/env';
 
 describe('PlaywrightAiFixture Cache Configuration', () => {
   beforeEach(() => {
@@ -61,7 +61,7 @@ describe('PlaywrightAiFixture Cache Configuration', () => {
   });
 
   describe('Legacy compatibility mode', () => {
-    it('should enable cache when MIDSCENE_CACHE env var is true (legacy mode)', () => {
+    it('should enable cache when SQAI_CACHE env var is true (legacy mode)', () => {
       // Mock environment variable to enable legacy cache mode
       vi.mocked(globalConfigManager.getEnvConfigInBoolean).mockReturnValue(
         true,
@@ -76,7 +76,7 @@ describe('PlaywrightAiFixture Cache Configuration', () => {
 
       // Verify that environment variable was checked
       expect(globalConfigManager.getEnvConfigInBoolean).toHaveBeenCalledWith(
-        'MIDSCENE_CACHE',
+        'SQAI_CACHE',
       );
 
       // Verify that cache is enabled with the generated ID
@@ -88,7 +88,7 @@ describe('PlaywrightAiFixture Cache Configuration', () => {
       expect(fixture.agentForPage).toBeDefined();
     });
 
-    it('should not enable cache when MIDSCENE_CACHE env var is false (legacy mode)', () => {
+    it('should not enable cache when SQAI_CACHE env var is false (legacy mode)', () => {
       // Mock environment variable to disable legacy cache mode
       vi.mocked(globalConfigManager.getEnvConfigInBoolean).mockReturnValue(
         false,
@@ -103,7 +103,7 @@ describe('PlaywrightAiFixture Cache Configuration', () => {
 
       // Verify that environment variable was checked
       expect(globalConfigManager.getEnvConfigInBoolean).toHaveBeenCalledWith(
-        'MIDSCENE_CACHE',
+        'SQAI_CACHE',
       );
 
       // Verify that cache is disabled (undefined)

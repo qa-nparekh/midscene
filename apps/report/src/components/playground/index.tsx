@@ -1,6 +1,6 @@
-import type { DeviceAction, UIContext } from '@midscene/core';
-import { PlaygroundSDK, noReplayAPIs } from '@midscene/playground';
-import type { ServerResponse } from '@midscene/playground';
+import type { DeviceAction, UIContext } from '@sqai/core';
+import { PlaygroundSDK, noReplayAPIs } from '@sqai/playground';
+import type { ServerResponse } from '@sqai/playground';
 import {
   ContextPreview,
   Logo,
@@ -13,8 +13,8 @@ import {
   safeOverrideAIConfig,
   useEnvConfig,
   useServerValid,
-} from '@midscene/visualizer';
-import type { StaticPageAgent } from '@midscene/web/static';
+} from '@sqai/visualizer';
+import type { StaticPageAgent } from '@sqai/web/static';
 import { Form, message } from 'antd';
 import { useCallback, useEffect, useRef, useState } from 'react';
 import { Panel, PanelGroup, PanelResizeHandle } from 'react-resizable-panels';

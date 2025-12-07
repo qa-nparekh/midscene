@@ -1,8 +1,8 @@
 import { readFileSync, rmSync } from 'node:fs';
-import type { ReportDumpWithAttributes } from '@midscene/core';
-import { getReportFileName, printReportMsg } from '@midscene/core/agent';
-import { writeDumpReport } from '@midscene/core/utils';
-import { replaceIllegalPathCharsAndSpace } from '@midscene/shared/utils';
+import type { ReportDumpWithAttributes } from '@sqai/core';
+import { getReportFileName, printReportMsg } from '@sqai/core/agent';
+import { writeDumpReport } from '@sqai/core/utils';
+import { replaceIllegalPathCharsAndSpace } from '@sqai/shared/utils';
 import type {
   FullConfig,
   Reporter,

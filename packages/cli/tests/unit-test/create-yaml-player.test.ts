@@ -1,12 +1,12 @@
 import { readFileSync } from 'node:fs';
 import { createYamlPlayer, launchServer } from '@/create-yaml-player';
-import type { MidsceneYamlScript, MidsceneYamlScriptEnv } from '@midscene/core';
-import { processCacheConfig } from '@midscene/core/utils';
+import type { MidsceneYamlScript, MidsceneYamlScriptEnv } from '@sqai/core';
+import { processCacheConfig } from '@sqai/core/utils';
 import { beforeEach, describe, expect, test, vi } from 'vitest';
 
 // Mock the global config manager to control environment variables
-vi.mock('@midscene/shared/env', () => ({
-  MIDSCENE_CACHE: 'MIDSCENE_CACHE',
+vi.mock('@sqai/shared/env', () => ({
+  SQAI_CACHE: 'SQAI_CACHE',
   globalConfigManager: {
     getEnvConfigInBoolean: vi.fn(),
   },
@@ -21,25 +21,25 @@ vi.mock('http-server', () => ({
   createServer: vi.fn(),
 }));
 
-vi.mock('@midscene/core/yaml', () => ({
+vi.mock('@sqai/core/yaml', () => ({
   ScriptPlayer: vi.fn(),
   parseYamlScript: vi.fn(),
 }));
 
-vi.mock('@midscene/android', () => ({
+vi.mock('@sqai/android', () => ({
   agentFromAdbDevice: vi.fn(),
 }));
 
-vi.mock('@midscene/web/bridge-mode', () => ({
+vi.mock('@sqai/web/bridge-mode', () => ({
   AgentOverChromeBridge: vi.fn(),
 }));
 
-vi.mock('@midscene/web/puppeteer-agent-launcher', () => ({
+vi.mock('@sqai/web/puppeteer-agent-launcher', () => ({
   puppeteerAgentForTarget: vi.fn(),
 }));
 
-import { ScriptPlayer, parseYamlScript } from '@midscene/core/yaml';
-import { globalConfigManager } from '@midscene/shared/env';
+import { ScriptPlayer, parseYamlScript } from '@sqai/core/yaml';
+import { globalConfigManager } from '@sqai/shared/env';
 import { createServer } from 'http-server';
 
 describe('create-yaml-player', () => {
@@ -237,7 +237,7 @@ describe('create-yaml-player', () => {
   });
 
   describe('Cache configuration - Legacy compatibility mode', () => {
-    test('should enable cache when MIDSCENE_CACHE env var is true (legacy mode)', () => {
+    test('should enable cache when SQAI_CACHE env var is true (legacy mode)', () => {
       // Mock environment variable to enable legacy cache mode
       vi.mocked(globalConfigManager.getEnvConfigInBoolean).mockReturnValue(
         true,
@@ -250,7 +250,7 @@ describe('create-yaml-player', () => {
 
       // Verify that environment variable was checked
       expect(globalConfigManager.getEnvConfigInBoolean).toHaveBeenCalledWith(
-        'MIDSCENE_CACHE',
+        'SQAI_CACHE',
       );
 
       // Verify that cache is enabled with the file name as ID
@@ -259,7 +259,7 @@ describe('create-yaml-player', () => {
       });
     });
 
-    test('should not enable cache when MIDSCENE_CACHE env var is false (legacy mode)', () => {
+    test('should not enable cache when SQAI_CACHE env var is false (legacy mode)', () => {
       // Mock environment variable to disable legacy cache mode
       vi.mocked(globalConfigManager.getEnvConfigInBoolean).mockReturnValue(
         false,
@@ -271,7 +271,7 @@ describe('create-yaml-player', () => {
 
       // Verify that environment variable was checked
       expect(globalConfigManager.getEnvConfigInBoolean).toHaveBeenCalledWith(
-        'MIDSCENE_CACHE',
+        'SQAI_CACHE',
       );
 
       // Verify that cache is disabled (undefined)

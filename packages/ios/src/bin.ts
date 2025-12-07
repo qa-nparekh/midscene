@@ -1,11 +1,11 @@
 import { createServer } from 'node:net';
 import path from 'node:path';
 import { input, select } from '@inquirer/prompts';
-import { PlaygroundServer } from '@midscene/playground';
+import { PlaygroundServer } from '@sqai/playground';
 import {
   DEFAULT_WDA_PORT,
   PLAYGROUND_SERVER_PORT,
-} from '@midscene/shared/constants';
+} from '@sqai/shared/constants';
 import { IOSAgent } from './agent';
 import { IOSDevice } from './device';
 

@@ -1,5 +1,5 @@
-import { type AgentOpt, Agent as PageAgent } from '@midscene/core/agent';
-import { getDebug } from '@midscene/shared/logger';
+import { type AgentOpt, Agent as PageAgent } from '@sqai/core/agent';
+import { getDebug } from '@sqai/shared/logger';
 import { AndroidDevice, type AndroidDeviceOpt } from './device';
 import { getConnectedDevices } from './utils';
 

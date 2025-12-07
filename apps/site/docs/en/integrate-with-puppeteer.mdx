@@ -16,7 +16,7 @@ There is also a demo of Puppeteer with Vitest: [https://github.com/web-infra-dev
 
 ## Step 1. Install dependencies
 
-<PackageManagerTabs command="install @midscene/web puppeteer tsx --save-dev" />
+<PackageManagerTabs command="install @sqai/web puppeteer tsx --save-dev" />
 
 ## Step 2. Write scripts
 
@@ -24,7 +24,7 @@ Write and save the following code as `./demo.ts`.
 
 ```typescript title="./demo.ts"
 import puppeteer from "puppeteer";
-import { PuppeteerAgent } from "@midscene/web/puppeteer";
+import { PuppeteerAgent } from "@sqai/web/puppeteer";
 
 const sleep = (ms: number) => new Promise((r) => setTimeout(r, ms));
 Promise.resolve(
@@ -109,8 +109,8 @@ const mid = new PuppeteerAgent(page, {
 Use the `customActions` option to extend the agent's action space with your own actions defined via `defineAction`. When provided, these actions will be appended to the built-in ones so the agent can call them during planning.
 
 ```typescript
-import { getMidsceneLocationSchema, z } from '@midscene/core';
-import { defineAction } from '@midscene/core/device';
+import { getMidsceneLocationSchema, z } from '@sqai/core';
+import { defineAction } from '@sqai/core/device';
 
 const ContinuousClick = defineAction({
   name: 'continuousClick',

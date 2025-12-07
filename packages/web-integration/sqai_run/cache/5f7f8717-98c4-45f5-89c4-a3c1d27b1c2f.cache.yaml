@@ -1,0 +1,6 @@
+midsceneVersion: 0.30.9
+cacheId: 5f7f8717-98c4-45f5-89c4-a3c1d27b1c2f
+caches:
+  - type: plan
+    prompt: new
+    yamlWorkflow: new-workflow

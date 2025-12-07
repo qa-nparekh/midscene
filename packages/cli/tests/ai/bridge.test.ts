@@ -12,7 +12,7 @@ describeIf(
   () => {
     test('open new tab', async () => {
       const params = [
-        './tests/midscene_scripts_bridge/new_tab/open-new-tab.yaml',
+        './tests/SQAI_scripts_bridge/new_tab/open-new-tab.yaml',
       ];
       await execa(cliBin, params);
     });

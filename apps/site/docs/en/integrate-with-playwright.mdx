@@ -20,7 +20,7 @@ You can find an example project of direct Playwright integration here: [https://
 
 ### Step 1: Install dependencies
 
-<PackageManagerTabs command="install @midscene/web playwright @playwright/test tsx --save-dev" />
+<PackageManagerTabs command="install @sqai/web playwright @playwright/test tsx --save-dev" />
 
 ### Step 2: Write the script
 
@@ -28,7 +28,7 @@ Save the following code as `./demo.ts`:
 
 ```typescript
 import { chromium } from 'playwright';
-import { PlaywrightAgent } from '@midscene/web/playwright';
+import { PlaywrightAgent } from '@sqai/web/playwright';
 import 'dotenv/config'; // read environment variables from .env file
 
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
@@ -143,7 +143,7 @@ You can find an example project of Playwright test integration here: [https://gi
 
 Add dependencies
 
-<PackageManagerTabs command="install @midscene/web --save-dev" />
+<PackageManagerTabs command="install @sqai/web --save-dev" />
 
 Update playwright.config.ts
 
@@ -151,7 +151,7 @@ Update playwright.config.ts
 export default defineConfig({
   testDir: './e2e',
 + timeout: 90 * 1000,
-+ reporter: [["list"], ["@midscene/web/playwright-reporter", { type: "merged" }]], // type optional, default is "merged", means multiple test cases generate one report, optional value is "separate", means one report for each test case
++ reporter: [["list"], ["@sqai/web/playwright-reporter", { type: "merged" }]], // type optional, default is "merged", means multiple test cases generate one report, optional value is "separate", means one report for each test case
 });
 ```
 
@@ -163,8 +163,8 @@ Save the following code as `./e2e/fixture.ts`:
 
 ```typescript
 import { test as base } from '@playwright/test';
-import type { PlayWrightAiFixtureType } from '@midscene/web/playwright';
-import { PlaywrightAiFixture } from '@midscene/web/playwright';
+import type { PlayWrightAiFixtureType } from '@sqai/web/playwright';
+import { PlaywrightAiFixture } from '@sqai/web/playwright';
 
 export const test = base.extend<PlayWrightAiFixtureType>(
   PlaywrightAiFixture({
@@ -294,8 +294,8 @@ After the command executes successfully, it will output: `Midscene - report file
 Use the `customActions` option to extend the agent's action space with your own actions defined via `defineAction`. When provided, these actions will be appended to the built-in ones so the agent can call them during planning.
 
 ```typescript
-import { getMidsceneLocationSchema, z } from '@midscene/core';
-import { defineAction } from '@midscene/core/device';
+import { getMidsceneLocationSchema, z } from '@sqai/core';
+import { defineAction } from '@sqai/core/device';
 
 const ContinuousClick = defineAction({
   name: 'continuousClick',

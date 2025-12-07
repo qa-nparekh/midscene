@@ -13,7 +13,7 @@ vi.mock('node:path', () => ({
   },
 }));
 
-vi.mock('@midscene/shared/constants', () => ({
+vi.mock('@sqai/shared/constants', () => ({
   PLAYWRIGHT_EXAMPLE_CODE: 'mock playwright example code',
 }));
 
@@ -26,7 +26,7 @@ describe('Prompts Module', () => {
     expect(PROMPTS.PLAYWRIGHT_CODE_EXAMPLE).toBe(
       'mock playwright example code',
     );
-    expect(PROMPTS.MIDSCENE_API_DOCS).toBe('mock api documentation content');
+    expect(PROMPTS.SQAI_API_DOCS).toBe('mock api documentation content');
   });
 
   test('should read API documentation from correct path', async () => {

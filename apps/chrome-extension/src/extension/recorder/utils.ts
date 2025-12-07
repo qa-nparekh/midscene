@@ -3,9 +3,9 @@ import {
   type AIArgs,
   callAIWithObjectResponse,
   callAIWithStringResponse,
-} from '@midscene/core/ai-model';
-import type { ChromeRecordedEvent } from '@midscene/recorder';
-import type { IModelConfig } from '@midscene/shared/env';
+} from '@sqai/core/ai-model';
+import type { ChromeRecordedEvent } from '@sqai/recorder';
+import type { IModelConfig } from '@sqai/shared/env';
 import { message } from 'antd';
 import { saveAs } from 'file-saver';
 import JSZip from 'jszip';

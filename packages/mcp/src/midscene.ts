@@ -2,14 +2,14 @@ import {
   AndroidAgent,
   AndroidDevice,
   getConnectedDevices,
-} from '@midscene/android';
+} from '@sqai/android';
 import {
-  MIDSCENE_MCP_ANDROID_MODE,
-  MIDSCENE_MCP_USE_PUPPETEER_MODE,
+  SQAI_MCP_ANDROID_MODE,
+  SQAI_MCP_USE_PUPPETEER_MODE,
   globalConfigManager,
-} from '@midscene/shared/env';
-import { parseBase64 } from '@midscene/shared/img';
-import { AgentOverChromeBridge } from '@midscene/web/bridge-mode';
+} from '@sqai/shared/env';
+import { parseBase64 } from '@sqai/shared/img';
+import { AgentOverChromeBridge } from '@sqai/web/bridge-mode';
 import type { McpServer } from '@modelcontextprotocol/sdk/server/mcp.js';
 import type {
   ImageContent,
@@ -40,10 +40,10 @@ export class MidsceneManager {
   private mcpServer: McpServer; // Add server instance
   private agent?: AgentOverChromeBridge | PuppeteerBrowserAgent | AndroidAgent;
   private puppeteerMode = globalConfigManager.getEnvConfigInBoolean(
-    MIDSCENE_MCP_USE_PUPPETEER_MODE,
+    SQAI_MCP_USE_PUPPETEER_MODE,
   );
   private androidMode = globalConfigManager.getEnvConfigInBoolean(
-    MIDSCENE_MCP_ANDROID_MODE,
+    SQAI_MCP_ANDROID_MODE,
   ); // Add Android mode flag
   private androidDeviceId?: string; // Add device ID storage
   constructor(server: McpServer) {
@@ -255,7 +255,7 @@ export class MidsceneManager {
           }
         } else {
           throw new Error(
-            'Android mode is not enabled. Set MIDSCENE_MCP_ANDROID_MODE=true',
+            'Android mode is not enabled. Set SQAI_MCP_ANDROID_MODE=true',
           );
         }
       },

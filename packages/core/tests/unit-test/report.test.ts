@@ -115,7 +115,7 @@ describe('reportMergingTool', () => {
 <head><title>Test</title></head>
 <body>
 ${hugeContent}
-<script type="midscene_web_dump" type="application/json">
+<script type="SQAI_web_dump" type="application/json">
 test
 </script>
 </body>

@@ -1,5 +1,5 @@
 import { TaskExecutor } from '@/agent/tasks';
-import type { IModelConfig } from '@midscene/shared/env';
+import type { IModelConfig } from '@sqai/shared/env';
 import { describe, expect, it, vi } from 'vitest';
 
 /**

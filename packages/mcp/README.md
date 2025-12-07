@@ -1,3 +1,3 @@
-# Midscene MCP
+# SQAI MCP
 
-docs: https://midscenejs.com/mcp.html
+docs: https://SQAIjs.com/mcp.html

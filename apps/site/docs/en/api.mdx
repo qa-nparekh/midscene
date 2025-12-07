@@ -845,7 +845,7 @@ The path to the report file.
 You can override environment variables at runtime by calling the `overrideAIConfig` method.
 
 ```typescript
-import { overrideAIConfig } from '@midscene/web/puppeteer'; // or another Agent
+import { overrideAIConfig } from '@sqai/web/puppeteer'; // or another Agent
 
 overrideAIConfig({
   OPENAI_BASE_URL: '...',
@@ -967,7 +967,7 @@ When running multiple automation workflows, each agent generates its own report 
 Create a report merging tool instance.
 
 ```typescript
-import { ReportMergingTool } from '@midscene/core/report';
+import { ReportMergingTool } from '@sqai/core/report';
 
 const reportMergingTool = new ReportMergingTool();
 ```
@@ -1077,10 +1077,10 @@ import {
   AndroidAgent,
   AndroidDevice,
   getConnectedDevices,
-} from '@midscene/android';
-import type { TestStatus } from '@midscene/core';
-import { ReportMergingTool } from '@midscene/core/report';
-import { sleep } from '@midscene/core/utils';
+} from '@sqai/android';
+import type { TestStatus } from '@sqai/core';
+import { ReportMergingTool } from '@sqai/core/report';
+import { sleep } from '@sqai/core/utils';
 import type ADB from 'appium-adb';
 import {
   afterAll,

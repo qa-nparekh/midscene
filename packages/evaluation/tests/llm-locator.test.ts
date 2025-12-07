@@ -1,8 +1,8 @@
 import { writeFileSync } from 'node:fs';
-import Insight, { type Rect } from '@midscene/core';
-import { sleep } from '@midscene/core/utils';
-import { globalModelConfigManager } from '@midscene/shared/env';
-import { saveBase64Image } from '@midscene/shared/img';
+import Insight, { type Rect } from '@sqai/core';
+import { sleep } from '@sqai/core/utils';
+import { globalModelConfigManager } from '@sqai/shared/env';
+import { saveBase64Image } from '@sqai/shared/img';
 
 import dotenv from 'dotenv';
 import { afterAll, beforeAll, expect, test } from 'vitest';
@@ -46,7 +46,7 @@ beforeAll(async () => {
 
   resultCollector = new TestResultCollector(positionModeTag, modelName);
 
-  if (process.env.MIDSCENE_EVALUATION_EXPECT_VL) {
+  if (process.env.SQAI_EVALUATION_EXPECT_VL) {
     expect(vlMode).toBeTruthy();
   }
 });

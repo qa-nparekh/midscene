@@ -1,22 +1,22 @@
 import { readFileSync } from 'node:fs';
 import path, { basename, extname, join } from 'node:path';
-import { ScriptPlayer, parseYamlScript } from '@midscene/core/yaml';
+import { ScriptPlayer, parseYamlScript } from '@sqai/core/yaml';
 import { createServer } from 'http-server';
 
 import assert from 'node:assert';
-import { agentFromAdbDevice } from '@midscene/android';
+import { agentFromAdbDevice } from '@sqai/android';
 import type {
   FreeFn,
   MidsceneYamlScript,
   MidsceneYamlScriptEnv,
-} from '@midscene/core';
-import { createAgent } from '@midscene/core/agent';
-import type { AbstractInterface } from '@midscene/core/device';
-import { processCacheConfig } from '@midscene/core/utils';
-import { agentFromWebDriverAgent } from '@midscene/ios';
-import { getDebug } from '@midscene/shared/logger';
-import { AgentOverChromeBridge } from '@midscene/web/bridge-mode';
-import { puppeteerAgentForTarget } from '@midscene/web/puppeteer-agent-launcher';
+} from '@sqai/core';
+import { createAgent } from '@sqai/core/agent';
+import type { AbstractInterface } from '@sqai/core/device';
+import { processCacheConfig } from '@sqai/core/utils';
+import { agentFromWebDriverAgent } from '@sqai/ios';
+import { getDebug } from '@sqai/shared/logger';
+import { AgentOverChromeBridge } from '@sqai/web/bridge-mode';
+import { puppeteerAgentForTarget } from '@sqai/web/puppeteer-agent-launcher';
 import type { Browser } from 'puppeteer';
 
 export interface SingleYamlExecutionResult {

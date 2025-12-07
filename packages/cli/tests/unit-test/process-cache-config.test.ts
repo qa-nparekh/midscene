@@ -1,16 +1,16 @@
-import type { Cache } from '@midscene/core';
-import { processCacheConfig } from '@midscene/core/utils';
+import type { Cache } from '@sqai/core';
+import { processCacheConfig } from '@sqai/core/utils';
 import { beforeEach, describe, expect, test, vi } from 'vitest';
 
 // Mock the global config manager to control environment variables
-vi.mock('@midscene/shared/env', () => ({
-  MIDSCENE_CACHE: 'MIDSCENE_CACHE',
+vi.mock('@sqai/shared/env', () => ({
+  SQAI_CACHE: 'SQAI_CACHE',
   globalConfigManager: {
     getEnvConfigInBoolean: vi.fn(),
   },
 }));
 
-import { globalConfigManager } from '@midscene/shared/env';
+import { globalConfigManager } from '@sqai/shared/env';
 
 describe('processCacheConfig in CLI', () => {
   beforeEach(() => {
@@ -62,8 +62,8 @@ describe('processCacheConfig in CLI', () => {
     });
   });
 
-  describe('Environment variable support (MIDSCENE_CACHE)', () => {
-    test('should enable legacy cacheId when MIDSCENE_CACHE is true', () => {
+  describe('Environment variable support (SQAI_CACHE)', () => {
+    test('should enable legacy cacheId when SQAI_CACHE is true', () => {
       vi.mocked(globalConfigManager.getEnvConfigInBoolean).mockReturnValue(
         true,
       );
@@ -71,14 +71,14 @@ describe('processCacheConfig in CLI', () => {
       const result = processCacheConfig(undefined, 'legacy-cache-id');
 
       expect(globalConfigManager.getEnvConfigInBoolean).toHaveBeenCalledWith(
-        'MIDSCENE_CACHE',
+        'SQAI_CACHE',
       );
       expect(result).toEqual({
         id: 'legacy-cache-id',
       });
     });
 
-    test('should disable legacy cacheId when MIDSCENE_CACHE is false', () => {
+    test('should disable legacy cacheId when SQAI_CACHE is false', () => {
       vi.mocked(globalConfigManager.getEnvConfigInBoolean).mockReturnValue(
         false,
       );
@@ -86,7 +86,7 @@ describe('processCacheConfig in CLI', () => {
       const result = processCacheConfig(undefined, 'legacy-cache-id');
 
       expect(globalConfigManager.getEnvConfigInBoolean).toHaveBeenCalledWith(
-        'MIDSCENE_CACHE',
+        'SQAI_CACHE',
       );
       expect(result).toBeUndefined();
     });

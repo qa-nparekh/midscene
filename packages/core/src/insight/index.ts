@@ -23,12 +23,12 @@ import type {
 } from '@/types';
 import {
   type IModelConfig,
-  MIDSCENE_FORCE_DEEP_THINK,
+  SQAI_FORCE_DEEP_THINK,
   globalConfigManager,
-} from '@midscene/shared/env';
-import { compositeElementInfoImg, cropByRect } from '@midscene/shared/img';
-import { getDebug } from '@midscene/shared/logger';
-import { assert } from '@midscene/shared/utils';
+} from '@sqai/shared/env';
+import { compositeElementInfoImg, cropByRect } from '@sqai/shared/img';
+import { getDebug } from '@sqai/shared/logger';
+import { assert } from '@sqai/shared/utils';
 import type { TMultimodalPrompt } from '../ai-model/common';
 import { emitInsightDump } from './utils';
 
@@ -96,7 +96,7 @@ export default class Insight<
     assert(typeof query === 'object', 'query should be an object for locate');
 
     const globalDeepThinkSwitch = globalConfigManager.getEnvConfigInBoolean(
-      MIDSCENE_FORCE_DEEP_THINK,
+      SQAI_FORCE_DEEP_THINK,
     );
     if (globalDeepThinkSwitch) {
       debug('globalDeepThinkSwitch', globalDeepThinkSwitch);

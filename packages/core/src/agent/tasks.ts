@@ -40,11 +40,11 @@ import type {
 import { sleep } from '@/utils';
 import {
   type IModelConfig,
-  MIDSCENE_REPLANNING_CYCLE_LIMIT,
+  SQAI_REPLANNING_CYCLE_LIMIT,
   globalConfigManager,
-} from '@midscene/shared/env';
-import { getDebug } from '@midscene/shared/logger';
-import { assert } from '@midscene/shared/utils';
+} from '@sqai/shared/env';
+import { getDebug } from '@sqai/shared/logger';
+import { assert } from '@sqai/shared/utils';
 import type { TaskCache } from './task-cache';
 import { taskTitleStr } from './ui-utils';
 import {
@@ -760,7 +760,7 @@ export class TaskExecutor {
     return (
       this.replanningCycleLimit ||
       globalConfigManager.getEnvConfigInNumber(
-        MIDSCENE_REPLANNING_CYCLE_LIMIT,
+        SQAI_REPLANNING_CYCLE_LIMIT,
       ) ||
       (isVlmUiTars
         ? defaultVlmUiTarsReplanningCycleLimit

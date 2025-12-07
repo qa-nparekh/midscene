@@ -1,12 +1,12 @@
 import type { AbstractWebPage } from '@/web-page';
-import { Agent as PageAgent } from '@midscene/core/agent';
+import { Agent as PageAgent } from '@sqai/core/agent';
 import { beforeEach, describe, expect, it, vi } from 'vitest';
 
 declare const __VERSION__: string;
 
 // Mock only the necessary parts to avoid side effects
-vi.mock('@midscene/core/utils', async () => {
-  const actual = await vi.importActual('@midscene/core/utils');
+vi.mock('@sqai/core/utils', async () => {
+  const actual = await vi.importActual('@sqai/core/utils');
   return {
     ...actual,
     writeLogFile: vi.fn(() => null),
@@ -18,13 +18,13 @@ vi.mock('@midscene/core/utils', async () => {
   };
 });
 
-vi.mock('@midscene/shared/logger', () => ({
+vi.mock('@sqai/shared/logger', () => ({
   getDebug: vi.fn(() => vi.fn()),
   logMsg: vi.fn(),
 }));
 
-vi.mock('@midscene/core', async () => {
-  const actual = await vi.importActual('@midscene/core');
+vi.mock('@sqai/core', async () => {
+  const actual = await vi.importActual('@sqai/core');
   return {
     ...actual,
     Insight: vi.fn().mockImplementation(() => ({})),
@@ -55,9 +55,9 @@ const mockPage = {
 } as unknown as AbstractWebPage;
 
 const mockedModelConfigFnResult = {
-  MIDSCENE_MODEL_NAME: 'mock-model',
-  MIDSCENE_OPENAI_API_KEY: 'mock-api-key',
-  MIDSCENE_OPENAI_BASE_URL: 'mock-base-url',
+  SQAI_MODEL_NAME: 'mock-model',
+  SQAI_OPENAI_API_KEY: 'mock-api-key',
+  SQAI_OPENAI_BASE_URL: 'mock-base-url',
 };
 
 // Mock task executor

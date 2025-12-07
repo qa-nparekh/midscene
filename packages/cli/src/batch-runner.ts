@@ -8,9 +8,9 @@ import type {
   MidsceneYamlScriptEnv,
   MidsceneYamlScriptIOSEnv,
   MidsceneYamlScriptWebEnv,
-} from '@midscene/core';
-import { type ScriptPlayer, parseYamlScript } from '@midscene/core/yaml';
-import { getMidsceneRunSubDir } from '@midscene/shared/common';
+} from '@sqai/core';
+import { type ScriptPlayer, parseYamlScript } from '@sqai/core/yaml';
+import { getMidsceneRunSubDir } from '@sqai/shared/common';
 import merge from 'lodash.merge';
 import pLimit from 'p-limit';
 import puppeteer, { type Browser } from 'puppeteer';

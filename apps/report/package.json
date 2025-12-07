@@ -1,5 +1,5 @@
 {
-  "name": "@midscene/report",
+  "name": "@sqai/report",
   "version": "0.13.1",
   "private": true,
   "scripts": {
@@ -12,11 +12,11 @@
   },
   "dependencies": {
     "@ant-design/icons": "^5.3.1",
-    "@midscene/core": "workspace:*",
-    "@midscene/playground": "workspace:*",
-    "@midscene/shared": "workspace:*",
-    "@midscene/visualizer": "workspace:*",
-    "@midscene/web": "workspace:*",
+    "@sqai/core": "workspace:*",
+    "@sqai/playground": "workspace:*",
+    "@sqai/shared": "workspace:*",
+    "@sqai/visualizer": "workspace:*",
+    "@sqai/web": "workspace:*",
 
     "@rsbuild/core": "^1.3.22",
     "@rsbuild/plugin-less": "^1.2.4",

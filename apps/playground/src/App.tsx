@@ -1,10 +1,10 @@
-import { PlaygroundSDK } from '@midscene/playground';
+import { PlaygroundSDK } from '@sqai/playground';
 import {
   Logo,
   NavActions,
   UniversalPlayground,
   globalThemeConfig,
-} from '@midscene/visualizer';
+} from '@sqai/visualizer';
 import { ConfigProvider, Layout } from 'antd';
 import { useEffect, useMemo, useState } from 'react';
 import { Panel, PanelGroup, PanelResizeHandle } from 'react-resizable-panels';

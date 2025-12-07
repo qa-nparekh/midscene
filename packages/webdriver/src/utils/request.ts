@@ -1,4 +1,4 @@
-import { getDebug } from '@midscene/shared/logger';
+import { getDebug } from '@sqai/shared/logger';
 
 const debugRequest = getDebug('webdriver:request');
 

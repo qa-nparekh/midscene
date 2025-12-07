@@ -1,6 +1,6 @@
 import fs from 'node:fs';
-import * as CoreUtils from '@midscene/core/utils';
-import * as ImgUtils from '@midscene/shared/img';
+import * as CoreUtils from '@sqai/core/utils';
+import * as ImgUtils from '@sqai/shared/img';
 import { ADB } from 'appium-adb';
 import {
   type Mock,
@@ -44,8 +44,8 @@ vi.mock('appium-adb', () => {
   };
 });
 
-vi.mock('@midscene/core/utils');
-vi.mock('@midscene/shared/img');
+vi.mock('@sqai/core/utils');
+vi.mock('@sqai/shared/img');
 vi.mock('node:fs', async (importOriginal) => {
   const original = (await importOriginal()) as {
     default: Record<string, unknown>;
@@ -1600,7 +1600,7 @@ describe('AndroidDevice', () => {
       // Verify that screencap command does not use any display ID (note the extra space)
       expect(mockAdbInstance.shell).toHaveBeenCalledWith(
         expect.stringMatching(
-          /screencap -p {2}\/data\/local\/tmp\/midscene_screenshot_/,
+          /screencap -p {2}\/data\/local\/tmp\/SQAI_screenshot_/,
         ),
       );
       expect(mockAdbInstance.shell).not.toHaveBeenCalledWith(

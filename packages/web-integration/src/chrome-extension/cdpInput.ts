@@ -10,8 +10,8 @@ import {
   type KeyDefinition,
   type KeyInput,
   _keyDefinitions,
-} from '@midscene/shared/us-keyboard-layout';
-import { assert } from '@midscene/shared/utils';
+} from '@sqai/shared/us-keyboard-layout';
+import { assert } from '@sqai/shared/utils';
 
 type KeyDescription = Required<
   Pick<KeyDefinition, 'keyCode' | 'key' | 'text' | 'code' | 'location'>

@@ -1,6 +1,6 @@
 import { existsSync, statSync } from 'node:fs';
 import { join } from 'node:path';
-import { getDebug } from '@midscene/shared/logger';
+import { getDebug } from '@sqai/shared/logger';
 import { glob } from 'glob';
 import { hideBin } from 'yargs/helpers';
 import yargs from 'yargs/yargs';
@@ -8,7 +8,7 @@ import { defaultConfig } from './config-factory';
 
 declare const __VERSION__: string;
 
-const debug = getDebug('midscene:cli');
+const debug = getDebug('sqai:cli');
 
 export const parseProcessArgs = async (): Promise<{
   path?: string;

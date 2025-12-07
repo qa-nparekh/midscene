@@ -1,8 +1,8 @@
 import { existsSync } from 'node:fs';
 import {
-  MIDSCENE_MCP_CHROME_PATH,
+  SQAI_MCP_CHROME_PATH,
   globalConfigManager,
-} from '@midscene/shared/env';
+} from '@sqai/shared/env';
 
 // Deep merge utility function
 export function deepMerge(target: any, source: any): any {
@@ -42,13 +42,13 @@ export function getSystemChromePath(): string | undefined {
   const platform = process.platform;
   const isDocker = process.env.DOCKER_CONTAINER === 'true';
 
-  // Priority 1: Use Docker's MIDSCENE_MCP_CHROME_PATH environment variable
+  // Priority 1: Use Docker's SQAI_MCP_CHROME_PATH environment variable
   if (
     isDocker &&
-    process.env.MIDSCENE_MCP_CHROME_PATH &&
-    existsSync(process.env.MIDSCENE_MCP_CHROME_PATH)
+    process.env.SQAI_MCP_CHROME_PATH &&
+    existsSync(process.env.SQAI_MCP_CHROME_PATH)
   ) {
-    return process.env.MIDSCENE_MCP_CHROME_PATH;
+    return process.env.SQAI_MCP_CHROME_PATH;
   }
 
   const chromePaths = {
@@ -98,7 +98,7 @@ export function getSystemChromePath(): string | undefined {
 
 export function getChromePathFromEnv(): string | undefined {
   const envChromePath = globalConfigManager.getEnvConfigValue(
-    MIDSCENE_MCP_CHROME_PATH,
+    SQAI_MCP_CHROME_PATH,
   );
   if (
     envChromePath !== 'auto' &&

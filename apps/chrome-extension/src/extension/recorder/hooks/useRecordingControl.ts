@@ -1,5 +1,5 @@
-import type { ChromeRecordedEvent } from '@midscene/recorder';
-import { globalModelConfigManager } from '@midscene/shared/env';
+import type { ChromeRecordedEvent } from '@sqai/recorder';
+import { globalModelConfigManager } from '@sqai/shared/env';
 import { message } from 'antd';
 import { useCallback, useEffect, useRef, useState } from 'react';
 import { type RecordingSession, useRecordStore } from '../../../store';

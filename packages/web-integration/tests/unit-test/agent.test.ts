@@ -1,15 +1,15 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import type { AbstractWebPage } from '@/web-page';
-import type { GroupedActionDump } from '@midscene/core';
-import { Agent as PageAgent } from '@midscene/core/agent';
-import { globalConfigManager } from '@midscene/shared/env';
+import type { GroupedActionDump } from '@sqai/core';
+import { Agent as PageAgent } from '@sqai/core/agent';
+import { globalConfigManager } from '@sqai/shared/env';
 import { beforeEach, describe, expect, it, vi } from 'vitest';
 
 declare const __VERSION__: string;
 // Mock only the necessary parts to avoid side effects
-vi.mock('@midscene/core/utils', async () => {
-  const actual = await vi.importActual('@midscene/core/utils');
+vi.mock('@sqai/core/utils', async () => {
+  const actual = await vi.importActual('@sqai/core/utils');
   return {
     ...actual,
     writeLogFile: vi.fn(() => null),
@@ -21,13 +21,13 @@ vi.mock('@midscene/core/utils', async () => {
   };
 });
 
-vi.mock('@midscene/shared/logger', () => ({
+vi.mock('@sqai/shared/logger', () => ({
   getDebug: vi.fn(() => vi.fn()),
   logMsg: vi.fn(),
 }));
 
-vi.mock('@midscene/core', async () => {
-  const actual = await vi.importActual('@midscene/core');
+vi.mock('@sqai/core', async () => {
+  const actual = await vi.importActual('@sqai/core');
   return {
     ...actual,
     Insight: vi.fn().mockImplementation(() => ({})),
@@ -58,9 +58,9 @@ const mockPage = {
 } as unknown as AbstractWebPage;
 
 const mockedModelConfigFnResult = {
-  MIDSCENE_MODEL_NAME: 'mock-model',
-  MIDSCENE_OPENAI_API_KEY: 'mock-api-key',
-  MIDSCENE_OPENAI_BASE_URL: 'mock-base-url',
+  SQAI_MODEL_NAME: 'mock-model',
+  SQAI_OPENAI_API_KEY: 'mock-api-key',
+  SQAI_OPENAI_BASE_URL: 'mock-base-url',
 };
 
 const modelConfigCalcByMockedModelConfigFnResult = {
@@ -524,7 +524,7 @@ describe('PageAgent cache configuration', () => {
   });
 
   describe('backward compatibility with cacheId', () => {
-    it('should work with cacheId when MIDSCENE_CACHE=true', () => {
+    it('should work with cacheId when SQAI_CACHE=true', () => {
       const globalConfigSpy = vi
         .spyOn(globalConfigManager, 'getEnvConfigInBoolean')
         .mockReturnValue(true);
@@ -542,7 +542,7 @@ describe('PageAgent cache configuration', () => {
       globalConfigSpy.mockRestore();
     });
 
-    it('should not create cache with cacheId when MIDSCENE_CACHE=false', () => {
+    it('should not create cache with cacheId when SQAI_CACHE=false', () => {
       const globalConfigSpy = vi
         .spyOn(globalConfigManager, 'getEnvConfigInBoolean')
         .mockReturnValue(false);

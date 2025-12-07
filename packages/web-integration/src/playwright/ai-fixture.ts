@@ -3,16 +3,16 @@ import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import { PlaywrightAgent, type PlaywrightWebPage } from '@/playwright/index';
 import type { WebPageAgentOpt } from '@/web-element';
-import type { Cache } from '@midscene/core';
-import type { AgentOpt, Agent as PageAgent } from '@midscene/core/agent';
-import { processCacheConfig } from '@midscene/core/utils';
+import type { Cache } from '@sqai/core';
+import type { AgentOpt, Agent as PageAgent } from '@sqai/core/agent';
+import { processCacheConfig } from '@sqai/core/utils';
 import {
   DEFAULT_WAIT_FOR_NAVIGATION_TIMEOUT,
   DEFAULT_WAIT_FOR_NETWORK_IDLE_TIMEOUT,
-} from '@midscene/shared/constants';
-import { getDebug } from '@midscene/shared/logger';
-import { uuid } from '@midscene/shared/utils';
-import { replaceIllegalPathCharsAndSpace } from '@midscene/shared/utils';
+} from '@sqai/shared/constants';
+import { getDebug } from '@sqai/shared/logger';
+import { uuid } from '@sqai/shared/utils';
+import { replaceIllegalPathCharsAndSpace } from '@sqai/shared/utils';
 import { type TestInfo, type TestType, test } from '@playwright/test';
 import type { Page as OriginPlaywrightPage } from 'playwright';
 export type APITestType = Pick<TestType<any, any>, 'step'>;

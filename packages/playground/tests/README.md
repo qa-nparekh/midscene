@@ -1,6 +1,6 @@
-# @midscene/playground Tests
+# @SQAI/playground Tests
 
-This directory contains the test suite for the `@midscene/playground` package.
+This directory contains the test suite for the `@SQAI/playground` package.
 
 ## Test Structure
 

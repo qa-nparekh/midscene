@@ -1,10 +1,10 @@
 import path from 'node:path';
 import { uiTarsPlanning } from '@/ai-model/ui-tars-planning';
-import { savePositionImg } from '@midscene/shared/img';
+import { savePositionImg } from '@sqai/shared/img';
 import { getContextFromFixture } from 'tests/evaluation';
 import { assert, describe, expect, it } from 'vitest';
 
-const isUiTars = process.env.MIDSCENE_USE_VLM_UI_TARS === '1';
+const isUiTars = process.env.SQAI_USE_VLM_UI_TARS === '1';
 
 describe.skipIf(!isUiTars)('only run in ui-tars', () => {
   it('plan to target', async () => {

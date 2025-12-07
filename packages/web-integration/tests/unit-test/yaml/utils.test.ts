@@ -1,4 +1,4 @@
-import { buildYaml, parseYamlScript } from '@midscene/core/yaml';
+import { buildYaml, parseYamlScript } from '@sqai/core/yaml';
 import { describe, expect, test } from 'vitest';
 
 describe('utils', () => {

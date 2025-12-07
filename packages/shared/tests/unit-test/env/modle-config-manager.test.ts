@@ -3,19 +3,19 @@ import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 import { ModelConfigManager } from '../../../src/env/model-config-manager';
 import type { TIntent, TModelConfigFn } from '../../../src/env/types';
 import {
-  MIDSCENE_GROUNDING_MODEL_NAME,
-  MIDSCENE_GROUNDING_OPENAI_API_KEY,
-  MIDSCENE_GROUNDING_OPENAI_BASE_URL,
-  MIDSCENE_MODEL_NAME,
-  MIDSCENE_OPENAI_API_KEY,
-  MIDSCENE_OPENAI_BASE_URL,
-  MIDSCENE_OPENAI_INIT_CONFIG_JSON,
-  MIDSCENE_PLANNING_MODEL_NAME,
-  MIDSCENE_PLANNING_OPENAI_API_KEY,
-  MIDSCENE_PLANNING_OPENAI_BASE_URL,
-  MIDSCENE_VQA_MODEL_NAME,
-  MIDSCENE_VQA_OPENAI_API_KEY,
-  MIDSCENE_VQA_OPENAI_BASE_URL,
+  SQAI_GROUNDING_MODEL_NAME,
+  SQAI_GROUNDING_OPENAI_API_KEY,
+  SQAI_GROUNDING_OPENAI_BASE_URL,
+  SQAI_MODEL_NAME,
+  SQAI_OPENAI_API_KEY,
+  SQAI_OPENAI_BASE_URL,
+  SQAI_OPENAI_INIT_CONFIG_JSON,
+  SQAI_PLANNING_MODEL_NAME,
+  SQAI_PLANNING_OPENAI_API_KEY,
+  SQAI_PLANNING_OPENAI_BASE_URL,
+  SQAI_VQA_MODEL_NAME,
+  SQAI_VQA_OPENAI_API_KEY,
+  SQAI_VQA_OPENAI_BASE_URL,
   OPENAI_API_KEY,
   OPENAI_BASE_URL,
 } from '../../../src/env/types';
@@ -34,29 +34,29 @@ describe('ModelConfigManager', () => {
     it('should create instance in isolated mode when modelConfigFn provided', () => {
       const modelConfigFn: TModelConfigFn = ({ intent }) => {
         const baseConfig = {
-          [MIDSCENE_MODEL_NAME]: 'gpt-4',
-          [MIDSCENE_OPENAI_API_KEY]: 'test-key',
-          [MIDSCENE_OPENAI_BASE_URL]: 'https://api.openai.com/v1',
+          [SQAI_MODEL_NAME]: 'gpt-4',
+          [SQAI_OPENAI_API_KEY]: 'test-key',
+          [SQAI_OPENAI_BASE_URL]: 'https://api.openai.com/v1',
         };
 
         switch (intent) {
           case 'VQA':
             return {
-              [MIDSCENE_VQA_MODEL_NAME]: 'gpt-4-vision',
-              [MIDSCENE_VQA_OPENAI_API_KEY]: 'test-vqa-key',
-              [MIDSCENE_VQA_OPENAI_BASE_URL]: 'https://api.openai.com/v1',
+              [SQAI_VQA_MODEL_NAME]: 'gpt-4-vision',
+              [SQAI_VQA_OPENAI_API_KEY]: 'test-vqa-key',
+              [SQAI_VQA_OPENAI_BASE_URL]: 'https://api.openai.com/v1',
             };
           case 'planning':
             return {
-              [MIDSCENE_PLANNING_MODEL_NAME]: 'gpt-4',
-              [MIDSCENE_PLANNING_OPENAI_API_KEY]: 'test-planning-key',
-              [MIDSCENE_PLANNING_OPENAI_BASE_URL]: 'https://api.openai.com/v1',
+              [SQAI_PLANNING_MODEL_NAME]: 'gpt-4',
+              [SQAI_PLANNING_OPENAI_API_KEY]: 'test-planning-key',
+              [SQAI_PLANNING_OPENAI_BASE_URL]: 'https://api.openai.com/v1',
             };
           case 'grounding':
             return {
-              [MIDSCENE_GROUNDING_MODEL_NAME]: 'gpt-4-vision',
-              [MIDSCENE_GROUNDING_OPENAI_API_KEY]: 'test-grounding-key',
-              [MIDSCENE_GROUNDING_OPENAI_BASE_URL]: 'https://api.openai.com/v1',
+              [SQAI_GROUNDING_MODEL_NAME]: 'gpt-4-vision',
+              [SQAI_GROUNDING_OPENAI_API_KEY]: 'test-grounding-key',
+              [SQAI_GROUNDING_OPENAI_BASE_URL]: 'https://api.openai.com/v1',
             };
           case 'default':
             return baseConfig;
@@ -75,9 +75,9 @@ describe('ModelConfigManager', () => {
           return undefined as any;
         }
         return {
-          [MIDSCENE_MODEL_NAME]: 'gpt-4',
-          [MIDSCENE_OPENAI_API_KEY]: 'test-key',
-          [MIDSCENE_OPENAI_BASE_URL]: 'https://api.openai.com/v1',
+          [SQAI_MODEL_NAME]: 'gpt-4',
+          [SQAI_OPENAI_API_KEY]: 'test-key',
+          [SQAI_OPENAI_BASE_URL]: 'https://api.openai.com/v1',
         };
       };
 
@@ -91,29 +91,29 @@ describe('ModelConfigManager', () => {
     it('should return model config in isolated mode', () => {
       const modelConfigFn: TModelConfigFn = ({ intent }) => {
         const baseConfig = {
-          [MIDSCENE_MODEL_NAME]: 'gpt-4',
-          [MIDSCENE_OPENAI_API_KEY]: 'test-key',
-          [MIDSCENE_OPENAI_BASE_URL]: 'https://api.openai.com/v1',
+          [SQAI_MODEL_NAME]: 'gpt-4',
+          [SQAI_OPENAI_API_KEY]: 'test-key',
+          [SQAI_OPENAI_BASE_URL]: 'https://api.openai.com/v1',
         };
 
         switch (intent) {
           case 'VQA':
             return {
-              [MIDSCENE_VQA_MODEL_NAME]: 'gpt-4-vision',
-              [MIDSCENE_VQA_OPENAI_API_KEY]: 'test-vqa-key',
-              [MIDSCENE_VQA_OPENAI_BASE_URL]: 'https://api.openai.com/v1',
+              [SQAI_VQA_MODEL_NAME]: 'gpt-4-vision',
+              [SQAI_VQA_OPENAI_API_KEY]: 'test-vqa-key',
+              [SQAI_VQA_OPENAI_BASE_URL]: 'https://api.openai.com/v1',
             };
           case 'planning':
             return {
-              [MIDSCENE_PLANNING_MODEL_NAME]: 'gpt-4',
-              [MIDSCENE_PLANNING_OPENAI_API_KEY]: 'test-planning-key',
-              [MIDSCENE_PLANNING_OPENAI_BASE_URL]: 'https://api.openai.com/v1',
+              [SQAI_PLANNING_MODEL_NAME]: 'gpt-4',
+              [SQAI_PLANNING_OPENAI_API_KEY]: 'test-planning-key',
+              [SQAI_PLANNING_OPENAI_BASE_URL]: 'https://api.openai.com/v1',
             };
           case 'grounding':
             return {
-              [MIDSCENE_GROUNDING_MODEL_NAME]: 'gpt-4-vision',
-              [MIDSCENE_GROUNDING_OPENAI_API_KEY]: 'test-grounding-key',
-              [MIDSCENE_GROUNDING_OPENAI_BASE_URL]: 'https://api.openai.com/v1',
+              [SQAI_GROUNDING_MODEL_NAME]: 'gpt-4-vision',
+              [SQAI_GROUNDING_OPENAI_API_KEY]: 'test-grounding-key',
+              [SQAI_GROUNDING_OPENAI_BASE_URL]: 'https://api.openai.com/v1',
             };
           case 'default':
             return baseConfig;
@@ -150,7 +150,7 @@ describe('ModelConfigManager', () => {
     });
 
     it('should return model config in normal mode', () => {
-      vi.stubEnv(MIDSCENE_MODEL_NAME, 'gpt-4');
+      vi.stubEnv(SQAI_MODEL_NAME, 'gpt-4');
       vi.stubEnv(OPENAI_API_KEY, 'test-key');
       vi.stubEnv(OPENAI_BASE_URL, 'https://api.openai.com/v1');
 
@@ -168,7 +168,7 @@ describe('ModelConfigManager', () => {
 
   describe('clearModelConfigMap', () => {
     it('should clear modelConfigMap in normal mode', () => {
-      vi.stubEnv(MIDSCENE_MODEL_NAME, 'gpt-4');
+      vi.stubEnv(SQAI_MODEL_NAME, 'gpt-4');
       vi.stubEnv(OPENAI_API_KEY, 'test-key');
       vi.stubEnv(OPENAI_BASE_URL, 'https://api.openai.com/v1');
 
@@ -187,9 +187,9 @@ describe('ModelConfigManager', () => {
 
     it('should throw error when called in isolated mode', () => {
       const modelConfigFn: TModelConfigFn = ({ intent }) => ({
-        [MIDSCENE_MODEL_NAME]: 'gpt-4',
-        [MIDSCENE_OPENAI_API_KEY]: 'test-key',
-        [MIDSCENE_OPENAI_BASE_URL]: 'https://api.openai.com/v1',
+        [SQAI_MODEL_NAME]: 'gpt-4',
+        [SQAI_OPENAI_API_KEY]: 'test-key',
+        [SQAI_OPENAI_BASE_URL]: 'https://api.openai.com/v1',
       });
 
       const manager = new ModelConfigManager(modelConfigFn);
@@ -203,10 +203,10 @@ describe('ModelConfigManager', () => {
   describe('getUploadTestServerUrl', () => {
     it('should return upload test server URL from default config', () => {
       const modelConfigFn: TModelConfigFn = ({ intent }) => ({
-        [MIDSCENE_MODEL_NAME]: 'gpt-4',
-        [MIDSCENE_OPENAI_API_KEY]: 'test-key',
-        [MIDSCENE_OPENAI_BASE_URL]: 'https://api.openai.com/v1',
-        [MIDSCENE_OPENAI_INIT_CONFIG_JSON]: JSON.stringify({
+        [SQAI_MODEL_NAME]: 'gpt-4',
+        [SQAI_OPENAI_API_KEY]: 'test-key',
+        [SQAI_OPENAI_BASE_URL]: 'https://api.openai.com/v1',
+        [SQAI_OPENAI_INIT_CONFIG_JSON]: JSON.stringify({
           REPORT_SERVER_URL: 'https://test-server.com',
         }),
       });
@@ -218,9 +218,9 @@ describe('ModelConfigManager', () => {
 
     it('should return undefined when no REPORT_SERVER_URL in config', () => {
       const modelConfigFn: TModelConfigFn = ({ intent }) => ({
-        [MIDSCENE_MODEL_NAME]: 'gpt-4',
-        [MIDSCENE_OPENAI_API_KEY]: 'test-key',
-        [MIDSCENE_OPENAI_BASE_URL]: 'https://api.openai.com/v1',
+        [SQAI_MODEL_NAME]: 'gpt-4',
+        [SQAI_OPENAI_API_KEY]: 'test-key',
+        [SQAI_OPENAI_BASE_URL]: 'https://api.openai.com/v1',
       });
 
       const manager = new ModelConfigManager(modelConfigFn);
@@ -230,9 +230,9 @@ describe('ModelConfigManager', () => {
 
     it('should return undefined when openaiExtraConfig is undefined', () => {
       const modelConfigFn: TModelConfigFn = ({ intent }) => ({
-        [MIDSCENE_MODEL_NAME]: 'gpt-4',
-        [MIDSCENE_OPENAI_API_KEY]: 'test-key',
-        [MIDSCENE_OPENAI_BASE_URL]: 'https://api.openai.com/v1',
+        [SQAI_MODEL_NAME]: 'gpt-4',
+        [SQAI_OPENAI_API_KEY]: 'test-key',
+        [SQAI_OPENAI_BASE_URL]: 'https://api.openai.com/v1',
       });
 
       const manager = new ModelConfigManager(modelConfigFn);
@@ -244,15 +244,15 @@ describe('ModelConfigManager', () => {
   describe('isolated mode behavior', () => {
     it('should not be affected by environment variables in isolated mode', () => {
       const modelConfigFn: TModelConfigFn = ({ intent }) => ({
-        [MIDSCENE_MODEL_NAME]: 'gpt-4',
-        [MIDSCENE_OPENAI_API_KEY]: 'isolated-key',
-        [MIDSCENE_OPENAI_BASE_URL]: 'https://isolated.openai.com/v1',
+        [SQAI_MODEL_NAME]: 'gpt-4',
+        [SQAI_OPENAI_API_KEY]: 'isolated-key',
+        [SQAI_OPENAI_BASE_URL]: 'https://isolated.openai.com/v1',
       });
 
       // Set environment variables that should be ignored
-      vi.stubEnv(MIDSCENE_MODEL_NAME, 'gpt-3.5-turbo');
-      vi.stubEnv(MIDSCENE_OPENAI_API_KEY, 'env-key');
-      vi.stubEnv(MIDSCENE_OPENAI_BASE_URL, 'https://env.openai.com/v1');
+      vi.stubEnv(SQAI_MODEL_NAME, 'gpt-3.5-turbo');
+      vi.stubEnv(SQAI_OPENAI_API_KEY, 'env-key');
+      vi.stubEnv(SQAI_OPENAI_BASE_URL, 'https://env.openai.com/v1');
 
       const manager = new ModelConfigManager(modelConfigFn);
       const config = manager.getModelConfig('default');

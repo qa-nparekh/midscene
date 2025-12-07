@@ -67,15 +67,15 @@ npm run demo
 你可以从 [`./src/sample-device.ts`](https://github.com/web-infra-dev/midscene-example/blob/main/custom-interface/src/sample-device.ts) 文件中获取示例实现。让我们快速浏览一下。
 
 ```typescript
-import type { DeviceAction, Size } from '@midscene/core';
-import { getMidsceneLocationSchema, z } from '@midscene/core';
+import type { DeviceAction, Size } from '@sqai/core';
+import { getMidsceneLocationSchema, z } from '@sqai/core';
 import {
   type AbstractInterface,
   defineAction,
   defineActionTap,
   defineActionInput,
   // ... 其他动作导入
-} from '@midscene/core/device';
+} from '@sqai/core/device';
 
 export interface SampleDeviceConfig {
   deviceName?: string;
@@ -184,7 +184,7 @@ export class SampleDevice implements AbstractInterface {
 
 ```ts 
 import 'dotenv/config'; // 从 .env 文件里读取 Midscene 环境变量
-import { playgroundForAgent } from '@midscene/playground';
+import { playgroundForAgent } from '@sqai/playground';
 
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
@@ -220,7 +220,7 @@ npm publish
 
 ```typescript
 import 'dotenv/config'; // 从 .env 文件里读取 Midscene 环境变量
-import { playgroundForAgent } from '@midscene/playground';
+import { playgroundForAgent } from '@sqai/playground';
 
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
@@ -262,7 +262,7 @@ YAML 的其他字段与[自动化脚本](./automate-with-scripts-in-yaml.html)�
 ### `AbstractInterface` 类
 
 ```typescript
-import { AbstractInterface } from '@midscene/core';
+import { AbstractInterface } from '@sqai/core';
 ```
 
 `AbstractInterface` 是智能体控制界面的关键类。
@@ -277,8 +277,8 @@ import { AbstractInterface } from '@midscene/core';
 类型签名：
 
 ```ts
-import type { DeviceAction, Size, UIContext } from '@midscene/core';
-import type { ElementNode } from '@midscene/shared/extractor';
+import type { DeviceAction, Size, UIContext } from '@sqai/core';
+import type { ElementNode } from '@sqai/shared/extractor';
 
 abstract class AbstractInterface {
   // 必选
@@ -315,7 +315,7 @@ import {
 	type ActionTapParam,
 	defineAction,
 	defineActionTap,
-} from "@midscene/core/device";
+} from "@sqai/core/device";
 ```
 
 #### 预定义的动作
@@ -340,7 +340,7 @@ import {
 API 签名：
 
 ```typescript
-import { defineAction } from "@midscene/core/device";
+import { defineAction } from "@sqai/core/device";
 
 defineAction(
   {
@@ -378,7 +378,7 @@ defineAction({
 一个更复杂的示例，关于如何定义自定义动作：
 
 ```typescript
-import { getMidsceneLocationSchema } from "@midscene/core/device";
+import { getMidsceneLocationSchema } from "@sqai/core/device";
 
 defineAction({
   name: 'LaunchApp',
@@ -396,7 +396,7 @@ defineAction({
 ### `playgroundForAgent` 函数
 
 ```typescript
-import { playgroundForAgent } from '@midscene/playground';
+import { playgroundForAgent } from '@sqai/playground';
 ```
 
 `playgroundForAgent` 函数用于为特定的 Agent 创建一个 Playground 启动器，让你可以在浏览器中测试和调试你的自定义界面 Agent。
@@ -484,9 +484,9 @@ interface LaunchPlaygroundResult {
 
 ```typescript
 import 'dotenv/config';
-import { playgroundForAgent } from '@midscene/playground';
+import { playgroundForAgent } from '@sqai/playground';
 import { SampleDevice } from './sample-device';
-import { Agent } from '@midscene/core/agent';
+import { Agent } from '@sqai/core/agent';
 
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 

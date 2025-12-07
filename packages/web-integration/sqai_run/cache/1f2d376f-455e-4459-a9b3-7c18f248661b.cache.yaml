@@ -1,0 +1,9 @@
+midsceneVersion: 0.30.9
+cacheId: 1f2d376f-455e-4459-a9b3-7c18f248661b
+caches:
+  - type: plan
+    prompt: test-prompt-1
+    yamlWorkflow: test-yaml-workflow-1
+  - type: plan
+    prompt: test-prompt-2
+    yamlWorkflow: test-yaml-workflow-2

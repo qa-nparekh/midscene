@@ -1,4 +1,4 @@
-import type { TVlModeTypes } from '@midscene/shared/env';
+import type { TVlModeTypes } from '@sqai/shared/env';
 import type { ResponseFormatJSONSchema } from 'openai/resources/index';
 import { bboxDescription } from './common';
 export function systemPromptToLocateElement(vlMode: TVlModeTypes | undefined) {

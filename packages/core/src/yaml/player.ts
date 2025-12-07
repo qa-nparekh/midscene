@@ -1,6 +1,6 @@
 import { existsSync, mkdirSync, writeFileSync } from 'node:fs';
 import { basename, dirname, join, resolve } from 'node:path';
-import { assert, ifInBrowser, ifInWorker } from '@midscene/shared/utils';
+import { assert, ifInBrowser, ifInWorker } from '@sqai/shared/utils';
 
 // previous defined yaml flow, as a helper
 interface MidsceneYamlFlowItemAIInput extends LocateOption {
@@ -50,8 +50,8 @@ import type {
   ScriptPlayerTaskStatus,
   ScrollParam,
 } from '@/types';
-import { getMidsceneRunSubDir } from '@midscene/shared/common';
-import { getDebug } from '@midscene/shared/logger';
+import { getMidsceneRunSubDir } from '@sqai/shared/common';
+import { getDebug } from '@sqai/shared/logger';
 import {
   buildDetailedLocateParam,
   buildDetailedLocateParamAndRestParams,

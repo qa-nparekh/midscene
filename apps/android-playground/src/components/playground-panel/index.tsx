@@ -1,10 +1,10 @@
-import { PlaygroundSDK } from '@midscene/playground';
+import { PlaygroundSDK } from '@sqai/playground';
 import {
   Logo,
   NavActions,
   UniversalPlayground,
   useEnvConfig,
-} from '@midscene/visualizer';
+} from '@sqai/visualizer';
 import { useEffect, useMemo } from 'react';
 import './index.less';
 

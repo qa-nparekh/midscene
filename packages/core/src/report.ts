@@ -1,6 +1,6 @@
 import * as fs from 'node:fs';
 import * as path from 'node:path';
-import { getMidsceneRunSubDir } from '@midscene/shared/common';
+import { getMidsceneRunSubDir } from '@sqai/shared/common';
 import { getReportFileName } from './agent';
 import type { ReportFileWithAttributes } from './types';
 import { getReportTpl, reportHTMLContent } from './utils';
@@ -17,7 +17,7 @@ export class ReportMergingTool {
     // Regular expression to match content between script tags
     // Requires newline before <script and </script>
     const scriptRegex =
-      /\n<script type="midscene_web_dump" type="application\/json"[^>]*>([\s\S]*?)\n<\/script>/;
+      /\n<script type="SQAI_web_dump" type="application\/json"[^>]*>([\s\S]*?)\n<\/script>/;
 
     const fileContent = fs.readFileSync(filePath, 'utf-8');
     const match = scriptRegex.exec(fileContent);

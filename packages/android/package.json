@@ -1,7 +1,7 @@
 {
-  "name": "@midscene/android",
+  "name": "@sqai/android",
   "version": "0.30.9",
-  "description": "Android automation library for Midscene",
+  "description": "Android automation library for SQAI",
   "keywords": [
     "Android UI automation",
     "Android AI testing",
@@ -25,19 +25,19 @@
     "dev": "npm run build:watch",
     "build": "rslib build",
     "build:watch": "rslib build --watch",
-    "playground": "DEBUG=midscene:* tsx demo/playground.ts",
+    "playground": "DEBUG=sqai:* tsx demo/playground.ts",
     "test": "vitest --run",
     "test:u": "vitest --run -u",
     "test:ai": "AI_TEST_TYPE=android npm run test",
-    "test:ai:cache": "MIDSCENE_CACHE=true AI_TEST_TYPE=android npm run test"
+    "test:ai:cache": "SQAI_CACHE=true AI_TEST_TYPE=android npm run test"
   },
   "dependencies": {
-    "@midscene/core": "workspace:*",
-    "@midscene/shared": "workspace:*",
+    "@sqai/core": "workspace:*",
+    "@sqai/shared": "workspace:*",
     "appium-adb": "12.12.1"
   },
   "devDependencies": {
-    "@midscene/playground": "workspace:*",
+    "@sqai/playground": "workspace:*",
     "@rslib/core": "^0.11.2",
     "@types/node": "^18.0.0",
     "dotenv": "^16.4.5",

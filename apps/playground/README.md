@@ -1,6 +1,6 @@
-# Midscene Playground
+# SQAI Playground
 
-A universal web-based playground for testing and experimenting with Midscene.js features.
+A universal web-based playground for testing and experimenting with SQAI features.
 
 ## Features
 
@@ -17,7 +17,7 @@ A universal web-based playground for testing and experimenting with Midscene.js 
 Make sure you have the playground server running:
 
 ```bash
-npx @midscene/playground
+npx @SQAI/playground
 ```
 
 The server will start at `http://localhost:8080` by default.
@@ -40,7 +40,7 @@ npm run preview
 
 ## Usage
 
-1. **Start the Server**: Run `npx @midscene/playground` to start the backend server
+1. **Start the Server**: Run `npx @SQAI/playground` to start the backend server
 2. **Open the Playground**: Navigate to `http://localhost:3000` (or the dev server URL)
 3. **Configure AI**: Click the settings icon to configure your AI model and API keys
 4. **Start Testing**: Enter natural language instructions to interact with web pages

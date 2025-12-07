@@ -284,7 +284,7 @@ export const decideModelConfigFromEnv = (
 
   debugLog(`decideModelConfig as legacy logic with intent ${intent}.`);
 
-  // TODO: when fallback to legacy logic, prefer to read MIDSCENE_OPENAI_API_KEY rather than OPENAI_API_KEY
+  // TODO: when fallback to legacy logic, prefer to read SQAI_OPENAI_API_KEY rather than OPENAI_API_KEY
   const result = decideOpenaiSdkConfig({
     keys: DEFAULT_MODEL_CONFIG_KEYS_LEGACY,
     provider: allEnvConfig,

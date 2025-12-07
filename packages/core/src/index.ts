@@ -18,7 +18,7 @@ export {
   type TUserPrompt,
 } from './ai-model/index';
 
-export { MIDSCENE_MODEL_NAME } from '@midscene/shared/env';
+export { SQAI_MODEL_NAME } from '@sqai/shared/env';
 
 export type * from './types';
 

@@ -1,4 +1,4 @@
-import { PlaygroundServer } from '@midscene/playground';
+import { PlaygroundServer } from '@sqai/playground';
 import cors from 'cors';
 import { StaticPage, StaticPageAgent } from './static';
 import 'dotenv/config';

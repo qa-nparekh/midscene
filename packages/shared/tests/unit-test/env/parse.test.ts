@@ -5,10 +5,10 @@ import {
   parseVlModeAndUiTarsModelVersionFromRawValue,
 } from '../../../src/env/parse';
 import {
-  MIDSCENE_USE_DOUBAO_VISION,
-  MIDSCENE_USE_GEMINI,
-  MIDSCENE_USE_QWEN_VL,
-  MIDSCENE_USE_VLM_UI_TARS,
+  SQAI_USE_DOUBAO_VISION,
+  SQAI_USE_GEMINI,
+  SQAI_USE_QWEN_VL,
+  SQAI_USE_VLM_UI_TARS,
 } from '../../../src/env/types';
 
 describe('parseVlModeAndUiTarsFromRaw', () => {
@@ -86,16 +86,16 @@ describe('parseVlModeAndUiTarsFromGlobalConfig', () => {
 
   it('should throw an error when multiple vision modes are enabled', () => {
     const provider = {
-      [MIDSCENE_USE_DOUBAO_VISION]: '1',
-      [MIDSCENE_USE_QWEN_VL]: '1',
+      [SQAI_USE_DOUBAO_VISION]: '1',
+      [SQAI_USE_QWEN_VL]: '1',
     };
     expect(() => parseVlModeAndUiTarsFromGlobalConfig(provider)).toThrow(
-      'Only one vision mode can be enabled at a time. Currently enabled modes: MIDSCENE_USE_DOUBAO_VISION, MIDSCENE_USE_QWEN_VL. Please disable all but one mode.',
+      'Only one vision mode can be enabled at a time. Currently enabled modes: SQAI_USE_DOUBAO_VISION, SQAI_USE_QWEN_VL. Please disable all but one mode.',
     );
   });
 
   it('should correctly parse qwen-vl mode', () => {
-    const provider = { [MIDSCENE_USE_QWEN_VL]: '1' };
+    const provider = { [SQAI_USE_QWEN_VL]: '1' };
     expect(parseVlModeAndUiTarsFromGlobalConfig(provider)).toEqual({
       vlMode: 'qwen-vl',
       uiTarsVersion: undefined,
@@ -103,7 +103,7 @@ describe('parseVlModeAndUiTarsFromGlobalConfig', () => {
   });
 
   it('should correctly parse doubao-vision mode', () => {
-    const provider = { [MIDSCENE_USE_DOUBAO_VISION]: '1' };
+    const provider = { [SQAI_USE_DOUBAO_VISION]: '1' };
     expect(parseVlModeAndUiTarsFromGlobalConfig(provider)).toEqual({
       vlMode: 'doubao-vision',
       uiTarsVersion: undefined,
@@ -111,7 +111,7 @@ describe('parseVlModeAndUiTarsFromGlobalConfig', () => {
   });
 
   it('should correctly parse gemini mode', () => {
-    const provider = { [MIDSCENE_USE_GEMINI]: '1' };
+    const provider = { [SQAI_USE_GEMINI]: '1' };
     expect(parseVlModeAndUiTarsFromGlobalConfig(provider)).toEqual({
       vlMode: 'gemini',
       uiTarsVersion: undefined,
@@ -119,7 +119,7 @@ describe('parseVlModeAndUiTarsFromGlobalConfig', () => {
   });
 
   it('should correctly parse vlm-ui-tars mode with version 1.0', () => {
-    const provider = { [MIDSCENE_USE_VLM_UI_TARS]: '1' };
+    const provider = { [SQAI_USE_VLM_UI_TARS]: '1' };
     expect(parseVlModeAndUiTarsFromGlobalConfig(provider)).toEqual({
       vlMode: 'vlm-ui-tars',
       uiTarsVersion: UITarsModelVersion.V1_0,
@@ -127,7 +127,7 @@ describe('parseVlModeAndUiTarsFromGlobalConfig', () => {
   });
 
   it('should correctly parse vlm-ui-tars mode with DOUBAO', () => {
-    const provider = { [MIDSCENE_USE_VLM_UI_TARS]: 'DOUBAO' };
+    const provider = { [SQAI_USE_VLM_UI_TARS]: 'DOUBAO' };
     expect(parseVlModeAndUiTarsFromGlobalConfig(provider)).toEqual({
       vlMode: 'vlm-ui-tars',
       uiTarsVersion: UITarsModelVersion.DOUBAO_1_5_20B,
@@ -135,7 +135,7 @@ describe('parseVlModeAndUiTarsFromGlobalConfig', () => {
   });
 
   it('should correctly parse vlm-ui-tars mode with DOUBAO-1.5', () => {
-    const provider = { [MIDSCENE_USE_VLM_UI_TARS]: 'DOUBAO-1.5' };
+    const provider = { [SQAI_USE_VLM_UI_TARS]: 'DOUBAO-1.5' };
     expect(parseVlModeAndUiTarsFromGlobalConfig(provider)).toEqual({
       vlMode: 'vlm-ui-tars',
       uiTarsVersion: UITarsModelVersion.DOUBAO_1_5_20B,
@@ -143,7 +143,7 @@ describe('parseVlModeAndUiTarsFromGlobalConfig', () => {
   });
 
   it('should correctly parse vlm-ui-tars mode with a specific version', () => {
-    const provider = { [MIDSCENE_USE_VLM_UI_TARS]: '1.5' };
+    const provider = { [SQAI_USE_VLM_UI_TARS]: '1.5' };
     expect(parseVlModeAndUiTarsFromGlobalConfig(provider)).toEqual({
       vlMode: 'vlm-ui-tars',
       uiTarsVersion: UITarsModelVersion.V1_5,

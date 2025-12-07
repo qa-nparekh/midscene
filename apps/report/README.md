@@ -1,8 +1,8 @@
-# Midscene Report
+# SQAI Report
 
-Midscene Report is a visualization application for displaying test execution results from Midscene.js. It provides an interactive interface for viewing and analyzing test execution data.
+SQAI Report is a visualization application for displaying test execution results from SQAI. It provides an interactive interface for viewing and analyzing test execution data.
 
-Visit our website: [https://midscene.js.org](https://midscene.js.org)
+Visit our website: [https://SQAI.org](https://SQAI.org)
 
 ## Features
 

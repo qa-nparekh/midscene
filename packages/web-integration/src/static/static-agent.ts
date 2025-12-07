@@ -1,4 +1,4 @@
-import { Agent as PageAgent } from '@midscene/core/agent';
+import { Agent as PageAgent } from '@sqai/core/agent';
 import type StaticPage from './static-page';
 
 export class StaticPageAgent extends PageAgent {

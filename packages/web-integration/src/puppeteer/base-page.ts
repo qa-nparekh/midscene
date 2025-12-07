@@ -7,23 +7,23 @@ import type {
   Rect,
   Size,
   UIContext,
-} from '@midscene/core';
-import type { AbstractInterface } from '@midscene/core/device';
-import { sleep } from '@midscene/core/utils';
+} from '@sqai/core';
+import type { AbstractInterface } from '@sqai/core/device';
+import { sleep } from '@sqai/core/utils';
 import {
   DEFAULT_WAIT_FOR_NAVIGATION_TIMEOUT,
   DEFAULT_WAIT_FOR_NETWORK_IDLE_CONCURRENCY,
   DEFAULT_WAIT_FOR_NETWORK_IDLE_TIMEOUT,
-} from '@midscene/shared/constants';
-import type { ElementInfo } from '@midscene/shared/extractor';
-import { treeToList } from '@midscene/shared/extractor';
-import { createImgBase64ByFormat } from '@midscene/shared/img';
-import { type DebugFunction, getDebug } from '@midscene/shared/logger';
+} from '@sqai/shared/constants';
+import type { ElementInfo } from '@sqai/shared/extractor';
+import { treeToList } from '@sqai/shared/extractor';
+import { createImgBase64ByFormat } from '@sqai/shared/img';
+import { type DebugFunction, getDebug } from '@sqai/shared/logger';
 import {
   getElementInfosScriptContent,
   getExtraReturnLogic,
-} from '@midscene/shared/node';
-import { assert } from '@midscene/shared/utils';
+} from '@sqai/shared/node';
+import { assert } from '@sqai/shared/utils';
 import type { Page as PlaywrightPage } from 'playwright';
 import type { Page as PuppeteerPage } from 'puppeteer';
 import {

@@ -7,7 +7,7 @@ test('ai report', async ({ page, ai, aiAssert, aiQuery }, testInfo) => {
   testInfo.snapshotSuffix = '';
   await new Promise((resolve) => setTimeout(resolve, 3000));
   const htmlFile = getLastModifiedReportHTMLFile(
-    path.join(process.cwd(), './midscene_run/report/'),
+    path.join(process.cwd(), './sqai_run/report/'),
   );
 
   console.log('using report file:', htmlFile);

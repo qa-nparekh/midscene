@@ -782,10 +782,10 @@ puppeteerPage.screenshot = async (options) => {
 
 ```bash
 # Headed mode (visible browser) access baidu.com and search "weather"
-npx @midscene/cli --headed --url https://www.baidu.com --action "input 'weather', press enter" --sleep 3000
+npx @sqai/cli --headed --url https://www.baidu.com --action "input 'weather', press enter" --sleep 3000
 
 # Visit GitHub status page and save the status to ./status.json
-npx @midscene/cli --url https://www.githubstatus.com/ \
+npx @sqai/cli --url https://www.githubstatus.com/ \
   --query-output status.json \
   --query '{serviceName: string, status: string}[], github page status, return service name'
 ```

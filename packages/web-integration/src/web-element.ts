@@ -4,14 +4,14 @@ import type {
   Rect,
   UIContext,
   WebElementInfo,
-} from '@midscene/core';
-import type { AbstractInterface } from '@midscene/core/device';
-import { traverseTree } from '@midscene/shared/extractor';
-import { getDebug } from '@midscene/shared/logger';
-import { _keyDefinitions } from '@midscene/shared/us-keyboard-layout';
+} from '@sqai/core';
+import type { AbstractInterface } from '@sqai/core/device';
+import { traverseTree } from '@sqai/shared/extractor';
+import { getDebug } from '@sqai/shared/logger';
+import { _keyDefinitions } from '@sqai/shared/us-keyboard-layout';
 
-import { commonContextParser } from '@midscene/core/agent';
-import type { NodeType } from '@midscene/shared/constants';
+import { commonContextParser } from '@sqai/core/agent';
+import type { NodeType } from '@sqai/shared/constants';
 import type ChromeExtensionProxyPage from './chrome-extension/page';
 import type { PlaywrightWebPage } from './playwright';
 import type { PuppeteerWebPage } from './puppeteer';

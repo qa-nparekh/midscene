@@ -2,10 +2,10 @@ import {
   AndroidAgent,
   AndroidDevice,
   getConnectedDevices,
-} from '@midscene/android';
-import type { TestStatus } from '@midscene/core';
-import { ReportMergingTool } from '@midscene/core/report';
-import { sleep } from '@midscene/core/utils';
+} from '@sqai/android';
+import type { TestStatus } from '@sqai/core';
+import { ReportMergingTool } from '@sqai/core/report';
+import { sleep } from '@sqai/core/utils';
 import type ADB from 'appium-adb';
 import {
   afterAll,

@@ -1,5 +1,5 @@
-import { sleep } from '@midscene/core/utils';
-import { DEFAULT_WDA_PORT } from '@midscene/shared/constants';
+import { sleep } from '@sqai/core/utils';
+import { DEFAULT_WDA_PORT } from '@sqai/shared/constants';
 import { beforeAll, describe, expect, it, vi } from 'vitest';
 import { agentFromWebDriverAgent, checkIOSEnvironment } from '../../src';
 

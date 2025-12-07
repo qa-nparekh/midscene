@@ -1,9 +1,9 @@
 import {
-  MIDSCENE_MODEL_NAME,
-  MIDSCENE_USE_DOUBAO_VISION,
+  SQAI_MODEL_NAME,
+  SQAI_USE_DOUBAO_VISION,
   OPENAI_API_KEY,
   OPENAI_BASE_URL,
-} from '@midscene/shared/env';
+} from '@sqai/shared/env';
 import { ADB } from 'appium-adb';
 import {
   type Mock,
@@ -23,10 +23,10 @@ vi.mock('../../src/device');
 vi.mock('../../src/utils');
 
 const mockedModelConfigFnResult = {
-  MIDSCENE_MODEL_NAME: 'mock',
-  MIDSCENE_OPENAI_API_KEY: 'mock',
-  MIDSCENE_OPENAI_BASE_URL: 'mock',
-  MIDSCENE_VL_MODE: 'doubao-vision',
+  SQAI_MODEL_NAME: 'mock',
+  SQAI_OPENAI_API_KEY: 'mock',
+  SQAI_OPENAI_BASE_URL: 'mock',
+  SQAI_VL_MODE: 'doubao-vision',
 } as const;
 
 describe('AndroidAgent', () => {
@@ -63,8 +63,8 @@ describe('AndroidAgent', () => {
 
   describe('agentFromAdbDevice', () => {
     beforeEach(() => {
-      vi.stubEnv(MIDSCENE_USE_DOUBAO_VISION, 'true');
-      vi.stubEnv(MIDSCENE_MODEL_NAME, 'mock');
+      vi.stubEnv(SQAI_USE_DOUBAO_VISION, 'true');
+      vi.stubEnv(SQAI_MODEL_NAME, 'mock');
       vi.stubEnv(OPENAI_API_KEY, 'mock');
       vi.stubEnv(OPENAI_BASE_URL, 'mock');
     });

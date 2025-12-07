@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-import { setIsMcp } from '@midscene/shared/utils';
+import { setIsMcp } from '@sqai/shared/utils';
 import { McpServer } from '@modelcontextprotocol/sdk/server/mcp.js';
 import { StdioServerTransport } from '@modelcontextprotocol/sdk/server/stdio.js';
 import {
@@ -17,7 +17,7 @@ declare const __VERSION__: string;
 setIsMcp(true);
 
 const server = new McpServer({
-  name: '@midscene/mcp',
+  name: '@sqai/mcp',
   version: __VERSION__,
   description:
     'Midscene MCP Server: Control the browser using natural language commands for navigation, clicking, input, hovering, and achieving goals. Also supports screenshots and JavaScript execution.',

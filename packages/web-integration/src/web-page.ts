@@ -1,5 +1,5 @@
 import assert from 'node:assert';
-import type { Point } from '@midscene/core';
+import type { Point } from '@sqai/core';
 import {
   AbstractInterface,
   type DeviceAction,
@@ -14,12 +14,12 @@ import {
   defineActionScroll,
   defineActionSwipe,
   defineActionTap,
-} from '@midscene/core/device';
+} from '@sqai/core/device';
 
-import { sleep } from '@midscene/core/utils';
-import type { ElementInfo } from '@midscene/shared/extractor';
-import { getDebug } from '@midscene/shared/logger';
-import { transformHotkeyInput } from '@midscene/shared/us-keyboard-layout';
+import { sleep } from '@sqai/core/utils';
+import type { ElementInfo } from '@sqai/shared/extractor';
+import { getDebug } from '@sqai/shared/logger';
+import { transformHotkeyInput } from '@sqai/shared/us-keyboard-layout';
 
 const debug = getDebug('web:page');
 

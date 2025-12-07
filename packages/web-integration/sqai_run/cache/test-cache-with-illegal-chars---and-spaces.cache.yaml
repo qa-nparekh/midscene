@@ -1,0 +1,15 @@
+midsceneVersion: 0.30.9
+cacheId: test-cache-with-illegal-chars---and-spaces
+caches:
+  - type: plan
+    prompt: test
+    yamlWorkflow: test-workflow
+  - type: plan
+    prompt: test
+    yamlWorkflow: test-workflow
+  - type: plan
+    prompt: test
+    yamlWorkflow: test-workflow
+  - type: plan
+    prompt: test
+    yamlWorkflow: test-workflow

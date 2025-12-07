@@ -22,8 +22,8 @@ vi.mock('node:fs', () => ({
   existsSync: vi.fn(),
 }));
 
-vi.mock('@midscene/shared/env', () => ({
-  MIDSCENE_MCP_CHROME_PATH: 'MIDSCENE_MCP_CHROME_PATH',
+vi.mock('@sqai/shared/env', () => ({
+  SQAI_MCP_CHROME_PATH: 'SQAI_MCP_CHROME_PATH',
   globalConfigManager: {
     getEnvConfigValue: vi.fn(),
   },
@@ -97,7 +97,7 @@ describe('Utils Module', () => {
 
     test('should return Docker Chrome path when in Docker', () => {
       process.env.DOCKER_CONTAINER = 'true';
-      process.env.MIDSCENE_MCP_CHROME_PATH = '/docker/chrome';
+      process.env.SQAI_MCP_CHROME_PATH = '/docker/chrome';
       vi.mocked(existsSync).mockReturnValue(true);
 
       const result = getSystemChromePath();
@@ -144,7 +144,7 @@ describe('Utils Module', () => {
 
   describe('getChromePathFromEnv', () => {
     beforeEach(async () => {
-      const envModule = await import('@midscene/shared/env');
+      const envModule = await import('@sqai/shared/env');
       vi.mocked(
         envModule.globalConfigManager.getEnvConfigValue,
       ).mockReturnValue(undefined);
@@ -152,7 +152,7 @@ describe('Utils Module', () => {
     });
 
     test('should return env chrome path when valid', async () => {
-      const envModule = await import('@midscene/shared/env');
+      const envModule = await import('@sqai/shared/env');
       const customPath = '/custom/chrome/path';
       vi.mocked(
         envModule.globalConfigManager.getEnvConfigValue,
@@ -164,7 +164,7 @@ describe('Utils Module', () => {
     });
 
     test('should fallback to system path when env is auto', async () => {
-      const envModule = await import('@midscene/shared/env');
+      const envModule = await import('@sqai/shared/env');
       vi.mocked(
         envModule.globalConfigManager.getEnvConfigValue,
       ).mockReturnValue('auto');
@@ -174,7 +174,7 @@ describe('Utils Module', () => {
     });
 
     test('should fallback to system path when env path does not exist', async () => {
-      const envModule = await import('@midscene/shared/env');
+      const envModule = await import('@sqai/shared/env');
       vi.mocked(
         envModule.globalConfigManager.getEnvConfigValue,
       ).mockReturnValue('/nonexistent/path');
@@ -320,25 +320,25 @@ describe('Resources Module', () => {
 describe('Tools Module', () => {
   test('should have all expected tools defined', () => {
     const expectedTools = [
-      'midscene_playwright_example',
-      'midscene_navigate',
-      'midscene_get_console_logs',
-      'midscene_get_screenshot',
-      'midscene_get_tabs',
-      'midscene_set_active_tab',
-      'midscene_aiHover',
-      'midscene_aiWaitFor',
-      'midscene_aiAssert',
-      'midscene_aiKeyboardPress',
-      'midscene_screenshot',
-      'midscene_aiTap',
-      'midscene_aiScroll',
-      'midscene_aiInput',
-      'midscene_android_connect',
-      'midscene_android_launch',
-      'midscene_android_list_devices',
-      'midscene_android_back',
-      'midscene_android_home',
+      'SQAI_playwright_example',
+      'SQAI_navigate',
+      'SQAI_get_console_logs',
+      'SQAI_get_screenshot',
+      'SQAI_get_tabs',
+      'SQAI_set_active_tab',
+      'SQAI_aiHover',
+      'SQAI_aiWaitFor',
+      'SQAI_aiAssert',
+      'SQAI_aiKeyboardPress',
+      'SQAI_screenshot',
+      'SQAI_aiTap',
+      'SQAI_aiScroll',
+      'SQAI_aiInput',
+      'SQAI_android_connect',
+      'SQAI_android_launch',
+      'SQAI_android_list_devices',
+      'SQAI_android_back',
+      'SQAI_android_home',
     ];
 
     expectedTools.forEach((toolName) => {
@@ -349,23 +349,23 @@ describe('Tools Module', () => {
   });
 
   test('web-specific tools should have correct properties', () => {
-    expect(tools.midscene_navigate.name).toBe('midscene_navigate');
-    expect(tools.midscene_navigate.description).toContain('browser');
+    expect(tools.SQAI_navigate.name).toBe('SQAI_navigate');
+    expect(tools.SQAI_navigate.description).toContain('browser');
 
-    expect(tools.midscene_get_console_logs.inputSchema).toBeDefined();
+    expect(tools.SQAI_get_console_logs.inputSchema).toBeDefined();
     expect(
-      tools.midscene_get_console_logs.inputSchema.properties.msgType.enum,
+      tools.SQAI_get_console_logs.inputSchema.properties.msgType.enum,
     ).toContain('error');
 
-    expect(tools.midscene_get_screenshot.inputSchema.required).toContain(
+    expect(tools.SQAI_get_screenshot.inputSchema.required).toContain(
       'name',
     );
   });
 
   test('android-specific tools should have correct names', () => {
-    expect(tools.midscene_android_connect.description).toContain('Android');
-    expect(tools.midscene_android_launch.description).toContain('application');
-    expect(tools.midscene_android_list_devices.description).toContain(
+    expect(tools.SQAI_android_connect.description).toContain('Android');
+    expect(tools.SQAI_android_launch.description).toContain('application');
+    expect(tools.SQAI_android_list_devices.description).toContain(
       'devices',
     );
   });

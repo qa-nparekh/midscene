@@ -1,4 +1,4 @@
-import type { TVlModeTypes } from '@midscene/shared/env';
+import type { TVlModeTypes } from '@sqai/shared/env';
 import { bboxDescription } from './common';
 
 export function systemPromptToLocateSection(vlMode: TVlModeTypes | undefined) {

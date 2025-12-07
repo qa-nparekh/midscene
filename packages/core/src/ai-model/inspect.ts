@@ -11,14 +11,14 @@ import type {
   ReferenceImage,
   UIContext,
 } from '@/types';
-import type { IModelConfig } from '@midscene/shared/env';
+import type { IModelConfig } from '@sqai/shared/env';
 import {
   cropByRect,
   paddingToMatchBlockByBase64,
   preProcessImageUrl,
-} from '@midscene/shared/img';
-import { getDebug } from '@midscene/shared/logger';
-import { assert } from '@midscene/shared/utils';
+} from '@sqai/shared/img';
+import { getDebug } from '@sqai/shared/logger';
+import { assert } from '@sqai/shared/utils';
 import type {
   ChatCompletionSystemMessageParam,
   ChatCompletionUserMessageParam,

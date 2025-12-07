@@ -1,13 +1,13 @@
-# @midscene/ios
+# @SQAI/ios
 
-iOS automation library for Midscene, providing AI-powered testing and automation capabilities for iOS simulators and devices.
+iOS automation library for SQAI, providing AI-powered testing and automation capabilities for iOS simulators and devices.
 
 ## Features
 
 - 🎯 **iOS Simulator Support** - Full automation support for iOS simulators
 - 🤖 **AI-Powered Actions** - Intelligent element detection and interaction
 - 📱 **Native iOS Actions** - Home button, app switcher, and iOS-specific gestures
-- 🔧 **Simple API** - Easy-to-use interface similar to @midscene/android
+- 🔧 **Simple API** - Easy-to-use interface similar to @SQAI/android
 - 📸 **Screenshot Capture** - Built-in screenshot functionality
 - ⌨️ **Text Input** - Support for text input including non-ASCII characters
 - 🎮 **Gesture Support** - Tap, swipe, long press, and custom gestures
@@ -34,7 +34,7 @@ npm install appium-webdriveragent
 
 ### WebDriverAgent Setup
 
-Midscene iOS uses WebDriverAgent for device automation. You need to prepare WebDriverAgent before using the library:
+SQAI iOS uses WebDriverAgent for device automation. You need to prepare WebDriverAgent before using the library:
 
 #### For iOS Simulators
 
@@ -89,14 +89,14 @@ Midscene iOS uses WebDriverAgent for device automation. You need to prepare WebD
 For more advanced setup options and troubleshooting, refer to the official WebDriverAgent documentation:
 **📖 [WebDriverAgent Setup Guide](https://appium.github.io/appium-xcuitest-driver/4.25/wda-custom-server/)**
 
-> **⚠️ Important:** WebDriverAgent must be running on port 8100 (default) before using Midscene iOS. If WebDriverAgent is not detected, you'll receive setup instructions.
+> **⚠️ Important:** WebDriverAgent must be running on port 8100 (default) before using SQAI iOS. If WebDriverAgent is not detected, you'll receive setup instructions.
 
 ## Installation
 
 ```bash
-npm install @midscene/ios
+npm install @SQAI/ios
 # or
-pnpm add @midscene/ios
+pnpm add @SQAI/ios
 ```
 
 ## Quick Start
@@ -104,7 +104,7 @@ pnpm add @midscene/ios
 ### Basic Usage (Recommended)
 
 ```typescript
-import { agentFromWebDriverAgent } from '@midscene/ios';
+import { agentFromWebDriverAgent } from '@SQAI/ios';
 
 // Connect to WebDriverAgent (auto-detects device)
 const agent = await agentFromWebDriverAgent();
@@ -121,7 +121,7 @@ await agent.aiAction('tap the go button');
 ### Using Custom WebDriverAgent Configuration
 
 ```typescript
-import { agentFromWebDriverAgent } from '@midscene/ios';
+import { agentFromWebDriverAgent } from '@SQAI/ios';
 
 // Connect to WebDriverAgent on custom host/port
 const agent = await agentFromWebDriverAgent({
@@ -142,7 +142,7 @@ await agent.aiAction('tap the login button');
 Core device automation class implementing the AbstractInterface.
 
 ```typescript
-import { IOSDevice } from '@midscene/ios';
+import { IOSDevice } from '@SQAI/ios';
 
 // Create device (deviceId is auto-detected from WebDriverAgent)
 const device = new IOSDevice({
@@ -174,7 +174,7 @@ await device.destroy();
 High-level agent for AI-powered automation.
 
 ```typescript
-import { IOSAgent, agentFromWebDriverAgent } from '@midscene/ios';
+import { IOSAgent, agentFromWebDriverAgent } from '@SQAI/ios';
 
 // Recommended approach
 const agent = await agentFromWebDriverAgent();
@@ -196,7 +196,7 @@ import {
   ensureSimulatorBooted,
   // Note: getConnectedDevices and getDefaultDevice are deprecated
   // Use agentFromWebDriverAgent() instead
-} from '@midscene/ios';
+} from '@SQAI/ios';
 
 // Environment check
 const envStatus = await checkIOSEnvironment();
@@ -215,10 +215,10 @@ Set environment variables for default behavior:
 
 ```bash
 # Default device UDID
-export MIDSCENE_IOS_DEVICE_UDID=your-device-udid
+export SQAI_IOS_DEVICE_UDID=your-device-udid
 
 # Default simulator UDID
-export MIDSCENE_IOS_SIMULATOR_UDID=your-simulator-udid
+export SQAI_IOS_SIMULATOR_UDID=your-simulator-udid
 ```
 
 ## Supported iOS Actions
@@ -266,7 +266,7 @@ export MIDSCENE_IOS_SIMULATOR_UDID=your-simulator-udid
 
 ```typescript
 import { describe, it } from 'vitest';
-import { agentFromWebDriverAgent } from '@midscene/ios';
+import { agentFromWebDriverAgent } from '@SQAI/ios';
 
 describe('iOS App Test', () => {
   it('should login to app', async () => {

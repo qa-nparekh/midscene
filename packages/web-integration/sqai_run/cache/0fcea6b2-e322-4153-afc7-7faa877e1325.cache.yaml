@@ -1,0 +1,10 @@
+midsceneVersion: 0.30.9
+cacheId: 0fcea6b2-e322-4153-afc7-7faa877e1325
+caches:
+  - type: plan
+    prompt: test-prompt
+    yamlWorkflow: test-workflow
+  - type: locate
+    prompt: locate-prompt
+    xpaths:
+      - test-xpath

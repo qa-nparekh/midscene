@@ -5,9 +5,9 @@ import type {
   PlanningAIResponse,
   Rect,
   plan,
-} from '@midscene/core';
-import type { AiLocateSection } from '@midscene/core/ai-model';
-import { globalModelConfigManager } from '@midscene/shared/env';
+} from '@sqai/core';
+import type { AiLocateSection } from '@sqai/core/ai-model';
+import { globalModelConfigManager } from '@sqai/shared/env';
 import type { TestCase } from '../tests/util';
 
 type ActualResult =

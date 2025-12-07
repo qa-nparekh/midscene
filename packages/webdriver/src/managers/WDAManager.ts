@@ -1,7 +1,7 @@
 import { exec } from 'node:child_process';
 import { promisify } from 'node:util';
-import { DEFAULT_WDA_PORT } from '@midscene/shared/constants';
-import { getDebug } from '@midscene/shared/logger';
+import { DEFAULT_WDA_PORT } from '@sqai/shared/constants';
+import { getDebug } from '@sqai/shared/logger';
 import { BaseServiceManager } from './ServiceManager';
 
 const execAsync = promisify(exec);

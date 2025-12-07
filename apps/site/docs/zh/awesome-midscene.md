@@ -32,7 +32,7 @@
 
 创建了扩展 Midscene.js 功能的项目？我们很乐意在这里展示！
 
-要将你的项目添加到这个列表，请在 [Midscene 仓库](https://github.com/web-infra-dev/midscene) 中提交 issue，告知我们你的 awesome midscene 项目。
+要将你的项目添加到这个列表，请在 [Midscene 仓库](https://github.com/qa-nparekh/midscene) 中提交 issue，告知我们你的 awesome midscene 项目。
 
 ## 收录标准
 

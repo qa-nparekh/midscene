@@ -7,18 +7,18 @@ import {
 } from '@azure/identity';
 import {
   type IModelConfig,
-  MIDSCENE_API_TYPE,
-  MIDSCENE_LANGSMITH_DEBUG,
+  SQAI_API_TYPE,
+  SQAI_LANGSMITH_DEBUG,
   OPENAI_MAX_TOKENS,
   type TVlModeTypes,
   type UITarsModelVersion,
   globalConfigManager,
-} from '@midscene/shared/env';
+} from '@sqai/shared/env';
 
-import { parseBase64 } from '@midscene/shared/img';
-import { getDebug } from '@midscene/shared/logger';
-import { assert } from '@midscene/shared/utils';
-import { ifInBrowser } from '@midscene/shared/utils';
+import { parseBase64 } from '@sqai/shared/img';
+import { getDebug } from '@sqai/shared/logger';
+import { assert } from '@sqai/shared/utils';
+import { ifInBrowser } from '@sqai/shared/utils';
 import { HttpsProxyAgent } from 'https-proxy-agent';
 import { jsonrepair } from 'jsonrepair';
 import OpenAI, { AzureOpenAI } from 'openai';
@@ -128,7 +128,7 @@ async function createChatClient({
       ...openaiExtraConfig,
       defaultHeaders: {
         ...(openaiExtraConfig?.defaultHeaders || {}),
-        [MIDSCENE_API_TYPE]: AIActionTypeValue.toString(),
+        [SQAI_API_TYPE]: AIActionTypeValue.toString(),
       },
       dangerouslyAllowBrowser: true,
     });
@@ -136,7 +136,7 @@ async function createChatClient({
 
   if (
     openai &&
-    globalConfigManager.getEnvConfigInBoolean(MIDSCENE_LANGSMITH_DEBUG)
+    globalConfigManager.getEnvConfigInBoolean(SQAI_LANGSMITH_DEBUG)
   ) {
     if (ifInBrowser) {
       throw new Error('langsmith is not supported in browser');

@@ -1,19 +1,19 @@
 /* eslint-disable max-lines */
 'use client';
 import './index.less';
-import { timeStr } from '@midscene/visualizer';
+import { timeStr } from '@sqai/visualizer';
 
 import { RadiusSettingOutlined } from '@ant-design/icons';
 import type {
   BaseElement,
   ExecutionTaskInsightAssertion,
   ExecutionTaskPlanning,
-} from '@midscene/core';
-import { paramStr, typeStr } from '@midscene/core/agent';
+} from '@sqai/core';
+import { paramStr, typeStr } from '@sqai/core/agent';
 import {
   highlightColorForType,
   timeCostStrElement,
-} from '@midscene/visualizer';
+} from '@sqai/visualizer';
 import { Tag, Timeline, type TimelineItemProps, Tooltip } from 'antd';
 import { useExecutionDump } from '../store';
 

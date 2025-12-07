@@ -1,4 +1,4 @@
-import type { UIContext } from '@midscene/core';
+import type { UIContext } from '@sqai/core';
 import type { ContextProvider } from '../../../types';
 
 /**

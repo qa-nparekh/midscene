@@ -1,5 +1,5 @@
 import fs from 'node:fs';
-import { ifInBrowser, ifInWorker } from '@midscene/shared/utils';
+import { ifInBrowser, ifInWorker } from '@sqai/shared/utils';
 
 // remember to include this file into extension's package
 // extract html element from page

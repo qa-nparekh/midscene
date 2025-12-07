@@ -25,14 +25,14 @@ export OPENAI_API_KEY="sk-abcdefghijklmnopqrstuvwxyz"
 
 ## 第一步：安装依赖
 
-<PackageManagerTabs command="install @midscene/web tsx --save-dev" />
+<PackageManagerTabs command="install @sqai/web tsx --save-dev" />
 
 ## 第二步：编写脚本
 
 编写并保存以下代码为 `./demo-new-tab.ts`。
 
 ```typescript
-import { AgentOverChromeBridge } from "@midscene/web/bridge-mode";
+import { AgentOverChromeBridge } from "@sqai/web/bridge-mode";
 
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 Promise.resolve(
@@ -78,7 +78,7 @@ tsx demo-new-tab.ts
 ## 构造器
 
 ```typescript
-import { AgentOverChromeBridge } from "@midscene/web/bridge-mode";
+import { AgentOverChromeBridge } from "@sqai/web/bridge-mode";
 
 const agent = new AgentOverChromeBridge();
 ```

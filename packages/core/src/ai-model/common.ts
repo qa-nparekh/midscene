@@ -8,16 +8,16 @@ import type {
   Rect,
   Size,
 } from '@/types';
-import { assert } from '@midscene/shared/utils';
+import { assert } from '@sqai/shared/utils';
 
 import type { ChatCompletionMessageParam } from 'openai/resources/index';
 
 import type { PlanningLocateParam } from '@/types';
-import { NodeType } from '@midscene/shared/constants';
-import type { TVlModeTypes } from '@midscene/shared/env';
-import { treeToList } from '@midscene/shared/extractor';
-import { compositeElementInfoImg } from '@midscene/shared/img';
-import { getDebug } from '@midscene/shared/logger';
+import { NodeType } from '@sqai/shared/constants';
+import type { TVlModeTypes } from '@sqai/shared/env';
+import { treeToList } from '@sqai/shared/extractor';
+import { compositeElementInfoImg } from '@sqai/shared/img';
+import { getDebug } from '@sqai/shared/logger';
 import { z } from 'zod';
 
 export type AIArgs = ChatCompletionMessageParam[];
@@ -500,7 +500,7 @@ export const TUserPromptSchema = z.union([
 export type TMultimodalPrompt = z.infer<typeof TMultimodalPromptSchema>;
 export type TUserPrompt = z.infer<typeof TUserPromptSchema>;
 
-const locateFieldFlagName = 'midscene_location_field_flag';
+const locateFieldFlagName = 'SQAI_location_field_flag';
 
 // Schema for locator field input (when users provide locate parameters)
 const MidsceneLocationInput = z

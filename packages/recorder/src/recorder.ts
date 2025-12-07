@@ -1,5 +1,5 @@
-import { isNotContainerElement } from '@midscene/shared/extractor';
-import { getElementXpath } from '@midscene/shared/extractor';
+import { isNotContainerElement } from '@sqai/shared/extractor';
+import { getElementXpath } from '@sqai/shared/extractor';
 
 const DEBUG = localStorage.getItem('DEBUG') === 'true'; // Based on process.env.NODE_ENV
 // localStorage.setItem('DEBUG', 'true');

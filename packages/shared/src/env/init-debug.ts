@@ -1,21 +1,21 @@
 import { enableDebug } from '../logger';
 import { getBasicEnvValue } from './basic';
-import { MIDSCENE_DEBUG_AI_PROFILE, MIDSCENE_DEBUG_AI_RESPONSE } from './types';
+import { SQAI_DEBUG_AI_PROFILE, SQAI_DEBUG_AI_RESPONSE } from './types';
 
 export const initDebugConfig = () => {
-  const shouldPrintTiming = getBasicEnvValue(MIDSCENE_DEBUG_AI_PROFILE);
+  const shouldPrintTiming = getBasicEnvValue(SQAI_DEBUG_AI_PROFILE);
   let debugConfig = '';
   if (shouldPrintTiming) {
     console.warn(
-      'MIDSCENE_DEBUG_AI_PROFILE is deprecated, use DEBUG=midscene:ai:profile instead',
+      'SQAI_DEBUG_AI_PROFILE is deprecated, use DEBUG=midscene:ai:profile instead',
     );
     debugConfig = 'ai:profile';
   }
-  const shouldPrintAIResponse = getBasicEnvValue(MIDSCENE_DEBUG_AI_RESPONSE);
+  const shouldPrintAIResponse = getBasicEnvValue(SQAI_DEBUG_AI_RESPONSE);
 
   if (shouldPrintAIResponse) {
     console.warn(
-      'MIDSCENE_DEBUG_AI_RESPONSE is deprecated, use DEBUG=midscene:ai:response instead',
+      'SQAI_DEBUG_AI_RESPONSE is deprecated, use DEBUG=midscene:ai:response instead',
     );
     if (debugConfig) {
       debugConfig = 'ai:*';

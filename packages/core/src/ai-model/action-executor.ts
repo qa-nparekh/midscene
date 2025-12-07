@@ -7,7 +7,7 @@ import type {
   ExecutionTaskReturn,
   ExecutorContext,
 } from '@/types';
-import { assert } from '@midscene/shared/utils';
+import { assert } from '@sqai/shared/utils';
 
 export class Executor {
   name: string;

@@ -67,15 +67,15 @@ Define a class that extends the `AbstractInterface` class, and implement the req
 You can get the sample implementation from the [`./src/sample-device.ts`](https://github.com/web-infra-dev/midscene-example/blob/main/custom-interface/src/sample-device.ts) file. Let's take a glance at it.
 
 ```typescript
-import type { DeviceAction, Size } from '@midscene/core';
-import { getMidsceneLocationSchema, z } from '@midscene/core';
+import type { DeviceAction, Size } from '@sqai/core';
+import { getMidsceneLocationSchema, z } from '@sqai/core';
 import {
   type AbstractInterface,
   defineAction,
   defineActionTap,
   defineActionInput,
   // ... other action imports
-} from '@midscene/core/device';
+} from '@sqai/core/device';
 
 export interface SampleDeviceConfig {
   deviceName?: string;
@@ -184,7 +184,7 @@ Attach a playground server to the agent, and you can test the agent in the web b
 
 ```ts 
 import 'dotenv/config'; // read Midscene environment variables from .env file
-import { playgroundForAgent } from '@midscene/playground';
+import { playgroundForAgent } from '@sqai/playground';
 
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
@@ -220,7 +220,7 @@ A typical usage of your npm package is like this:
 
 ```typescript
 import 'dotenv/config'; // read Midscene environment variables from .env file
-import { playgroundForAgent } from '@midscene/playground';
+import { playgroundForAgent } from '@sqai/playground';
 
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
@@ -261,7 +261,7 @@ Other fields in the yaml script are the same as the [yaml script](./automate-wit
 ### `AbstractInterface` class
 
 ```typescript
-import { AbstractInterface } from '@midscene/core';
+import { AbstractInterface } from '@sqai/core';
 ```
 
 `AbstractInterface` is the key class for the agent to control the interface. 
@@ -276,8 +276,8 @@ These are the required methods that you need to implement:
 Type signatures:
 
 ```ts
-import type { DeviceAction, Size, UIContext } from '@midscene/core';
-import type { ElementNode } from '@midscene/shared/extractor';
+import type { DeviceAction, Size, UIContext } from '@sqai/core';
+import type { ElementNode } from '@sqai/shared/extractor';
 
 abstract class AbstractInterface {
   // Required
@@ -314,7 +314,7 @@ import {
 	type ActionTapParam,
 	defineAction,
 	defineActionTap,
-} from "@midscene/core/device";
+} from "@sqai/core/device";
 ```
 
 #### The predefined actions
@@ -339,7 +339,7 @@ You can define your own action by using the `defineAction()` function. You can a
 API Signature:
 
 ```typescript
-import { defineAction } from "@midscene/core/device";
+import { defineAction } from "@sqai/core/device";
 
 defineAction(
   {
@@ -377,7 +377,7 @@ If you want to get a param about the location of some element, you can use the `
 A more complex example about defining a custom action:
 
 ```typescript
-import { getMidsceneLocationSchema } from "@midscene/core/device";
+import { getMidsceneLocationSchema } from "@sqai/core/device";
 
 defineAction({
   name: 'LaunchApp',
@@ -395,7 +395,7 @@ defineAction({
 ### `playgroundForAgent` function
 
 ```typescript
-import { playgroundForAgent } from '@midscene/playground';
+import { playgroundForAgent } from '@sqai/playground';
 ```
 
 The `playgroundForAgent` function creates a playground launcher for a specific Agent, allowing you to test and debug your custom interface Agent in a web browser.
@@ -483,9 +483,9 @@ interface LaunchPlaygroundResult {
 
 ```typescript
 import 'dotenv/config';
-import { playgroundForAgent } from '@midscene/playground';
+import { playgroundForAgent } from '@sqai/playground';
 import { SampleDevice } from './sample-device';
-import { Agent } from '@midscene/core/agent';
+import { Agent } from '@sqai/core/agent';
 
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 

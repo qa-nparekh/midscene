@@ -10,7 +10,7 @@ import {
   type Size,
   getMidsceneLocationSchema,
   z,
-} from '@midscene/core';
+} from '@sqai/core';
 import {
   type AbstractInterface,
   type ActionTapParam,
@@ -21,23 +21,23 @@ import {
   defineActionKeyboardPress,
   defineActionScroll,
   defineActionTap,
-} from '@midscene/core/device';
-import { getTmpFile, sleep } from '@midscene/core/utils';
+} from '@sqai/core/device';
+import { getTmpFile, sleep } from '@sqai/core/utils';
 import {
-  MIDSCENE_ADB_PATH,
-  MIDSCENE_ADB_REMOTE_HOST,
-  MIDSCENE_ADB_REMOTE_PORT,
-  MIDSCENE_ANDROID_IME_STRATEGY,
+  SQAI_ADB_PATH,
+  SQAI_ADB_REMOTE_HOST,
+  SQAI_ADB_REMOTE_PORT,
+  SQAI_ANDROID_IME_STRATEGY,
   globalConfigManager,
-} from '@midscene/shared/env';
-import type { ElementInfo } from '@midscene/shared/extractor';
+} from '@sqai/shared/env';
+import type { ElementInfo } from '@sqai/shared/extractor';
 import {
   createImgBase64ByFormat,
   isValidPNGImageBuffer,
-} from '@midscene/shared/img';
-import { getDebug } from '@midscene/shared/logger';
-import { uuid } from '@midscene/shared/utils';
-import { repeat } from '@midscene/shared/utils';
+} from '@sqai/shared/img';
+import { getDebug } from '@sqai/shared/logger';
+import { uuid } from '@sqai/shared/utils';
+import { repeat } from '@sqai/shared/utils';
 
 import { ADB } from 'appium-adb';
 
@@ -370,13 +370,13 @@ export class AndroidDevice implements AbstractInterface {
       try {
         const androidAdbPath =
           this.options?.androidAdbPath ||
-          globalConfigManager.getEnvConfigValue(MIDSCENE_ADB_PATH);
+          globalConfigManager.getEnvConfigValue(SQAI_ADB_PATH);
         const remoteAdbHost =
           this.options?.remoteAdbHost ||
-          globalConfigManager.getEnvConfigValue(MIDSCENE_ADB_REMOTE_HOST);
+          globalConfigManager.getEnvConfigValue(SQAI_ADB_REMOTE_HOST);
         const remoteAdbPort =
           this.options?.remoteAdbPort ||
-          globalConfigManager.getEnvConfigValue(MIDSCENE_ADB_REMOTE_PORT);
+          globalConfigManager.getEnvConfigValue(SQAI_ADB_REMOTE_PORT);
 
         this.adb = await new ADB({
           udid: this.deviceId,
@@ -989,7 +989,7 @@ ${Object.keys(size)
 
     const IME_STRATEGY =
       (this.options?.imeStrategy ||
-        globalConfigManager.getEnvConfigValue(MIDSCENE_ANDROID_IME_STRATEGY)) ??
+        globalConfigManager.getEnvConfigValue(SQAI_ANDROID_IME_STRATEGY)) ??
       IME_STRATEGY_YADB_FOR_NON_ASCII;
 
     if (IME_STRATEGY === IME_STRATEGY_YADB_FOR_NON_ASCII) {
@@ -1209,7 +1209,7 @@ ${Object.keys(size)
       const adb = await this.getAdb();
       // Use a more reliable path resolution method
       const androidPkgJson = createRequire(import.meta.url).resolve(
-        '@midscene/android/package.json',
+        '@sqai/android/package.json',
       );
       const yadbBin = path.join(path.dirname(androidPkgJson), 'bin', 'yadb');
       await adb.push(yadbBin, '/data/local/tmp');
@@ -1226,7 +1226,7 @@ ${Object.keys(size)
     const isChinese = /[\p{Script=Han}\p{sc=Hani}]/u.test(text);
     const IME_STRATEGY =
       (this.options?.imeStrategy ||
-        globalConfigManager.getEnvConfigValue(MIDSCENE_ANDROID_IME_STRATEGY)) ??
+        globalConfigManager.getEnvConfigValue(SQAI_ANDROID_IME_STRATEGY)) ??
       IME_STRATEGY_YADB_FOR_NON_ASCII;
     const shouldAutoDismissKeyboard =
       options?.autoDismissKeyboard ?? this.options?.autoDismissKeyboard ?? true;

@@ -1,5 +1,5 @@
 import { InfoCircleOutlined } from '@ant-design/icons';
-import { useServerValid } from '@midscene/visualizer';
+import { useServerValid } from '@sqai/visualizer';
 import { ScrcpyVideoCodecId } from '@yume-chan/scrcpy';
 import { WebCodecsVideoDecoder } from '@yume-chan/scrcpy-decoder-webcodecs';
 import {

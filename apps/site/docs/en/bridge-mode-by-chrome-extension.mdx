@@ -24,14 +24,14 @@ Install [Midscene extension from Chrome web store](https://chromewebstore.google
 
 ## Step 2. Install dependencies
 
-<PackageManagerTabs command="install @midscene/web tsx --save-dev" />
+<PackageManagerTabs command="install @sqai/web tsx --save-dev" />
 
 ## Step 3. Write scripts
 
 Write and save the following code as `./demo-new-tab.ts`.
 
 ```typescript
-import { AgentOverChromeBridge } from "@midscene/web/bridge-mode";
+import { AgentOverChromeBridge } from "@sqai/web/bridge-mode";
 
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 Promise.resolve(
@@ -77,7 +77,7 @@ After executing the script, you should see the status of the Chrome extension sw
 ## Constructor
 
 ```typescript
-import { AgentOverChromeBridge } from "@midscene/web/bridge-mode";
+import { AgentOverChromeBridge } from "@sqai/web/bridge-mode";
 
 const agent = new AgentOverChromeBridge();
 ```

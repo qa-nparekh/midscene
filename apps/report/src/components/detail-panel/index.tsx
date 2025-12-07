@@ -10,10 +10,10 @@ import {
 import type {
   ExecutionTaskInsightLocate,
   ExecutionTaskPlanning,
-} from '@midscene/core';
-import { filterBase64Value, timeStr } from '@midscene/visualizer';
-import { Blackboard, Player } from '@midscene/visualizer';
-import type { WebUIContext } from '@midscene/web';
+} from '@sqai/core';
+import { filterBase64Value, timeStr } from '@sqai/visualizer';
+import { Blackboard, Player } from '@sqai/visualizer';
+import type { WebUIContext } from '@sqai/web';
 import { Segmented, Tooltip } from 'antd';
 import { useEffect, useState } from 'react';
 import OpenInPlayground from '../open-in-playground';

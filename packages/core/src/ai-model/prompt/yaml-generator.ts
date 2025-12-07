@@ -2,8 +2,8 @@ import type {
   StreamingAIResponse,
   StreamingCodeGenerationOptions,
 } from '@/types';
-import { YAML_EXAMPLE_CODE } from '@midscene/shared/constants';
-import type { IModelConfig } from '@midscene/shared/env';
+import { YAML_EXAMPLE_CODE } from '@sqai/shared/constants';
+import type { IModelConfig } from '@sqai/shared/env';
 import {
   AIActionType,
   type ChatCompletionMessageParam,

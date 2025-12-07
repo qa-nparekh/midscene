@@ -1,5 +1,5 @@
 name: '🐞 Bug Report'
-description: Report a Bug to Midscene
+description: Report a Bug to SQAI
 title: '[Bug]: '
 type: Bug
 body:
@@ -9,14 +9,14 @@ body:
         Thanks for taking the time to report this issue! Before submitting, please note:
 
          - Confirm that your problem cannot be solved by official documentation.
-         - Make sure you've searched in the [Issues](https://github.com/web-infra-dev/midscene/issues) and haven't found the same issue.
+         - Make sure you've searched in the [Issues](https://github.com/qa-nparekh/SQAI/issues) and haven't found the same issue.
          - If it's an upsteam bug, please report it to the relevant repository, such as [UI-TARS](https://github.com/bytedance/UI-TARS), [playwright](https://github.com/microsoft/playwright) and [puppeteer](https://github.com/puppeteer/puppeteer).
 
   - type: textarea
     id: versions
     attributes:
       label: Version
-      description: Run `npx envinfo --system --browsers --npmPackages '@midscene/*'` in your project, and paste the output into the textarea below.
+      description: Run `npx envinfo --system --browsers --npmPackages '@SQAI/*'` in your project, and paste the output into the textarea below.
       placeholder: |
         System:
         Browsers:
@@ -37,7 +37,7 @@ body:
     id: repro
     attributes:
       label: Reproduce link
-      description: 'Please provide a minimal reproduction of the issue. You can fork from the the [midscene-example](https://github.com/web-infra-dev/midscene-example).'
+      description: 'Please provide a minimal reproduction of the issue. You can fork from the the [SQAI-example](https://github.com/qa-nparekh/SQAI-example).'
       placeholder: paste link here
     validations:
       required: true

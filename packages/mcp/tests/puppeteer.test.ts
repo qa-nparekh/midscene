@@ -8,7 +8,7 @@ vi.mock('puppeteer-core', () => ({
   },
 }));
 
-vi.mock('@midscene/web/puppeteer', () => ({
+vi.mock('@sqai/web/puppeteer', () => ({
   PuppeteerAgent: vi.fn(),
 }));
 

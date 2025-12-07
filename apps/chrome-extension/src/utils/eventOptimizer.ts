@@ -1,8 +1,8 @@
-import Insight from '@midscene/core';
-import type { BaseElement, Rect, UIContext } from '@midscene/core';
-import type { RecordedEvent } from '@midscene/recorder';
-import { globalModelConfigManager } from '@midscene/shared/env';
-import { compositeElementInfoImg } from '@midscene/shared/img';
+import Insight from '@sqai/core';
+import type { BaseElement, Rect, UIContext } from '@sqai/core';
+import type { RecordedEvent } from '@sqai/recorder';
+import { globalModelConfigManager } from '@sqai/shared/env';
+import { compositeElementInfoImg } from '@sqai/shared/img';
 
 // Caches for element descriptions and boxed screenshots to improve performance
 const MAX_CACHE_SIZE = 100;

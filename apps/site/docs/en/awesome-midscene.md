@@ -32,7 +32,7 @@ A curated list of community projects that extend Midscene.js capabilities across
 
 Have you created a project that extends Midscene.js? We'd love to feature it here!
 
-To add your project to this list, please submit an issue to the [Midscene repository](https://github.com/web-infra-dev/midscene), and tell us your awesome midscene project.
+To add your project to this list, please submit an issue to the [Midscene repository](https://github.com/qa-nparekh/midscene), and tell us your awesome midscene project.
 
 ## Criteria for inclusion
 

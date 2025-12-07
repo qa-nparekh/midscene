@@ -1,4 +1,4 @@
-import type { DeviceAction } from '@midscene/core';
+import type { DeviceAction } from '@sqai/core';
 import { describe, expect, it, vi } from 'vitest';
 import {
   dataExtractionAPIs,

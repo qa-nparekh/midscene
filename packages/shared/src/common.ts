@@ -1,13 +1,13 @@
 import { existsSync, mkdirSync } from 'node:fs';
 import { tmpdir } from 'node:os';
 import path from 'node:path';
-// do not import getBasicEnvValue and MIDSCENE_RUN_DIR directly from ./env,
+// do not import getBasicEnvValue and SQAI_RUN_DIR directly from ./env,
 // because it will cause circular dependency
 import { getBasicEnvValue } from './env/basic';
-import { MIDSCENE_RUN_DIR } from './env/types';
+import { SQAI_RUN_DIR } from './env/types';
 import { ifInNode } from './utils';
 
-export const defaultRunDirName = 'midscene_run';
+export const defaultRunDirName = 'sqai_run';
 // Define locally for now to avoid import issues
 
 export const getMidsceneRunDir = () => {
@@ -15,7 +15,7 @@ export const getMidsceneRunDir = () => {
     return '';
   }
 
-  return getBasicEnvValue(MIDSCENE_RUN_DIR) || defaultRunDirName;
+  return getBasicEnvValue(SQAI_RUN_DIR) || defaultRunDirName;
 };
 
 export const getMidsceneRunBaseDir = () => {
@@ -40,7 +40,7 @@ export const getMidsceneRunBaseDir = () => {
 };
 
 /**
- * Get the path to the midscene_run directory or a subdirectory within it.
+ * Get the path to the sqai_run directory or a subdirectory within it.
  * Creates the directory if it doesn't exist.
  *
  * @param subdir - Optional subdirectory name (e.g., 'log', 'report')
