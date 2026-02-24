@@ -196,7 +196,7 @@ export class LocalStorageProvider implements StorageProvider {
         (key) =>
           key.includes('playground') ||
           key.includes('agent') ||
-          key.startsWith('midscene'),
+          key.startsWith('sqai'),
       );
 
       if (playgroundKeys.length > 10) {

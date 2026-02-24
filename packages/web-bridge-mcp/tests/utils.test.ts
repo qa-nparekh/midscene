@@ -12,7 +12,7 @@ vi.mock('node:fs', () => ({
 }));
 
 vi.mock('@sqaitech/shared/env', () => ({
-  MIDSCENE_MCP_CHROME_PATH: 'MIDSCENE_MCP_CHROME_PATH',
+  SQAI_MCP_CHROME_PATH: 'SQAI_MCP_CHROME_PATH',
   globalConfigManager: {
     getEnvConfigValue: vi.fn(),
   },
@@ -86,7 +86,7 @@ describe('Utils Module', () => {
 
     test('should return Docker Chrome path when in Docker', () => {
       process.env.DOCKER_CONTAINER = 'true';
-      process.env.MIDSCENE_MCP_CHROME_PATH = '/docker/chrome';
+      process.env.SQAI_MCP_CHROME_PATH = '/docker/chrome';
       vi.mocked(existsSync).mockReturnValue(true);
 
       const result = getSystemChromePath();
@@ -174,3 +174,4 @@ describe('Utils Module', () => {
     });
   });
 });
+

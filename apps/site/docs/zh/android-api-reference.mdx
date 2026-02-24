@@ -28,7 +28,7 @@
 ### 导入
 
 ```ts
-import { AndroidDevice, getConnectedDevices } from '@midscene/android';
+import { AndroidDevice, getConnectedDevices } from '@sqaitech/android';
 ```
 
 ### 构造函数
@@ -61,7 +61,7 @@ const device = new AndroidDevice(deviceId, {
 #### 快速开始
 
 ```ts
-import { AndroidAgent, AndroidDevice, getConnectedDevices } from '@midscene/android';
+import { AndroidAgent, AndroidDevice, getConnectedDevices } from '@sqaitech/android';
 
 const [first] = await getConnectedDevices();
 const device = new AndroidDevice(first.udid);
@@ -94,7 +94,7 @@ await agent.home();
 ### 导入
 
 ```ts
-import { AndroidAgent } from '@midscene/android';
+import { AndroidAgent } from '@sqaitech/android';
 ```
 
 ### 构造函数

@@ -74,14 +74,14 @@ s4ey59	device usb:34603008X product:cezanne model:M2006J device:cezan transport_
 
 ## 试用 Playground（零代码）
 
-Playground 是验证连接、观察 AI Agent 的最快方式，无需编写代码。它与 `@midscene/android` 共享相同的代码实现，因此在 Playground 上验证通过的流程，用脚本运行时也完全一致。
+Playground 是验证连接、观察 AI Agent 的最快方式，无需编写代码。它与 `@sqaitech/android` 共享相同的代码实现，因此在 Playground 上验证通过的流程，用脚本运行时也完全一致。
 
 ![](/android-playground.png)
 
 1. 启动 Playground CLI：
 
 ```bash
-npx --yes @midscene/android-playground
+npx --yes @sqaitech/android-playground
 ```
 
 2. 点击 Playground 窗口中的齿轮按钮，粘贴你的 API Key 配置。如果还没有 API Key，请回到 [模型配置](./model-config) 获取。
@@ -98,7 +98,7 @@ npx --yes @midscene/android-playground
 
 ### 第 1 步：安装依赖
 
-<PackageManagerTabs command="install @midscene/android --save-dev" />
+<PackageManagerTabs command="install @sqaitech/android --save-dev" />
 
 ### 第 2 步：编写脚本
 
@@ -109,7 +109,7 @@ import {
   AndroidAgent,
   AndroidDevice,
   getConnectedDevices,
-} from '@midscene/android';
+} from '@sqaitech/android';
 
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 Promise.resolve(
@@ -157,9 +157,9 @@ npx tsx demo.ts
 使用 `defineAction()` 定义自定义手势，并通过 `customActions` 传入。Midscene 会把自定义动作追加到规划器中，让 AI 可以调用你领域特定的动作名。
 
 ```typescript
-import { getMidsceneLocationSchema, z } from '@midscene/core';
-import { defineAction } from '@midscene/core/device';
-import { AndroidAgent, AndroidDevice, getConnectedDevices } from '@midscene/android';
+import { getMidsceneLocationSchema, z } from '@sqaitech/core';
+import { defineAction } from '@sqaitech/core/device';
+import { AndroidAgent, AndroidDevice, getConnectedDevices } from '@sqaitech/android';
 
 const ContinuousClick = defineAction({
   name: 'continuousClick',

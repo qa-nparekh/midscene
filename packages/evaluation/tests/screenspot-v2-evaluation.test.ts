@@ -1,6 +1,6 @@
 import { mkdirSync, readFileSync, rmSync, writeFileSync } from 'node:fs';
 import path, { resolve, join } from 'node:path';
-import Service, { type Rect, MIDSCENE_MODEL_NAME } from '@sqaitech/core';
+import Service, { type Rect, SQAI_MODEL_NAME } from '@sqaitech/core';
 import { sleep } from '@sqaitech/core/utils';
 import { globalModelConfigManager } from '@sqaitech/shared/env';
 import { imageInfoOfBase64, saveBase64Image } from '@sqaitech/shared/img';
@@ -272,3 +272,4 @@ function isRectInside(rect1: Rect, rect2: Rect): boolean {
     rect1.top + rect1.height <= rect2.top + rect2.height
   );
 }
+

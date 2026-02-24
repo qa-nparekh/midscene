@@ -95,7 +95,7 @@ describe.skipIf(!shouldRunAITest)('bin', () => {
   });
 
   test('run yaml scripts', async () => {
-    const params = ['./tests/midscene_scripts/local/local.yml'];
+    const params = ['./tests/SQAI_scripts/local/local.yml'];
     await execa(cliBin, params);
   });
 
@@ -147,27 +147,28 @@ tasks:
   });
 
   test('yaml with image prompt', async () => {
-    const params = ['./tests/midscene_scripts/online/image-prompting.yaml'];
+    const params = ['./tests/SQAI_scripts/online/image-prompting.yaml'];
     await execa(cliBin, params);
   });
 
   test.skip('run yaml scripts with keepWindow', async () => {
     const params = [
-      './tests/midscene_scripts/online/online.yaml',
+      './tests/SQAI_scripts/online/online.yaml',
       '--keep-window',
     ];
     await execa(cliBin, params);
   });
 
   test.skip('run yaml scripts with headed, put options before path', async () => {
-    const params = ['--headed', './tests/midscene_scripts/online/online.yaml'];
+    const params = ['--headed', './tests/SQAI_scripts/online/online.yaml'];
     await execa(cliBin, params);
   });
 
   test('run yaml scripts when set aiAssert errorMessage', async () => {
-    const params = ['./tests/midscene_scripts/local/local-error-message.yml'];
+    const params = ['./tests/SQAI_scripts/local/local-error-message.yml'];
     await expect(async () => {
       await execa(cliBin, params);
     }).rejects.toThrow(/something error when assert title/i);
   });
 });
+

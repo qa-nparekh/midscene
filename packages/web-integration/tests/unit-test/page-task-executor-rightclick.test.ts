@@ -193,3 +193,17 @@ describe('TaskExecutor RightClick Action', () => {
     await expect(rightClickTask.executor(null, mockContext)).rejects.toThrow();
   });
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
+

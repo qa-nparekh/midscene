@@ -6,15 +6,15 @@ import {
 } from './constants';
 import {
   type IModelConfig,
-  MIDSCENE_MODEL_FAMILY,
-  MIDSCENE_OPENAI_HTTP_PROXY,
-  MIDSCENE_OPENAI_INIT_CONFIG_JSON,
-  MIDSCENE_OPENAI_SOCKS_PROXY,
-  MIDSCENE_USE_DOUBAO_VISION,
-  MIDSCENE_USE_GEMINI,
-  MIDSCENE_USE_QWEN3_VL,
-  MIDSCENE_USE_QWEN_VL,
-  MIDSCENE_USE_VLM_UI_TARS,
+  SQAI_MODEL_FAMILY,
+  SQAI_OPENAI_HTTP_PROXY,
+  SQAI_OPENAI_INIT_CONFIG_JSON,
+  SQAI_OPENAI_SOCKS_PROXY,
+  SQAI_USE_DOUBAO_VISION,
+  SQAI_USE_GEMINI,
+  SQAI_USE_QWEN3_VL,
+  SQAI_USE_QWEN_VL,
+  SQAI_USE_VLM_UI_TARS,
   MODEL_FAMILY_VALUES,
   OPENAI_API_KEY,
   OPENAI_BASE_URL,
@@ -70,7 +70,7 @@ export const getUITarsModelVersion = (
  */
 export const validateModelFamily = (modelFamily?: TModelFamily): void => {
   if (modelFamily && !MODEL_FAMILY_VALUES.includes(modelFamily as any)) {
-    throw new Error(`Invalid MIDSCENE_MODEL_FAMILY value: ${modelFamily}`);
+    throw new Error(`Invalid SQAI_MODEL_FAMILY value: ${modelFamily}`);
   }
 };
 
@@ -82,18 +82,18 @@ export const validateModelFamily = (modelFamily?: TModelFamily): void => {
 export const legacyConfigToModelFamily = (
   provider: Record<string, string | undefined>,
 ): TModelFamily | undefined => {
-  const isDoubao = provider[MIDSCENE_USE_DOUBAO_VISION];
-  const isQwen = provider[MIDSCENE_USE_QWEN_VL];
-  const isQwen3 = provider[MIDSCENE_USE_QWEN3_VL];
-  const isUiTars = provider[MIDSCENE_USE_VLM_UI_TARS];
-  const isGemini = provider[MIDSCENE_USE_GEMINI];
+  const isDoubao = provider[SQAI_USE_DOUBAO_VISION];
+  const isQwen = provider[SQAI_USE_QWEN_VL];
+  const isQwen3 = provider[SQAI_USE_QWEN3_VL];
+  const isUiTars = provider[SQAI_USE_VLM_UI_TARS];
+  const isGemini = provider[SQAI_USE_GEMINI];
 
   const enabledModes = [
-    isDoubao && MIDSCENE_USE_DOUBAO_VISION,
-    isQwen && MIDSCENE_USE_QWEN_VL,
-    isQwen3 && MIDSCENE_USE_QWEN3_VL,
-    isUiTars && MIDSCENE_USE_VLM_UI_TARS,
-    isGemini && MIDSCENE_USE_GEMINI,
+    isDoubao && SQAI_USE_DOUBAO_VISION,
+    isQwen && SQAI_USE_QWEN_VL,
+    isQwen3 && SQAI_USE_QWEN3_VL,
+    isUiTars && SQAI_USE_VLM_UI_TARS,
+    isGemini && SQAI_USE_GEMINI,
   ].filter(Boolean);
 
   if (enabledModes.length > 1) {
@@ -156,13 +156,13 @@ export const parseOpenaiSdkConfig = ({
   const legacyAPIKey = useLegacyLogic ? provider[OPENAI_API_KEY] : undefined;
   const legacyBaseURL = useLegacyLogic ? provider[OPENAI_BASE_URL] : undefined;
   const legacySocksProxy = useLegacyLogic
-    ? provider[MIDSCENE_OPENAI_SOCKS_PROXY]
+    ? provider[SQAI_OPENAI_SOCKS_PROXY]
     : undefined;
   const legacyHttpProxy = useLegacyLogic
-    ? provider[MIDSCENE_OPENAI_HTTP_PROXY]
+    ? provider[SQAI_OPENAI_HTTP_PROXY]
     : undefined;
   const legacyOpenaiExtraConfig = useLegacyLogic
-    ? provider[MIDSCENE_OPENAI_INIT_CONFIG_JSON]
+    ? provider[SQAI_OPENAI_INIT_CONFIG_JSON]
     : undefined;
   const legacyModelFamily = useLegacyLogic
     ? legacyConfigToModelFamily(provider)
@@ -265,12 +265,12 @@ export const decideModelConfigFromIntentConfig = (
 
   assert(
     finalResult.openaiBaseURL,
-    `failed to get base URL of model (intent=${intent}). See https://midscenejs.com/model-strategy`,
+    `failed to get base URL of model (intent=${intent}). See https://sqai.tech/model-strategy`,
   );
 
   if (!finalResult.modelName) {
     console.warn(
-      `modelName is not set for intent ${intent}, this may cause unexpected behavior. See https://midscenejs.com/model-strategy`,
+      `modelName is not set for intent ${intent}, this may cause unexpected behavior. See https://sqai.tech/model-strategy`,
     );
   }
 

@@ -95,7 +95,7 @@ git checkout -b MY_BRANCH_NAME
 Use [nx build](https://nx.dev/nx-api/nx/documents/run) to build the package you want to change:
 
 ```sh
-npx nx build @midscene/web
+npx nx build @sqaitech/web
 ```
 
 Build all packages:
@@ -106,7 +106,7 @@ pnpm run build
 
 ### `REPLACE_ME_WITH_REPORT_HTML` error in the report file
 
-If you see `REPLACE_ME_WITH_REPORT_HTML` in the report file, it's usually because of the circular dependency issue of Midscene. You can rebuild the entire project without nx cache to solve this issue.
+If you see `REPLACE_ME_WITH_REPORT_HTML` in the report file, it's usually because of the circular dependency issue of SQAI Tech. You can rebuild the entire project without nx cache to solve this issue.
 
 ```sh
 # Rebuild the entire project without cache
@@ -121,7 +121,7 @@ To change the AI-related code of this repository, you need to create a '.env 'fi
 
 ```
 OPENAI_API_KEY="your_token"
-MIDSCENE_MODEL_NAME="qwen3-vl-plus"
+SQAI_MODEL_NAME="qwen3-vl-plus"
 ```
 
 
@@ -144,9 +144,9 @@ pnpm run test:ai
 You can also run the unit tests of a single package:
 
 ```sh
-npx nx test @midscene/web
+npx nx test @sqaitech/web
 # Test with AI-related features, it will need to create a .env file
-npx nx test:ai @midscene/web
+npx nx test:ai @sqaitech/web
 ```
 
 ### Run E2E Tests
@@ -165,7 +165,7 @@ pnpm run e2e
 If you need to run a specified test:
 
 ```sh
-npx nx e2e @midscene/web
+npx nx e2e @sqaitech/web
 ```
 
 If you need to run E2E tests for adb:
@@ -337,4 +337,4 @@ For more detailed information, please refer to [Chrome DevTools README](./apps/c
 
 ### Errors like 'Template does not contain {{dump}} placeholder'
 
-Due to some issues with circular dependencies, you need to execute the full build process within the entire repository to compile the Midscene project, rather than compiling the ⁠@midscene/core package separately.
+Due to some issues with circular dependencies, you need to execute the full build process within the entire repository to compile the SQAI project, rather than compiling the ⁠@sqaitech/core package separately.

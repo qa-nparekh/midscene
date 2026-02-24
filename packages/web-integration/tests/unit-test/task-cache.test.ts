@@ -308,7 +308,7 @@ describe('TaskCache', { timeout: 20000 }, () => {
     const cacheId = uuid();
     const uniqueDir = path.join(
       process.cwd(),
-      'midscene_run',
+      'SQAI_run',
       'cache',
       `test-cache-dir-${Date.now()}-${Math.random().toString(36).substring(2, 9)}`,
     );
@@ -950,3 +950,17 @@ describe('TaskCache manual cleaning with flushCacheToFile', () => {
     expect(cache.cache.caches[1].prompt).toBe('locate-used');
   });
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -24,7 +24,7 @@ export default defineConfig({
           output: {
             library: {
               type: 'window',
-              name: 'midscene_element_inspector',
+              name: 'sqai_element_inspector',
             },
           },
           optimization: {

@@ -34,7 +34,7 @@ export function unwrapZodField(field: unknown): unknown {
 /**
  * Check if a field is a Midscene locator field
  * Checks for either:
- * 1. midscene_location_field_flag in shape (result schema)
+ * 1. sqai_location_field_flag in shape (result schema)
  * 2. prompt field in shape (input schema)
  */
 export function isMidsceneLocatorField(field: unknown): boolean {
@@ -46,7 +46,7 @@ export function isMidsceneLocatorField(field: unknown): boolean {
     const shape = actualField._def.shape?.();
     if (shape) {
       // Method 1: Check for the location field flag (for result schema)
-      if ('midscene_location_field_flag' in shape) {
+      if ('sqai_location_field_flag' in shape) {
         return true;
       }
       // Method 2: Check if it's the input schema by checking for 'prompt' field

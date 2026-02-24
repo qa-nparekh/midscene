@@ -1,6 +1,6 @@
 {
   "name": "@sqaitech/mcp",
-  "version": "0.5.0",
+  "version": "1.2.1",
   "description": "Deprecated - Use @sqaitech/web-bridge-mcp, @sqaitech/android-mcp, or @sqaitech/ios-mcp",
   "bin": "dist/index.js",
   "files": ["dist"],

@@ -19,7 +19,7 @@ export {
 } from './ai-model/index';
 
 export {
-  MIDSCENE_MODEL_NAME,
+  SQAI_MODEL_NAME,
   type CreateOpenAIClientFn,
 } from '@sqaitech/shared/env';
 

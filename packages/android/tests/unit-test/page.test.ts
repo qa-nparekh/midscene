@@ -1600,7 +1600,7 @@ describe('AndroidDevice', () => {
       // Verify that screencap command does not use any display ID (note the extra space)
       expect(mockAdbInstance.shell).toHaveBeenCalledWith(
         expect.stringMatching(
-          /screencap -p {2}\/data\/local\/tmp\/midscene_screenshot_/,
+          /screencap -p {2}\/data\/local\/tmp\/SQAI_screenshot_/,
         ),
       );
       expect(mockAdbInstance.shell).not.toHaveBeenCalledWith(
@@ -1617,3 +1617,8 @@ describe('AndroidDevice', () => {
     });
   });
 });
+
+
+
+
+

@@ -6,7 +6,7 @@ import {
 } from '@/common';
 import { buildYamlFlowFromPlans } from '@/common';
 import {
-  MIDSCENE_USE_DOUBAO_VISION,
+  SQAI_USE_DOUBAO_VISION,
   OPENAI_API_KEY,
   OPENAI_BASE_URL,
 } from '@sqaitech/shared/env';
@@ -43,7 +43,7 @@ describe('llm planning - doubao', () => {
   beforeEach(() => {
     vi.stubEnv(OPENAI_BASE_URL, 'http://mock');
     vi.stubEnv(OPENAI_API_KEY, 'mock');
-    vi.stubEnv(MIDSCENE_USE_DOUBAO_VISION, 'true');
+    vi.stubEnv(SQAI_USE_DOUBAO_VISION, 'true');
   });
 
   afterEach(() => {
@@ -609,3 +609,77 @@ describe('llm planning - descriptionForAction with ZodEffects and ZodUnion', () 
     `);
   });
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

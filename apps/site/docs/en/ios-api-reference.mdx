@@ -26,7 +26,7 @@ Create a WebDriverAgent-backed instance that an IOSAgent can drive.
 ### Import
 
 ```ts
-import { IOSDevice } from '@midscene/ios';
+import { IOSDevice } from '@sqaitech/ios';
 ```
 
 ### Constructor
@@ -55,7 +55,7 @@ const device = new IOSDevice({
 #### Quick start
 
 ```ts
-import { IOSAgent, IOSDevice } from '@midscene/ios';
+import { IOSAgent, IOSDevice } from '@sqaitech/ios';
 
 const device = new IOSDevice({ wdaHost: 'localhost', wdaPort: 8100 });
 await device.connect();
@@ -89,7 +89,7 @@ Wire Midscene's AI planner to an IOSDevice for UI automation over WebDriverAgent
 ### Import
 
 ```ts
-import { IOSAgent } from '@midscene/ios';
+import { IOSAgent } from '@sqaitech/ios';
 ```
 
 ### Constructor
@@ -176,7 +176,7 @@ function agentFromWebDriverAgent(
 - `opts?: PageAgentOpt & IOSDeviceOpt` &mdash; Combine common agent options with [`IOSDevice`](#iosdevice) settings.
 
 ```ts
-import { agentFromWebDriverAgent } from '@midscene/ios';
+import { agentFromWebDriverAgent } from '@sqaitech/ios';
 
 const agent = await agentFromWebDriverAgent({
   wdaHost: 'localhost',
@@ -190,9 +190,9 @@ const agent = await agentFromWebDriverAgent({
 Extend the Agent's action space by supplying `customActions` with handlers created via `defineAction`. These actions appear after the built-in ones and can be called during planning.
 
 ```ts
-import { getMidsceneLocationSchema, z } from '@midscene/core';
-import { defineAction } from '@midscene/core/device';
-import { agentFromWebDriverAgent } from '@midscene/ios';
+import { getMidsceneLocationSchema, z } from '@sqaitech/core';
+import { defineAction } from '@sqaitech/core/device';
+import { agentFromWebDriverAgent } from '@sqaitech/ios';
 
 const ContinuousClick = defineAction({
   name: 'continuousClick',

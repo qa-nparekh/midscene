@@ -48,7 +48,7 @@ export default defineConfig({
       setup: (api) => {
         api.onAfterBuild(() => {
           console.warn(
-            'If you see "REPLACE_ME_WITH_REPORT_HTML" error in the Midscene report file, please rebuild the entire project with "pnpm run build:skip-cache". Reference: https://github.com/web-infra-dev/midscene/blob/main/CONTRIBUTING.md#replace_me_with_report_html-error-in-the-report-file',
+            'If you see "REPLACE_ME_WITH_REPORT_HTML" error in the SQAI Tech report file, please rebuild the entire project with "pnpm run build:skip-cache". Reference: https://github.com/web-infra-dev/midscene/blob/main/CONTRIBUTING.md#replace_me_with_report_html-error-in-the-report-file',
           );
         });
       },

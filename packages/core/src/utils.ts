@@ -8,8 +8,8 @@ import {
   getMidsceneRunSubDir,
 } from '@sqaitech/shared/common';
 import {
-  MIDSCENE_CACHE,
-  MIDSCENE_DEBUG_MODE,
+  SQAI_CACHE,
+  SQAI_DEBUG_MODE,
   globalConfigManager,
 } from '@sqaitech/shared/env';
 import { getRunningPkgInfo } from '@sqaitech/shared/node';
@@ -65,7 +65,7 @@ export function processCacheConfig(
 
   // 2. Backward compatibility: support old cacheId (requires environment variable)
   // When cache is undefined, check if legacy cacheId mode is enabled via env var
-  const envEnabled = globalConfigManager.getEnvConfigInBoolean(MIDSCENE_CACHE);
+  const envEnabled = globalConfigManager.getEnvConfigInBoolean(SQAI_CACHE);
 
   if (envEnabled && cacheId) {
     return { id: cacheId };
@@ -145,7 +145,7 @@ export function reportHTMLContent(
     // do not use template string here, will cause bundle error
     dumpContent =
       // biome-ignore lint/style/useTemplate: <explanation>
-      '<script type="midscene_web_dump" type="application/json">\n' +
+      '<script type="sqai_web_dump" type="application/json">\n' +
       escapeScriptTag(dumpData) +
       '\n</script>';
   } else {
@@ -157,7 +157,7 @@ export function reportHTMLContent(
     dumpContent =
       // do not use template string here, will cause bundle error
       // biome-ignore lint/style/useTemplate: <explanation>
-      '<script type="midscene_web_dump" type="application/json" ' +
+      '<script type="sqai_web_dump" type="application/json" ' +
       attributesArr.join(' ') +
       '>\n' +
       escapeScriptTag(dumpString) +
@@ -213,7 +213,7 @@ export function writeDumpReport(
       flag: appendReport ? 'a' : 'w',
     });
 
-    logMsg(`Midscene - dump file written: ${jsonPath}`);
+    logMsg(`SQAI - dump file written: ${jsonPath}`);
   }
 
   return reportPath;
@@ -251,7 +251,7 @@ export function writeLogFile(opts: {
       if (!gitIgnoreContent.includes(`${defaultRunDirName}/`)) {
         writeFileSync(
           gitIgnorePath,
-          `${gitIgnoreContent}\n# Midscene.js dump files\n${defaultRunDirName}/dump\n${defaultRunDirName}/report\n${defaultRunDirName}/tmp\n${defaultRunDirName}/log\n`,
+          `${gitIgnoreContent}\n# SQAI dump files\n${defaultRunDirName}/dump\n${defaultRunDirName}/report\n${defaultRunDirName}/tmp\n${defaultRunDirName}/log\n`,
           'utf-8',
         );
       }
@@ -339,9 +339,9 @@ export function getVersion() {
 function debugLog(...message: any[]) {
   // always read from process.env, and cannot be override by modelConfig, overrideAIConfig, etc.
   // also avoid circular dependency
-  const debugMode = process.env[MIDSCENE_DEBUG_MODE];
+  const debugMode = process.env[SQAI_DEBUG_MODE];
   if (debugMode) {
-    console.log('[Midscene]', ...message);
+    console.log('[SQAI]', ...message);
   }
 }
 

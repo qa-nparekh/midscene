@@ -6,7 +6,7 @@ import type { TUserPrompt } from '@/ai-model';
 import type { ElementCacheFeature } from '@/types';
 import { getMidsceneRunSubDir } from '@sqaitech/shared/common';
 import {
-  MIDSCENE_CACHE_MAX_FILENAME_LENGTH,
+  SQAI_CACHE_MAX_FILENAME_LENGTH,
   globalConfigManager,
 } from '@sqaitech/shared/env';
 import { getDebug } from '@sqaitech/shared/logger';
@@ -75,7 +75,7 @@ export class TaskCache {
     let safeCacheId = replaceIllegalPathCharsAndSpace(cacheId);
     const cacheMaxFilenameLength =
       globalConfigManager.getEnvConfigValueAsNumber(
-        MIDSCENE_CACHE_MAX_FILENAME_LENGTH,
+        SQAI_CACHE_MAX_FILENAME_LENGTH,
       ) ?? DEFAULT_CACHE_MAX_FILENAME_LENGTH;
     if (Buffer.byteLength(safeCacheId, 'utf8') > cacheMaxFilenameLength) {
       const prefix = safeCacheId.slice(0, 32);
@@ -223,7 +223,7 @@ export class TaskCache {
     const jsonTypeCacheFile = cacheFile.replace(cacheFileExt, '.json');
     if (existsSync(jsonTypeCacheFile) && this.isCacheResultUsed) {
       console.warn(
-        `An outdated cache file from an earlier version of Midscene has been detected. Since version 0.17, we have implemented an improved caching strategy. Please delete the old file located at: ${jsonTypeCacheFile}.`,
+        `An outdated cache file from an earlier version of SQAI has been detected. Since version 0.17, we have implemented an improved caching strategy. Please delete the old file located at: ${jsonTypeCacheFile}.`,
       );
       return undefined;
     }

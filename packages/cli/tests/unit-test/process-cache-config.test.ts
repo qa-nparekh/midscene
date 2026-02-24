@@ -4,7 +4,7 @@ import { beforeEach, describe, expect, test, vi } from 'vitest';
 
 // Mock the global config manager to control environment variables
 vi.mock('@sqaitech/shared/env', () => ({
-  MIDSCENE_CACHE: 'MIDSCENE_CACHE',
+  SQAI_CACHE: 'SQAI_CACHE',
   globalConfigManager: {
     getEnvConfigInBoolean: vi.fn(),
   },
@@ -62,8 +62,8 @@ describe('processCacheConfig in CLI', () => {
     });
   });
 
-  describe('Environment variable support (MIDSCENE_CACHE)', () => {
-    test('should enable legacy cacheId when MIDSCENE_CACHE is true', () => {
+  describe('Environment variable support (SQAI_CACHE)', () => {
+    test('should enable legacy cacheId when SQAI_CACHE is true', () => {
       vi.mocked(globalConfigManager.getEnvConfigInBoolean).mockReturnValue(
         true,
       );
@@ -71,14 +71,14 @@ describe('processCacheConfig in CLI', () => {
       const result = processCacheConfig(undefined, 'legacy-cache-id');
 
       expect(globalConfigManager.getEnvConfigInBoolean).toHaveBeenCalledWith(
-        'MIDSCENE_CACHE',
+        'SQAI_CACHE',
       );
       expect(result).toEqual({
         id: 'legacy-cache-id',
       });
     });
 
-    test('should disable legacy cacheId when MIDSCENE_CACHE is false', () => {
+    test('should disable legacy cacheId when SQAI_CACHE is false', () => {
       vi.mocked(globalConfigManager.getEnvConfigInBoolean).mockReturnValue(
         false,
       );
@@ -86,7 +86,7 @@ describe('processCacheConfig in CLI', () => {
       const result = processCacheConfig(undefined, 'legacy-cache-id');
 
       expect(globalConfigManager.getEnvConfigInBoolean).toHaveBeenCalledWith(
-        'MIDSCENE_CACHE',
+        'SQAI_CACHE',
       );
       expect(result).toBeUndefined();
     });
@@ -235,3 +235,4 @@ describe('processCacheConfig in CLI', () => {
     });
   });
 });
+

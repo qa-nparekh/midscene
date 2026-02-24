@@ -112,3 +112,17 @@ describe('PlaywrightAiFixture this binding', () => {
     expect(result).toBe('mock-instance-data: tap click submit button');
   });
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
+

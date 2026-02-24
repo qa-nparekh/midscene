@@ -2,7 +2,7 @@ import { GlobalConfigManager } from './global-config-manager';
 import { ModelConfigManager } from './model-config-manager';
 import {
   type GLOBAL_ENV_KEYS,
-  MIDSCENE_PREFERRED_LANGUAGE,
+  SQAI_PREFERRED_LANGUAGE,
   type MODEL_ENV_KEYS,
 } from './types';
 
@@ -15,7 +15,7 @@ globalModelConfigManager.registerGlobalConfigManager(globalConfigManager);
 
 export const getPreferredLanguage = () => {
   const prefer = globalConfigManager.getEnvConfigValue(
-    MIDSCENE_PREFERRED_LANGUAGE,
+    SQAI_PREFERRED_LANGUAGE,
   );
   if (prefer) {
     return prefer;

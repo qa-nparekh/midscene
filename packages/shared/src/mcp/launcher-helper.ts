@@ -132,7 +132,7 @@ Solution: Check that your agent constructor properly sets the interface property
     additionalInfo?: StartupInfo,
   ): void {
     const device = agent.interface;
-    console.log(`Starting Midscene ${platformName} MCP Server (${mode})...`);
+    console.log(`Starting SQAI ${platformName} MCP Server (${mode})...`);
     console.log(`Agent: ${agent.constructor.name}`);
     console.log(`Device: ${device.constructor.name}`);
 

@@ -128,8 +128,8 @@ export async function WebPageContextParser(
 }
 
 export const limitOpenNewTabScript = `
-if (!window.__MIDSCENE_NEW_TAB_INTERCEPTOR_INITIALIZED__) {
-  window.__MIDSCENE_NEW_TAB_INTERCEPTOR_INITIALIZED__ = true;
+if (!window.__SQAI_NEW_TAB_INTERCEPTOR_INITIALIZED__) {
+  window.__SQAI_NEW_TAB_INTERCEPTOR_INITIALIZED__ = true;
 
   // Intercept the window.open method (only once)
   window.open = function(url) {

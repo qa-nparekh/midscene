@@ -22,7 +22,7 @@ Migration Guide:
 2. Install the appropriate platform-specific package
 3. Update your MCP configuration to use the new package name
 
-For more information, visit: https://midscenejs.com/mcp-migration
+For more information, visit: https://sqai.tech/mcp-migration
 `;
 
 /**

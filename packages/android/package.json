@@ -1,6 +1,6 @@
 {
   "name": "@sqaitech/android",
-  "version": "0.5.0",
+  "version": "1.2.1",
   "description": "Android automation library for SQAI",
   "keywords": [
     "Android UI automation",

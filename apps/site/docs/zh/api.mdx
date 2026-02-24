@@ -1052,7 +1052,7 @@ console.log(logContent);
 通过 `overrideAIConfig` 方法在运行时设置全局环境变量。
 
 ```typescript
-import { overrideAIConfig } from '@midscene/web/puppeteer'; // 或其他的 Agent
+import { overrideAIConfig } from '@sqaitech/web/puppeteer'; // 或其他的 Agent
 
 overrideAIConfig({
   MIDSCENE_MODEL_BASE_URL: '...', // 推荐使用新的变量名
@@ -1136,7 +1136,7 @@ await agent.aiAssert({
 - 示例:
 
 ```typescript
-import { ReportMergingTool } from '@midscene/core/report';
+import { ReportMergingTool } from '@sqaitech/core/report';
 
 const reportMergingTool = new ReportMergingTool();
 ```
@@ -1275,8 +1275,8 @@ reportMergingTool.clear(); // 清空列表
 
 ```typescript
 import { describe, it, beforeEach, afterEach, afterAll } from 'vitest';
-import { AndroidAgent, AndroidDevice } from '@midscene/android';
-import { ReportMergingTool } from '@midscene/core/report';
+import { AndroidAgent, AndroidDevice } from '@sqaitech/android';
+import { ReportMergingTool } from '@sqaitech/core/report';
 
 describe('Android 设置自动化', () => {
   let device: AndroidDevice;

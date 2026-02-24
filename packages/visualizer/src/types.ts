@@ -78,7 +78,7 @@ export const VALIDATION_CONSTANTS = {
     BOOLEAN: 'ZodBoolean',
   },
   FIELD_FLAGS: {
-    LOCATION: 'midscene_location_field_flag',
+    LOCATION: 'sqai_location_field_flag',
   },
   DEFAULT_VALUES: {
     ACTION_TYPE: 'aiAct',

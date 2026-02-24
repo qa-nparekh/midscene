@@ -28,14 +28,14 @@ Midscene Chrome 插件的桥接模式允许你使用本地脚本来控制桌面�
 
 ### 第二步：安装依赖
 
-<PackageManagerTabs command="install @midscene/web tsx --save-dev" />
+<PackageManagerTabs command="install @sqaitech/web tsx --save-dev" />
 
 ### 第三步：编写脚本
 
 将以下代码保存为 `./demo-new-tab.ts`。
 
 ```typescript
-import { AgentOverChromeBridge } from "@midscene/web/bridge-mode";
+import { AgentOverChromeBridge } from "@sqaitech/web/bridge-mode";
 
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 Promise.resolve(

@@ -25,7 +25,7 @@ export const formatErrorMessage = (e: any): string => {
   const errorMessage = e?.message || '';
 
   if (errorMessage.includes('of different extension')) {
-    return 'Conflicting extension detected. Please disable the suspicious plugins and refresh the page. Guide: https://midscenejs.com/quick-experience.html#faq';
+    return 'Conflicting extension detected. Please disable the suspicious plugins and refresh the page. Guide: https://sqai.tech/quick-experience.html#faq';
   }
 
   if (errorMessage.includes('NOT_IMPLEMENTED_AS_DESIGNED')) {
@@ -133,7 +133,7 @@ export function validateStructuredParams(
           return (
             !path.includes('center') &&
             !path.includes('rect') &&
-            !path.includes('midscene_location_field_flag')
+            !path.includes('sqai_location_field_flag')
           );
         })
         .map((err) => {

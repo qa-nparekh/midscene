@@ -94,12 +94,12 @@ Generated code should:
 1. Import required dependencies
 2. Set up the test with proper configuration
 3. Include a beforeEach hook to navigate to the starting URL
-4. Implement a test that uses Midscene AI methods (aiTap, aiInput, aiAssert, etc.)
+4. Implement a test that uses SQAI AI methods (aiTap, aiInput, aiAssert, etc.)
 5. Include appropriate assertions and validations
 6. Follow best practices for Playwright tests
 7. Be ready to execute without further modification
 
-Important: Return ONLY the raw Playwright test code. Do NOT wrap the response in markdown code blocks (no \`\`\`typescript, \`\`\`javascript or \`\`\`). Start directly with the code content.`;
+Important: Return ONLY the raw Playwright test code. DO NOT wrap the response in markdown code blocks (no \`\`\`typescript, \`\`\`javascript or \`\`\`). Start directly with the code content.`;
 
   // Create message content with screenshots
   const messageContent = createMessageContent(
@@ -109,7 +109,7 @@ Important: Return ONLY the raw Playwright test code. Do NOT wrap the response in
   );
 
   // Create system prompt
-  const systemPrompt = `You are an expert test automation engineer specializing in Playwright and Midscene. 
+  const systemPrompt = `You are an expert test automation engineer specializing in Playwright and SQAI. 
 Your task is to generate a complete, executable Playwright test using @sqaitech/web/playwright that reproduces a recorded browser session.
 
 ${PLAYWRIGHT_EXAMPLE_CODE}`;
@@ -173,7 +173,7 @@ Generated code should:
 1. Import required dependencies
 2. Set up the test with proper configuration
 3. Include a beforeEach hook to navigate to the starting URL
-4. Implement a test that uses Midscene AI methods (aiTap, aiInput, aiAssert, etc.)
+4. Implement a test that uses SQAI AI methods (aiTap, aiInput, aiAssert, etc.)
 5. Include appropriate assertions and validations
 6. Follow best practices for Playwright tests
 7. Be ready to execute without further modification
@@ -189,7 +189,7 @@ Important: Return ONLY the raw Playwright test code. Do NOT wrap the response in
   );
 
   // Create system prompt
-  const systemPrompt = `You are an expert test automation engineer specializing in Playwright and Midscene. 
+  const systemPrompt = `You are an expert test automation engineer specializing in Playwright and SQAI. 
 Your task is to generate a complete, executable Playwright test using @sqaitech/web/playwright that reproduces a recorded browser session.
 
 ${PLAYWRIGHT_EXAMPLE_CODE}`;

@@ -60,7 +60,7 @@ import type { AbstractInterface } from '@/device';
 import type { TaskRunner } from '@/task-runner';
 import {
   type IModelConfig,
-  MIDSCENE_REPLANNING_CYCLE_LIMIT,
+  SQAI_REPLANNING_CYCLE_LIMIT,
   ModelConfigManager,
   globalConfigManager,
   globalModelConfigManager,
@@ -320,14 +320,14 @@ export class Agent<
 
     const envReplanningCycleLimit =
       globalConfigManager.getEnvConfigValueAsNumber(
-        MIDSCENE_REPLANNING_CYCLE_LIMIT,
+        SQAI_REPLANNING_CYCLE_LIMIT,
       );
 
     this.opts = Object.assign(
       {
         generateReport: true,
         autoPrintReportMsg: true,
-        groupName: 'Midscene Report',
+        groupName: 'SQAI Report',
         groupDescription: '',
       },
       opts || {},
@@ -407,7 +407,10 @@ export class Agent<
             }
           }
 
-          this.writeOutActionDumps();
+          // Only write report dumps on completion or error to avoid excessive I/O
+          if (runner.status === 'completed' || runner.status === 'error') {
+            this.writeOutActionDumps();
+          }
         },
       },
     });
@@ -1337,6 +1340,9 @@ export class Agent<
       return;
     }
 
+    // Write final dump before cleanup
+    this.writeOutActionDumps();
+    
     await this.interface.destroy?.();
     this.resetDump(); // reset dump to release memory
     this.destroyed = true;

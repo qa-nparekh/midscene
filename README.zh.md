@@ -23,7 +23,7 @@
   <a href="https://npm-compare.com/@midscene/web/#timeRange=THREE_YEARS"><img src="https://img.shields.io/npm/dm/@midscene/web.svg?style=flat-square&color=00a8f0" alt="downloads" /></a>
   <img src="https://img.shields.io/badge/License-MIT-blue.svg?style=flat-square&color=00a8f0" alt="License" />
   <a href="https://discord.gg/2JyBHxszE4"><img src="https://img.shields.io/discord/1328277792730779648?style=flat-square&color=7289DA&label=Discord&logo=discord&logoColor=white" alt="discord" /></a>
-  <a href="https://x.com/midscene_ai"><img src="https://img.shields.io/twitter/follow/midscene_ai?style=flat-square" alt="twitter" /></a>
+  <a href="https://x.com/sqai_tech"><img src="https://img.shields.io/twitter/follow/sqai_tech?style=flat-square" alt="twitter" /></a>
   <a href="https://deepwiki.com/web-infra-dev/midscene">
     <img alt="Ask DeepWiki.com" src="https://devin.ai/assets/deepwiki-badge.png" style="height: 18px; vertical-align: middle;">
   </a>
@@ -44,7 +44,7 @@
 
 此外还有这些实战案例：
 * [iOS 自动化 - 美团下单咖啡](https://midscenejs.com/zh/showcases#ios)
-* [iOS 自动化 - Twitter 自动点赞 @midscene_ai 首条推文](https://midscenejs.com/zh/showcases#ios)
+* [iOS 自动化 - Twitter 自动点赞 @sqai_tech 首条推文](https://midscenejs.com/zh/showcases#ios)
 * [Android 自动化 - 懂车帝查看小米 SU7 参数](https://midscenejs.com/zh/showcases#android)
 * [Android 自动化 - Booking 预订圣诞酒店](https://midscenejs.com/zh/showcases#android)
 * [MCP 集成 - Midscene MCP 操作界面发布 prepatch 版本](https://midscenejs.com/zh/showcases#mcp)
@@ -115,7 +115,7 @@ Midscene.js 在 UI 操作上采用纯视觉（pure-vision）路线：元素定�
 * [Web Infra 团队微信公众号](https://lf3-static.bytednsdoc.com/obj/eden-cn/vhaeh7vhabf/web-infra-wechat.jpg)
 * [飞书交流群](https://applink.larkoffice.com/client/chat/chatter/add_by_link?link_token=693v0991-a6bb-4b44-b2e1-365ca0d199ba)
 * [Discord](https://discord.gg/2JyBHxszE4)
-* [Follow us on X](https://x.com/midscene_ai)
+* [Follow us on X](https://x.com/sqai_tech)
 
   <img src="https://github.com/user-attachments/assets/211b05c9-3ccd-4f52-b798-f3a7f51330ed" alt="lark group link" width="300" />
 

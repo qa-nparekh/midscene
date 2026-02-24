@@ -26,10 +26,10 @@ import {
 } from '@sqaitech/core/device';
 import { getTmpFile, sleep } from '@sqaitech/core/utils';
 import {
-  MIDSCENE_ADB_PATH,
-  MIDSCENE_ADB_REMOTE_HOST,
-  MIDSCENE_ADB_REMOTE_PORT,
-  MIDSCENE_ANDROID_IME_STRATEGY,
+  SQAI_ADB_PATH,
+  SQAI_ADB_REMOTE_HOST,
+  SQAI_ADB_REMOTE_PORT,
+  SQAI_ANDROID_IME_STRATEGY,
   globalConfigManager,
 } from '@sqaitech/shared/env';
 import type { ElementInfo } from '@sqaitech/shared/extractor';
@@ -329,13 +329,13 @@ export class AndroidDevice implements AbstractInterface {
       try {
         const androidAdbPath =
           this.options?.androidAdbPath ||
-          globalConfigManager.getEnvConfigValue(MIDSCENE_ADB_PATH);
+          globalConfigManager.getEnvConfigValue(SQAI_ADB_PATH);
         const remoteAdbHost =
           this.options?.remoteAdbHost ||
-          globalConfigManager.getEnvConfigValue(MIDSCENE_ADB_REMOTE_HOST);
+          globalConfigManager.getEnvConfigValue(SQAI_ADB_REMOTE_HOST);
         const remoteAdbPort =
           this.options?.remoteAdbPort ||
-          globalConfigManager.getEnvConfigValue(MIDSCENE_ADB_REMOTE_PORT);
+          globalConfigManager.getEnvConfigValue(SQAI_ADB_REMOTE_PORT);
 
         this.adb = await new ADB({
           udid: this.deviceId,
@@ -407,7 +407,7 @@ ${Object.keys(size)
 
             // throw the error again
             throw new Error(
-              `ADB error with device ${deviceId} when calling ${methodName}, please check https://midscenejs.com/integrate-with-android.html#faq : ${error.message}`,
+              `ADB error with device ${deviceId} when calling ${methodName}, please check https://sqai.tech/integrate-with-android.html#faq : ${error.message}`,
               {
                 cause: error,
               },
@@ -986,7 +986,7 @@ ${Object.keys(size)
 
     const IME_STRATEGY =
       (this.options?.imeStrategy ||
-        globalConfigManager.getEnvConfigValue(MIDSCENE_ANDROID_IME_STRATEGY)) ??
+        globalConfigManager.getEnvConfigValue(SQAI_ANDROID_IME_STRATEGY)) ??
       IME_STRATEGY_YADB_FOR_NON_ASCII;
 
     if (IME_STRATEGY === IME_STRATEGY_YADB_FOR_NON_ASCII) {
@@ -1225,7 +1225,7 @@ ${Object.keys(size)
     const isChinese = /[\p{Script=Han}\p{sc=Hani}]/u.test(text);
     const IME_STRATEGY =
       (this.options?.imeStrategy ||
-        globalConfigManager.getEnvConfigValue(MIDSCENE_ANDROID_IME_STRATEGY)) ??
+        globalConfigManager.getEnvConfigValue(SQAI_ANDROID_IME_STRATEGY)) ??
       IME_STRATEGY_YADB_FOR_NON_ASCII;
     const shouldAutoDismissKeyboard =
       options?.autoDismissKeyboard ?? this.options?.autoDismissKeyboard ?? true;

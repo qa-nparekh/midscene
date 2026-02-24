@@ -23,7 +23,7 @@ import type {
 import { ServiceError } from '@/types';
 import {
   type IModelConfig,
-  MIDSCENE_FORCE_DEEP_THINK,
+  SQAI_FORCE_DEEP_THINK,
   globalConfigManager,
 } from '@sqaitech/shared/env';
 import { compositeElementInfoImg, cropByRect } from '@sqaitech/shared/img';
@@ -85,7 +85,7 @@ export default class Service {
     assert(typeof query === 'object', 'query should be an object for locate');
 
     const globalDeepThinkSwitch = globalConfigManager.getEnvConfigInBoolean(
-      MIDSCENE_FORCE_DEEP_THINK,
+      SQAI_FORCE_DEEP_THINK,
     );
     if (globalDeepThinkSwitch) {
       debug('globalDeepThinkSwitch', globalDeepThinkSwitch);
@@ -99,7 +99,7 @@ export default class Service {
 
     if (searchAreaPrompt && !modelFamily) {
       console.warn(
-        'The "deepThink" feature is not supported with multimodal LLM. Please config VL model for Midscene. https://midscenejs.com/model-config',
+        'The "deepThink" feature is not supported with multimodal LLM. Please config VL model for SQAI.',
       );
       searchAreaPrompt = undefined;
     }

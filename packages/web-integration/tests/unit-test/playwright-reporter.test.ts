@@ -86,7 +86,7 @@ describe('MidsceneReporter', () => {
         title: 'Should Not Report',
         annotations: [
           {
-            type: 'MIDSCENE_DUMP_ANNOTATION',
+            type: 'SQAI_DUMP_ANNOTATION',
             description: 'should-not-be-written',
           },
         ],
@@ -110,7 +110,7 @@ describe('MidsceneReporter', () => {
         title: 'My Test Case',
         annotations: [
           { type: 'some-other-annotation', description: 'some-data' },
-          { type: 'MIDSCENE_DUMP_ANNOTATION', description: tempFile },
+          { type: 'SQAI_DUMP_ANNOTATION', description: tempFile },
         ],
       } as any;
       const mockResult: TestResult = {
@@ -150,7 +150,7 @@ describe('MidsceneReporter', () => {
         id: 'test-id-2',
         title: 'Another Test',
         annotations: [
-          { type: 'MIDSCENE_DUMP_ANNOTATION', description: tempFile },
+          { type: 'SQAI_DUMP_ANNOTATION', description: tempFile },
         ],
       } as any;
       const mockResult: TestResult = { status: 'failed' } as any;
@@ -159,7 +159,7 @@ describe('MidsceneReporter', () => {
 
       // The annotation should still exist with the path (no clearing)
       expect(mockTest.annotations).toHaveLength(1);
-      expect(mockTest.annotations[0].type).toBe('MIDSCENE_DUMP_ANNOTATION');
+      expect(mockTest.annotations[0].type).toBe('SQAI_DUMP_ANNOTATION');
       expect(mockTest.annotations[0].description).toBe(tempFile);
 
       // Temp file should be deleted
@@ -192,7 +192,7 @@ describe('MidsceneReporter', () => {
         id: 'test-id-4',
         title: 'A Flaky Test',
         annotations: [
-          { type: 'MIDSCENE_DUMP_ANNOTATION', description: tempFile },
+          { type: 'SQAI_DUMP_ANNOTATION', description: tempFile },
         ],
       } as any;
       const mockResult: TestResult = {
@@ -227,7 +227,7 @@ describe('MidsceneReporter', () => {
         title: 'Missing File Test',
         annotations: [
           {
-            type: 'MIDSCENE_DUMP_ANNOTATION',
+            type: 'SQAI_DUMP_ANNOTATION',
             description: '/tmp/non-existent-file.json',
           },
         ],
@@ -249,3 +249,17 @@ describe('MidsceneReporter', () => {
     });
   });
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
+

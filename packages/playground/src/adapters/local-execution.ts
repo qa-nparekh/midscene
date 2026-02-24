@@ -61,7 +61,7 @@ export class LocalExecutionAdapter extends BasePlaygroundAdapter {
   formatErrorMessage(error: any): string {
     const errorMessage = error?.message || '';
     if (errorMessage.includes('of different extension')) {
-      return 'Conflicting extension detected. Please disable the suspicious plugins and refresh the page. Guide: https://midscenejs.com/quick-experience.html#faq';
+      return 'Conflicting extension detected. Please disable the suspicious plugins and refresh the page. Guide: https://sqai.tech/quick-experience.html#faq';
     }
     return this.formatBasicErrorMessage(error);
   }

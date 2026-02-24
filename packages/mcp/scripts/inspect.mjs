@@ -1,7 +1,7 @@
 import { spawn } from 'node:child_process';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { ALL_ENV_KEYS } from '@midscene/shared/env';
+import { ALL_ENV_KEYS } from '@sqaitech/shared/env';
 import dotenv from 'dotenv';
 
 // Get the directory name in ES module scope

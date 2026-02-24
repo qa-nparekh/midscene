@@ -29,3 +29,17 @@ describeIf('open new tab in bridge mode', () => {
     },
   );
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
+

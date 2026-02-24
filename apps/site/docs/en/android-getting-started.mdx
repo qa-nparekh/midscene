@@ -74,14 +74,14 @@ s4ey59	device usb:34603008X product:cezanne model:M2006J device:cezan transport_
 
 ## Try Playground (no code)
 
-Playground is the fastest way to validate the connection and observe AI-driven steps without writing code. It shares the same core as `@midscene/android`, so anything that works here will behave the same once scripted.
+Playground is the fastest way to validate the connection and observe AI-driven steps without writing code. It shares the same core as `@sqaitech/android`, so anything that works here will behave the same once scripted.
 
 ![](/android-playground.png)
 
 1. Launch the Playground CLI:
 
 ```bash
-npx --yes @midscene/android-playground
+npx --yes @sqaitech/android-playground
 ```
 
 2. Click the gear icon in the Playground window, then paste your API key configuration. Refer back to [Model configuration](./model-config) if you still need credentials.
@@ -98,7 +98,7 @@ Once Playground works, move to a repeatable script with the JavaScript SDK.
 
 ### Step 1. Install dependencies
 
-<PackageManagerTabs command="install @midscene/android --save-dev" />
+<PackageManagerTabs command="install @sqaitech/android --save-dev" />
 
 ### Step 2. Write scripts
 
@@ -109,7 +109,7 @@ import {
   AndroidAgent,
   AndroidDevice,
   getConnectedDevices,
-} from '@midscene/android';
+} from '@sqaitech/android';
 
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 Promise.resolve(
@@ -157,9 +157,9 @@ Use this section when you need to customize device behavior, wire Midscene into 
 Use `defineAction()` for custom gestures and pass them through `customActions`. Midscene will append them to the planner so AI can call your domain-specific action names.
 
 ```typescript
-import { getMidsceneLocationSchema, z } from '@midscene/core';
-import { defineAction } from '@midscene/core/device';
-import { AndroidAgent, AndroidDevice, getConnectedDevices } from '@midscene/android';
+import { getMidsceneLocationSchema, z } from '@sqaitech/core';
+import { defineAction } from '@sqaitech/core/device';
+import { AndroidAgent, AndroidDevice, getConnectedDevices } from '@sqaitech/android';
 
 const ContinuousClick = defineAction({
   name: 'continuousClick',
@@ -203,10 +203,10 @@ import {
   AndroidAgent,
   AndroidDevice,
   getConnectedDevices,
-} from '@midscene/android';
-import type { TestStatus } from '@midscene/core';
-import { ReportMergingTool } from '@midscene/core/report';
-import { sleep } from '@midscene/core/utils';
+} from '@sqaitech/android';
+import type { TestStatus } from '@sqaitech/core';
+import { ReportMergingTool } from '@sqaitech/core/report';
+import { sleep } from '@sqaitech/core/utils';
 import type ADB from 'appium-adb';
 import {
   afterAll,

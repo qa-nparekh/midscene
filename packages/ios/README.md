@@ -1,13 +1,13 @@
-# @midscene/ios
+# @sqaitech/ios
 
-iOS automation library for Midscene, providing AI-powered testing and automation capabilities for iOS simulators and devices.
+iOS automation library for SQAI, providing AI-powered testing and automation capabilities for iOS simulators and devices.
 
 ## Features
 
 - 🎯 **iOS Simulator Support** - Full automation support for iOS simulators
 - 🤖 **AI-Powered Actions** - Intelligent element detection and interaction
 - 📱 **Native iOS Actions** - Home button, app switcher, and iOS-specific gestures
-- 🔧 **Simple API** - Easy-to-use interface similar to @midscene/android
+- 🔧 **Simple API** - Easy-to-use interface similar to @sqaitech/android
 - 📸 **Screenshot Capture** - Built-in screenshot functionality
 - ⌨️ **Text Input** - Support for text input including non-ASCII characters
 - 🎮 **Gesture Support** - Tap, swipe, long press, and custom gestures
@@ -94,9 +94,9 @@ For more advanced setup options and troubleshooting, refer to the official WebDr
 ## Installation
 
 ```bash
-npm install @midscene/ios
+npm install @sqaitech/ios
 # or
-pnpm add @midscene/ios
+pnpm add @sqaitech/ios
 ```
 
 ## Quick Start
@@ -104,7 +104,7 @@ pnpm add @midscene/ios
 ### Basic Usage (Recommended)
 
 ```typescript
-import { agentFromWebDriverAgent } from '@midscene/ios';
+import { agentFromWebDriverAgent } from '@sqaitech/ios';
 
 // Connect to WebDriverAgent (auto-detects device)
 const agent = await agentFromWebDriverAgent();
@@ -121,7 +121,7 @@ await agent.aiAct('tap the go button');
 ### Using Custom WebDriverAgent Configuration
 
 ```typescript
-import { agentFromWebDriverAgent } from '@midscene/ios';
+import { agentFromWebDriverAgent } from '@sqaitech/ios';
 
 // Connect to WebDriverAgent on custom host/port
 const agent = await agentFromWebDriverAgent({
@@ -142,7 +142,7 @@ await agent.aiAct('tap the login button');
 Core device automation class implementing the AbstractInterface.
 
 ```typescript
-import { IOSDevice } from '@midscene/ios';
+import { IOSDevice } from '@sqaitech/ios';
 
 // Create device (deviceId is auto-detected from WebDriverAgent)
 const device = new IOSDevice({
@@ -174,7 +174,7 @@ await device.destroy();
 High-level agent for AI-powered automation.
 
 ```typescript
-import { IOSAgent, agentFromWebDriverAgent } from '@midscene/ios';
+import { IOSAgent, agentFromWebDriverAgent } from '@sqaitech/ios';
 
 // Recommended approach
 const agent = await agentFromWebDriverAgent();
@@ -196,7 +196,7 @@ import {
   ensureSimulatorBooted,
   // Note: getConnectedDevices and getDefaultDevice are deprecated
   // Use agentFromWebDriverAgent() instead
-} from '@midscene/ios';
+} from '@sqaitech/ios';
 
 // Environment check
 const envStatus = await checkIOSEnvironment();
@@ -266,7 +266,7 @@ export MIDSCENE_IOS_SIMULATOR_UDID=your-simulator-udid
 
 ```typescript
 import { describe, it } from 'vitest';
-import { agentFromWebDriverAgent } from '@midscene/ios';
+import { agentFromWebDriverAgent } from '@sqaitech/ios';
 
 describe('iOS App Test', () => {
   it('should login to app', async () => {

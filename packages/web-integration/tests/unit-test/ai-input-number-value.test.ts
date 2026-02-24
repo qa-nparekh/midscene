@@ -55,10 +55,10 @@ const mockPage = {
 } as unknown as AbstractWebPage;
 
 const mockedModelConfig = {
-  MIDSCENE_MODEL_NAME: 'mock-model',
-  MIDSCENE_MODEL_API_KEY: 'mock-api-key',
-  MIDSCENE_MODEL_BASE_URL: 'mock-base-url',
-  MIDSCENE_MODEL_FAMILY: 'qwen3-vl',
+  SQAI_MODEL_NAME: 'mock-model',
+  SQAI_MODEL_API_KEY: 'mock-api-key',
+  SQAI_MODEL_BASE_URL: 'mock-base-url',
+  SQAI_MODEL_FAMILY: 'qwen3-vl',
 };
 
 // Mock task executor
@@ -233,3 +233,17 @@ describe('PageAgent aiInput with number value', () => {
     ).resolves.not.toThrow();
   });
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
+

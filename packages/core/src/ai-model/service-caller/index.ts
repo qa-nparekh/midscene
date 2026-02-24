@@ -2,9 +2,9 @@ import type { AIUsageInfo, DeepThinkOption } from '@/types';
 import type { CodeGenerationChunk, StreamingCallback } from '@/types';
 import {
   type IModelConfig,
-  MIDSCENE_LANGFUSE_DEBUG,
-  MIDSCENE_LANGSMITH_DEBUG,
-  MIDSCENE_MODEL_MAX_TOKENS,
+  SQAI_LANGFUSE_DEBUG,
+  SQAI_LANGSMITH_DEBUG,
+  SQAI_MODEL_MAX_TOKENS,
   OPENAI_MAX_TOKENS,
   type TModelFamily,
   type UITarsModelVersion,
@@ -153,7 +153,7 @@ async function createChatClient({
   // LangSmith wrapper
   if (
     openai &&
-    globalConfigManager.getEnvConfigInBoolean(MIDSCENE_LANGSMITH_DEBUG)
+    globalConfigManager.getEnvConfigInBoolean(SQAI_LANGSMITH_DEBUG)
   ) {
     if (ifInBrowser) {
       throw new Error('langsmith is not supported in browser');
@@ -168,7 +168,7 @@ async function createChatClient({
   // Langfuse wrapper
   if (
     openai &&
-    globalConfigManager.getEnvConfigInBoolean(MIDSCENE_LANGFUSE_DEBUG)
+    globalConfigManager.getEnvConfigInBoolean(SQAI_LANGFUSE_DEBUG)
   ) {
     if (ifInBrowser) {
       throw new Error('langfuse is not supported in browser');
@@ -222,7 +222,7 @@ export async function callAI(
   });
 
   const maxTokens =
-    globalConfigManager.getEnvConfigValueAsNumber(MIDSCENE_MODEL_MAX_TOKENS) ??
+    globalConfigManager.getEnvConfigValueAsNumber(SQAI_MODEL_MAX_TOKENS) ??
     globalConfigManager.getEnvConfigValueAsNumber(OPENAI_MAX_TOKENS);
   const debugCall = getDebug('ai:call');
   const debugProfileStats = getDebug('ai:profile:stats');
@@ -412,7 +412,7 @@ export async function callAI(
           lastError = error as Error;
           if (attempt < maxAttempts) {
             console.warn(
-              `[Midscene] AI call failed (attempt ${attempt}/${maxAttempts}), retrying in ${retryInterval}ms... Error: ${lastError.message}`,
+              `[SQAI] AI call failed (attempt ${attempt}/${maxAttempts}), retrying in ${retryInterval}ms... Error: ${lastError.message}`,
             );
             await new Promise((resolve) => setTimeout(resolve, retryInterval));
           }
@@ -450,7 +450,7 @@ export async function callAI(
   } catch (e: any) {
     console.error(' call AI error', e);
     const newError = new Error(
-      `failed to call ${isStreaming ? 'streaming ' : ''}AI model service (${modelName}): ${e.message}\nTrouble shooting: https://midscenejs.com/model-provider.html`,
+      `failed to call ${isStreaming ? 'streaming ' : ''}AI model service (${modelName}): ${e.message}`,
       {
         cause: e,
       },

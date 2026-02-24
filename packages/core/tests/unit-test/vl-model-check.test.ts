@@ -26,9 +26,9 @@ vi.mock('@sqaitech/core', async () => {
 });
 
 const mockedModelConfig = {
-  MIDSCENE_MODEL_NAME: 'gpt-4o',
-  MIDSCENE_MODEL_API_KEY: 'mock-api-key',
-  MIDSCENE_MODEL_BASE_URL: 'mock-base-url',
+  SQAI_MODEL_NAME: 'gpt-4o',
+  SQAI_MODEL_API_KEY: 'mock-api-key',
+  SQAI_MODEL_BASE_URL: 'mock-base-url',
 };
 
 const createMockInterface = (
@@ -114,10 +114,10 @@ describe('VL Model Check for Different Interface Types', () => {
     const mockPage = createMockInterface('android');
 
     const modelConfigWithVL = {
-      MIDSCENE_MODEL_NAME: 'gemini-2.0-flash-exp',
-      MIDSCENE_MODEL_API_KEY: 'mock-api-key',
-      MIDSCENE_MODEL_BASE_URL: 'mock-base-url',
-      MIDSCENE_MODEL_FAMILY: 'gemini',
+      SQAI_MODEL_NAME: 'gemini-2.0-flash-exp',
+      SQAI_MODEL_API_KEY: 'mock-api-key',
+      SQAI_MODEL_BASE_URL: 'mock-base-url',
+      SQAI_MODEL_FAMILY: 'gemini',
     };
 
     expect(() => {
@@ -128,3 +128,77 @@ describe('VL Model Check for Different Interface Types', () => {
     }).not.toThrow();
   });
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

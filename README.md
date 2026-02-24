@@ -28,7 +28,7 @@ autonomously register the GitHub form in a web browser and pass all field valida
 
 Plus these real-world showcases:
 * [iOS Automation - Meituan coffee order](https://midscenejs.com/showcases#ios)
-* [iOS Automation - Auto-like the first @midscene_ai tweet](https://midscenejs.com/showcases#ios)
+* [iOS Automation - Auto-like the first @sqai_tech tweet](https://midscenejs.com/showcases#ios)
 * [Android Automation - DCar: Xiaomi SU7 specs](https://midscenejs.com/showcases#android)
 * [Android Automation - Booking a hotel for Christmas](https://midscenejs.com/showcases#android)
 * [MCP Integration - Midscene MCP UI prepatch release](https://midscenejs.com/showcases#mcp)
@@ -89,7 +89,7 @@ Read more about [Model Strategy](https://midscenejs.com/model-strategy)
 ## 🤝 Community
 
 * [Discord](https://discord.gg/2JyBHxszE4)
-* [Follow us on X](https://x.com/midscene_ai)
+* [Follow us on X](https://x.com/sqai_tech)
 * [Lark Group(飞书交流群)](https://applink.larkoffice.com/client/chat/chatter/add_by_link?link_token=693v0991-a6bb-4b44-b2e1-365ca0d199ba)
 
 ## 🌟 Awesome Midscene

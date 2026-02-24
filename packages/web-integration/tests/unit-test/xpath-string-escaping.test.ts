@@ -47,3 +47,17 @@ describe('XPath String Escaping', () => {
     expect(() => new Function(safeExpression)).not.toThrow();
   });
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -6,7 +6,7 @@ export const unescapeContent = antiEscapeScriptTag;
 export function parseImageScripts(html: string): Record<string, string> {
   const imageMap: Record<string, string> = {};
   const regex =
-    /<script type="midscene-image" data-id="([^"]+)">([\s\S]*?)<\/script>/g;
+    /<script type="sqai-image" data-id="([^"]+)">([\s\S]*?)<\/script>/g;
 
   for (const match of html.matchAll(regex)) {
     const [, id, content] = match;
@@ -17,7 +17,7 @@ export function parseImageScripts(html: string): Record<string, string> {
 }
 
 export function parseDumpScript(html: string): string {
-  const regex = /<script type="midscene_web_dump"[^>]*>([\s\S]*?)<\/script>/;
+  const regex = /<script type="sqai_web_dump"[^>]*>([\s\S]*?)<\/script>/;
   const match = regex.exec(html);
 
   if (!match) {
@@ -30,7 +30,7 @@ export function parseDumpScript(html: string): string {
 export function parseDumpScriptAttributes(
   html: string,
 ): Record<string, string> {
-  const regex = /<script type="midscene_web_dump"([^>]*)>/;
+  const regex = /<script type="sqai_web_dump"([^>]*)>/;
   const match = regex.exec(html);
 
   if (!match) {
@@ -55,7 +55,7 @@ export function generateImageScriptTag(id: string, data: string): string {
   // Do not use template string here, will cause bundle error with <script
   return (
     // biome-ignore lint/style/useTemplate: <explanation>
-    '<script type="midscene-image" data-id="' +
+    '<script type="sqai-image" data-id="' +
     id +
     '">' +
     escapeContent(data) +
@@ -82,7 +82,7 @@ export function generateDumpScriptTag(
   // Do not use template string here, will cause bundle error with <script
   return (
     // biome-ignore lint/style/useTemplate: <explanation>
-    '<script type="midscene_web_dump"' +
+    '<script type="sqai_web_dump"' +
     attrString +
     '>' +
     escapeContent(json) +

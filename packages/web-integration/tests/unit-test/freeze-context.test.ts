@@ -23,9 +23,9 @@ const mockPage = {
 } as unknown as WebPage;
 
 const mockedModelConfig = {
-  MIDSCENE_MODEL_NAME: 'mock-model',
-  MIDSCENE_MODEL_API_KEY: 'mock-api-key',
-  MIDSCENE_MODEL_BASE_URL: 'mock-base-url',
+  SQAI_MODEL_NAME: 'mock-model',
+  SQAI_MODEL_API_KEY: 'mock-api-key',
+  SQAI_MODEL_BASE_URL: 'mock-base-url',
 };
 
 describe('PageAgent freeze/unfreeze page context', () => {
@@ -354,3 +354,17 @@ describe('PageAgent freeze/unfreeze page context', () => {
     });
   });
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
+

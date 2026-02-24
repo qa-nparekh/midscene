@@ -23,7 +23,7 @@ import { PackageManagerTabs } from '@theme';
 
 ### 第一步：安装依赖
 
-<PackageManagerTabs command="install @midscene/web playwright @playwright/test tsx --save-dev" />
+<PackageManagerTabs command="install @sqaitech/web playwright @playwright/test tsx --save-dev" />
 
 ### 第二步：编写脚本
 
@@ -31,7 +31,7 @@ import { PackageManagerTabs } from '@theme';
 
 ```typescript
 import { chromium } from 'playwright';
-import { PlaywrightAgent } from '@midscene/web/playwright';
+import { PlaywrightAgent } from '@sqaitech/web/playwright';
 import 'dotenv/config'; // read environment variables from .env file
 
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
@@ -138,7 +138,7 @@ npx tsx demo.ts
 
 新增依赖
 
-<PackageManagerTabs command="install @midscene/web --save-dev" />
+<PackageManagerTabs command="install @sqaitech/web --save-dev" />
 
 更新 playwright.config.ts
 
@@ -146,7 +146,7 @@ npx tsx demo.ts
 export default defineConfig({
   testDir: './e2e',
 + timeout: 90 * 1000,
-+ reporter: [["list"], ["@midscene/web/playwright-reporter", { type: "merged" }]], // type 可选, 默认值为 "merged"，表示多个测试用例生成一个报告，可选值为 "separate"，表示为每个测试用例一个报告
++ reporter: [["list"], ["@sqaitech/web/playwright-reporter", { type: "merged" }]], // type 可选, 默认值为 "merged"，表示多个测试用例生成一个报告，可选值为 "separate"，表示为每个测试用例一个报告
 });
 ```
 
@@ -158,8 +158,8 @@ export default defineConfig({
 
 ```typescript
 import { test as base } from '@playwright/test';
-import type { PlayWrightAiFixtureType } from '@midscene/web/playwright';
-import { PlaywrightAiFixture } from '@midscene/web/playwright';
+import type { PlayWrightAiFixtureType } from '@sqaitech/web/playwright';
+import { PlaywrightAiFixture } from '@sqaitech/web/playwright';
 
 export const test = base.extend<PlayWrightAiFixtureType>(
   PlaywrightAiFixture({
@@ -277,7 +277,7 @@ const mid = new PlaywrightAgent(page, {
 
 #### 前置依赖
 
-<PackageManagerTabs command="install playwright @playwright/test @midscene/web --save-dev" />
+<PackageManagerTabs command="install playwright @playwright/test @sqaitech/web --save-dev" />
 
 <GetCdpUrl />
 
@@ -285,7 +285,7 @@ const mid = new PlaywrightAgent(page, {
 
 ```typescript
 import { chromium } from 'playwright';
-import { PlaywrightAgent } from '@midscene/web/playwright';
+import { PlaywrightAgent } from '@sqaitech/web/playwright';
 
 // 来自远程浏览器服务的 CDP WebSocket URL
 const cdpWsUrl = 'ws://your-remote-browser.com/devtools/browser/your-session-id';
@@ -314,8 +314,8 @@ await browser.close();
 使用 `customActions` 选项，结合 `defineAction` 定义的自定义交互动作，可以扩展 Agent 的动作空间。这些动作会追加在内置动作之后，方便 Agent 在规划阶段调用。
 
 ```typescript
-import { getMidsceneLocationSchema, z } from '@midscene/core';
-import { defineAction } from '@midscene/core/device';
+import { getMidsceneLocationSchema, z } from '@sqaitech/core';
+import { defineAction } from '@sqaitech/core/device';
 
 const ContinuousClick = defineAction({
   name: 'continuousClick',

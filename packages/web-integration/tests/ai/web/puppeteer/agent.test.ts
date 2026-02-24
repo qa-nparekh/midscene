@@ -181,3 +181,17 @@ describe('puppeteer integration', () => {
     await agent.aiAssert('the element A is on the right of the element B');
   });
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
+

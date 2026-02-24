@@ -6,11 +6,11 @@ import {
 } from '../../../src/env/parse-model-config';
 import { UITarsModelVersion } from '../../../src/env/types';
 import {
-  MIDSCENE_USE_DOUBAO_VISION,
-  MIDSCENE_USE_GEMINI,
-  MIDSCENE_USE_QWEN3_VL,
-  MIDSCENE_USE_QWEN_VL,
-  MIDSCENE_USE_VLM_UI_TARS,
+  SQAI_USE_DOUBAO_VISION,
+  SQAI_USE_GEMINI,
+  SQAI_USE_QWEN3_VL,
+  SQAI_USE_QWEN_VL,
+  SQAI_USE_VLM_UI_TARS,
 } from '../../../src/env/types';
 
 describe('getUITarsModelVersion', () => {
@@ -50,7 +50,7 @@ describe('validateModelFamily', () => {
 
   it('should throw on invalid value', () => {
     expect(() => validateModelFamily('invalid' as any)).toThrow(
-      'Invalid MIDSCENE_MODEL_FAMILY value: invalid',
+      'Invalid SQAI_MODEL_FAMILY value: invalid',
     );
   });
 });
@@ -61,35 +61,189 @@ describe('legacyConfigToModelFamily', () => {
   });
 
   it('should map individual legacy flags to model family', () => {
-    expect(legacyConfigToModelFamily({ [MIDSCENE_USE_QWEN3_VL]: '1' })).toBe(
+    expect(legacyConfigToModelFamily({ [SQAI_USE_QWEN3_VL]: '1' })).toBe(
       'qwen3-vl',
     );
-    expect(legacyConfigToModelFamily({ [MIDSCENE_USE_QWEN_VL]: '1' })).toBe(
+    expect(legacyConfigToModelFamily({ [SQAI_USE_QWEN_VL]: '1' })).toBe(
       'qwen2.5-vl',
     );
     expect(
-      legacyConfigToModelFamily({ [MIDSCENE_USE_DOUBAO_VISION]: '1' }),
+      legacyConfigToModelFamily({ [SQAI_USE_DOUBAO_VISION]: '1' }),
     ).toBe('doubao-vision');
-    expect(legacyConfigToModelFamily({ [MIDSCENE_USE_GEMINI]: '1' })).toBe(
+    expect(legacyConfigToModelFamily({ [SQAI_USE_GEMINI]: '1' })).toBe(
       'gemini',
     );
   });
 
   it('should handle UI-TARS legacy flags', () => {
-    expect(legacyConfigToModelFamily({ [MIDSCENE_USE_VLM_UI_TARS]: '1' })).toBe(
+    expect(legacyConfigToModelFamily({ [SQAI_USE_VLM_UI_TARS]: '1' })).toBe(
       'vlm-ui-tars',
     );
     expect(
-      legacyConfigToModelFamily({ [MIDSCENE_USE_VLM_UI_TARS]: 'DOUBAO' }),
+      legacyConfigToModelFamily({ [SQAI_USE_VLM_UI_TARS]: 'DOUBAO' }),
     ).toBe('vlm-ui-tars-doubao-1.5');
   });
 
   it('should throw when multiple legacy flags enabled', () => {
     expect(() =>
       legacyConfigToModelFamily({
-        [MIDSCENE_USE_QWEN3_VL]: '1',
-        [MIDSCENE_USE_QWEN_VL]: '1',
+        [SQAI_USE_QWEN3_VL]: '1',
+        [SQAI_USE_QWEN_VL]: '1',
       }),
     ).toThrow('Only one vision mode can be enabled at a time.');
   });
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

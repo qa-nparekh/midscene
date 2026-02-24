@@ -1,7 +1,7 @@
 import { describe, expect, it } from 'vitest';
 import {
-  MIDSCENE_MODEL_API_KEY,
-  MIDSCENE_MODEL_BASE_URL,
+  SQAI_MODEL_API_KEY,
+  SQAI_MODEL_BASE_URL,
 } from '../../../src/env';
 import { DEFAULT_MODEL_CONFIG_KEYS } from '../../../src/env/constants';
 import { parseOpenaiSdkConfig } from '../../../src/env/parse-model-config';
@@ -21,8 +21,8 @@ describe('decideOpenaiSdkConfig', () => {
     const result = parseOpenaiSdkConfig({
       keys: DEFAULT_MODEL_CONFIG_KEYS,
       provider: {
-        [MIDSCENE_MODEL_API_KEY]: 'mock-key',
-        [MIDSCENE_MODEL_BASE_URL]: 'mock-url',
+        [SQAI_MODEL_API_KEY]: 'mock-key',
+        [SQAI_MODEL_BASE_URL]: 'mock-url',
       },
     });
     expect(result).toEqual(
@@ -33,3 +33,157 @@ describe('decideOpenaiSdkConfig', () => {
     );
   });
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

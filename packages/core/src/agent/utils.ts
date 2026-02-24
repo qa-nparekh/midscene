@@ -9,7 +9,7 @@ import type {
 } from '@/types';
 import { uploadTestInfoToServer } from '@/utils';
 import {
-  MIDSCENE_REPORT_TAG_NAME,
+  SQAI_REPORT_TAG_NAME,
   globalConfigManager,
 } from '@sqaitech/shared/env';
 import { generateElementByPosition } from '@sqaitech/shared/extractor';
@@ -56,7 +56,7 @@ export async function commonContextParser(
 
 export function getReportFileName(tag = 'web') {
   const reportTagName = globalConfigManager.getEnvConfigValue(
-    MIDSCENE_REPORT_TAG_NAME,
+    SQAI_REPORT_TAG_NAME,
   );
   const dateTimeInFileName = dayjs().format('YYYY-MM-DD_HH-mm-ss');
   // ensure uniqueness at the same time
@@ -65,7 +65,7 @@ export function getReportFileName(tag = 'web') {
 }
 
 export function printReportMsg(filepath: string) {
-  logMsg(`Midscene - report file updated: ${filepath}`);
+  logMsg(`SQAI - report file updated: ${filepath}`);
 }
 
 /**
@@ -106,7 +106,7 @@ export function generateCacheId(fileName?: string): string {
   if (!taskFile) {
     taskFile = uuid();
     console.warn(
-      'Midscene - using random UUID for cache id. Cache may be invalid.',
+      'SQAI - using random UUID for cache id. Cache may be invalid.',
     );
   }
 

@@ -150,7 +150,7 @@ const main = async () => {
     (global as any).scrcpyServerPort = availableScrcpyPort;
 
     console.log('');
-    console.log('✨ Midscene Android Playground is ready!');
+    console.log('✨ SQAI Android Playground is ready!');
     console.log(`🎮 Playground: http://localhost:${playgroundServer.port}`);
     console.log(`📱 Device: ${selectedDeviceId}`);
     console.log(`🔑 Generated Server ID: ${playgroundServer.id}`);

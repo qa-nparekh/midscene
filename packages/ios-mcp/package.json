@@ -1,6 +1,6 @@
 {
   "name": "@sqaitech/ios-mcp",
-  "version": "0.5.0",
+  "version": "1.2.1",
   "description": "SQAI MCP Server for iOS automation",
   "bin": "dist/index.js",
   "files": ["dist"],

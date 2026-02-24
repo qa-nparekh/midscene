@@ -267,7 +267,7 @@ ${exampleThoughtLine}  "log": "Click the login button",
 For example, if the instruction is to find out every title in the screenshot, the return value should be:
 
 {
-${exampleThoughtLineWithNote}  "note": "The titles in the current screenshot are: 'Hello, world!', 'Midscene 101', 'Model strategy'",
+${exampleThoughtLineWithNote}  "note": "The titles in the current screenshot are: 'Hello, world!', 'SQAI 101', 'Model strategy'",
   "log": "Scroll to find more titles",
   "action": {
     "type": "Scroll",

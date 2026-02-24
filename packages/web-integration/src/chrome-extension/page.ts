@@ -294,7 +294,7 @@ export default class ChromeExtensionProxyPage implements AbstractInterface {
     const expression = () => {
       const tree = (
         window as any
-      ).midscene_element_inspector.webExtractNodeTree();
+      ).sqai_element_inspector.webExtractNodeTree();
 
       return {
         tree,
@@ -383,7 +383,7 @@ export default class ChromeExtensionProxyPage implements AbstractInterface {
     });
 
     const result = await this.sendCommandToDebugger('Runtime.evaluate', {
-      expression: `window.midscene_element_inspector.getXpathsByPoint({left: ${point.left}, top: ${point.top}}, ${isOrderSensitive})`,
+      expression: `window.sqai_element_inspector.getXpathsByPoint({left: ${point.left}, top: ${point.top}}, ${isOrderSensitive})`,
       returnByValue: true,
     });
     return result.result.value;
@@ -400,7 +400,7 @@ export default class ChromeExtensionProxyPage implements AbstractInterface {
       expression: script,
     });
     const result = await this.sendCommandToDebugger('Runtime.evaluate', {
-      expression: `window.midscene_element_inspector.getElementInfoByXpath(${JSON.stringify(xpath)})`,
+      expression: `window.sqai_element_inspector.getElementInfoByXpath(${JSON.stringify(xpath)})`,
       returnByValue: true,
     });
     return result.result.value;

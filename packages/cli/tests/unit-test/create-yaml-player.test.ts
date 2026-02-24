@@ -6,7 +6,7 @@ import { beforeEach, describe, expect, test, vi } from 'vitest';
 
 // Mock the global config manager to control environment variables
 vi.mock('@sqaitech/shared/env', () => ({
-  MIDSCENE_CACHE: 'MIDSCENE_CACHE',
+  SQAI_CACHE: 'SQAI_CACHE',
   globalConfigManager: {
     getEnvConfigInBoolean: vi.fn(),
   },
@@ -256,7 +256,7 @@ describe('create-yaml-player', () => {
   });
 
   describe('Cache configuration - Legacy compatibility mode', () => {
-    test('should enable cache when MIDSCENE_CACHE env var is true (legacy mode)', () => {
+    test('should enable cache when SQAI_CACHE env var is true (legacy mode)', () => {
       // Mock environment variable to enable legacy cache mode
       vi.mocked(globalConfigManager.getEnvConfigInBoolean).mockReturnValue(
         true,
@@ -269,7 +269,7 @@ describe('create-yaml-player', () => {
 
       // Verify that environment variable was checked
       expect(globalConfigManager.getEnvConfigInBoolean).toHaveBeenCalledWith(
-        'MIDSCENE_CACHE',
+        'SQAI_CACHE',
       );
 
       // Verify that cache is enabled with the file name as ID
@@ -278,7 +278,7 @@ describe('create-yaml-player', () => {
       });
     });
 
-    test('should not enable cache when MIDSCENE_CACHE env var is false (legacy mode)', () => {
+    test('should not enable cache when SQAI_CACHE env var is false (legacy mode)', () => {
       // Mock environment variable to disable legacy cache mode
       vi.mocked(globalConfigManager.getEnvConfigInBoolean).mockReturnValue(
         false,
@@ -290,7 +290,7 @@ describe('create-yaml-player', () => {
 
       // Verify that environment variable was checked
       expect(globalConfigManager.getEnvConfigInBoolean).toHaveBeenCalledWith(
-        'MIDSCENE_CACHE',
+        'SQAI_CACHE',
       );
 
       // Verify that cache is disabled (undefined)
@@ -1066,3 +1066,4 @@ describe('create-yaml-player', () => {
     });
   });
 });
+

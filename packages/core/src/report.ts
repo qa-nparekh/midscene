@@ -17,7 +17,7 @@ export class ReportMergingTool {
     // Regular expression to match content between script tags
     // Requires newline before <script and </script>
     const scriptRegex =
-      /\n<script type="midscene_web_dump" type="application\/json"[^>]*>([\s\S]*?)\n<\/script>/;
+      /\n<script type="sqai_web_dump" type="application\/json"[^>]*>([\s\S]*?)\n<\/script>/;
 
     const fileContent = fs.readFileSync(filePath, 'utf-8');
     const match = scriptRegex.exec(fileContent);
@@ -26,7 +26,7 @@ export class ReportMergingTool {
   }
 
   public mergeReports(
-    reportFileName: 'AUTO' | string = 'AUTO', // user custom report filename, save into midscene report dir if undefined
+    reportFileName: 'AUTO' | string = 'AUTO', // user custom report filename, save into SQAI report dir if undefined
     opts?: {
       rmOriginalReports?: boolean; // whether to remove origin report files
       overwrite?: boolean; // if output filepath specified, throw an error when overwrite = true, otherwise overwrite the file

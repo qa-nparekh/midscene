@@ -158,7 +158,7 @@ export abstract class BasePlaygroundAdapter {
           return (
             !path.includes('center') &&
             !path.includes('rect') &&
-            !path.includes('midscene_location_field_flag')
+            !path.includes('sqai_location_field_flag')
           );
         })
         .map((err) => {

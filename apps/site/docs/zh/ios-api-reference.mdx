@@ -26,7 +26,7 @@
 ### 导入
 
 ```ts
-import { IOSDevice } from '@midscene/ios';
+import { IOSDevice } from '@sqaitech/ios';
 ```
 
 ### 构造函数
@@ -56,7 +56,7 @@ const device = new IOSDevice({
 #### 快速开始
 
 ```ts
-import { IOSAgent, IOSDevice } from '@midscene/ios';
+import { IOSAgent, IOSDevice } from '@sqaitech/ios';
 
 const device = new IOSDevice({ wdaHost: 'localhost', wdaPort: 8100 });
 await device.connect();
@@ -90,7 +90,7 @@ await device.connect();
 ### 导入
 
 ```ts
-import { IOSAgent } from '@midscene/ios';
+import { IOSAgent } from '@sqaitech/ios';
 ```
 
 ### 构造函数
@@ -177,7 +177,7 @@ function agentFromWebDriverAgent(
 - `opts?: PageAgentOpt & IOSDeviceOpt` —— 在一个对象中同时传入通用 Agent 选项与 [`IOSDevice`](#iosdevice) 的配置。
 
 ```ts
-import { agentFromWebDriverAgent } from '@midscene/ios';
+import { agentFromWebDriverAgent } from '@sqaitech/ios';
 
 const agent = await agentFromWebDriverAgent({
   wdaHost: 'localhost',
@@ -191,9 +191,9 @@ const agent = await agentFromWebDriverAgent({
 通过 `defineAction` 创建处理器并传入 `customActions`，即可扩展 Agent 的动作空间。这些动作会追加在内置动作之后，可在规划阶段被调用。
 
 ```ts
-import { getMidsceneLocationSchema, z } from '@midscene/core';
-import { defineAction } from '@midscene/core/device';
-import { agentFromWebDriverAgent } from '@midscene/ios';
+import { getMidsceneLocationSchema, z } from '@sqaitech/core';
+import { defineAction } from '@sqaitech/core/device';
+import { agentFromWebDriverAgent } from '@sqaitech/ios';
 
 const ContinuousClick = defineAction({
   name: 'continuousClick',

@@ -129,7 +129,7 @@ export function playgroundForAgent(agent: Agent) {
       }
 
       if (verbose) {
-        console.log('🚀 Starting Midscene Playground...');
+        console.log('🚀 Starting SQAI Playground...');
         console.log(`📱 Agent: ${agent.constructor.name}`);
         console.log(`🖥️ Page: ${webPage.constructor.name}`);
         console.log(`🌐 Port: ${port}`);
@@ -169,7 +169,7 @@ export function playgroundForAgent(agent: Agent) {
         host: '127.0.0.1',
         close: async () => {
           if (verbose) {
-            console.log('🛑 Shutting down Midscene Playground...');
+            console.log('🛑 Shutting down SQAI Playground...');
           }
 
           try {

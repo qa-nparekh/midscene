@@ -6,7 +6,7 @@ import {
 import type { InfoListItem, StorageProvider } from '../../../types';
 
 // Database configuration
-const DB_NAME = 'midscene_playground';
+const DB_NAME = 'sqai_playground';
 const DB_VERSION = 1;
 const MESSAGES_STORE = 'playground_messages';
 const RESULTS_STORE = 'playground_results';

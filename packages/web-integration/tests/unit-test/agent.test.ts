@@ -58,10 +58,10 @@ const mockPage = {
 } as unknown as AbstractWebPage;
 
 const mockedModelConfig = {
-  MIDSCENE_MODEL_NAME: 'mock-model',
-  MIDSCENE_MODEL_API_KEY: 'mock-api-key',
-  MIDSCENE_MODEL_BASE_URL: 'mock-base-url',
-  MIDSCENE_MODEL_FAMILY: 'qwen3-vl',
+  SQAI_MODEL_NAME: 'mock-model',
+  SQAI_MODEL_API_KEY: 'mock-api-key',
+  SQAI_MODEL_BASE_URL: 'mock-base-url',
+  SQAI_MODEL_FAMILY: 'qwen3-vl',
 };
 
 const modelConfigCalcByMockedModelConfig = {
@@ -499,7 +499,7 @@ describe('PageAgent cache configuration', () => {
   });
 
   describe('backward compatibility with cacheId', () => {
-    it('should work with cacheId when MIDSCENE_CACHE=true', () => {
+    it('should work with cacheId when SQAI_CACHE=true', () => {
       const globalConfigSpy = vi
         .spyOn(globalConfigManager, 'getEnvConfigInBoolean')
         .mockReturnValue(true);
@@ -517,7 +517,7 @@ describe('PageAgent cache configuration', () => {
       globalConfigSpy.mockRestore();
     });
 
-    it('should not create cache with cacheId when MIDSCENE_CACHE=false', () => {
+    it('should not create cache with cacheId when SQAI_CACHE=false', () => {
       const globalConfigSpy = vi
         .spyOn(globalConfigManager, 'getEnvConfigInBoolean')
         .mockReturnValue(false);
@@ -600,3 +600,17 @@ describe('PageAgent cache configuration', () => {
     });
   });
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
+

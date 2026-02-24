@@ -191,7 +191,7 @@ const main = async () => {
     await playgroundServer.launch(availablePlaygroundPort);
 
     console.log('');
-    console.log('✨ Midscene iOS Playground is ready!');
+    console.log('✨ SQAI iOS Playground is ready!');
     console.log(`🎮 Playground: http://localhost:${playgroundServer.port}`);
     console.log('📱 Device: WebDriverAgent Connected');
     console.log(`🔧 WebDriverAgent: ${wdaConfig.host}:${wdaConfig.port}`);

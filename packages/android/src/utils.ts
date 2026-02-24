@@ -16,7 +16,7 @@ export async function getConnectedDevices(): Promise<Device[]> {
   } catch (error: any) {
     console.error('Failed to get device list:', error);
     throw new Error(
-      `Unable to get connected Android device list, please check https://midscenejs.com/integrate-with-android.html#faq : ${error.message}`,
+      `Unable to get connected Android device list, please check https://sqai.tech/integrate-with-android.html#faq : ${error.message}`,
       {
         cause: error,
       },

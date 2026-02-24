@@ -21,7 +21,7 @@ import { PackageManagerTabs } from '@theme';
 
 ### 第一步：安装依赖
 
-<PackageManagerTabs command="install @midscene/web puppeteer tsx --save-dev" />
+<PackageManagerTabs command="install @sqaitech/web puppeteer tsx --save-dev" />
 
 ### 第二步：编写脚本
 
@@ -29,7 +29,7 @@ import { PackageManagerTabs } from '@theme';
 
 ```typescript title="./demo.ts"
 import puppeteer from "puppeteer";
-import { PuppeteerAgent } from "@midscene/web/puppeteer";
+import { PuppeteerAgent } from "@sqaitech/web/puppeteer";
 
 const sleep = (ms: number) => new Promise((r) => setTimeout(r, ms));
 Promise.resolve(
@@ -130,7 +130,7 @@ const mid = new PuppeteerAgent(page, {
 
 #### 前置依赖
 
-<PackageManagerTabs command="install puppeteer @midscene/web --save-dev" />
+<PackageManagerTabs command="install puppeteer @sqaitech/web --save-dev" />
 
 <GetCdpUrl />
 
@@ -138,7 +138,7 @@ const mid = new PuppeteerAgent(page, {
 
 ```typescript
 import puppeteer from 'puppeteer';
-import { PuppeteerAgent } from '@midscene/web/puppeteer';
+import { PuppeteerAgent } from '@sqaitech/web/puppeteer';
 
 // 假设你已经有了一个 CDP WebSocket URL
 const cdpWsUrl = 'ws://your-remote-browser.com/devtools/browser/your-session-id';
@@ -170,8 +170,8 @@ await browser.disconnect();
 可以使用 `customActions` 选项，通过 `defineAction` 来扩展 Agent 的动作空间。传入该选项后，这些动作会追加到内置动作中，Agent 在规划（Planning）时就可以调用它们。
 
 ```typescript
-import { getMidsceneLocationSchema, z } from '@midscene/core';
-import { defineAction } from '@midscene/core/device';
+import { getMidsceneLocationSchema, z } from '@sqaitech/core';
+import { defineAction } from '@sqaitech/core/device';
 
 const ContinuousClick = defineAction({
   name: 'continuousClick',

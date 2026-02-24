@@ -32,7 +32,7 @@ The report includes detailed interaction information such as screenshots, operat
 
 ### Browser Bridge Mode
 
-`@midscene/web-bridge-mcp` exposes the [Chrome extension Bridge Mode](./bridge-mode) as an MCP service.
+`@sqaitech/web-bridge-mcp` exposes the [Chrome extension Bridge Mode](./bridge-mode) as an MCP service.
 
 **Environment preparation**
 
@@ -40,14 +40,14 @@ Refer to [Chrome Bridge Mode](./bridge-mode) to ensure the browser extension sta
 
 **Configuration**
 
-Add the Midscene Web Bridge MCP server (`@midscene/web-bridge-mcp`) in your MCP client. For model configuration parameters, see [Model strategy](./model-strategy).
+Add the Midscene Web Bridge MCP server (`@sqaitech/web-bridge-mcp`) in your MCP client. For model configuration parameters, see [Model strategy](./model-strategy).
 
 ```json
 {
   "mcpServers": {
     "midscene-web": {
       "command": "npx",
-      "args": ["-y", "@midscene/web-bridge-mcp"],
+      "args": ["-y", "@sqaitech/web-bridge-mcp"],
       "env": {
         "MIDSCENE_MODEL_BASE_URL": "replace with your model service URL",
         "MIDSCENE_MODEL_API_KEY": "replace with your API Key",
@@ -69,14 +69,14 @@ Add the Midscene Web Bridge MCP server (`@midscene/web-bridge-mcp`) in your MCP 
 
 **Configuration**
 
-Add the Midscene iOS MCP server (`@midscene/ios-mcp`) in your MCP client. For model configuration parameters, see [Model strategy](./model-strategy).
+Add the Midscene iOS MCP server (`@sqaitech/ios-mcp`) in your MCP client. For model configuration parameters, see [Model strategy](./model-strategy).
 
 ```json
 {
   "mcpServers": {
     "midscene-ios": {
       "command": "npx",
-      "args": ["-y", "@midscene/ios-mcp"],
+      "args": ["-y", "@sqaitech/ios-mcp"],
       "env": {
         "MIDSCENE_MODEL_BASE_URL": "replace with your model service URL",
         "MIDSCENE_MODEL_API_KEY": "replace with your API Key",
@@ -99,14 +99,14 @@ Add the Midscene iOS MCP server (`@midscene/ios-mcp`) in your MCP client. For mo
 
 **Configuration**
 
-Add the Midscene Android MCP server (`@midscene/android-mcp`) in your MCP client. For model configuration parameters, see [Model strategy](./model-strategy).
+Add the Midscene Android MCP server (`@sqaitech/android-mcp`) in your MCP client. For model configuration parameters, see [Model strategy](./model-strategy).
 
 ```json
 {
   "mcpServers": {
     "midscene-android": {
       "command": "npx",
-      "args": ["-y", "@midscene/android-mcp"],
+      "args": ["-y", "@sqaitech/android-mcp"],
       "env": {
         "MIDSCENE_MODEL_BASE_URL": "replace with your model service URL",
         "MIDSCENE_MODEL_API_KEY": "replace with your API Key",
@@ -130,8 +130,8 @@ The tools provided by `mcpKitForAgent` include screenshots and every Action in t
 The `mcpKitForAgent` function takes an Agent instance and returns an object containing description and tools list:
 
 ```typescript
-import { mcpKitForAgent } from '@midscene/web/mcp-server';
-import { Agent } from '@midscene/core/agent';
+import { mcpKitForAgent } from '@sqaitech/web/mcp-server';
+import { Agent } from '@sqaitech/core/agent';
 
 const agent = new Agent();
 const { description, tools } = await mcpKitForAgent(agent);
@@ -146,17 +146,17 @@ Each platform provides its corresponding `mcpKitForAgent` function:
 
 **Web platform**
 ```typescript
-import { mcpKitForAgent } from '@midscene/web/mcp-server';
+import { mcpKitForAgent } from '@sqaitech/web/mcp-server';
 ```
 
 **iOS platform**
 ```typescript
-import { mcpKitForAgent } from '@midscene/ios/mcp-server';
+import { mcpKitForAgent } from '@sqaitech/ios/mcp-server';
 ```
 
 **Android platform**
 ```typescript
-import { mcpKitForAgent } from '@midscene/android/mcp-server';
+import { mcpKitForAgent } from '@sqaitech/android/mcp-server';
 ```
 
 ### Integrate into custom MCP service
@@ -165,7 +165,7 @@ You can integrate the obtained tools into your own MCP service:
 
 ```typescript
 import { McpServer } from '@modelcontextprotocol/sdk/server/mcp.js';
-import { mcpKitForAgent } from '@midscene/web/mcp-server';
+import { mcpKitForAgent } from '@sqaitech/web/mcp-server';
 
 const agent = new Agent();
 const { description, tools } = await mcpKitForAgent(agent);

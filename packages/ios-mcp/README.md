@@ -1,3 +1,3 @@
-# @midscene/ios-mcp
+# @sqaitech/ios-mcp
 
 docs: https://midscenejs.com/mcp.html

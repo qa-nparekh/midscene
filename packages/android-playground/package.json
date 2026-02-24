@@ -1,6 +1,6 @@
 {
   "name": "@sqaitech/android-playground",
-  "version": "0.5.0",
+  "version": "1.2.1",
   "description": "Android playground for SQAI",
   "main": "./dist/lib/index.js",
   "types": "./dist/types/index.d.ts",

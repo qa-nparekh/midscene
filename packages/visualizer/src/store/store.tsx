@@ -2,11 +2,11 @@ import * as Z from 'zustand';
 
 const { create } = Z;
 
-const AUTO_ZOOM_KEY = 'midscene-auto-zoom';
-const BACKGROUND_VISIBLE_KEY = 'midscene-background-visible';
-const ELEMENTS_VISIBLE_KEY = 'midscene-elements-visible';
-const MODEL_CALL_DETAILS_KEY = 'midscene-model-call-details';
-const DARK_MODE_KEY = 'midscene-dark-mode';
+const AUTO_ZOOM_KEY = 'sqai-auto-zoom';
+const BACKGROUND_VISIBLE_KEY = 'sqai-background-visible';
+const ELEMENTS_VISIBLE_KEY = 'sqai-elements-visible';
+const MODEL_CALL_DETAILS_KEY = 'sqai-model-call-details';
+const DARK_MODE_KEY = 'sqai-dark-mode';
 
 const parseBooleanParam = (value: string | null): boolean | undefined => {
   if (value === null) {
@@ -97,18 +97,18 @@ export const useGlobalPreference = create<{
   };
 });
 
-const CONFIG_KEY = 'midscene-env-config';
-const SERVICE_MODE_KEY = 'midscene-service-mode';
-const TRACKING_ACTIVE_TAB_KEY = 'midscene-tracking-active-tab';
-const DEEP_THINK_KEY = 'midscene-deep-think';
-const SCREENSHOT_INCLUDED_KEY = 'midscene-screenshot-included';
-const DOM_INCLUDED_KEY = 'midscene-dom-included';
+const CONFIG_KEY = 'sqai-env-config';
+const SERVICE_MODE_KEY = 'sqai-service-mode';
+const TRACKING_ACTIVE_TAB_KEY = 'sqai-tracking-active-tab';
+const DEEP_THINK_KEY = 'sqai-deep-think';
+const SCREENSHOT_INCLUDED_KEY = 'sqai-screenshot-included';
+const DOM_INCLUDED_KEY = 'sqai-dom-included';
 
 // Device-specific configuration keys
-const IME_STRATEGY_KEY = 'midscene-ime-strategy';
-const AUTO_DISMISS_KEYBOARD_KEY = 'midscene-auto-dismiss-keyboard';
-const KEYBOARD_DISMISS_STRATEGY_KEY = 'midscene-keyboard-dismiss-strategy';
-const ALWAYS_REFRESH_SCREEN_INFO_KEY = 'midscene-always-refresh-screen-info';
+const IME_STRATEGY_KEY = 'sqai-ime-strategy';
+const AUTO_DISMISS_KEYBOARD_KEY = 'sqai-auto-dismiss-keyboard';
+const KEYBOARD_DISMISS_STRATEGY_KEY = 'sqai-keyboard-dismiss-strategy';
+const ALWAYS_REFRESH_SCREEN_INFO_KEY = 'sqai-always-refresh-screen-info';
 const getConfigStringFromLocalStorage = () => {
   const configString = localStorage.getItem(CONFIG_KEY);
   return configString || '';

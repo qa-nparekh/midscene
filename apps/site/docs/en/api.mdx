@@ -1127,7 +1127,7 @@ Create a report merging tool instance.
 - Example:
 
 ```typescript
-import { ReportMergingTool } from '@midscene/core/report';
+import { ReportMergingTool } from '@sqaitech/core/report';
 
 const reportMergingTool = new ReportMergingTool();
 ```
@@ -1266,8 +1266,8 @@ Below is a complete example of using `ReportMergingTool` in a Vitest suite:
 
 ```typescript
 import { describe, it, beforeEach, afterEach, afterAll } from 'vitest';
-import { AndroidAgent, AndroidDevice } from '@midscene/android';
-import { ReportMergingTool } from '@midscene/core/report';
+import { AndroidAgent, AndroidDevice } from '@sqaitech/android';
+import { ReportMergingTool } from '@sqaitech/core/report';
 
 describe('Android settings automation', () => {
   let device: AndroidDevice;

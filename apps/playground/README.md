@@ -40,7 +40,7 @@ npm run preview
 
 ## Usage
 
-1. **Start the Server**: Run `npx @midscene/playground` to start the backend server
+1. **Start the Server**: Run `npx @sqaitech/playground` to start the backend server
 2. **Open the Playground**: Navigate to `http://localhost:3000` (or the dev server URL)
 3. **Configure AI**: Click the settings icon to configure your AI model and API keys
 4. **Start Testing**: Enter natural language instructions to interact with web pages

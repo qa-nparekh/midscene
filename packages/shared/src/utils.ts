@@ -105,8 +105,8 @@ export async function repeat(
 
 const REGEXP_LT = /</g;
 const REGEXP_GT = />/g;
-const REGEXP_LT_ESCAPE = '__midscene_lt__';
-const REGEXP_GT_ESCAPE = '__midscene_gt__';
+const REGEXP_LT_ESCAPE = '__sqai_lt__';
+const REGEXP_GT_ESCAPE = '__sqai_gt__';
 
 export const escapeScriptTag = (html: string) => {
   return html

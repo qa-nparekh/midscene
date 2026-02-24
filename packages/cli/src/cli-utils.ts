@@ -33,7 +33,7 @@ export const parseProcessArgs = async (): Promise<{
     })
     .usage(
       `Midscene.js helps you automate browser actions, assertions, and data extraction by AI. 
-Homepage: https://midscenejs.com
+Homepage: https://sqai.tech
 Github: https://github.com/web-infra-dev/midscene
 
 Usage: 
@@ -88,9 +88,9 @@ Usage:
     .version('version', 'Show version number', __VERSION__)
     .help()
     .epilogue(`For complete list of configuration options, please visit:
-  • Web options: https://midscenejs.com/automate-with-scripts-in-yaml#the-web-part
-  • Android options: https://midscenejs.com/automate-with-scripts-in-yaml#the-android-part
-  • iOS options: https://midscenejs.com/automate-with-scripts-in-yaml#the-ios-part
+  • Web options: https://sqai.tech/automate-with-scripts-in-yaml#the-web-part
+  • Android options: https://sqai.tech/automate-with-scripts-in-yaml#the-android-part
+  • iOS options: https://sqai.tech/automate-with-scripts-in-yaml#the-ios-part
 
 Examples:
   $0 script.yaml --web.user-agent "Custom Agent" --web.viewport-width 1920

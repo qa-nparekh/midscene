@@ -49,3 +49,17 @@ describe('agent with forceSameTabNavigation', () => {
     await agent.aiAssert('the page is about "midscene" project');
   });
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,6 +1,6 @@
 {
   "name": "@sqaitech/shared",
-  "version": "0.5.0",
+  "version": "1.2.1",
   "repository": "https://github.com/qa-nparekh/midscene",
   "homepage": "https://github.com/qa-nparekh/midscene",
   "types": "./dist/types/index.d.ts",

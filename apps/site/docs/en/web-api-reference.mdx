@@ -28,7 +28,7 @@ Use Midscene against a Puppeteer-controlled browser when you need AI actions in 
 ### Import
 
 ```ts
-import { PuppeteerAgent } from '@midscene/web/puppeteer';
+import { PuppeteerAgent } from '@sqaitech/web/puppeteer';
 ```
 
 ### Constructor
@@ -65,7 +65,7 @@ In addition to the base agent options, Puppeteer exposes:
 
 ```ts
 import puppeteer from 'puppeteer';
-import { PuppeteerAgent } from '@midscene/web/puppeteer';
+import { PuppeteerAgent } from '@sqaitech/web/puppeteer';
 
 const browser = await puppeteer.launch({ headless: false });
 const page = await browser.newPage();
@@ -89,7 +89,7 @@ await browser.close();
 
 ```ts
 import puppeteer from 'puppeteer';
-import { PuppeteerAgent } from '@midscene/web/puppeteer';
+import { PuppeteerAgent } from '@sqaitech/web/puppeteer';
 
 const browser = await puppeteer.connect({
   browserWSEndpoint: process.env.REMOTE_CDP_URL!,
@@ -116,7 +116,7 @@ Use Midscene inside a Playwright browser for AI-driven testing or automation alo
 ### Import
 
 ```ts
-import { PlaywrightAgent } from '@midscene/web/playwright';
+import { PlaywrightAgent } from '@sqaitech/web/playwright';
 ```
 
 ### Constructor
@@ -151,7 +151,7 @@ const agent = new PlaywrightAgent(page, {
 
 ```ts
 import { chromium } from 'playwright';
-import { PlaywrightAgent } from '@midscene/web/playwright';
+import { PlaywrightAgent } from '@sqaitech/web/playwright';
 
 const browser = await chromium.launch({ headless: true });
 const page = await browser.newPage();
@@ -173,12 +173,12 @@ await browser.close();
 ```ts
 // playwright.config.ts
 export default defineConfig({
-  reporter: [['list'], ['@midscene/web/playwright-reporter']],
+  reporter: [['list'], ['@sqaitech/web/playwright-reporter']],
 });
 
 // e2e/fixture.ts
 import { test as base } from '@playwright/test';
-import { PlaywrightAiFixture } from '@midscene/web/playwright';
+import { PlaywrightAiFixture } from '@sqaitech/web/playwright';
 
 export const test = base.extend(
   PlaywrightAiFixture({ waitForNetworkIdleTimeout: 1000 }),
@@ -204,7 +204,7 @@ Bridge Mode lets Midscene operate your currently active desktop Chrome tab throu
 ### Import
 
 ```ts
-import { AgentOverChromeBridge } from '@midscene/web/bridge-mode';
+import { AgentOverChromeBridge } from '@sqaitech/web/bridge-mode';
 ```
 
 ### Constructor
@@ -273,7 +273,7 @@ function destroy(closeNewTabsAfterDisconnect?: boolean): Promise<void>;
 #### Open a new desktop tab
 
 ```ts
-import { AgentOverChromeBridge } from '@midscene/web/bridge-mode';
+import { AgentOverChromeBridge } from '@sqaitech/web/bridge-mode';
 
 const agent = new AgentOverChromeBridge();
 await agent.connectNewTabWithUrl('https://www.bing.com');
@@ -286,7 +286,7 @@ await agent.destroy();
 #### Attach to current tab
 
 ```ts
-import { AgentOverChromeBridge } from '@midscene/web/bridge-mode';
+import { AgentOverChromeBridge } from '@sqaitech/web/bridge-mode';
 
 const agent = new AgentOverChromeBridge({
   allowRemoteAccess: false,
