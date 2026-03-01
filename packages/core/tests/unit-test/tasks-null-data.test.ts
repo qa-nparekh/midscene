@@ -1,7 +1,7 @@
 import { TaskExecutor } from '@/agent/tasks';
 import { ScreenshotItem } from '@/screenshot-item';
 import type { ServiceDump } from '@/types';
-import type { IModelConfig } from '@midscene/shared/env';
+import type { IModelConfig } from '@sqaitech/shared/env';
 import { describe, expect, it, vi } from 'vitest';
 
 // Helper function to create mock UIContext with ScreenshotItem

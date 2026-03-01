@@ -22,7 +22,7 @@ Midscene 针对每个不同环境都有对应的 Agent。每个 Agent 的构造�
 - `autoPrintReportMsg: boolean`: 如果为 true，则打印报告消息。默认值为 true。
 - `cacheId: string | undefined`: 如果配置，则使用此 cacheId 保存或匹配缓存。默认值为 undefined，也就是不启用缓存。
 - `aiActContext: string`: 调用 `agent.aiAct()` 时，发送给 AI 模型的背景知识，比如 "有 cookie 对话框时先关闭它"，默认值为空。此前名为 `aiActionContext`，旧名称仍然兼容。
-- `replanningCycleLimit: number`: `aiAct` 的最大重规划次数。默认值为 20（UI-TARS 模型默认 40）。推荐通过 agent 入参设置；`MIDSCENE_REPLANNING_CYCLE_LIMIT` 环境变量仅作兼容读取。
+- `replanningCycleLimit: number`: `aiAct` 的最大重规划次数。默认值为 20（UI-TARS 模型默认 40）。推荐通过 agent 入参设置；`SQAI_REPLANNING_CYCLE_LIMIT` 环境变量仅作兼容读取。
 - `waitAfterAction: number`: 每次动作执行后的等待时间（毫秒）。这让 UI 有时间稳定，然后再执行下一个动作。默认值为 300 毫秒。
 - `onTaskStartTip: (tip: string) => void | Promise<void>`：可选回调，在每个子任务执行开始前收到一条可读的任务描述提示。默认值为 undefined。
 - `outputFormat: 'single-html' | 'html-and-external-assets'`: 控制报告的生成格式。`'single-html'`（默认）将所有截图作为 base64 内嵌到单个 HTML 文件中。`'html-and-external-assets'` 将截图保存为独立的 PNG 文件到子目录，适用于报告文件过大的场景。**注意**：使用 `'html-and-external-assets'` 时，报告必须通过 HTTP 服务器或 CDN 地址访问，无法直接使用 `file://` 协议打开。这是因为浏览器的 CORS（跨源资源共享）限制会阻止从 file 协议加载相对路径的本地图片。如需在本地测试，可在报告目录下启动简易的 HTTP 服务器。进入报告目录后运行以下命令之一：
@@ -41,10 +41,10 @@ Midscene 针对每个不同环境都有对应的 Agent。每个 Agent 的构造�
 ```typescript
 const agent = new PuppeteerAgent(page, {
   modelConfig: {
-    MIDSCENE_MODEL_NAME: 'qwen3-vl-plus',
-    MIDSCENE_MODEL_BASE_URL: 'https://dashscope.aliyuncs.com/compatible-mode/v1',
-    MIDSCENE_MODEL_API_KEY: 'sk-...',
-    MIDSCENE_MODEL_FAMILY: 'qwen3-vl'
+    SQAI_MODEL_NAME: 'qwen3-vl-plus',
+    SQAI_MODEL_BASE_URL: 'https://dashscope.aliyuncs.com/compatible-mode/v1',
+    SQAI_MODEL_API_KEY: 'sk-...',
+    SQAI_MODEL_FAMILY: 'qwen3-vl'
   }
 });
 ```
@@ -54,19 +54,19 @@ const agent = new PuppeteerAgent(page, {
 const agent = new PuppeteerAgent(page, {
   modelConfig: {
     // 默认
-    MIDSCENE_MODEL_NAME: 'qwen3-vl-plus',
-    MIDSCENE_MODEL_API_KEY: 'sk-default-key',
-    MIDSCENE_MODEL_BASE_URL: '.....',
-    MIDSCENE_MODEL_FAMILY: 'qwen3-vl',
+    SQAI_MODEL_NAME: 'qwen3-vl-plus',
+    SQAI_MODEL_API_KEY: 'sk-default-key',
+    SQAI_MODEL_BASE_URL: '.....',
+    SQAI_MODEL_FAMILY: 'qwen3-vl',
 
     // planning 意图
-    MIDSCENE_PLANNING_MODEL_NAME: 'gpt-5.1',
-    MIDSCENE_PLANNING_MODEL_API_KEY: 'sk-planning-key',
-    MIDSCENE_PLANNING_MODEL_BASE_URL: '...',
+    SQAI_PLANNING_MODEL_NAME: 'gpt-5.1',
+    SQAI_PLANNING_MODEL_API_KEY: 'sk-planning-key',
+    SQAI_PLANNING_MODEL_BASE_URL: '...',
 
     // insight 意图
-    MIDSCENE_INSIGHT_MODEL_NAME: 'qwen-vl-plus',
-    MIDSCENE_INSIGHT_MODEL_API_KEY: 'sk-insight-key'
+    SQAI_INSIGHT_MODEL_NAME: 'qwen-vl-plus',
+    SQAI_INSIGHT_MODEL_API_KEY: 'sk-insight-key'
   }
 });
 ```
@@ -149,7 +149,7 @@ function ai(prompt: string): Promise<void>; // 简写形式
   - `prompt: string` - 用自然语言描述的操作内容
   - `options?: Object` - 可选，一个配置对象，包含：
     - `cacheable?: boolean` - 当启用 [缓存功能](./caching.mdx) 时，是否允许缓存当前 API 调用结果。默认值为 true
-    - `deepThink?: 'unset' | true | false` - 当模型支持时（取决于 MIDSCENE_MODEL_FAMILY），是否开启规划阶段的深度思考能力。默认值为 `'unset'`（等同于省略该参数），跟随模型服务商的默认策略。[详情参阅 deepThink 说明](./model-strategy#关于-aiact-方法的-deepthink-参数)。
+    - `deepThink?: 'unset' | true | false` - 当模型支持时（取决于 SQAI_MODEL_FAMILY），是否开启规划阶段的深度思考能力。默认值为 `'unset'`（等同于省略该参数），跟随模型服务商的默认策略。[详情参阅 deepThink 说明](./model-strategy#关于-aiact-方法的-deepthink-参数)。
     - `fileChooserAccept?: string | string[]` - 当文件选择器弹出时，指定对应的文件路径。可以是单个文件路径或路径数组。仅在 web 页面（Playwright、Puppeteer）中可用。
       - **注意**：如果文件输入框不支持多文件（没有 `multiple` 属性），但是传入了多个文件，会抛出错误。
       - **注意**：如果点击触发了文件选择器但没有传入 `fileChooserAccept` 参数，文件选择器会被忽略，页面可以继续正常操作。
@@ -1057,12 +1057,12 @@ console.log(logContent);
 通过 `overrideAIConfig` 方法在运行时设置全局环境变量。
 
 ```typescript
-import { overrideAIConfig } from '@midscene/web/puppeteer'; // 或其他的 Agent
+import { overrideAIConfig } from '@sqaitech/web/puppeteer'; // 或其他的 Agent
 
 overrideAIConfig({
-  MIDSCENE_MODEL_BASE_URL: '...', // 推荐使用新的变量名
-  MIDSCENE_MODEL_API_KEY: '...', // 推荐使用新的变量名
-  MIDSCENE_MODEL_NAME: '...',
+  SQAI_MODEL_BASE_URL: '...', // 推荐使用新的变量名
+  SQAI_MODEL_API_KEY: '...', // 推荐使用新的变量名
+  SQAI_MODEL_NAME: '...',
 
   // 旧的变量名仍然兼容：
   // OPENAI_BASE_URL: '...',
@@ -1141,7 +1141,7 @@ await agent.aiAssert({
 - 示例:
 
 ```typescript
-import { ReportMergingTool } from '@midscene/core/report';
+import { ReportMergingTool } from '@sqaitech/core/report';
 
 const reportMergingTool = new ReportMergingTool();
 ```
@@ -1280,8 +1280,8 @@ reportMergingTool.clear(); // 清空列表
 
 ```typescript
 import { describe, it, beforeEach, afterEach, afterAll } from 'vitest';
-import { AndroidAgent, AndroidDevice } from '@midscene/android';
-import { ReportMergingTool } from '@midscene/core/report';
+import { AndroidAgent, AndroidDevice } from '@sqaitech/android';
+import { ReportMergingTool } from '@sqaitech/core/report';
 
 describe('Android 设置自动化', () => {
   let device: AndroidDevice;
@@ -1341,6 +1341,6 @@ describe('Android 设置自动化', () => {
 
 :::tip
 
-合并后的报告文件会保存在 `midscene_run/report` 目录下。你可以使用浏览器打开合并后的 HTML 文件查看所有自动化工作流的执行情况。
+合并后的报告文件会保存在 `sqai_run/report` 目录下。你可以使用浏览器打开合并后的 HTML 文件查看所有自动化工作流的执行情况。
 
 :::

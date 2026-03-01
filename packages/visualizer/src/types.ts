@@ -1,4 +1,4 @@
-import type { DeviceAction, UIContext } from '@midscene/core';
+import type { DeviceAction, UIContext } from '@sqaitech/core';
 import type { ComponentType } from 'react';
 
 // Zod schema related types - compatible with actual zod types
@@ -78,7 +78,7 @@ export const VALIDATION_CONSTANTS = {
     BOOLEAN: 'ZodBoolean',
   },
   FIELD_FLAGS: {
-    LOCATION: 'midscene_location_field_flag',
+    LOCATION: 'sqai_location_field_flag',
   },
   DEFAULT_VALUES: {
     ACTION_TYPE: 'aiAct',
@@ -227,8 +227,8 @@ import type {
   GroupedActionDump,
   IExecutionDump,
   WebUIContext,
-} from '@midscene/core';
-import type { ExecutionOptions, PlaygroundAgent } from '@midscene/playground';
+} from '@sqaitech/core';
+import type { ExecutionOptions, PlaygroundAgent } from '@sqaitech/playground';
 
 // result type
 export interface PlaygroundResult {

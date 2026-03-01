@@ -129,22 +129,22 @@ agent:
 
 ### Compatibility mode (not recommended)
 
-Configuration via `MIDSCENE_CACHE=1` environment variable with cacheId, equivalent to read-write mode.
+Configuration via `SQAI_CACHE=1` environment variable with cacheId, equivalent to read-write mode.
 
 ```javascript
-// Old way, requires MIDSCENE_CACHE=1 environment variable and cacheId
+// Old way, requires SQAI_CACHE=1 environment variable and cacheId
 const agent = new PuppeteerAgent(originPage, {
   cacheId: 'puppeteer-swag-sab'
 });
 ```
 
 ```bash
-MIDSCENE_CACHE=1 tsx demo.ts
+SQAI_CACHE=1 tsx demo.ts
 ```
 
-## Using Playwright AI Fixture from `@midscene/web/playwright`
+## Using Playwright AI Fixture from `@sqaitech/web/playwright`
 
-When using `PlaywrightAiFixture` from `@midscene/web/playwright`, pass the same `cache` options to control caching behaviour.
+When using `PlaywrightAiFixture` from `@sqaitech/web/playwright`, pass the same `cache` options to control caching behaviour.
 
 ### Disable cache
 
@@ -298,7 +298,7 @@ Please ensure you have correctly configured caching:
 2. **Playwright AI Fixture mode**: Set `cache: true` or `cache: { id: "your-cache-id" }` in fixture configuration
 3. **YAML script mode**: Set `agent.cache.id` in the YAML file
 4. **Read-only mode**: Ensure you called the `agent.flushCache()` method
-5. **Legacy approach**: Set `cacheId` and enable `MIDSCENE_CACHE=1` environment variable
+5. **Legacy approach**: Set `cacheId` and enable `SQAI_CACHE=1` environment variable
 
 ### How to check if the cache is hit?
 
@@ -340,4 +340,4 @@ When the cache is not hit or not available, the process will fall back to using 
 
 ### Get more debug logs for caching
 
-You can set the `DEBUG=midscene:cache:*` environment variable to get more debug logs for caching.
+You can set the `DEBUG=sqai:cache:*` environment variable to get more debug logs for caching.

@@ -1,5 +1,5 @@
 import type { Server } from 'node:http';
-import { WebMCPServer } from '@midscene/web/mcp-server';
+import { WebMCPServer } from '@sqaitech/web/mcp-server';
 import { afterAll, beforeAll, describe, expect, it, vi } from 'vitest';
 
 describe('WebMCPServer HTTP mode', () => {

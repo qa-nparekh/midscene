@@ -15,7 +15,7 @@ import {
   EventRecorder,
   RecordTimeline,
   type RecordedEvent,
-} from '@midscene/recorder';
+} from '@sqaitech/recorder';
 import CanvasSelector from './components/canvas-selector';
 
 const { Title } = Typography;

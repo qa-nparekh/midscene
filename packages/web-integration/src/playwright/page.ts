@@ -13,7 +13,7 @@ export class WebPage extends BasePage<'playwright', PlaywrightPageType> {
 
   async registerFileChooserListener(
     handler: (
-      chooser: import('@midscene/core/device').FileChooserHandler,
+      chooser: import('@sqaitech/core/device').FileChooserHandler,
     ) => Promise<void>,
   ): Promise<{ dispose: () => void; getError: () => Error | undefined }> {
     const page = this.underlyingPage as PlaywrightPageType;

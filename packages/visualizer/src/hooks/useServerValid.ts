@@ -1,4 +1,4 @@
-import { PlaygroundSDK } from '@midscene/playground';
+import { PlaygroundSDK } from '@sqaitech/playground';
 import { useEffect, useState } from 'react';
 import { useEnvConfig } from '../store/store';
 

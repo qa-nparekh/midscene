@@ -1,19 +1,19 @@
 import assert from 'node:assert';
 import { existsSync, mkdirSync, writeFileSync } from 'node:fs';
-import { NodeType } from '@midscene/shared/constants';
+import { NodeType } from '@sqaitech/shared/constants';
 
 import path from 'node:path';
-import { descriptionOfTree } from '@midscene/core/tree';
+import { descriptionOfTree } from '@sqaitech/core/tree';
 import {
   imageInfoOfBase64,
   processImageElementInfo,
   resizeImgBase64,
   saveBase64Image,
   zoomForGPT4o,
-} from '@midscene/shared/img';
-import type { WebPage } from '@midscene/web';
+} from '@sqaitech/shared/img';
+import type { WebPage } from '@sqaitech/web';
 
-import type { ElementInfo } from '@midscene/shared/extractor';
+import type { ElementInfo } from '@sqaitech/shared/extractor';
 
 export function generateTestDataPath(testDataName: string) {
   assert(testDataName, 'testDataName is required');

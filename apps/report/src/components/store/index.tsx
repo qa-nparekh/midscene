@@ -7,12 +7,12 @@ import type {
   GroupedActionDump,
   LocateResultElement,
   ServiceDump,
-} from '@midscene/core';
-import type { AnimationScript } from '@midscene/visualizer';
+} from '@sqaitech/core';
+import type { AnimationScript } from '@sqaitech/visualizer';
 import {
   allScriptsFromDump,
   generateAnimationScripts,
-} from '@midscene/visualizer';
+} from '@sqaitech/visualizer';
 import * as Z from 'zustand';
 
 const { create } = Z;

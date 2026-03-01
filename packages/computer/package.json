@@ -1,5 +1,5 @@
 {
-  "name": "@midscene/computer",
+  "name": "@sqaitech/computer",
   "version": "1.4.6",
   "description": "Midscene.js Computer Desktop Automation",
   "license": "MIT",
@@ -12,7 +12,7 @@
   "module": "./dist/es/index.mjs",
   "types": "./dist/types/index.d.ts",
   "bin": {
-    "midscene-computer": "./bin/midscene-computer"
+    "sqai-computer": "./bin/midscene-computer"
   },
   "files": ["bin", "dist", "README.md"],
   "exports": {
@@ -36,8 +36,8 @@
   },
   "dependencies": {
     "@computer-use/libnut": "^4.2.0",
-    "@midscene/core": "workspace:*",
-    "@midscene/shared": "workspace:*",
+    "@sqaitech/core": "workspace:*",
+    "@sqaitech/shared": "workspace:*",
     "clipboardy": "^4.0.0",
     "screenshot-desktop": "^1.15.3"
   },

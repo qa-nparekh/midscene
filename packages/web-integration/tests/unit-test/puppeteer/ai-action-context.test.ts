@@ -1,7 +1,7 @@
 import { describe, expect, test } from 'vitest';
 
 import { resolveAiActionContext } from '@/puppeteer/agent-launcher';
-import type { MidsceneYamlScriptWebEnv } from '@midscene/core';
+import type { MidsceneYamlScriptWebEnv } from '@sqaitech/core';
 
 const baseTarget: Pick<MidsceneYamlScriptWebEnv, 'url'> = {
   url: 'http://example.com',

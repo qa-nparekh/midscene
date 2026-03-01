@@ -1,7 +1,7 @@
 import { exec } from 'node:child_process';
 import { platform } from 'node:os';
 import { promisify } from 'node:util';
-import { getDebug } from '@midscene/shared/logger';
+import { getDebug } from '@sqaitech/shared/logger';
 
 const execAsync = promisify(exec);
 const debugUtils = getDebug('ios:utils');

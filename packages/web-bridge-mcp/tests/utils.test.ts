@@ -11,8 +11,8 @@ vi.mock('node:fs', () => ({
   existsSync: vi.fn(),
 }));
 
-vi.mock('@midscene/shared/env', () => ({
-  MIDSCENE_MCP_CHROME_PATH: 'MIDSCENE_MCP_CHROME_PATH',
+vi.mock('@sqaitech/shared/env', () => ({
+  SQAI_MCP_CHROME_PATH: 'SQAI_MCP_CHROME_PATH',
   globalConfigManager: {
     getEnvConfigValue: vi.fn(),
   },
@@ -86,7 +86,7 @@ describe('Utils Module', () => {
 
     test('should return Docker Chrome path when in Docker', () => {
       process.env.DOCKER_CONTAINER = 'true';
-      process.env.MIDSCENE_MCP_CHROME_PATH = '/docker/chrome';
+      process.env.SQAI_MCP_CHROME_PATH = '/docker/chrome';
       vi.mocked(existsSync).mockReturnValue(true);
 
       const result = getSystemChromePath();
@@ -133,7 +133,7 @@ describe('Utils Module', () => {
 
   describe('getChromePathFromEnv', () => {
     beforeEach(async () => {
-      const envModule = await import('@midscene/shared/env');
+      const envModule = await import('@sqaitech/shared/env');
       vi.mocked(
         envModule.globalConfigManager.getEnvConfigValue,
       ).mockReturnValue(undefined);
@@ -141,7 +141,7 @@ describe('Utils Module', () => {
     });
 
     test('should return env chrome path when valid', async () => {
-      const envModule = await import('@midscene/shared/env');
+      const envModule = await import('@sqaitech/shared/env');
       const customPath = '/custom/chrome/path';
       vi.mocked(
         envModule.globalConfigManager.getEnvConfigValue,
@@ -153,7 +153,7 @@ describe('Utils Module', () => {
     });
 
     test('should fallback to system path when env is auto', async () => {
-      const envModule = await import('@midscene/shared/env');
+      const envModule = await import('@sqaitech/shared/env');
       vi.mocked(
         envModule.globalConfigManager.getEnvConfigValue,
       ).mockReturnValue('auto');
@@ -163,7 +163,7 @@ describe('Utils Module', () => {
     });
 
     test('should fallback to system path when env path does not exist', async () => {
-      const envModule = await import('@midscene/shared/env');
+      const envModule = await import('@sqaitech/shared/env');
       vi.mocked(
         envModule.globalConfigManager.getEnvConfigValue,
       ).mockReturnValue('/nonexistent/path');

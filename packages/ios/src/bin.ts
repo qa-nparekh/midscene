@@ -1,11 +1,11 @@
 import path from 'node:path';
 import { input, select } from '@inquirer/prompts';
-import { PlaygroundServer } from '@midscene/playground';
+import { PlaygroundServer } from '@sqaitech/playground';
 import {
   DEFAULT_WDA_PORT,
   PLAYGROUND_SERVER_PORT,
-} from '@midscene/shared/constants';
-import { findAvailablePort } from '@midscene/shared/node';
+} from '@sqaitech/shared/constants';
+import { findAvailablePort } from '@sqaitech/shared/node';
 import { IOSAgent } from './agent';
 import { IOSDevice } from './device';
 

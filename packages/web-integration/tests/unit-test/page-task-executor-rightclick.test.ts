@@ -1,5 +1,5 @@
-import type { DeviceAction, PlanningAction } from '@midscene/core';
-import { TaskExecutor } from '@midscene/core/agent';
+import type { DeviceAction, PlanningAction } from '@sqaitech/core';
+import { TaskExecutor } from '@sqaitech/core/agent';
 import { beforeEach, describe, expect, it, vi } from 'vitest';
 
 // Mock page with mouse operations

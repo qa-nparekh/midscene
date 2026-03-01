@@ -1,4 +1,4 @@
-import { ComputerMCPServer } from '@midscene/computer/mcp-server';
+import { ComputerMCPServer } from '@sqaitech/computer/mcp-server';
 import { afterAll, beforeAll, describe, expect, it, vi } from 'vitest';
 
 describe('ComputerMCPServer HTTP mode', () => {

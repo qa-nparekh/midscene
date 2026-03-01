@@ -1,7 +1,7 @@
 import { existsSync, readFileSync, rmSync } from 'node:fs';
 import path from 'node:path';
 import { PuppeteerAgent } from '@/puppeteer';
-import { ReportMergingTool } from '@midscene/core/report';
+import { ReportMergingTool } from '@sqaitech/core/report';
 import {
   afterAll,
   afterEach,
@@ -87,7 +87,7 @@ describe('ReportMergingTool integration', () => {
       expect(content).toContain('<!doctype html>');
       expect(content).toContain('Midscene');
       // Should contain dump script tags from merged reports
-      expect(content).toContain('midscene_web_dump');
+      expect(content).toContain('sqai_web_dump');
       console.log('Merged report verified successfully!');
     }
   });

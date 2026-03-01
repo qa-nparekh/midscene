@@ -11,8 +11,8 @@ import {
   pointToBbox,
 } from '@/common';
 import { type DeviceAction, getMidsceneLocationSchema } from '@/index';
-import { getMidsceneRunSubDir } from '@midscene/shared/common';
-import { uuid } from '@midscene/shared/utils';
+import { getMidsceneRunSubDir } from '@sqaitech/shared/common';
+import { uuid } from '@sqaitech/shared/utils';
 import { describe, expect, it } from 'vitest';
 import { z } from 'zod';
 import { ifPlanLocateParamIsBbox } from '../../src/agent/utils';
@@ -60,7 +60,7 @@ describe('utils', () => {
     const reportPath = writeDumpReport('test', '{}');
     expect(reportPath).toBeTruthy();
     const reportContent = readFileSync(reportPath!, 'utf-8');
-    expect(reportContent).contains('type="midscene_web_dump"');
+    expect(reportContent).contains('type="sqai_web_dump"');
   });
 
   it('write report file with attributes', () => {
@@ -91,13 +91,13 @@ describe('utils', () => {
   it('reportHTMLContent', () => {
     const reportA = reportHTMLContent('');
     expect(reportA).toContain(
-      '<script type="midscene_web_dump" type="application/json">\n\n</script>',
+      '<script type="sqai_web_dump" type="application/json">\n\n</script>',
     );
 
     const content = uuid();
     const reportB = reportHTMLContent(content);
     expect(reportB).toContain(
-      `<script type="midscene_web_dump" type="application/json">\n${content}\n</script>`,
+      `<script type="sqai_web_dump" type="application/json">\n${content}\n</script>`,
     );
   });
 
@@ -109,7 +109,7 @@ describe('utils', () => {
     expect(reportPathA).toBe(tmpFile);
     const fileContentA = readFileSync(tmpFile, 'utf-8');
     expect(fileContentA).toContain(
-      '<script type="midscene_web_dump" type="application/json">\n\n</script>',
+      '<script type="sqai_web_dump" type="application/json">\n\n</script>',
     );
 
     // test string content
@@ -118,7 +118,7 @@ describe('utils', () => {
     expect(reportPathB).toBe(tmpFile);
     const fileContentB = readFileSync(tmpFile, 'utf-8');
     expect(fileContentB).toContain(
-      `<script type="midscene_web_dump" type="application/json">\n${content}\n</script>`,
+      `<script type="sqai_web_dump" type="application/json">\n${content}\n</script>`,
     );
 
     // test array with attributes
@@ -236,7 +236,7 @@ describe('utils', () => {
     expect(reportContent).toBeTruthy();
     expect(reportContent).toContain('data-midscene-id="123"');
     expect(reportContent).toContain(
-      `__midscene_lt__script__midscene_gt__alert("xss")__midscene_lt__/script__midscene_gt__`,
+      `__SQAI_lt__script__SQAI_gt__alert("xss")__SQAI_lt__/script__SQAI_gt__`,
     );
     expect(reportContent).not.toContain('<script>alert("xss")</script>');
   });
@@ -245,7 +245,7 @@ describe('utils', () => {
     const reportContent = reportHTMLContent('<script>alert("xss")</script>');
     expect(reportContent).toBeTruthy();
     expect(reportContent).toContain(
-      `__midscene_lt__script__midscene_gt__alert("xss")__midscene_lt__/script__midscene_gt__`,
+      `__SQAI_lt__script__SQAI_gt__alert("xss")__SQAI_lt__/script__SQAI_gt__`,
     );
     expect(reportContent).not.toContain('<script>alert("xss")</script>');
   });
@@ -567,13 +567,13 @@ describe('dumpActionParam', () => {
     const input1 = {
       foo: 'test',
       locator1: {
-        midscene_location_field_flag: true,
+        SQAI_location_field_flag: true,
         prompt: 'first locator',
         center: [100, 200],
         rect: { left: 50, top: 100, width: 100, height: 50 },
       },
       locator2: {
-        midscene_location_field_flag: true,
+        SQAI_location_field_flag: true,
         prompt: 'second locator',
         center: [200, 300],
         rect: { left: 150, top: 200, width: 100, height: 50 },
@@ -597,7 +597,7 @@ describe('dumpActionParam', () => {
     const input2 = {
       foo: 'test2',
       locator1: {
-        midscene_location_field_flag: true,
+        SQAI_location_field_flag: true,
         prompt: 'only locator',
         center: [50, 100],
         rect: { left: 25, top: 50, width: 50, height: 25 },
@@ -643,13 +643,13 @@ describe('dumpActionParam', () => {
     const input2 = {
       foo: 'test2',
       locator1: {
-        midscene_location_field_flag: true,
+        SQAI_location_field_flag: true,
         // missing prompt
         center: [100, 200],
         rect: { left: 50, top: 100, width: 100, height: 50 },
       },
       locator2: {
-        midscene_location_field_flag: true,
+        SQAI_location_field_flag: true,
         prompt: 'valid locator',
         center: [200, 300],
         rect: { left: 150, top: 200, width: 100, height: 50 },
@@ -665,7 +665,7 @@ describe('dumpActionParam', () => {
             100,
             200,
           ],
-          "midscene_location_field_flag": true,
+          "SQAI_location_field_flag": true,
           "rect": {
             "height": 50,
             "left": 50,

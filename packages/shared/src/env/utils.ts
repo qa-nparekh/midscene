@@ -2,7 +2,7 @@ import { GlobalConfigManager } from './global-config-manager';
 import { ModelConfigManager } from './model-config-manager';
 import {
   type GLOBAL_ENV_KEYS,
-  MIDSCENE_PREFERRED_LANGUAGE,
+  SQAI_PREFERRED_LANGUAGE,
   type MODEL_ENV_KEYS,
 } from './types';
 
@@ -15,7 +15,7 @@ globalModelConfigManager.registerGlobalConfigManager(globalConfigManager);
 
 /**
  * Interface for devices that support getTimestamp method.
- * This is a minimal interface to avoid circular dependencies with @midscene/core.
+ * This is a minimal interface to avoid circular dependencies with @sqaitech/core.
  */
 export interface DeviceWithTimestamp {
   getTimestamp?: () => Promise<number>;
@@ -65,7 +65,7 @@ export async function getCurrentTime(
 
 export const getPreferredLanguage = () => {
   const prefer = globalConfigManager.getEnvConfigValue(
-    MIDSCENE_PREFERRED_LANGUAGE,
+    SQAI_PREFERRED_LANGUAGE,
   );
   if (prefer) {
     return prefer;

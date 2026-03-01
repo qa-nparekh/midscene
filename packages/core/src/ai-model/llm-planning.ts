@@ -6,10 +6,10 @@ import type {
   RawResponsePlanningAIResponse,
   UIContext,
 } from '@/types';
-import type { IModelConfig, TModelFamily } from '@midscene/shared/env';
-import { paddingToMatchBlockByBase64 } from '@midscene/shared/img';
-import { getDebug } from '@midscene/shared/logger';
-import { assert } from '@midscene/shared/utils';
+import type { IModelConfig, TModelFamily } from '@sqaitech/shared/env';
+import { paddingToMatchBlockByBase64 } from '@sqaitech/shared/img';
+import { getDebug } from '@sqaitech/shared/logger';
+import { assert } from '@sqaitech/shared/utils';
 import type { ChatCompletionMessageParam } from 'openai/resources/index';
 import {
   buildYamlFlowFromPlans,

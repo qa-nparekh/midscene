@@ -1,6 +1,6 @@
 import path from 'node:path';
 import { PuppeteerAgent } from '@/puppeteer';
-import { sleep } from '@midscene/core/utils';
+import { sleep } from '@sqaitech/core/utils';
 import { afterEach, describe, expect, it, vi } from 'vitest';
 import { launchPage } from './utils';
 

@@ -9,14 +9,14 @@
     "preview": "rsbuild preview"
   },
   "dependencies": {
-    "@midscene/recorder": "workspace:*",
+    "@sqaitech/recorder": "workspace:*",
     "antd": "^5.21.6",
     "dayjs": "^1.11.11",
     "react": "18.3.1",
     "react-dom": "18.3.1"
   },
   "devDependencies": {
-    "@midscene/shared": "workspace:*",
+    "@sqaitech/shared": "workspace:*",
     "@rsbuild/core": "^1.6.15",
     "@rsbuild/plugin-node-polyfill": "1.4.2",
     "@rsbuild/plugin-react": "^1.4.1",

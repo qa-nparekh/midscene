@@ -7,17 +7,17 @@ import type {
   Rect,
   Size,
 } from '@/types';
-import { assert, isPlainObject } from '@midscene/shared/utils';
+import { assert, isPlainObject } from '@sqaitech/shared/utils';
 
 import type { ChatCompletionMessageParam } from 'openai/resources/index';
 
 import { isUITars } from '@/ai-model/auto-glm/util';
 import type { PlanningLocateParam } from '@/types';
-import { NodeType } from '@midscene/shared/constants';
-import type { TModelFamily } from '@midscene/shared/env';
-import { treeToList } from '@midscene/shared/extractor';
-import { compositeElementInfoImg } from '@midscene/shared/img';
-import { getDebug } from '@midscene/shared/logger';
+import { NodeType } from '@sqaitech/shared/constants';
+import type { TModelFamily } from '@sqaitech/shared/env';
+import { treeToList } from '@sqaitech/shared/extractor';
+import { compositeElementInfoImg } from '@sqaitech/shared/img';
+import { getDebug } from '@sqaitech/shared/logger';
 import { z } from 'zod';
 
 export type AIArgs = ChatCompletionMessageParam[];
@@ -494,7 +494,7 @@ export const TUserPromptSchema = z.union([
 export type TMultimodalPrompt = z.infer<typeof TMultimodalPromptSchema>;
 export type TUserPrompt = z.infer<typeof TUserPromptSchema>;
 
-const locateFieldFlagName = 'midscene_location_field_flag';
+const locateFieldFlagName = 'SQAI_location_field_flag';
 
 // Schema for locator field input (when users provide locate parameters)
 const MidsceneLocationInput = z

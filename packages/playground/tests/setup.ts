@@ -1,7 +1,7 @@
 import { afterEach, beforeEach, vi } from 'vitest';
 
 // Mock us-keyboard-layout FIRST to avoid process.platform access at import time
-vi.mock('@midscene/shared/us-keyboard-layout', () => ({
+vi.mock('@sqaitech/shared/us-keyboard-layout', () => ({
   isMac: false,
   keyMap: {},
   modifierKeys: [],
@@ -13,16 +13,16 @@ vi.spyOn(console, 'warn').mockImplementation(() => {});
 vi.spyOn(console, 'error').mockImplementation(() => {});
 
 // Mock problematic dependencies early
-vi.mock('@midscene/shared', () => ({
+vi.mock('@sqaitech/shared', () => ({
   generateId: vi.fn(() => 'mock-id'),
   sleep: vi.fn(() => Promise.resolve()),
 }));
 
-vi.mock('@midscene/shared/img/get-photon', () => ({
+vi.mock('@sqaitech/shared/img/get-photon', () => ({
   default: vi.fn(),
 }));
 
-vi.mock('@midscene/shared/env', () => ({
+vi.mock('@sqaitech/shared/env', () => ({
   overrideAIConfig: vi.fn(),
   resetAIConfig: vi.fn(),
   globalConfigManager: {
@@ -33,7 +33,7 @@ vi.mock('@midscene/shared/env', () => ({
 }));
 
 // Mock findAllMidsceneLocatorField to detect locator fields in schema
-vi.mock('@midscene/core/ai-model', () => ({
+vi.mock('@sqaitech/core/ai-model', () => ({
   findAllMidsceneLocatorField: vi.fn((schema: any) => {
     // Check if schema has a shape with locateField-like keys
     if (schema && typeof schema === 'object' && 'shape' in schema) {
@@ -50,7 +50,7 @@ vi.mock('@midscene/core/ai-model', () => ({
   }),
 }));
 
-vi.mock('@midscene/core/agent', () => ({
+vi.mock('@sqaitech/core/agent', () => ({
   Agent: class MockAgent {
     constructor(device: any) {
       this.device = device;

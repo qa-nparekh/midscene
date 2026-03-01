@@ -6,18 +6,18 @@ Midscene 会发送页面截图到 AI 模型。在某些场景下，例如调用 
 
 如果你担心数据隐私问题，请参阅 [数据隐私](./data-privacy)。
 
-## 如何配置 midscene_run 目录？
+## 如何配置 sqai_run 目录？
 
-Midscene 会将运行产物（报告、日志、缓存等）保存在 `midscene_run` 目录下。默认情况下，该目录会创建在当前工作目录下。
+SQAI 会将运行产物（报告、日志、缓存等）保存在 `sqai_run` 目录下。默认情况下，该目录会创建在当前工作目录下。
 
-你可以通过环境变量 `MIDSCENE_RUN_DIR` 来自定义该目录的位置，支持相对路径或绝对路径：
+你可以通过环境变量 `SQAI_RUN_DIR` 来自定义该目录的位置，支持相对路径或绝对路径：
 
 ```bash
 # 使用相对路径
-export MIDSCENE_RUN_DIR="./my_custom_dir"
+export SQAI_RUN_DIR="./my_custom_dir"
 
 # 使用绝对路径
-export MIDSCENE_RUN_DIR="/tmp/midscene_output"
+export SQAI_RUN_DIR="/tmp/midscene_output"
 ```
 
 该目录包含以下子目录：
@@ -111,7 +111,7 @@ Midscene 的元素定位能力依赖于 AI 模型的视觉理解能力，所以�
 
 ### 3. 检查 Model Family 配置
 
-确认你的模型配置中 `MIDSCENE_MODEL_FAMILY` 参数设置是否正确，`MIDSCENE_MODEL_FAMILY` 配置错误会影响 Midscene 对模型的适配逻辑。详见 [模型配置](./model-config)。
+确认你的模型配置中 `SQAI_MODEL_FAMILY` 参数设置是否正确，`SQAI_MODEL_FAMILY` 配置错误会影响 Midscene 对模型的适配逻辑。详见 [模型配置](./model-config)。
 
 ### 4. 分析定位偏移的原因
 

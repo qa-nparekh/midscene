@@ -1,5 +1,5 @@
 {
-  "name": "@midscene/playground",
+  "name": "@sqaitech/playground",
   "version": "1.4.6",
   "description": "Midscene playground utilities for web integration",
   "author": "midscene team",
@@ -25,8 +25,8 @@
     "type-check": "tsc --noEmit"
   },
   "dependencies": {
-    "@midscene/core": "workspace:*",
-    "@midscene/shared": "workspace:*",
+    "@sqaitech/core": "workspace:*",
+    "@sqaitech/shared": "workspace:*",
     "cors": "^2.8.5",
     "dotenv": "^16.4.5",
     "express": "^4.21.2",

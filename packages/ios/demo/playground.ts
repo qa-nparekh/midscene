@@ -1,5 +1,5 @@
-import { playgroundForAgent } from '@midscene/playground';
-import { DEFAULT_WDA_PORT } from '@midscene/shared/constants';
+import { playgroundForAgent } from '@sqaitech/playground';
+import { DEFAULT_WDA_PORT } from '@sqaitech/shared/constants';
 import dotenv from 'dotenv';
 import { agentFromWebDriverAgent } from '../src';
 

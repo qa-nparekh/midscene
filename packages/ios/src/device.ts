@@ -7,7 +7,7 @@ import {
   type Size,
   getMidsceneLocationSchema,
   z,
-} from '@midscene/core';
+} from '@sqaitech/core';
 import {
   type AbstractInterface,
   type ActionTapParam,
@@ -23,18 +23,18 @@ import {
   defineActionSwipe,
   defineActionTap,
   normalizeMobileSwipeParam,
-} from '@midscene/core/device';
-import { sleep } from '@midscene/core/utils';
-import { DEFAULT_WDA_PORT } from '@midscene/shared/constants';
-import type { ElementInfo } from '@midscene/shared/extractor';
-import { createImgBase64ByFormat } from '@midscene/shared/img';
-import { getDebug } from '@midscene/shared/logger';
-import { normalizeForComparison } from '@midscene/shared/utils';
-import { WDAManager } from '@midscene/webdriver';
+} from '@sqaitech/core/device';
+import { sleep } from '@sqaitech/core/utils';
+import { DEFAULT_WDA_PORT } from '@sqaitech/shared/constants';
+import type { ElementInfo } from '@sqaitech/shared/extractor';
+import { createImgBase64ByFormat } from '@sqaitech/shared/img';
+import { getDebug } from '@sqaitech/shared/logger';
+import { normalizeForComparison } from '@sqaitech/shared/utils';
+import { WDAManager } from '@sqaitech/webdriver';
 import { IOSWebDriverClient as WebDriverAgentBackend } from './ios-webdriver-client';
 
 // Re-export IOSDeviceOpt and IOSDeviceInputOpt for backward compatibility
-export type { IOSDeviceOpt, IOSDeviceInputOpt } from '@midscene/core/device';
+export type { IOSDeviceOpt, IOSDeviceInputOpt } from '@sqaitech/core/device';
 
 const debugDevice = getDebug('ios:device');
 

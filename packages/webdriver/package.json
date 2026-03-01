@@ -1,5 +1,5 @@
 {
-  "name": "@midscene/webdriver",
+  "name": "@sqaitech/webdriver",
   "version": "1.4.6",
   "description": "WebDriver protocol implementation for Midscene automation",
   "main": "dist/lib/index.js",
@@ -14,7 +14,7 @@
     "lint:fix": "biome check . --write"
   },
   "dependencies": {
-    "@midscene/shared": "workspace:*",
+    "@sqaitech/shared": "workspace:*",
     "node-fetch": "^3.3.2"
   },
   "devDependencies": {

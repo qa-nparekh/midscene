@@ -1,9 +1,9 @@
-import type { GenericAgent } from '@midscene/shared/mcp';
+import type { GenericAgent } from '@sqaitech/shared/mcp';
 import {
   BaseMCPServer,
   type Tool,
   createMCPServerLauncher,
-} from '@midscene/shared/mcp';
+} from '@sqaitech/shared/mcp';
 import type { AgentOverChromeBridge } from './bridge-mode';
 import { WebMidsceneTools } from './mcp-tools';
 
@@ -16,7 +16,7 @@ export class WebMCPServer extends BaseMCPServer {
   constructor(toolsManager?: WebMidsceneTools) {
     super(
       {
-        name: '@midscene/web-bridge-mcp',
+        name: '@sqaitech/web-bridge-mcp',
         version: __VERSION__,
         description: 'Control the browser using natural language commands',
       },
@@ -57,7 +57,7 @@ export async function mcpKitForAgent(agent: GenericAgent): Promise<{
 
   return {
     description:
-      'Midscene Bridge MCP Server: Control the browser using natural language commands for navigation, clicking, input, hovering, screenshots waitFor, and achieving goals.',
+      'SQAI Bridge MCP Server: Control the browser using natural language commands for navigation, clicking, input, hovering, screenshots waitFor, and achieving goals.',
     tools: toolsManager.getToolDefinitions(),
   };
 }

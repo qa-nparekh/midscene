@@ -1,6 +1,6 @@
-import type { Size } from '@midscene/core';
-import { createImgBase64ByFormat } from '@midscene/shared/img';
-import { getDebug } from '@midscene/shared/logger';
+import type { Size } from '@sqaitech/core';
+import { createImgBase64ByFormat } from '@sqaitech/shared/img';
+import { getDebug } from '@sqaitech/shared/logger';
 import type { ScrcpyScreenshotManager } from './scrcpy-manager';
 import { DEFAULT_SCRCPY_CONFIG } from './scrcpy-manager';
 

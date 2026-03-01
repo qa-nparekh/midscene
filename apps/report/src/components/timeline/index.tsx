@@ -3,8 +3,8 @@ import * as PIXI from 'pixi.js';
 import { useEffect, useMemo, useRef } from 'react';
 
 import './index.less';
-import type { ExecutionRecorderItem, ExecutionTask } from '@midscene/core';
-import { useTheme } from '@midscene/visualizer';
+import type { ExecutionRecorderItem, ExecutionTask } from '@sqaitech/core';
+import { useTheme } from '@sqaitech/visualizer';
 import { getTextureFromCache, loadTexture } from '../pixi-loader';
 import { useAllCurrentTasks, useExecutionDump } from '../store';
 

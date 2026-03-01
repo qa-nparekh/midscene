@@ -1,5 +1,5 @@
 {
-  "name": "@midscene/computer-playground",
+  "name": "@sqaitech/computer-playground",
   "version": "1.4.6",
   "description": "Computer playground for Midscene - PC desktop automation",
   "main": "./dist/lib/index.js",
@@ -7,8 +7,8 @@
   "module": "./dist/es/index.mjs",
   "files": ["dist", "static", "bin", "README.md"],
   "bin": {
-    "midscene-computer-playground": "./bin/computer-playground",
-    "@midscene/computer-playground": "./bin/computer-playground"
+    "sqai-computer-playground": "./bin/computer-playground",
+    "@sqaitech/computer-playground": "./bin/computer-playground"
   },
   "scripts": {
     "dev": "npm run build:watch",
@@ -17,10 +17,10 @@
     "build:watch": "rslib build --watch --no-clean"
   },
   "dependencies": {
-    "@midscene/computer": "workspace:*",
-    "@midscene/core": "workspace:*",
-    "@midscene/playground": "workspace:*",
-    "@midscene/shared": "workspace:*",
+    "@sqaitech/computer": "workspace:*",
+    "@sqaitech/core": "workspace:*",
+    "@sqaitech/playground": "workspace:*",
+    "@sqaitech/shared": "workspace:*",
     "cors": "^2.8.5",
     "express": "^4.21.2",
     "puppeteer": "24.6.0"

@@ -1,4 +1,4 @@
-import { PlaygroundSDK } from '@midscene/playground';
+import { PlaygroundSDK } from '@sqaitech/playground';
 import { Button, Tooltip, message } from 'antd';
 import type React from 'react';
 import { useEffect } from 'react';

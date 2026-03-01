@@ -1,6 +1,6 @@
 # API 参考（PC 桌面）
 
-本页记录了 `@midscene/computer` 提供的 PC 桌面特定 API。
+本页记录了 `@sqaitech/computer` 提供的 PC 桌面特定 API。
 
 有关适用于所有平台的通用 API，请参阅 [通用 API 参考](./api)。
 
@@ -31,7 +31,7 @@ interface ComputerAgentOpt {
 **示例：**
 
 ```typescript
-import { agentFromComputer } from '@midscene/computer';
+import { agentFromComputer } from '@sqaitech/computer';
 
 // 连接到主显示器
 const agent = await agentFromComputer({
@@ -64,7 +64,7 @@ interface DisplayInfo {
 **示例：**
 
 ```typescript
-import { ComputerDevice } from '@midscene/computer';
+import { ComputerDevice } from '@sqaitech/computer';
 
 const displays = await ComputerDevice.listDisplays();
 console.log('可用显示器:', displays);
@@ -92,7 +92,7 @@ interface EnvironmentCheck {
 **示例：**
 
 ```typescript
-import { checkComputerEnvironment } from '@midscene/computer';
+import { checkComputerEnvironment } from '@sqaitech/computer';
 
 const env = await checkComputerEnvironment();
 console.log('环境检查:', env);
@@ -254,7 +254,7 @@ const displays = await ComputerDevice.listDisplays();
 ### 打开应用并导航
 
 ```typescript
-import { agentFromComputer } from '@midscene/computer';
+import { agentFromComputer } from '@sqaitech/computer';
 
 const agent = await agentFromComputer();
 
@@ -283,7 +283,7 @@ if (process.platform === 'darwin') {
 ### 多显示器工作流
 
 ```typescript
-import { ComputerDevice, agentFromComputer } from '@midscene/computer';
+import { ComputerDevice, agentFromComputer } from '@sqaitech/computer';
 
 // 列出显示器
 const displays = await ComputerDevice.listDisplays();
@@ -307,7 +307,7 @@ if (displays.length > 1) {
 ### Web 浏览器自动化
 
 ```typescript
-import { agentFromComputer } from '@midscene/computer';
+import { agentFromComputer } from '@sqaitech/computer';
 
 const agent = await agentFromComputer();
 
@@ -342,7 +342,7 @@ import type {
   ComputerDeviceOpt,
   DisplayInfo,
   EnvironmentCheck,
-} from '@midscene/computer';
+} from '@sqaitech/computer';
 ```
 
 ## 另请参阅

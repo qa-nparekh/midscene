@@ -1,24 +1,24 @@
-import { z } from '@midscene/core';
+import { z } from '@sqaitech/core';
 import {
   type BaseAgent,
   BaseMidsceneTools,
   type ToolDefinition,
-} from '@midscene/shared/mcp';
+} from '@sqaitech/shared/mcp';
 
 const DEPRECATION_MESSAGE = `
 ⚠️ DEPRECATION NOTICE ⚠️
 
-The @midscene/mcp package is deprecated and no longer maintained.
+The @sqaitech/mcp package is deprecated and no longer maintained.
 
 Please migrate to one of the platform-specific MCP packages:
-  • @midscene/web-bridge-mcp - For web browser automation (Bridge mode)
-  • @midscene/android-mcp - For Android device automation
-  • @midscene/ios-mcp - For iOS device automation
+  • @sqaitech/web-bridge-mcp - For web browser automation (Bridge mode)
+  • @sqaitech/android-mcp - For Android device automation
+  • @sqaitech/ios-mcp - For iOS device automation
 
 These new packages provide better performance, stability, and platform-specific features.
 
 Migration Guide:
-1. Uninstall @midscene/mcp
+1. Uninstall @sqaitech/mcp
 2. Install the appropriate platform-specific package
 3. Update your MCP configuration to use the new package name
 
@@ -50,31 +50,31 @@ export const tools = {
   web_connect: {
     name: 'web_connect',
     description:
-      'DEPRECATED: Connect to web page by opening new tab with URL. Use @midscene/web-bridge-mcp instead.',
+      'DEPRECATED: Connect to web page by opening new tab with URL. Use @sqaitech/web-bridge-mcp instead.',
   },
 
   // Android-specific tools
-  midscene_android_connect: {
-    name: 'midscene_android_connect',
+  SQAI_android_connect: {
+    name: 'SQAI_android_connect',
     description:
-      'DEPRECATED: Connect to an Android device via ADB for automation. Use @midscene/android-mcp instead.',
+      'DEPRECATED: Connect to an Android device via ADB for automation. Use @sqaitech/android-mcp instead.',
   },
-  midscene_android_list_devices: {
-    name: 'midscene_android_list_devices',
+  SQAI_android_list_devices: {
+    name: 'SQAI_android_list_devices',
     description:
-      'DEPRECATED: List all connected Android devices available for automation. Use @midscene/android-mcp instead.',
+      'DEPRECATED: List all connected Android devices available for automation. Use @sqaitech/android-mcp instead.',
   },
 
   // iOS-specific tools
-  midscene_ios_connect: {
-    name: 'midscene_ios_connect',
+  SQAI_ios_connect: {
+    name: 'SQAI_ios_connect',
     description:
-      'DEPRECATED: Connect to an iOS device via WebDriverAgent for automation. Use @midscene/ios-mcp instead.',
+      'DEPRECATED: Connect to an iOS device via WebDriverAgent for automation. Use @sqaitech/ios-mcp instead.',
   },
-  midscene_ios_list_devices: {
-    name: 'midscene_ios_list_devices',
+  SQAI_ios_list_devices: {
+    name: 'SQAI_ios_list_devices',
     description:
-      'DEPRECATED: List all connected iOS devices available for automation. Use @midscene/ios-mcp instead.',
+      'DEPRECATED: List all connected iOS devices available for automation. Use @sqaitech/ios-mcp instead.',
   },
 
   // AI methods from Agent class

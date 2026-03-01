@@ -1,7 +1,7 @@
 import assert from 'node:assert';
 import fs from 'node:fs';
 import path from 'node:path';
-import { commonIgnoreWarnings } from '@midscene/shared';
+import { commonIgnoreWarnings } from '@sqaitech/shared';
 import { defineConfig } from '@rsbuild/core';
 import { pluginLess } from '@rsbuild/plugin-less';
 import { pluginNodePolyfill } from '@rsbuild/plugin-node-polyfill';
@@ -26,7 +26,7 @@ const allTestData = jsonFiles.map((file) => {
 
 // put back the report template to the core package
 // this is a workaround for the circular dependency issue
-// ERROR: This repository uses pkg in bundler mode. It is necessary to declare @midscene/report in the dependency; otherwise, it may cause packaging order issues and thus lead to the failure of report injection
+// ERROR: This repository uses pkg in bundler mode. It is necessary to declare @sqaitech/report in the dependency; otherwise, it may cause packaging order issues and thus lead to the failure of report injection
 const copyReportTemplate = () => ({
   name: 'copy-report-template',
   setup(api: {
@@ -54,8 +54,8 @@ const copyReportTemplate = () => ({
         fs.readFileSync(path.join(corePkgDir, 'package.json'), 'utf-8'),
       );
       assert(
-        corePkgJson.name === '@midscene/core',
-        'core package name is not @midscene/core',
+        corePkgJson.name === '@sqaitech/core',
+        'core package name is not @sqaitech/core',
       );
       const corePkgDistDir = path.join(corePkgDir, 'dist');
 
@@ -116,7 +116,7 @@ export default defineConfig({
         ? allTestData.map((item, index) => ({
             tag: 'script',
             attrs: {
-              type: 'midscene_web_dump',
+              type: 'sqai_web_dump',
               playwright_test_description: item.data.groupDescription,
               playwright_test_id: `id-${index}`,
               playwright_test_title: item.data.groupName,
@@ -166,7 +166,7 @@ export default defineConfig({
     pluginTypeCheck(),
     pluginWorkspaceDev({
       projects: {
-        '@midscene/report': {
+        '@sqaitech/report': {
           skip: true,
         },
       },

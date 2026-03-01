@@ -1,5 +1,5 @@
 {
-  "name": "@midscene/computer-win",
+  "name": "@sqaitech/computer-win",
   "version": "1.4.6",
   "description": "Midscene.js Computer Desktop Automation for Windows",
   "license": "MIT",
@@ -24,7 +24,7 @@
     "dev": "rslib build --watch"
   },
   "dependencies": {
-    "@midscene/computer": "workspace:*"
+    "@sqaitech/computer": "workspace:*"
   },
   "devDependencies": {
     "@rslib/core": "^0.18.3",

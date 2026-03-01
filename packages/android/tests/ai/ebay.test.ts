@@ -1,4 +1,4 @@
-import { sleep } from '@midscene/core/utils';
+import { sleep } from '@sqaitech/core/utils';
 import { beforeAll, describe, it, vi } from 'vitest';
 import { AndroidAgent, AndroidDevice, getConnectedDevices } from '../../src';
 
@@ -18,11 +18,11 @@ describe('Test todo list', () => {
       aiActionContext:
         'If any location, permission, user agreement, etc. popup, click agree. If login page pops up, close it.',
       modelConfig: {
-        MIDSCENE_MODEL_NAME: 'qwen3-vl-plus',
-        MIDSCENE_MODEL_BASE_URL:
+        SQAI_MODEL_NAME: 'qwen3-vl-plus',
+        SQAI_MODEL_BASE_URL:
           'https://dashscope.aliyuncs.com/compatible-mode/v1',
-        MIDSCENE_MODEL_API_KEY: 'sk-...',
-        MIDSCENE_MODEL_FAMILY: 'qwen3-vl',
+        SQAI_MODEL_API_KEY: 'sk-...',
+        SQAI_MODEL_FAMILY: 'qwen3-vl',
       },
     });
     await page.connect();

@@ -1,6 +1,6 @@
 import type { PlanningAIResponse, UIContext } from '@/types';
-import type { IModelConfig } from '@midscene/shared/env';
-import { getDebug } from '@midscene/shared/logger';
+import type { IModelConfig } from '@sqaitech/shared/env';
+import { getDebug } from '@sqaitech/shared/logger';
 import type { ChatCompletionMessageParam } from 'openai/resources/index';
 import type { ConversationHistory } from '../conversation-history';
 import {

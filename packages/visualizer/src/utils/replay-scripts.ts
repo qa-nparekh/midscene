@@ -1,6 +1,6 @@
 'use client';
 import { mousePointer } from '@/utils';
-import { paramStr, typeStr } from '@midscene/core/agent';
+import { paramStr, typeStr } from '@sqaitech/core/agent';
 
 import type {
   ExecutionDump,
@@ -12,7 +12,7 @@ import type {
   LocateResultElement,
   Rect,
   UIContext,
-} from '@midscene/core';
+} from '@sqaitech/core';
 
 // Local type definition for Planning Locate task
 interface ExecutionTaskPlanningLocate extends ExecutionTask {

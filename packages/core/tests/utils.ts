@@ -2,7 +2,7 @@ import { writeFileSync } from 'node:fs';
 import { join } from 'node:path';
 import { ScreenshotItem } from '@/screenshot-item';
 import type { UIContext } from '@/types';
-import { localImg2Base64 } from '@midscene/shared/img';
+import { localImg2Base64 } from '@sqaitech/shared/img';
 
 export function getFixture(name: string) {
   return join(__dirname, 'fixtures', name);

@@ -31,14 +31,14 @@ Node.js 18.19.0 or higher is required.
 
 ## Try Playground (no code)
 
-Playground is the fastest way to validate the connection and observe AI-driven steps without writing code. It shares the same core as `@midscene/computer`, so anything that works here will behave the same once scripted.
+Playground is the fastest way to validate the connection and observe AI-driven steps without writing code. It shares the same core as `@sqaitech/computer`, so anything that works here will behave the same once scripted.
 
 <video src="https://lf3-static.bytednsdoc.com/obj/eden-cn/nupipfups/Midscene/pc-twitter2.mp4" controls/>
 
 1. Launch the Playground CLI:
 
 ```bash
-npx --yes @midscene/computer-playground
+npx --yes @sqaitech/computer-playground
 ```
 
 2. Click the gear icon in the Playground window, then paste your API key configuration. Refer back to [Model configuration](./model-config) if you still need credentials.
@@ -53,14 +53,14 @@ Once Playground works, move to a repeatable script with the JavaScript SDK.
 
 ### Step 1. Install dependencies
 
-<PackageManagerTabs command="install @midscene/computer" />
+<PackageManagerTabs command="install @sqaitech/computer" />
 
 ### Step 2. Write your first script
 
 Create `example.ts`:
 
 ```typescript
-import { agentFromComputer } from '@midscene/computer';
+import { agentFromComputer } from '@sqaitech/computer';
 
 (async () => {
   // Create an agent
@@ -95,7 +95,7 @@ npx tsx example.ts
 If you have multiple displays, you can control a specific one:
 
 ```typescript
-import { ComputerDevice, agentFromComputer } from '@midscene/computer';
+import { ComputerDevice, agentFromComputer } from '@sqaitech/computer';
 
 // List all displays
 const displays = await ComputerDevice.listDisplays();
@@ -178,7 +178,7 @@ await agent.aiAssert('A folder named "My Project" exists');
 You can check if your system is properly configured:
 
 ```typescript
-import { checkComputerEnvironment } from '@midscene/computer';
+import { checkComputerEnvironment } from '@sqaitech/computer';
 
 const env = await checkComputerEnvironment();
 console.log('Platform:', env.platform);

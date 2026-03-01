@@ -1,9 +1,9 @@
-import type { Agent } from '@midscene/core/agent';
+import type { Agent } from '@sqaitech/core/agent';
 import {
   BaseMCPServer,
   type Tool,
   createMCPServerLauncher,
-} from '@midscene/shared/mcp';
+} from '@sqaitech/shared/mcp';
 import { AndroidAgent } from './agent';
 import { AndroidMidsceneTools } from './mcp-tools.js';
 
@@ -17,7 +17,7 @@ export class AndroidMCPServer extends BaseMCPServer {
   constructor(toolsManager?: AndroidMidsceneTools) {
     super(
       {
-        name: '@midscene/android-mcp',
+        name: '@sqaitech/android-mcp',
         version: __VERSION__,
         description:
           'Control the Android device using natural language commands',

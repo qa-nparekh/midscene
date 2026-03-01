@@ -8,14 +8,14 @@ import type {
   MidsceneYamlScriptEnv,
   MidsceneYamlScriptIOSEnv,
   MidsceneYamlScriptWebEnv,
-} from '@midscene/core';
-import { type ScriptPlayer, parseYamlScript } from '@midscene/core/yaml';
-import { getMidsceneRunSubDir } from '@midscene/shared/common';
+} from '@sqaitech/core';
+import { type ScriptPlayer, parseYamlScript } from '@sqaitech/core/yaml';
+import { getMidsceneRunSubDir } from '@sqaitech/shared/common';
 import {
   buildChromeArgs,
   defaultViewportHeight,
   defaultViewportWidth,
-} from '@midscene/web/puppeteer-agent-launcher';
+} from '@sqaitech/web/puppeteer-agent-launcher';
 
 import merge from 'lodash.merge';
 import pLimit from 'p-limit';

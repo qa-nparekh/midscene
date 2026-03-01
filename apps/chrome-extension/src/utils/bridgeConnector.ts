@@ -1,4 +1,4 @@
-import { ExtensionBridgePageBrowserSide } from '@midscene/web/bridge-mode-browser';
+import { ExtensionBridgePageBrowserSide } from '@sqaitech/web/bridge-mode-browser';
 
 export type BridgeStatus =
   | 'listening'

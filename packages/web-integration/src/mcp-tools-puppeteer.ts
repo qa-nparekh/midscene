@@ -3,16 +3,16 @@ import { existsSync } from 'node:fs';
 import { mkdir, readFile, unlink, writeFile } from 'node:fs/promises';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
-import { z } from '@midscene/core';
-import { BaseMidsceneTools, type ToolDefinition } from '@midscene/shared/mcp';
+import { z } from '@sqaitech/core';
+import { BaseMidsceneTools, type ToolDefinition } from '@sqaitech/shared/mcp';
 import type { Page as PuppeteerPage } from 'puppeteer';
 import puppeteer from 'puppeteer-core';
 import type { Browser, Page } from 'puppeteer-core';
 import { PuppeteerAgent } from './puppeteer';
 import { StaticPage } from './static';
 
-const ENDPOINT_FILE = join(tmpdir(), 'midscene-puppeteer-endpoint');
-const USER_DATA_DIR = join(tmpdir(), 'midscene-puppeteer-profile');
+const ENDPOINT_FILE = join(tmpdir(), 'sqai-puppeteer-endpoint');
+const USER_DATA_DIR = join(tmpdir(), 'sqai-puppeteer-profile');
 
 function getSystemChromePath(): string | undefined {
   const platform = process.platform;
@@ -43,7 +43,7 @@ function getSystemChromePath(): string | undefined {
 }
 
 function resolveChromePath(): string {
-  const envPath = process.env.MIDSCENE_MCP_CHROME_PATH;
+  const envPath = process.env.SQAI_MCP_CHROME_PATH;
   if (envPath && envPath !== 'auto' && existsSync(envPath)) {
     return envPath;
   }
@@ -51,7 +51,7 @@ function resolveChromePath(): string {
   if (systemPath) return systemPath;
 
   throw new Error(
-    'Chrome not found. Install Google Chrome or set MIDSCENE_MCP_CHROME_PATH environment variable.',
+    'Chrome not found. Install Google Chrome or set SQAI_MCP_CHROME_PATH environment variable.',
   );
 }
 

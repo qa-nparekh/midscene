@@ -1,4 +1,4 @@
-import { getPreferredLanguage } from '@midscene/shared/env';
+import { getPreferredLanguage } from '@sqaitech/shared/env';
 
 export function getUiTarsPlanningPrompt(): string {
   const preferredLanguage = getPreferredLanguage();

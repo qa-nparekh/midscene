@@ -1,13 +1,13 @@
 import type {
   StreamingAIResponse,
   StreamingCodeGenerationOptions,
-} from '@midscene/core';
+} from '@sqaitech/core';
 import {
   generateYamlTest as generateYamlTestCore,
   generateYamlTestStream as generateYamlTestStreamCore,
-} from '@midscene/core/ai-model';
-import type { ChromeRecordedEvent } from '@midscene/recorder';
-import type { IModelConfig } from '@midscene/shared/env';
+} from '@sqaitech/core/ai-model';
+import type { ChromeRecordedEvent } from '@sqaitech/recorder';
+import type { IModelConfig } from '@sqaitech/shared/env';
 import { recordLogger } from '../logger';
 import { extractNavigationAndViewportInfo } from './playwrightGenerator';
 import { handleTestGenerationError } from './shared/testGenerationUtils';

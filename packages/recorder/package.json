@@ -1,5 +1,5 @@
 {
-  "name": "@midscene/recorder",
+  "name": "@sqaitech/recorder",
   "version": "1.4.6",
   "type": "module",
   "exports": {
@@ -27,7 +27,7 @@
     "antd": "^5.21.6",
     "dayjs": "^1.11.11",
     "react-dom": "18.3.1",
-    "@midscene/shared": "workspace:*"
+    "@sqaitech/shared": "workspace:*"
   },
   "peerDependencies": {
     "react": "18.3.1",

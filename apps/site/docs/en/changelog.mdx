@@ -8,7 +8,7 @@ v1.4 introduces Midscene Skills — a set of installable skill packs for AI assi
 
 Midscene Skills is a set of skill packs that can be installed into AI assistants like Claude Code and OpenClaw. Once installed, AI assistants can control browsers, desktops, Android, and iOS devices using natural language.
 
-Each platform package (`@midscene/android`, `@midscene/ios`, `@midscene/web`, etc.) now exposes an independent CLI entry point, which is the foundation that Skills is built upon.
+Each platform package (`@sqaitech/android`, `@sqaitech/ios`, `@sqaitech/web`, etc.) now exposes an independent CLI entry point, which is the foundation that Skills is built upon.
 
 **Supported Platforms:**
 - Browser (Puppeteer headless mode)
@@ -21,7 +21,7 @@ See: [Midscene Skills](https://github.com/web-infra-dev/midscene-skills)
 
 ### Standalone Desktop Automation MCP Package
 
-New `@midscene/computer-mcp` package provides PC desktop automation as a standalone MCP service. Developers can use desktop automation capabilities directly in MCP-compatible tools like Cursor and Trae without additional integration.
+New `@sqaitech/computer-mcp` package provides PC desktop automation as a standalone MCP service. Developers can use desktop automation capabilities directly in MCP-compatible tools like Cursor and Trae without additional integration.
 
 See docs: [PC Desktop Automation](./computer-introduction)
 
@@ -190,7 +190,7 @@ See documentation: [MCP Services](./mcp)
 
 ### CLI and configuration enhancements
 - **File parameter support**: Fixed CLI issue where `--files` parameter wasn't properly handled when `--config` was specified; now they can be flexibly combined
-- **Dynamic configuration**: Fixed Playground not reading the `MIDSCENE_REPLANNING_CYCLE_LIMIT` environment variable properly
+- **Dynamic configuration**: Fixed Playground not reading the `SQAI_REPLANNING_CYCLE_LIMIT` environment variable properly
 
 ### iOS Agent compatibility improvements
 - Optimized `getWindowSize` method to automatically fall back to legacy endpoint when newer API is unavailable, improving compatibility with WebDriverAgent versions
@@ -279,20 +279,20 @@ Method renames (backward compatible)
 - Renamed `logScreenshot()` → `recordToReport()` (old method kept with deprecation warning)
 
 Environment variable renames (backward compatible)
-- Renamed `OPENAI_API_KEY` → `MIDSCENE_MODEL_API_KEY` (new variable preferred, old variable as fallback)
-- Renamed `OPENAI_BASE_URL` → `MIDSCENE_MODEL_BASE_URL` (new variable preferred, old variable as fallback)
+- Renamed `OPENAI_API_KEY` → `SQAI_MODEL_API_KEY` (new variable preferred, old variable as fallback)
+- Renamed `OPENAI_BASE_URL` → `SQAI_MODEL_BASE_URL` (new variable preferred, old variable as fallback)
 
 ### ⬆️ Upgrade to the latest version
 
 Upgrade only the packages you use. For example:
 
-`npm install @midscene/web@latest`
-`npm install @midscene/android@latest`
-`npm install @midscene/ios@latest`
+`npm install @sqaitech/web@latest`
+`npm install @sqaitech/android@latest`
+`npm install @sqaitech/ios@latest`
 
 If you use the CLI installed globally:
 
-`npm i -g @midscene/cli`
+`npm i -g @sqaitech/cli`
 
 ## v0.30 - Cache management upgrade and mobile experience optimization
 
@@ -540,12 +540,12 @@ Based on the introduction of [Rslib](https://github.com/web-infra-dev/rslib) in 
 - Support storing more complex data structures, laying the foundation for future feature extensions
 
 #### Customize replanning cycle limit
-- Set the `MIDSCENE_REPLANNING_CYCLE_LIMIT` environment variable to customize the maximum number of re-planning cycles allowed when executing operations (aiAct).
+- Set the `SQAI_REPLANNING_CYCLE_LIMIT` environment variable to customize the maximum number of re-planning cycles allowed when executing operations (aiAct).
 - The default value is 10. When the AI needs to re-plan more than this limit, an error will be thrown and suggest splitting the task.
 - Provide more flexible task execution control, adapting to different automation scenarios
 
 ```bash
-export MIDSCENE_REPLANNING_CYCLE_LIMIT=10 # default value is 10
+export SQAI_REPLANNING_CYCLE_LIMIT=10 # default value is 10
 ```
 
 ### Android interaction optimization
@@ -954,8 +954,8 @@ On the new test report page, you can debug the AI execution results at any time,
 * Support for calling Doubao models, reference the environment variables below to experience.
 
 ```bash
-MIDSCENE_OPENAI_INIT_CONFIG_JSON='{"baseURL":"https://xxx.net/api/v3","apiKey":"xxx"}'
-MIDSCENE_MODEL_NAME='ep-20240925111815-mpfz8'
+SQAI_OPENAI_INIT_CONFIG_JSON='{"baseURL":"https://xxx.net/api/v3","apiKey":"xxx"}'
+SQAI_MODEL_NAME='ep-20240925111815-mpfz8'
 MIDSCENE_MODEL_TEXT_ONLY='true'
 ```
 
@@ -1038,7 +1038,7 @@ In the new version, we have merged the Plan and Locate operations in the prompt 
 ```diff
 - playwright test --config=playwright.config.ts
 # Enable cache
-+ MIDSCENE_CACHE=true playwright test --config=playwright.config.ts
++ SQAI_CACHE=true playwright test --config=playwright.config.ts
 ```
 
 * Support for azure openAI
@@ -1074,10 +1074,10 @@ puppeteerPage.screenshot = async (options) => {
 
 ```bash
 # Headed mode (visible browser) access baidu.com and search "weather"
-npx @midscene/cli --headed --url https://www.baidu.com --action "input 'weather', press enter" --sleep 3000
+npx @sqaitech/cli --headed --url https://www.baidu.com --action "input 'weather', press enter" --sleep 3000
 
 # Visit GitHub status page and save the status to ./status.json
-npx @midscene/cli --url https://www.githubstatus.com/ \
+npx @sqaitech/cli --url https://www.githubstatus.com/ \
   --query-output status.json \
   --query '{serviceName: string, status: string}[], github page status, return service name'
 ```

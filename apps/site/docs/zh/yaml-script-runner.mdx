@@ -33,10 +33,10 @@ midscene ./bing-search.yaml
 Midscene 命令行工具使用 [dotenv](https://www.npmjs.com/package/dotenv) 来加载 `.env` 文件。你可以在工具运行目录下创建一个 `.env` 文件，并添加以下配置：
 
 ```ini filename=.env
-MIDSCENE_MODEL_BASE_URL="https://替换为你的模型服务地址/v1"
-MIDSCENE_MODEL_API_KEY="替换为你的 API Key"
-MIDSCENE_MODEL_NAME="替换为你的模型名称"
-MIDSCENE_MODEL_FAMILY="替换为你的模型系列"
+SQAI_MODEL_BASE_URL="https://替换为你的模型服务地址/v1"
+SQAI_MODEL_API_KEY="替换为你的 API Key"
+SQAI_MODEL_NAME="替换为你的模型名称"
+SQAI_MODEL_FAMILY="替换为你的模型系列"
 ```
 
 更多配置信息请参考[模型策略](./model-strategy)文档。
@@ -54,16 +54,16 @@ MIDSCENE_MODEL_FAMILY="替换为你的模型系列"
 
 ### 安装命令行工具
 
-全局安装 `@midscene/cli` （推荐新手使用）：
+全局安装 `@sqaitech/cli` （推荐新手使用）：
 
 ```bash
-npm i -g @midscene/cli
+npm i -g @sqaitech/cli
 ```
 
 或在项目中按需安装
 
 ```bash
-npm i @midscene/cli --save-dev
+npm i @sqaitech/cli --save-dev
 ```
 
 ### 编写第一个脚本
@@ -141,7 +141,7 @@ topic=weather today
 
 ### 运行多个脚本
 
-`@midscene/cli` 支持使用通配符匹配多个脚本来批量执行脚本，这相当于 `--files` 参数的简写。
+`@sqaitech/cli` 支持使用通配符匹配多个脚本来批量执行脚本，这相当于 `--files` 参数的简写。
 
 ```bash
 # 运行单个脚本

@@ -39,7 +39,7 @@ describe('SVG XPath Generation Test', () => {
 
     const testHtmlPath = path.join(
       process.cwd(),
-      'midscene_run',
+      'sqai_run',
       'test-svg-xpath-gen.html',
     );
     fs.mkdirSync(path.dirname(testHtmlPath), { recursive: true });
@@ -130,7 +130,7 @@ describe('SVG XPath Generation Test', () => {
     } catch (error) {
       const testHtmlPath = path.join(
         process.cwd(),
-        'midscene_run',
+        'sqai_run',
         'test-svg-xpath-gen.html',
       );
       if (fs.existsSync(testHtmlPath)) {
@@ -203,7 +203,7 @@ describe('SVG XPath Debug', () => {
 
     const testHtmlPath = path.join(
       process.cwd(),
-      'midscene_run',
+      'sqai_run',
       'test-svg-debug.html',
     );
     fs.mkdirSync(path.dirname(testHtmlPath), { recursive: true });
@@ -366,7 +366,7 @@ describe('SVG XPath Debug', () => {
     } catch (error) {
       const testHtmlPath = path.join(
         process.cwd(),
-        'midscene_run',
+        'sqai_run',
         'test-svg-debug.html',
       );
       if (fs.existsSync(testHtmlPath)) {
@@ -381,7 +381,7 @@ describe('SVG Icon Cache Tests', () => {
   let resetFn: () => Promise<void>;
   let agent: any;
   const cacheId = 'svg-icon-cache-test';
-  const cacheDir = path.join(process.cwd(), 'midscene_run', 'cache');
+  const cacheDir = path.join(process.cwd(), 'sqai_run', 'cache');
   const cacheFilePath = path.join(cacheDir, `${cacheId}.cache.yaml`);
 
   afterEach(async () => {
@@ -488,7 +488,7 @@ describe('SVG Icon Cache Tests', () => {
     // Write test HTML to temporary file
     const testHtmlPath = path.join(
       process.cwd(),
-      'midscene_run',
+      'sqai_run',
       'test-svg-icons.html',
     );
     fs.mkdirSync(path.dirname(testHtmlPath), { recursive: true });
@@ -630,7 +630,7 @@ describe('SVG Icon Cache Tests', () => {
 
     const testHtmlPath = path.join(
       process.cwd(),
-      'midscene_run',
+      'sqai_run',
       'test-multiple-svg-icons.html',
     );
     fs.mkdirSync(path.dirname(testHtmlPath), { recursive: true });

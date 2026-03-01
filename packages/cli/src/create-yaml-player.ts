@@ -1,6 +1,6 @@
 import { readFileSync } from 'node:fs';
 import path, { basename, extname, join } from 'node:path';
-import { ScriptPlayer, parseYamlScript } from '@midscene/core/yaml';
+import { ScriptPlayer, parseYamlScript } from '@sqaitech/core/yaml';
 import { createServer } from 'http-server';
 
 import assert from 'node:assert';
@@ -10,13 +10,13 @@ import type {
   MidsceneYamlScript,
   MidsceneYamlScriptAgentOpt,
   MidsceneYamlScriptEnv,
-} from '@midscene/core';
-import { createAgent } from '@midscene/core/agent';
-import type { AbstractInterface } from '@midscene/core/device';
-import { processCacheConfig } from '@midscene/core/utils';
-import { getDebug } from '@midscene/shared/logger';
-import { AgentOverChromeBridge } from '@midscene/web/bridge-mode';
-import { puppeteerAgentForTarget } from '@midscene/web/puppeteer-agent-launcher';
+} from '@sqaitech/core';
+import { createAgent } from '@sqaitech/core/agent';
+import type { AbstractInterface } from '@sqaitech/core/device';
+import { processCacheConfig } from '@sqaitech/core/utils';
+import { getDebug } from '@sqaitech/shared/logger';
+import { AgentOverChromeBridge } from '@sqaitech/web/bridge-mode';
+import { puppeteerAgentForTarget } from '@sqaitech/web/puppeteer-agent-launcher';
 import type { Browser, Page } from 'puppeteer';
 
 export interface SingleYamlExecutionResult {
@@ -231,7 +231,7 @@ export async function createYamlPlayer(
       // handle android
       if (typeof clonedYamlScript.android !== 'undefined') {
         const androidTarget = clonedYamlScript.android;
-        const { agentFromAdbDevice } = await import('@midscene/android');
+        const { agentFromAdbDevice } = await import('@sqaitech/android');
         const agent = await agentFromAdbDevice(androidTarget?.deviceId, {
           ...androidTarget, // Pass all Android config options
           ...buildAgentOptions(
@@ -256,7 +256,7 @@ export async function createYamlPlayer(
       // handle iOS
       if (typeof clonedYamlScript.ios !== 'undefined') {
         const iosTarget = clonedYamlScript.ios;
-        const { agentFromWebDriverAgent } = await import('@midscene/ios');
+        const { agentFromWebDriverAgent } = await import('@sqaitech/ios');
         const agent = await agentFromWebDriverAgent({
           ...iosTarget, // Pass all iOS config options
           ...buildAgentOptions(
@@ -281,7 +281,7 @@ export async function createYamlPlayer(
       // handle computer
       if (typeof clonedYamlScript.computer !== 'undefined') {
         const computerTarget = clonedYamlScript.computer;
-        const { agentFromComputer } = await import('@midscene/computer');
+        const { agentFromComputer } = await import('@sqaitech/computer');
         const agent = await agentFromComputer({
           ...computerTarget,
           ...buildAgentOptions(

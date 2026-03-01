@@ -1,4 +1,4 @@
-import { injectReportHtmlFromCore } from '@midscene/shared/mcp';
+import { injectReportHtmlFromCore } from '@sqaitech/shared/mcp';
 import { defineConfig } from '@rslib/core';
 import { rspack } from '@rspack/core';
 import { version } from './package.json';

@@ -1,5 +1,5 @@
 import './App.less';
-import { PlaygroundSDK } from '@midscene/playground';
+import { PlaygroundSDK } from '@sqaitech/playground';
 import {
   Logo,
   NavActions,
@@ -7,7 +7,7 @@ import {
   globalThemeConfig,
   safeOverrideAIConfig,
   useEnvConfig,
-} from '@midscene/visualizer';
+} from '@sqaitech/visualizer';
 import { ConfigProvider, Layout, Modal, notification } from 'antd';
 import { useCallback, useEffect, useMemo, useState } from 'react';
 

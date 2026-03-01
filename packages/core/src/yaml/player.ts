@@ -1,6 +1,6 @@
 import { existsSync, mkdirSync, writeFileSync } from 'node:fs';
 import { basename, dirname, join, resolve } from 'node:path';
-import { assert, ifInBrowser, ifInWorker } from '@midscene/shared/utils';
+import { assert, ifInBrowser, ifInWorker } from '@sqaitech/shared/utils';
 import { type ZodTypeAny, z } from 'zod';
 
 // previous defined yaml flow, as a helper
@@ -45,8 +45,8 @@ import type {
   ScriptPlayerTaskStatus,
   ScrollParam,
 } from '@/types';
-import { getMidsceneRunSubDir } from '@midscene/shared/common';
-import { getDebug } from '@midscene/shared/logger';
+import { getMidsceneRunSubDir } from '@sqaitech/shared/common';
+import { getDebug } from '@sqaitech/shared/logger';
 import {
   buildDetailedLocateParam,
   buildDetailedLocateParamAndRestParams,

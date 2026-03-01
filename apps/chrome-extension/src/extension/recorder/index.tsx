@@ -13,7 +13,7 @@ import { useTabMonitoring } from './hooks/useTabMonitoring';
 import { recordLogger } from './logger';
 import type { ViewMode } from './types';
 import './recorder.less';
-import { useEnvConfig } from '@midscene/visualizer';
+import { useEnvConfig } from '@sqaitech/visualizer';
 import { generateDefaultSessionName } from './utils';
 
 export default function Recorder() {

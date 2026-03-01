@@ -1,4 +1,4 @@
-import { getDebug } from '@midscene/shared/logger';
+import { getDebug } from '@sqaitech/shared/logger';
 import { ADB, type Device } from 'appium-adb';
 
 const debugUtils = getDebug('android:utils');

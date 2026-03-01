@@ -17,7 +17,7 @@ module.exports = {
     'doc_build',
     'node_modules',
     'pnpm-lock.yaml',
-    'midscene_run',
+    'sqai_run',
   ],
   flagWords: banWords,
   dictionaries: ['dictionary'],

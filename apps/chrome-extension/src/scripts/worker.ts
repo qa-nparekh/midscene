@@ -1,7 +1,7 @@
 /// <reference types="chrome" />
 
-import { uuid } from '@midscene/shared/utils';
-import type { WebUIContext } from '@midscene/web';
+import { uuid } from '@sqaitech/shared/utils';
+import type { WebUIContext } from '@sqaitech/web';
 import { BridgeConnector, type BridgeStatus } from '../utils/bridgeConnector';
 import { registerAlarmListener, safeSetupKeepalive } from '../utils/keepalive';
 import { workerMessageTypes } from '../utils/workerMessageTypes';

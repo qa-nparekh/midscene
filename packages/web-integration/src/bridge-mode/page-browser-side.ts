@@ -1,4 +1,4 @@
-import { assert } from '@midscene/shared/utils';
+import { assert } from '@sqaitech/shared/utils';
 import ChromeExtensionProxyPage from '../chrome-extension/page';
 import type {
   ChromePageDestroyOptions,

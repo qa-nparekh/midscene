@@ -10,12 +10,12 @@ interface RslibPluginApi {
 }
 
 /**
- * Rslib plugin to inject report HTML from @midscene/core dist into MCP bundle.
+ * Rslib plugin to inject report HTML from @sqaitech/core dist into MCP bundle.
  * This runs after build and reads the already-injected HTML from core.
  *
  * Prerequisites:
- * - @midscene/report must be in devDependencies to ensure correct build order
- * - @midscene/core dist must exist with injected HTML
+ * - @sqaitech/report must be in devDependencies to ensure correct build order
+ * - @sqaitech/core dist must exist with injected HTML
  *
  * @param packageDir - The directory of the MCP package (use __dirname)
  */
@@ -35,7 +35,7 @@ export function injectReportHtmlFromCore(packageDir: string) {
 
         if (!fs.existsSync(coreUtilsPath)) {
           console.warn(
-            '[inject-report-html] @midscene/core dist not found, skipping',
+            '[inject-report-html] @sqaitech/core dist not found, skipping',
           );
           return;
         }

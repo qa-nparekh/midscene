@@ -11,7 +11,7 @@ import {
   LoadingOutlined,
   ThunderboltOutlined,
 } from '@ant-design/icons';
-import type { BaseElement, LocateResultElement, Rect } from '@midscene/core';
+import type { BaseElement, LocateResultElement, Rect } from '@sqaitech/core';
 import { Dropdown, Spin, Switch, Tooltip, message } from 'antd';
 import GlobalPerspectiveIcon from '../../icons/global-perspective.svg';
 import PlayerSettingIcon from '../../icons/player-setting.svg';
@@ -137,7 +137,7 @@ const downloadReport = (content: string): void => {
   const url = URL.createObjectURL(blob);
   const a = document.createElement('a');
   a.href = url;
-  a.download = 'midscene_report.html';
+  a.download = 'sqai_report.html';
   a.click();
 };
 
@@ -204,7 +204,7 @@ class RecordingSession {
       const url = URL.createObjectURL(blob);
       const a = document.createElement('a');
       a.href = url;
-      a.download = 'midscene_replay.webm';
+      a.download = 'sqai_replay.webm';
       a.click();
       URL.revokeObjectURL(url);
     };

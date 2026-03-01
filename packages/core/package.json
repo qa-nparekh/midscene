@@ -1,5 +1,5 @@
 {
-  "name": "@midscene/core",
+  "name": "@sqaitech/core",
   "description": "Automate browser actions, extract data, and perform assertions using AI. It offers JavaScript SDK, Chrome extension, and support for scripting in YAML. See https://midscenejs.com/ for details.",
   "version": "1.4.6",
   "repository": "https://github.com/web-infra-dev/midscene",
@@ -72,7 +72,7 @@
     "test:parse-action": "npm run test:ai -- tests/ai/parse-action.test.ts"
   },
   "dependencies": {
-    "@midscene/shared": "workspace:*",
+    "@sqaitech/shared": "workspace:*",
     "@ui-tars/action-parser": "1.2.3",
     "dayjs": "^1.11.11",
     "dotenv": "^16.4.5",

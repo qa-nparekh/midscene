@@ -4,10 +4,10 @@ import {
   ComputerDevice,
   agentFromComputer,
   checkAccessibilityPermission,
-} from '@midscene/computer';
-import { PlaygroundServer } from '@midscene/playground';
-import { PLAYGROUND_SERVER_PORT } from '@midscene/shared/constants';
-import { findAvailablePort } from '@midscene/shared/node';
+} from '@sqaitech/computer';
+import { PlaygroundServer } from '@sqaitech/playground';
+import { PLAYGROUND_SERVER_PORT } from '@sqaitech/shared/constants';
+import { findAvailablePort } from '@sqaitech/shared/node';
 import puppeteer from 'puppeteer';
 
 const staticDir = path.join(__dirname, '../../static');

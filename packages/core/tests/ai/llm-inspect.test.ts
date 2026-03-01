@@ -1,5 +1,5 @@
 import { AiLocateElement, AiLocateSection } from '@/ai-model';
-import { globalModelConfigManager } from '@midscene/shared/env';
+import { globalModelConfigManager } from '@sqaitech/shared/env';
 import { getContextFromFixture } from 'tests/evaluation';
 import { beforeAll, expect, test, vi } from 'vitest';
 

@@ -3,16 +3,16 @@ import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import { PlaywrightAgent, type PlaywrightWebPage } from '@/playwright/index';
 import type { WebPageAgentOpt } from '@/web-element';
-import type { Cache } from '@midscene/core';
-import type { AgentOpt, Agent as PageAgent } from '@midscene/core/agent';
-import { processCacheConfig } from '@midscene/core/utils';
+import type { Cache } from '@sqaitech/core';
+import type { AgentOpt, Agent as PageAgent } from '@sqaitech/core/agent';
+import { processCacheConfig } from '@sqaitech/core/utils';
 import {
   DEFAULT_WAIT_FOR_NAVIGATION_TIMEOUT,
   DEFAULT_WAIT_FOR_NETWORK_IDLE_TIMEOUT,
-} from '@midscene/shared/constants';
-import { getDebug } from '@midscene/shared/logger';
-import { uuid } from '@midscene/shared/utils';
-import { replaceIllegalPathCharsAndSpace } from '@midscene/shared/utils';
+} from '@sqaitech/shared/constants';
+import { getDebug } from '@sqaitech/shared/logger';
+import { uuid } from '@sqaitech/shared/utils';
+import { replaceIllegalPathCharsAndSpace } from '@sqaitech/shared/utils';
 import { type TestInfo, type TestType, test } from '@playwright/test';
 import type { Page as OriginPlaywrightPage } from 'playwright';
 export type APITestType = Pick<TestType<any, any>, 'step'>;
@@ -45,7 +45,7 @@ const groupAndCaseForTest = (testInfo: TestInfo) => {
 };
 
 const midsceneAgentKeyId = '_midsceneAgentId';
-export const midsceneDumpAnnotationId = 'MIDSCENE_DUMP_ANNOTATION';
+export const midsceneDumpAnnotationId = 'SQAI_DUMP_ANNOTATION';
 
 // Track temporary dump files per page for cleanup
 const pageTempFiles = new Map<string, string>();
@@ -209,7 +209,7 @@ export const PlaywrightAiFixture = (options?: {
     }
 
     // 2. Create new temp file with predictable name using pageId
-    const tempFileName = `midscene-dump-${test.testId || uuid()}-${pageId}.json`;
+    const tempFileName = `sqai-dump-${test.testId || uuid()}-${pageId}.json`;
     const tempFilePath = join(tmpdir(), tempFileName);
 
     // 3. Serialize dump with screenshots as separate files

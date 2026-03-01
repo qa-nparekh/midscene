@@ -17,8 +17,8 @@ import { TaskBuilder } from '@/agent/task-builder';
 import type { AbstractInterface } from '@/device';
 import { ScreenshotItem } from '@/screenshot-item';
 import type Service from '@/service';
-import type { IModelConfig } from '@midscene/shared/env';
-import { uuid } from '@midscene/shared/utils';
+import type { IModelConfig } from '@sqaitech/shared/env';
+import { uuid } from '@sqaitech/shared/utils';
 import { beforeEach, describe, expect, it, vi } from 'vitest';
 import { getMidsceneLocationSchema, z } from '../../src';
 

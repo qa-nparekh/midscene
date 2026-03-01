@@ -30,7 +30,7 @@ interface BridgeMessageRecord {
   msgType: 'log' | 'status';
 }
 
-const BRIDGE_SERVER_URL_KEY = 'midscene-bridge-server-url';
+const BRIDGE_SERVER_URL_KEY = 'sqai-bridge-server-url';
 const DEFAULT_SERVER_URL = 'ws://localhost:3766';
 
 export default function Bridge() {

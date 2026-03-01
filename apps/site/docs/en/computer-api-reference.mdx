@@ -1,6 +1,6 @@
 # API Reference (PC Desktop)
 
-This page documents the PC desktop-specific APIs provided by `@midscene/computer`.
+This page documents the PC desktop-specific APIs provided by `@sqaitech/computer`.
 
 For common APIs that work across all platforms, see [Common API Reference](./api).
 
@@ -31,7 +31,7 @@ interface ComputerAgentOpt {
 **Example:**
 
 ```typescript
-import { agentFromComputer } from '@midscene/computer';
+import { agentFromComputer } from '@sqaitech/computer';
 
 // Connect to primary display
 const agent = await agentFromComputer({
@@ -64,7 +64,7 @@ interface DisplayInfo {
 **Example:**
 
 ```typescript
-import { ComputerDevice } from '@midscene/computer';
+import { ComputerDevice } from '@sqaitech/computer';
 
 const displays = await ComputerDevice.listDisplays();
 console.log('Available displays:', displays);
@@ -92,7 +92,7 @@ interface EnvironmentCheck {
 **Example:**
 
 ```typescript
-import { checkComputerEnvironment } from '@midscene/computer';
+import { checkComputerEnvironment } from '@sqaitech/computer';
 
 const env = await checkComputerEnvironment();
 console.log('Environment check:', env);
@@ -254,7 +254,7 @@ const displays = await ComputerDevice.listDisplays();
 ### Open Application and Navigate
 
 ```typescript
-import { agentFromComputer } from '@midscene/computer';
+import { agentFromComputer } from '@sqaitech/computer';
 
 const agent = await agentFromComputer();
 
@@ -283,7 +283,7 @@ if (process.platform === 'darwin') {
 ### Multi-Display Workflow
 
 ```typescript
-import { ComputerDevice, agentFromComputer } from '@midscene/computer';
+import { ComputerDevice, agentFromComputer } from '@sqaitech/computer';
 
 // List displays
 const displays = await ComputerDevice.listDisplays();
@@ -307,7 +307,7 @@ if (displays.length > 1) {
 ### Web Browser Automation
 
 ```typescript
-import { agentFromComputer } from '@midscene/computer';
+import { agentFromComputer } from '@sqaitech/computer';
 
 const agent = await agentFromComputer();
 
@@ -342,7 +342,7 @@ import type {
   ComputerDeviceOpt,
   DisplayInfo,
   EnvironmentCheck,
-} from '@midscene/computer';
+} from '@sqaitech/computer';
 ```
 
 ## See Also

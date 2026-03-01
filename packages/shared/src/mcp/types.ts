@@ -1,7 +1,7 @@
 import type { McpServer } from '@modelcontextprotocol/sdk/server/mcp.js';
 import type { z } from 'zod';
 
-// Avoid circular dependency: don't import from @midscene/core
+// Avoid circular dependency: don't import from @sqaitech/core
 // Instead, use generic types that will be provided by implementation
 
 /**

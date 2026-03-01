@@ -5,13 +5,13 @@ import {
   descriptionOfTree,
   traverseTree,
   treeToList,
-} from '@midscene/shared/extractor';
+} from '@sqaitech/shared/extractor';
 import {
   compositeElementInfoImg,
   imageInfoOfBase64,
   saveBase64Image,
-} from '@midscene/shared/img';
-import { getElementInfosScriptContent } from '@midscene/shared/node';
+} from '@sqaitech/shared/img';
+import { getElementInfosScriptContent } from '@sqaitech/shared/node';
 import { createServer } from 'http-server';
 import { afterAll, beforeAll, describe, expect, it } from 'vitest';
 import { launchPage } from '../ai/web/puppeteer/utils';
@@ -215,7 +215,7 @@ describe(
       });
       const elementInfosScriptContent = getElementInfosScriptContent();
       const element = await page.evaluateJavaScript?.(
-        `${elementInfosScriptContent}midscene_element_inspector.getElementInfoByXpath('/html/body/div[2]/div/div/ul/li[1]/span/text()[1]')`,
+        `${elementInfosScriptContent}sqai_element_inspector.getElementInfoByXpath('/html/body/div[2]/div/div/ul/li[1]/span/text()[1]')`,
       );
       expect(element.content).toBe('English');
       expect(element.nodeType).toBe('TEXT Node');
@@ -234,7 +234,7 @@ describe(
 
       const elementInfosScriptContent = getElementInfosScriptContent();
       const element = await page.evaluateJavaScript?.(
-        `${elementInfosScriptContent}midscene_element_inspector.getElementInfoByXpath('/html/body/button')`,
+        `${elementInfosScriptContent}sqai_element_inspector.getElementInfoByXpath('/html/body/button')`,
       );
       expect(element.nodeType).toBe('BUTTON Node');
       expect(element.attributes).toMatchSnapshot();
@@ -252,7 +252,7 @@ describe(
 
       const elementInfosScriptContent = getElementInfosScriptContent();
       const description = await page.evaluateJavaScript?.(
-        `${elementInfosScriptContent}midscene_element_inspector.webExtractNodeTreeAsString(document, true)`,
+        `${elementInfosScriptContent}sqai_element_inspector.webExtractNodeTreeAsString(document, true)`,
       );
       expect(description).not.toContain('This should be collected');
       expect(description.split('\n').length).toBeLessThan(100);
@@ -270,7 +270,7 @@ describe(
 
       const elementInfosScriptContent = getElementInfosScriptContent();
       const description = await page.evaluateJavaScript?.(
-        `${elementInfosScriptContent}midscene_element_inspector.webExtractNodeTreeAsString(document, false)`,
+        `${elementInfosScriptContent}sqai_element_inspector.webExtractNodeTreeAsString(document, false)`,
       );
       expect(description).toContain('This should be collected');
       expect(description.split('\n').length).toBeGreaterThan(200);
@@ -290,49 +290,49 @@ describe(
 
       // Test disabled input - attribute exists with empty value (DOM behavior)
       const disabledInput = await page.evaluateJavaScript?.(
-        `${elementInfosScriptContent}midscene_element_inspector.getElementInfoByXpath('//*[@id="J_disabled_input"]')`,
+        `${elementInfosScriptContent}sqai_element_inspector.getElementInfoByXpath('//*[@id="J_disabled_input"]')`,
       );
       expect(disabledInput).toBeDefined();
       expect(disabledInput.attributes).toHaveProperty('disabled');
 
       // Test readonly input
       const readonlyInput = await page.evaluateJavaScript?.(
-        `${elementInfosScriptContent}midscene_element_inspector.getElementInfoByXpath('//*[@id="J_readonly_input"]')`,
+        `${elementInfosScriptContent}sqai_element_inspector.getElementInfoByXpath('//*[@id="J_readonly_input"]')`,
       );
       expect(readonlyInput).toBeDefined();
       expect(readonlyInput.attributes).toHaveProperty('readonly');
 
       // Test checked checkbox
       const checkedCheckbox = await page.evaluateJavaScript?.(
-        `${elementInfosScriptContent}midscene_element_inspector.getElementInfoByXpath('//*[@id="J_checked_checkbox"]')`,
+        `${elementInfosScriptContent}sqai_element_inspector.getElementInfoByXpath('//*[@id="J_checked_checkbox"]')`,
       );
       expect(checkedCheckbox).toBeDefined();
       expect(checkedCheckbox.attributes).toHaveProperty('checked');
 
       // Test required input
       const requiredInput = await page.evaluateJavaScript?.(
-        `${elementInfosScriptContent}midscene_element_inspector.getElementInfoByXpath('//*[@id="J_required_input"]')`,
+        `${elementInfosScriptContent}sqai_element_inspector.getElementInfoByXpath('//*[@id="J_required_input"]')`,
       );
       expect(requiredInput).toBeDefined();
       expect(requiredInput.attributes).toHaveProperty('required');
 
       // Test disabled button
       const disabledButton = await page.evaluateJavaScript?.(
-        `${elementInfosScriptContent}midscene_element_inspector.getElementInfoByXpath('//*[@id="J_disabled_button"]')`,
+        `${elementInfosScriptContent}sqai_element_inspector.getElementInfoByXpath('//*[@id="J_disabled_button"]')`,
       );
       expect(disabledButton).toBeDefined();
       expect(disabledButton.attributes).toHaveProperty('disabled');
 
       // Test disabled select
       const disabledSelect = await page.evaluateJavaScript?.(
-        `${elementInfosScriptContent}midscene_element_inspector.getElementInfoByXpath('//*[@id="J_disabled_select"]')`,
+        `${elementInfosScriptContent}sqai_element_inspector.getElementInfoByXpath('//*[@id="J_disabled_select"]')`,
       );
       expect(disabledSelect).toBeDefined();
       expect(disabledSelect.attributes).toHaveProperty('disabled');
 
       // Test custom data attributes without value (data-flag, data-active)
       const dataFlagDiv = await page.evaluateJavaScript?.(
-        `${elementInfosScriptContent}midscene_element_inspector.getElementInfoByXpath('//*[@id="J_data_flag_div"]')`,
+        `${elementInfosScriptContent}sqai_element_inspector.getElementInfoByXpath('//*[@id="J_data_flag_div"]')`,
       );
       expect(dataFlagDiv).toBeDefined();
       expect(dataFlagDiv.attributes).toHaveProperty('data-flag');
@@ -355,11 +355,11 @@ describe(
 
         // Test clicking on the button element
         const orderSensitiveXpaths = await page.evaluateJavaScript?.(
-          `${elementInfosScriptContent}midscene_element_inspector.getXpathsByPoint({left: 100, top: 400}, true)`,
+          `${elementInfosScriptContent}sqai_element_inspector.getXpathsByPoint({left: 100, top: 400}, true)`,
         );
 
         const orderInsensitiveXpaths = await page.evaluateJavaScript?.(
-          `${elementInfosScriptContent}midscene_element_inspector.getXpathsByPoint({left: 100, top: 400}, false)`,
+          `${elementInfosScriptContent}sqai_element_inspector.getXpathsByPoint({left: 100, top: 400}, false)`,
         );
 
         expect(orderSensitiveXpaths).toBeDefined();
@@ -392,7 +392,7 @@ describe(
 
         // Test xpath with normalize-space text matching - this may match the text node
         const elementInfo = await page.evaluateJavaScript?.(
-          `${elementInfosScriptContent}midscene_element_inspector.getElementInfoByXpath('/html/body/div[2]/div/div/ul/li[1]/span[normalize-space()="English"]')`,
+          `${elementInfosScriptContent}sqai_element_inspector.getElementInfoByXpath('/html/body/div[2]/div/div/ul/li[1]/span[normalize-space()="English"]')`,
         );
 
         expect(elementInfo).toBeDefined();
@@ -417,7 +417,7 @@ describe(
         // Look for elements with Chinese text or special characters
         const point = { left: 600, top: 500 }; // Adjust coordinates as needed
         const xpaths = await page.evaluateJavaScript?.(
-          `${elementInfosScriptContent}midscene_element_inspector.getXpathsByPoint(${JSON.stringify(point)}, false)`,
+          `${elementInfosScriptContent}sqai_element_inspector.getXpathsByPoint(${JSON.stringify(point)}, false)`,
         );
 
         expect(xpaths[0]).toMatch(/^\/html/);

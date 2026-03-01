@@ -1,4 +1,4 @@
-import type { TModelFamily } from '@midscene/shared/env';
+import type { TModelFamily } from '@sqaitech/shared/env';
 
 /**
  * Check if the modelFamily is auto-glm or auto-glm-multilingual

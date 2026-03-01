@@ -1,4 +1,4 @@
-import { IOSMCPServer } from '@midscene/ios/mcp-server';
+import { IOSMCPServer } from '@sqaitech/ios/mcp-server';
 import { afterAll, beforeAll, describe, expect, it, vi } from 'vitest';
 
 describe('IOSMCPServer HTTP mode', () => {

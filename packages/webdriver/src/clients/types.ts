@@ -1,4 +1,4 @@
-import { WEBDRIVER_ELEMENT_ID_KEY } from '@midscene/shared/constants';
+import { WEBDRIVER_ELEMENT_ID_KEY } from '@sqaitech/shared/constants';
 
 export interface WDASession {
   sessionId: string;

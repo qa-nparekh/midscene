@@ -31,10 +31,10 @@ The CLI prints execution progress and generates a visual report when it finishes
 The Midscene CLI uses [dotenv](https://www.npmjs.com/package/dotenv) to load a `.env` file from the directory where you run the tool. Create a `.env` file and add:
 
 ```ini filename=.env
-MIDSCENE_MODEL_BASE_URL="replace with your model service URL/v1"
-MIDSCENE_MODEL_API_KEY="replace with your API Key"
-MIDSCENE_MODEL_NAME="replace with your model name"
-MIDSCENE_MODEL_FAMILY="replace with your model family"
+SQAI_MODEL_BASE_URL="replace with your model service URL/v1"
+SQAI_MODEL_API_KEY="replace with your API Key"
+SQAI_MODEL_NAME="replace with your model name"
+SQAI_MODEL_FAMILY="replace with your model family"
 ```
 
 For more configuration details, see the [Model strategy](./model-strategy) guide.
@@ -51,16 +51,16 @@ Notes:
 
 ### Install the CLI
 
-Install `@midscene/cli` globally (recommended for first-time users):
+Install `@sqaitech/cli` globally (recommended for first-time users):
 
 ```bash
-npm i -g @midscene/cli
+npm i -g @sqaitech/cli
 ```
 
 Or install it per project:
 
 ```bash
-npm i @midscene/cli --save-dev
+npm i @sqaitech/cli --save-dev
 ```
 
 ### Write your first script
@@ -138,7 +138,7 @@ topic=weather today
 
 ### Run multiple scripts
 
-`@midscene/cli` supports glob patterns to batch-execute scripts, which is a shorthand for the `--files` argument.
+`@sqaitech/cli` supports glob patterns to batch-execute scripts, which is a shorthand for the `--files` argument.
 
 ```bash
 # Run a single script

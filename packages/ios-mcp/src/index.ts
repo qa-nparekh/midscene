@@ -1,6 +1,6 @@
 import { parseArgs } from 'node:util';
-import { IOSMCPServer } from '@midscene/ios/mcp-server';
-import { type CLIArgs, CLI_ARGS_CONFIG } from '@midscene/shared/mcp';
+import { IOSMCPServer } from '@sqaitech/ios/mcp-server';
+import { type CLIArgs, CLI_ARGS_CONFIG } from '@sqaitech/shared/mcp';
 
 const { values } = parseArgs({ options: CLI_ARGS_CONFIG });
 const args = values as CLIArgs;

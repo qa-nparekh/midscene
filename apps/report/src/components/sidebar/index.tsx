@@ -4,13 +4,13 @@ import type {
   AIUsageInfo,
   ExecutionTask,
   ExecutionTaskPlanningLocate,
-} from '@midscene/core';
-import { typeStr } from '@midscene/core/agent';
+} from '@sqaitech/core';
+import { typeStr } from '@sqaitech/core/agent';
 import {
   type AnimationScript,
   iconForStatus,
   timeCostStrElement,
-} from '@midscene/visualizer';
+} from '@sqaitech/visualizer';
 import { Checkbox, Tag, Tooltip } from 'antd';
 import { useEffect, useMemo } from 'react';
 import CameraIcon from '../../icons/camera.svg?react';
@@ -706,7 +706,7 @@ const Sidebar = (props: SidebarProps = {}): JSX.Element => {
           <span className="tip-text">
             How to insert a custom log entry ?{' '}
             <a
-              href="https://midscenejs.com/api#agentlogscreenshot"
+              href="https://sqai.tech/api#agentlogscreenshot"
               target="_blank"
               rel="noopener noreferrer"
             >

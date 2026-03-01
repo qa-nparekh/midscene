@@ -6,13 +6,13 @@ import {
   AndroidAgent,
   AndroidDevice,
   getConnectedDevices,
-} from '@midscene/android';
-import { PlaygroundServer } from '@midscene/playground';
+} from '@sqaitech/android';
+import { PlaygroundServer } from '@sqaitech/playground';
 import {
   PLAYGROUND_SERVER_PORT,
   SCRCPY_SERVER_PORT,
-} from '@midscene/shared/constants';
-import { findAvailablePort } from '@midscene/shared/node';
+} from '@sqaitech/shared/constants';
+import { findAvailablePort } from '@sqaitech/shared/node';
 import cors from 'cors';
 import ScrcpyServer from './scrcpy-server';
 

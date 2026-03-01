@@ -12,25 +12,25 @@ Midscene 默认集成了 OpenAI SDK 调用 AI 服务，它限定了推理服务�
 
 | 名称 | 描述 |
 |------|-------------|
-| `MIDSCENE_MODEL_API_KEY` | 模型 API Key，如 "sk-abcd..." |
-| `MIDSCENE_MODEL_BASE_URL` | API 的接入 URL，常见以版本号结尾（如`/v1`）；不需要编写最后的 `/chat/completion` 部分，底层 SDK 会自动添加 |
-| `MIDSCENE_MODEL_NAME` | 模型名称 |
-| `MIDSCENE_MODEL_FAMILY` | 模型系列，用于确定坐标处理方式 |
+| `SQAI_MODEL_API_KEY` | 模型 API Key，如 "sk-abcd..." |
+| `SQAI_MODEL_BASE_URL` | API 的接入 URL，常见以版本号结尾（如`/v1`）；不需要编写最后的 `/chat/completion` 部分，底层 SDK 会自动添加 |
+| `SQAI_MODEL_NAME` | 模型名称 |
+| `SQAI_MODEL_FAMILY` | 模型系列，用于确定坐标处理方式 |
 
 ## 高阶配置（可选）
 
 | 名称 | 描述 |
 |------|-------------|
-| `MIDSCENE_MODEL_TIMEOUT` | AI 接口调用超时时间（毫秒，默认意图），默认使用 OpenAI SDK 默认值（10 分钟）|
-| `MIDSCENE_MODEL_TEMPERATURE` | 模型采样温度 |
-| `MIDSCENE_MODEL_MAX_TOKENS` | 模型响应的 max_tokens 数配置，默认是 2048 |
-| `MIDSCENE_MODEL_RETRY_COUNT` | AI 调用失败时的重试次数，默认 1（即失败后重试 1 次）|
-| `MIDSCENE_MODEL_RETRY_INTERVAL` | AI 调用重试间隔毫秒数，默认 2000 |
-| `MIDSCENE_MODEL_HTTP_PROXY` | HTTP/HTTPS 代理配置，如 `http://127.0.0.1:8080` 或 `https://proxy.example.com:8080`，优先级高于 `MIDSCENE_MODEL_SOCKS_PROXY` |
-| `MIDSCENE_MODEL_SOCKS_PROXY` | SOCKS 代理配置，如 `socks5://127.0.0.1:1080` |
-| `MIDSCENE_MODEL_INIT_CONFIG_JSON` | 覆盖 OpenAI SDK 初始化配置的 JSON |
-| `MIDSCENE_RUN_DIR` | 运行产物目录，默认值为当前工作目录下的 `midscene_run`，支持设置绝对路径或相对路径 |
-| `MIDSCENE_PREFERRED_LANGUAGE` | 可选，模型响应的语言；如果当前系统时区是 GMT+8 则默认是 `Chinese`，否则是 `English` |
+| `SQAI_MODEL_TIMEOUT` | AI 接口调用超时时间（毫秒，默认意图），默认使用 OpenAI SDK 默认值（10 分钟）|
+| `SQAI_MODEL_TEMPERATURE` | 模型采样温度 |
+| `SQAI_MODEL_MAX_TOKENS` | 模型响应的 max_tokens 数配置，默认是 2048 |
+| `SQAI_MODEL_RETRY_COUNT` | AI 调用失败时的重试次数，默认 1（即失败后重试 1 次）|
+| `SQAI_MODEL_RETRY_INTERVAL` | AI 调用重试间隔毫秒数，默认 2000 |
+| `SQAI_MODEL_HTTP_PROXY` | HTTP/HTTPS 代理配置，如 `http://127.0.0.1:8080` 或 `https://proxy.example.com:8080`，优先级高于 `SQAI_MODEL_SOCKS_PROXY` |
+| `SQAI_MODEL_SOCKS_PROXY` | SOCKS 代理配置，如 `socks5://127.0.0.1:1080` |
+| `SQAI_MODEL_INIT_CONFIG_JSON` | 覆盖 OpenAI SDK 初始化配置的 JSON |
+| `SQAI_RUN_DIR` | 运行产物目录，默认值为当前工作目录下的 `sqai_run`，支持设置绝对路径或相对路径 |
+| `SQAI_PREFERRED_LANGUAGE` | 可选，模型响应的语言；如果当前系统时区是 GMT+8 则默认是 `Chinese`，否则是 `English` |
 
 > 提示：通过 Agent 的 `replanningCycleLimit` 入参控制重规划次数（默认 20，`vlm-ui-tars` 为 40），不再使用环境变量。
 
@@ -40,16 +40,16 @@ Midscene 默认集成了 OpenAI SDK 调用 AI 服务，它限定了推理服务�
 
 | 名称 | 描述 |
 |------|-------------|
-| `MIDSCENE_INSIGHT_MODEL_API_KEY` | API Key |
-| `MIDSCENE_INSIGHT_MODEL_BASE_URL` | API 的接入 URL，常见以版本号结尾（如`/v1`）；不需要编写最后的 `/chat/completion` 部分 |
-| `MIDSCENE_INSIGHT_MODEL_NAME` | 模型名称 |
-| `MIDSCENE_INSIGHT_MODEL_TIMEOUT` | 可选，Insight 意图的 AI 接口调用超时时间（毫秒）|
-| `MIDSCENE_INSIGHT_MODEL_TEMPERATURE` | 可选，Insight 意图的模型采样温度 |
-| `MIDSCENE_INSIGHT_MODEL_RETRY_COUNT` | 可选，效果等同于 `MIDSCENE_MODEL_RETRY_COUNT` |
-| `MIDSCENE_INSIGHT_MODEL_RETRY_INTERVAL` | 可选，效果等同于 `MIDSCENE_MODEL_RETRY_INTERVAL` |
-| `MIDSCENE_INSIGHT_MODEL_HTTP_PROXY` | 可选，效果等同于 `MIDSCENE_MODEL_HTTP_PROXY` |
-| `MIDSCENE_INSIGHT_MODEL_SOCKS_PROXY` | 可选，效果等同于 `MIDSCENE_MODEL_SOCKS_PROXY`  |
-| `MIDSCENE_INSIGHT_MODEL_INIT_CONFIG_JSON` | 可选，效果等同于 `MIDSCENE_MODEL_INIT_CONFIG_JSON`  |
+| `SQAI_INSIGHT_MODEL_API_KEY` | API Key |
+| `SQAI_INSIGHT_MODEL_BASE_URL` | API 的接入 URL，常见以版本号结尾（如`/v1`）；不需要编写最后的 `/chat/completion` 部分 |
+| `SQAI_INSIGHT_MODEL_NAME` | 模型名称 |
+| `SQAI_INSIGHT_MODEL_TIMEOUT` | 可选，Insight 意图的 AI 接口调用超时时间（毫秒）|
+| `SQAI_INSIGHT_MODEL_TEMPERATURE` | 可选，Insight 意图的模型采样温度 |
+| `SQAI_INSIGHT_MODEL_RETRY_COUNT` | 可选，效果等同于 `SQAI_MODEL_RETRY_COUNT` |
+| `SQAI_INSIGHT_MODEL_RETRY_INTERVAL` | 可选，效果等同于 `SQAI_MODEL_RETRY_INTERVAL` |
+| `SQAI_INSIGHT_MODEL_HTTP_PROXY` | 可选，效果等同于 `SQAI_MODEL_HTTP_PROXY` |
+| `SQAI_INSIGHT_MODEL_SOCKS_PROXY` | 可选，效果等同于 `SQAI_MODEL_SOCKS_PROXY`  |
+| `SQAI_INSIGHT_MODEL_INIT_CONFIG_JSON` | 可选，效果等同于 `SQAI_MODEL_INIT_CONFIG_JSON`  |
 
 ### 为 Planning 意图单独配置模型
 
@@ -57,29 +57,29 @@ Midscene 默认集成了 OpenAI SDK 调用 AI 服务，它限定了推理服务�
 
 | 名称 | 描述 |
 |------|-------------|
-| `MIDSCENE_PLANNING_MODEL_API_KEY` | API Key |
-| `MIDSCENE_PLANNING_MODEL_BASE_URL` | API 的接入 URL，常见以版本号结尾（如`/v1`）；不需要编写最后的 `/chat/completion` 部分 |
-| `MIDSCENE_PLANNING_MODEL_NAME` | 模型名称 |
-| `MIDSCENE_PLANNING_MODEL_TIMEOUT` | 可选，Planning 意图的 AI 接口调用超时时间（毫秒）|
-| `MIDSCENE_PLANNING_MODEL_TEMPERATURE` | 可选，Planning 意图的模型采样温度 |
-| `MIDSCENE_PLANNING_MODEL_RETRY_COUNT` | 可选，效果等同于 `MIDSCENE_MODEL_RETRY_COUNT` |
-| `MIDSCENE_PLANNING_MODEL_RETRY_INTERVAL` | 可选，效果等同于 `MIDSCENE_MODEL_RETRY_INTERVAL` |
-| `MIDSCENE_PLANNING_MODEL_HTTP_PROXY` | 可选，效果等同于 `MIDSCENE_MODEL_HTTP_PROXY` |
-| `MIDSCENE_PLANNING_MODEL_SOCKS_PROXY` | 可选，效果等同于 `MIDSCENE_MODEL_SOCKS_PROXY`  |
-| `MIDSCENE_PLANNING_MODEL_INIT_CONFIG_JSON` | 可选，效果等同于 `MIDSCENE_MODEL_INIT_CONFIG_JSON`  |
+| `SQAI_PLANNING_MODEL_API_KEY` | API Key |
+| `SQAI_PLANNING_MODEL_BASE_URL` | API 的接入 URL，常见以版本号结尾（如`/v1`）；不需要编写最后的 `/chat/completion` 部分 |
+| `SQAI_PLANNING_MODEL_NAME` | 模型名称 |
+| `SQAI_PLANNING_MODEL_TIMEOUT` | 可选，Planning 意图的 AI 接口调用超时时间（毫秒）|
+| `SQAI_PLANNING_MODEL_TEMPERATURE` | 可选，Planning 意图的模型采样温度 |
+| `SQAI_PLANNING_MODEL_RETRY_COUNT` | 可选，效果等同于 `SQAI_MODEL_RETRY_COUNT` |
+| `SQAI_PLANNING_MODEL_RETRY_INTERVAL` | 可选，效果等同于 `SQAI_MODEL_RETRY_INTERVAL` |
+| `SQAI_PLANNING_MODEL_HTTP_PROXY` | 可选，效果等同于 `SQAI_MODEL_HTTP_PROXY` |
+| `SQAI_PLANNING_MODEL_SOCKS_PROXY` | 可选，效果等同于 `SQAI_MODEL_SOCKS_PROXY`  |
+| `SQAI_PLANNING_MODEL_INIT_CONFIG_JSON` | 可选，效果等同于 `SQAI_MODEL_INIT_CONFIG_JSON`  |
 
 ### 调试日志开关
 
 通过设置以下配置，可以在命令行打印更多调试日志。
-无论是否配置，这些日志都会打印在 `./midscene_run/log` 文件夹中。
+无论是否配置，这些日志都会打印在 `./sqai_run/log` 文件夹中。
 
 | 名称 | 描述 |
 |------|-------------|
-| `DEBUG=midscene:ai:profile:stats` | 打印 AI 服务消耗的时间、token 使用情况，用逗号分隔，便于分析 |
-| `DEBUG=midscene:ai:profile:detail` | 打印 AI token 消耗信息的详细日志 |
-| `DEBUG=midscene:ai:call` | 打印 AI 响应详情 |
-| `DEBUG=midscene:android:adb` | 打印 Android adb 命令调用详情 |
-| `DEBUG=midscene:*` | 打印所有调试日志 |
+| `DEBUG=sqai:ai:profile:stats` | 打印 AI 服务消耗的时间、token 使用情况，用逗号分隔，便于分析 |
+| `DEBUG=sqai:ai:profile:detail` | 打印 AI token 消耗信息的详细日志 |
+| `DEBUG=sqai:ai:call` | 打印 AI 响应详情 |
+| `DEBUG=sqai:android:adb` | 打印 Android adb 命令调用详情 |
+| `DEBUG=sqai:*` | 打印所有调试日志 |
 
 
 ## 仍兼容的模型配置（不推荐）
@@ -90,22 +90,22 @@ Midscene 默认集成了 OpenAI SDK 调用 AI 服务，它限定了推理服务�
 
 | 名称 | 描述 | 新配置方式 |
 |------|-------------|-----------|
-| `MIDSCENE_USE_DOUBAO_VISION` | 已弃用。启用豆包视觉模型 | 使用 `MIDSCENE_MODEL_FAMILY="doubao-vision"` |
-| `MIDSCENE_USE_QWEN3_VL` | 已弃用。启用千问 Qwen3-VL 模型 | 使用 `MIDSCENE_MODEL_FAMILY="qwen3-vl"` |
-| `MIDSCENE_USE_QWEN_VL` | 已弃用。启用千问 Qwen2.5-VL 模型 | 使用 `MIDSCENE_MODEL_FAMILY="qwen2.5-vl"` |
-| `MIDSCENE_USE_GEMINI` | 已弃用。启用 Gemini 模型 | 使用 `MIDSCENE_MODEL_FAMILY="gemini"` |
-| `MIDSCENE_USE_VLM_UI_TARS` | 已弃用。启用 UI-TARS 模型 | 使用 `MIDSCENE_MODEL_FAMILY="vlm-ui-tars"` |
+| `SQAI_USE_DOUBAO_VISION` | 已弃用。启用豆包视觉模型 | 使用 `SQAI_MODEL_FAMILY="doubao-vision"` |
+| `SQAI_USE_QWEN3_VL` | 已弃用。启用千问 Qwen3-VL 模型 | 使用 `SQAI_MODEL_FAMILY="qwen3-vl"` |
+| `SQAI_USE_QWEN_VL` | 已弃用。启用千问 Qwen2.5-VL 模型 | 使用 `SQAI_MODEL_FAMILY="qwen2.5-vl"` |
+| `SQAI_USE_GEMINI` | 已弃用。启用 Gemini 模型 | 使用 `SQAI_MODEL_FAMILY="gemini"` |
+| `SQAI_USE_VLM_UI_TARS` | 已弃用。启用 UI-TARS 模型 | 使用 `SQAI_MODEL_FAMILY="vlm-ui-tars"` |
 
 ### 通用配置
 
 | 名称 | 描述 | 新配置方式 |
 |------|-------------|-----------|
-| `OPENAI_API_KEY` | 已弃用但仍兼容 | 使用 `MIDSCENE_MODEL_API_KEY` |
-| `OPENAI_BASE_URL` | 已弃用但仍兼容 | 使用 `MIDSCENE_MODEL_BASE_URL` |
-| `MIDSCENE_OPENAI_INIT_CONFIG_JSON` | 已弃用但仍兼容 | 使用 `MIDSCENE_MODEL_INIT_CONFIG_JSON` |
-| `MIDSCENE_OPENAI_HTTP_PROXY` | 已弃用但仍兼容 | 使用 `MIDSCENE_MODEL_HTTP_PROXY` |
-| `MIDSCENE_OPENAI_SOCKS_PROXY` | 已弃用但仍兼容 | 使用 `MIDSCENE_MODEL_SOCKS_PROXY` |
-| `OPENAI_MAX_TOKENS` | 已弃用但仍兼容 | 使用 `MIDSCENE_MODEL_MAX_TOKENS` |
+| `OPENAI_API_KEY` | 已弃用但仍兼容 | 使用 `SQAI_MODEL_API_KEY` |
+| `OPENAI_BASE_URL` | 已弃用但仍兼容 | 使用 `SQAI_MODEL_BASE_URL` |
+| `SQAI_OPENAI_INIT_CONFIG_JSON` | 已弃用但仍兼容 | 使用 `SQAI_MODEL_INIT_CONFIG_JSON` |
+| `SQAI_OPENAI_HTTP_PROXY` | 已弃用但仍兼容 | 使用 `SQAI_MODEL_HTTP_PROXY` |
+| `SQAI_OPENAI_SOCKS_PROXY` | 已弃用但仍兼容 | 使用 `SQAI_MODEL_SOCKS_PROXY` |
+| `OPENAI_MAX_TOKENS` | 已弃用但仍兼容 | 使用 `SQAI_MODEL_MAX_TOKENS` |
 
 ## 使用 JavaScript 配置参数
 
@@ -115,8 +115,8 @@ Midscene 默认集成了 OpenAI SDK 调用 AI 服务，它限定了推理服务�
 const agent = new Agent(page, {
   // 通过 modelConfig 配置
   modelConfig: {
-    MIDSCENE_MODEL_TIMEOUT: '60000', // 60 秒
-    MIDSCENE_MODEL_NAME: 'qwen3-vl-plus',
+    SQAI_MODEL_TIMEOUT: '60000', // 60 秒
+    SQAI_MODEL_NAME: 'qwen3-vl-plus',
     // ... 其他配置
   }
 });
@@ -126,7 +126,7 @@ const agent = new Agent(page, {
 
 ### 如何查看模型的 token 使用情况？
 
-通过在环境变量中设置 `DEBUG=midscene:ai:profile:stats`，你可以打印模型的使用信息和响应时间。
+通过在环境变量中设置 `DEBUG=sqai:ai:profile:stats`，你可以打印模型的使用信息和响应时间。
 
 你也可以在报告文件中查看模型的使用量统计。
 
@@ -144,7 +144,7 @@ npm install langsmith
 
 ```bash
 # 启用 Midscene 的 LangSmith 自动集成
-export MIDSCENE_LANGSMITH_DEBUG=1
+export SQAI_LANGSMITH_DEBUG=1
 
 # LangSmith 配置
 export LANGCHAIN_API_KEY="your-langchain-api-key-here"
@@ -196,7 +196,7 @@ sdk.start();
 
 ```bash
 # 启用 Midscene 的 Langfuse 自动集成
-export MIDSCENE_LANGFUSE_DEBUG=1
+export SQAI_LANGFUSE_DEBUG=1
 
 # Langfuse 配置
 export LANGFUSE_PUBLIC_KEY="your-langfuse-public-key-here"

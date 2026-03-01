@@ -47,7 +47,7 @@ describe('dump/html-utils', () => {
   describe('parseDumpScript', () => {
     it('should parse dump script content from HTML', () => {
       const json = '{"test": "data"}';
-      const html = `<script type="midscene_web_dump">${escapeContent(json)}</script>`;
+      const html = `<script type="sqai_web_dump">${escapeContent(json)}</script>`;
       expect(parseDumpScript(html)).toBe(json);
     });
 
@@ -61,7 +61,7 @@ describe('dump/html-utils', () => {
   describe('parseDumpScriptAttributes', () => {
     it('should parse attributes from dump script', () => {
       const html =
-        '<script type="midscene_web_dump" name="test" version="1.0">content</script>';
+        '<script type="sqai_web_dump" name="test" version="1.0">content</script>';
       const attrs = parseDumpScriptAttributes(html);
       expect(attrs).toEqual({ name: 'test', version: '1.0' });
     });
@@ -82,7 +82,7 @@ describe('dump/html-utils', () => {
   describe('generateDumpScriptTag', () => {
     it('should generate dump script tag without attributes', () => {
       const tag = generateDumpScriptTag('{"test": "data"}');
-      expect(tag).toContain('type="midscene_web_dump"');
+      expect(tag).toContain('type="sqai_web_dump"');
     });
 
     it('should generate dump script tag with attributes', () => {

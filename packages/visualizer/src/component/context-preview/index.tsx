@@ -1,4 +1,4 @@
-import type { UIContext } from '@midscene/core';
+import type { UIContext } from '@sqaitech/core';
 import { Button } from 'antd';
 import type React from 'react';
 import Blackboard from '../blackboard';

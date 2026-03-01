@@ -1,5 +1,5 @@
 import { PuppeteerAgent } from '@/puppeteer';
-import { sleep } from '@midscene/core/utils';
+import { sleep } from '@sqaitech/core/utils';
 import { describe, expect, it, vi } from 'vitest';
 import { DEFAULT_TEST_TIMEOUT, createTestContext } from './test-utils';
 import { launchPage } from './utils';

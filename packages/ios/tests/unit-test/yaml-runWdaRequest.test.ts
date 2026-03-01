@@ -1,9 +1,9 @@
-import type { DeviceAction } from '@midscene/core';
+import type { DeviceAction } from '@sqaitech/core';
 import type {
   MidsceneYamlScript,
   MidsceneYamlScriptEnv,
-} from '@midscene/core/yaml';
-import { ScriptPlayer } from '@midscene/core/yaml';
+} from '@sqaitech/core/yaml';
+import { ScriptPlayer } from '@sqaitech/core/yaml';
 import { describe, expect, it, vi } from 'vitest';
 import { z } from 'zod';
 

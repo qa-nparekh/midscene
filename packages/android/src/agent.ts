@@ -1,7 +1,7 @@
-import type { ActionParam, ActionReturn, DeviceAction } from '@midscene/core';
-import { type AgentOpt, Agent as PageAgent } from '@midscene/core/agent';
-import { getDebug } from '@midscene/shared/logger';
-import { mergeAndNormalizeAppNameMapping } from '@midscene/shared/utils';
+import type { ActionParam, ActionReturn, DeviceAction } from '@sqaitech/core';
+import { type AgentOpt, Agent as PageAgent } from '@sqaitech/core/agent';
+import { getDebug } from '@sqaitech/shared/logger';
+import { mergeAndNormalizeAppNameMapping } from '@sqaitech/shared/utils';
 import { defaultAppNameMapping } from './appNameMapping';
 import {
   AndroidDevice,

@@ -1,6 +1,6 @@
 import assert from 'node:assert';
-import type { Point } from '@midscene/core';
-import { z } from '@midscene/core';
+import type { Point } from '@sqaitech/core';
+import { z } from '@sqaitech/core';
 import {
   AbstractInterface,
   type DeviceAction,
@@ -17,12 +17,12 @@ import {
   defineActionScroll,
   defineActionSwipe,
   defineActionTap,
-} from '@midscene/core/device';
+} from '@sqaitech/core/device';
 
-import { sleep } from '@midscene/core/utils';
-import type { ElementInfo } from '@midscene/shared/extractor';
-import { getDebug } from '@midscene/shared/logger';
-import { transformHotkeyInput } from '@midscene/shared/us-keyboard-layout';
+import { sleep } from '@sqaitech/core/utils';
+import type { ElementInfo } from '@sqaitech/shared/extractor';
+import { getDebug } from '@sqaitech/shared/logger';
+import { transformHotkeyInput } from '@sqaitech/shared/us-keyboard-layout';
 
 const debug = getDebug('web:page');
 

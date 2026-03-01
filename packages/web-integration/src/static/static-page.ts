@@ -1,6 +1,6 @@
-import type { DeviceAction, Point, UIContext } from '@midscene/core';
-import type { AbstractInterface } from '@midscene/core/device';
-import { ScreenshotItem } from '@midscene/core';
+import type { DeviceAction, Point, UIContext } from '@sqaitech/core';
+import type { AbstractInterface } from '@sqaitech/core/device';
+import { ScreenshotItem } from '@sqaitech/core';
 import {
   defineActionDragAndDrop,
   defineActionHover,
@@ -10,8 +10,8 @@ import {
   defineActionScroll,
   defineActionSwipe,
   defineActionTap,
-} from '@midscene/core/device';
-import { ERROR_CODE_NOT_IMPLEMENTED_AS_DESIGNED } from '@midscene/shared/common';
+} from '@sqaitech/core/device';
+import { ERROR_CODE_NOT_IMPLEMENTED_AS_DESIGNED } from '@sqaitech/shared/common';
 
 type WebUIContext = UIContext | {
   screenshotBase64?: string;

@@ -1,34 +1,34 @@
 import { Agent } from '@/agent';
-import type { CreateOpenAIClientFn } from '@midscene/shared/env';
+import type { CreateOpenAIClientFn } from '@sqaitech/shared/env';
 import {
-  MIDSCENE_INSIGHT_MODEL_API_KEY,
-  MIDSCENE_INSIGHT_MODEL_BASE_URL,
-  MIDSCENE_INSIGHT_MODEL_NAME,
-  MIDSCENE_MODEL_API_KEY,
-  MIDSCENE_MODEL_BASE_URL,
-  MIDSCENE_MODEL_FAMILY,
-  MIDSCENE_MODEL_NAME,
-  MIDSCENE_PLANNING_MODEL_API_KEY,
-  MIDSCENE_PLANNING_MODEL_BASE_URL,
-  MIDSCENE_PLANNING_MODEL_NAME,
-} from '@midscene/shared/env';
+  SQAI_INSIGHT_MODEL_API_KEY,
+  SQAI_INSIGHT_MODEL_BASE_URL,
+  SQAI_INSIGHT_MODEL_NAME,
+  SQAI_MODEL_API_KEY,
+  SQAI_MODEL_BASE_URL,
+  SQAI_MODEL_FAMILY,
+  SQAI_MODEL_NAME,
+  SQAI_PLANNING_MODEL_API_KEY,
+  SQAI_PLANNING_MODEL_BASE_URL,
+  SQAI_PLANNING_MODEL_NAME,
+} from '@sqaitech/shared/env';
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 
 const defaultModelConfig = {
-  [MIDSCENE_MODEL_NAME]: 'qwen2.5-vl-max',
-  [MIDSCENE_MODEL_API_KEY]: 'test-key',
-  [MIDSCENE_MODEL_BASE_URL]: 'https://api.sample.com/v1',
-  [MIDSCENE_MODEL_FAMILY]: 'qwen2.5-vl' as const,
+  [SQAI_MODEL_NAME]: 'qwen2.5-vl-max',
+  [SQAI_MODEL_API_KEY]: 'test-key',
+  [SQAI_MODEL_BASE_URL]: 'https://api.sample.com/v1',
+  [SQAI_MODEL_FAMILY]: 'qwen2.5-vl' as const,
 };
 
 const complexModelConfig = {
   ...defaultModelConfig,
-  [MIDSCENE_PLANNING_MODEL_NAME]: 'gpt-5.1',
-  [MIDSCENE_PLANNING_MODEL_API_KEY]: 'test-planning-key',
-  [MIDSCENE_PLANNING_MODEL_BASE_URL]: 'https://api.smaple-planning.com/v1',
-  [MIDSCENE_INSIGHT_MODEL_NAME]: 'model-for-insight',
-  [MIDSCENE_INSIGHT_MODEL_API_KEY]: 'test-insight-key',
-  [MIDSCENE_INSIGHT_MODEL_BASE_URL]: 'https://api.sample-insight.com/v1',
+  [SQAI_PLANNING_MODEL_NAME]: 'gpt-5.1',
+  [SQAI_PLANNING_MODEL_API_KEY]: 'test-planning-key',
+  [SQAI_PLANNING_MODEL_BASE_URL]: 'https://api.smaple-planning.com/v1',
+  [SQAI_INSIGHT_MODEL_NAME]: 'model-for-insight',
+  [SQAI_INSIGHT_MODEL_API_KEY]: 'test-insight-key',
+  [SQAI_INSIGHT_MODEL_BASE_URL]: 'https://api.sample-insight.com/v1',
 };
 
 const createMockInterface = () =>
@@ -327,13 +327,13 @@ describe('Agent with custom OpenAI client', () => {
 
       const agent = new Agent(mockInterface, {
         modelConfig: {
-          [MIDSCENE_MODEL_NAME]: 'gpt-4o',
-          [MIDSCENE_MODEL_API_KEY]: 'default-key',
-          [MIDSCENE_MODEL_BASE_URL]: 'https://api.openai.com/v1',
-          [MIDSCENE_PLANNING_MODEL_NAME]: 'qwen-vl-plus',
-          [MIDSCENE_PLANNING_MODEL_API_KEY]: 'planning-key',
-          [MIDSCENE_PLANNING_MODEL_BASE_URL]: 'https://api.openai.com/v1',
-          [MIDSCENE_MODEL_FAMILY]: 'qwen2.5-vl' as const,
+          [SQAI_MODEL_NAME]: 'gpt-4o',
+          [SQAI_MODEL_API_KEY]: 'default-key',
+          [SQAI_MODEL_BASE_URL]: 'https://api.openai.com/v1',
+          [SQAI_PLANNING_MODEL_NAME]: 'qwen-vl-plus',
+          [SQAI_PLANNING_MODEL_API_KEY]: 'planning-key',
+          [SQAI_PLANNING_MODEL_BASE_URL]: 'https://api.openai.com/v1',
+          [SQAI_MODEL_FAMILY]: 'qwen2.5-vl' as const,
         },
         createOpenAIClient: mockCreateClient,
       });
@@ -383,9 +383,9 @@ describe('Agent with custom OpenAI client', () => {
 
       const agent = new Agent(mockInterface, {
         modelConfig: {
-          [MIDSCENE_MODEL_NAME]: 'gpt-4o',
-          [MIDSCENE_MODEL_API_KEY]: 'test-api-key',
-          [MIDSCENE_MODEL_BASE_URL]: 'https://custom.openai.com/v1',
+          [SQAI_MODEL_NAME]: 'gpt-4o',
+          [SQAI_MODEL_API_KEY]: 'test-api-key',
+          [SQAI_MODEL_BASE_URL]: 'https://custom.openai.com/v1',
         },
         createOpenAIClient: mockCreateClient,
       });

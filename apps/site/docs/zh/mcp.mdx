@@ -32,7 +32,7 @@ open report_file_name.html
 
 ### 浏览器桥接模式
 
-`@midscene/web-bridge-mcp` 支持将 [Chrome 插件的桥接模式](./bridge-mode)发布为 MCP 服务。
+`@sqaitech/web-bridge-mcp` 支持将 [Chrome 插件的桥接模式](./bridge-mode)发布为 MCP 服务。
 
 **环境准备**
 
@@ -44,19 +44,19 @@ open report_file_name.html
 
 **配置**
 
-在 MCP 客户端中添加 Midscene Web Bridge MCP 服务器 （ `@midscene/web-bridge-mcp` ）。其中模型配置的参数请参考 [模型策略](./model-strategy)。
+在 MCP 客户端中添加 Midscene Web Bridge MCP 服务器 （ `@sqaitech/web-bridge-mcp` ）。其中模型配置的参数请参考 [模型策略](./model-strategy)。
 
 ```json
 {
   "mcpServers": {
     "midscene-web": {
       "command": "npx",
-      "args": ["-y", "@midscene/web-bridge-mcp"],
+      "args": ["-y", "@sqaitech/web-bridge-mcp"],
       "env": {
-        "MIDSCENE_MODEL_BASE_URL": "替换为你的模型服务地址",
-        "MIDSCENE_MODEL_API_KEY": "替换为你的 API Key",
-        "MIDSCENE_MODEL_NAME": "替换为你的模型名称",
-        "MIDSCENE_MODEL_FAMILY": "替换为你的模型系列",
+        "SQAI_MODEL_BASE_URL": "替换为你的模型服务地址",
+        "SQAI_MODEL_API_KEY": "替换为你的 API Key",
+        "SQAI_MODEL_NAME": "替换为你的模型名称",
+        "SQAI_MODEL_FAMILY": "替换为你的模型系列",
         "MCP_SERVER_REQUEST_TIMEOUT": "600000"
       }
     }
@@ -73,19 +73,19 @@ open report_file_name.html
 
 **配置**
 
-在 MCP 客户端中添加 Midscene iOS MCP 服务器（ `@midscene/ios-mcp` ）。其中模型配置的参数请参考 [模型策略](./model-strategy)。
+在 MCP 客户端中添加 Midscene iOS MCP 服务器（ `@sqaitech/ios-mcp` ）。其中模型配置的参数请参考 [模型策略](./model-strategy)。
 
 ```json
 {
   "mcpServers": {
     "midscene-ios": {
       "command": "npx",
-      "args": ["-y", "@midscene/ios-mcp"],
+      "args": ["-y", "@sqaitech/ios-mcp"],
       "env": {
-        "MIDSCENE_MODEL_BASE_URL": "替换为你的模型服务地址",
-        "MIDSCENE_MODEL_API_KEY": "替换为你的 API Key",
-        "MIDSCENE_MODEL_NAME": "替换为你的模型名称",
-        "MIDSCENE_MODEL_FAMILY": "替换为你的模型系列",
+        "SQAI_MODEL_BASE_URL": "替换为你的模型服务地址",
+        "SQAI_MODEL_API_KEY": "替换为你的 API Key",
+        "SQAI_MODEL_NAME": "替换为你的模型名称",
+        "SQAI_MODEL_FAMILY": "替换为你的模型系列",
         "MCP_SERVER_REQUEST_TIMEOUT": "800000"
       }
     }
@@ -103,19 +103,19 @@ open report_file_name.html
 
 **配置**
 
-在 MCP 客户端中添加 Midscene Android MCP 服务器（ `@midscene/android-mcp` ）。其中模型配置的参数请参考 [模型策略](./model-strategy)。
+在 MCP 客户端中添加 Midscene Android MCP 服务器（ `@sqaitech/android-mcp` ）。其中模型配置的参数请参考 [模型策略](./model-strategy)。
 
 ```json
 {
   "mcpServers": {
     "midscene-android": {
       "command": "npx",
-      "args": ["-y", "@midscene/android-mcp"],
+      "args": ["-y", "@sqaitech/android-mcp"],
       "env": {
-        "MIDSCENE_MODEL_BASE_URL": "替换为你的模型服务地址",
-        "MIDSCENE_MODEL_API_KEY": "替换为你的 API Key",
-        "MIDSCENE_MODEL_NAME": "替换为你的模型名称",
-        "MIDSCENE_MODEL_FAMILY": "替换为你的模型系列",
+        "SQAI_MODEL_BASE_URL": "替换为你的模型服务地址",
+        "SQAI_MODEL_API_KEY": "替换为你的 API Key",
+        "SQAI_MODEL_NAME": "替换为你的模型名称",
+        "SQAI_MODEL_FAMILY": "替换为你的模型系列",
         "MCP_SERVER_REQUEST_TIMEOUT": "800000"
       }
     }
@@ -125,7 +125,7 @@ open report_file_name.html
 
 ### 电脑桌面 MCP 服务
 
-`@midscene/computer-mcp` 支持将电脑桌面自动化能力发布为 MCP 服务，让 AI 可以通过鼠标、键盘和截图操作来控制你的电脑。
+`@sqaitech/computer-mcp` 支持将电脑桌面自动化能力发布为 MCP 服务，让 AI 可以通过鼠标、键盘和截图操作来控制你的电脑。
 
 **环境准备**
 
@@ -134,19 +134,19 @@ open report_file_name.html
 
 **配置**
 
-在 MCP 客户端中添加 Midscene Computer MCP 服务器（ `@midscene/computer-mcp` ）。其中模型配置的参数请参考 [模型策略](./model-strategy)。
+在 MCP 客户端中添加 Midscene Computer MCP 服务器（ `@sqaitech/computer-mcp` ）。其中模型配置的参数请参考 [模型策略](./model-strategy)。
 
 ```json
 {
   "mcpServers": {
     "midscene-computer": {
       "command": "npx",
-      "args": ["-y", "@midscene/computer-mcp"],
+      "args": ["-y", "@sqaitech/computer-mcp"],
       "env": {
-        "MIDSCENE_MODEL_BASE_URL": "替换为你的模型服务地址",
-        "MIDSCENE_MODEL_API_KEY": "替换为你的 API Key",
-        "MIDSCENE_MODEL_NAME": "替换为你的模型名称",
-        "MIDSCENE_MODEL_FAMILY": "替换为你的模型系列",
+        "SQAI_MODEL_BASE_URL": "替换为你的模型服务地址",
+        "SQAI_MODEL_API_KEY": "替换为你的 API Key",
+        "SQAI_MODEL_NAME": "替换为你的模型名称",
+        "SQAI_MODEL_FAMILY": "替换为你的模型系列",
         "MCP_SERVER_REQUEST_TIMEOUT": "800000"
       }
     }
@@ -165,8 +165,8 @@ open report_file_name.html
 `mcpKitForAgent` 函数接受一个 Agent 实例，返回包含描述和工具列表的对象：
 
 ```typescript
-import { mcpKitForAgent } from '@midscene/web/mcp-server';
-import { Agent } from '@midscene/core/agent';
+import { mcpKitForAgent } from '@sqaitech/web/mcp-server';
+import { Agent } from '@sqaitech/core/agent';
 
 const agent = new Agent();
 const { description, tools } = await mcpKitForAgent(agent);
@@ -181,22 +181,22 @@ const { description, tools } = await mcpKitForAgent(agent);
 
 **Web 平台**
 ```typescript
-import { mcpKitForAgent } from '@midscene/web/mcp-server';
+import { mcpKitForAgent } from '@sqaitech/web/mcp-server';
 ```
 
 **iOS 平台**
 ```typescript
-import { mcpKitForAgent } from '@midscene/ios/mcp-server';
+import { mcpKitForAgent } from '@sqaitech/ios/mcp-server';
 ```
 
 **Android 平台**
 ```typescript
-import { mcpKitForAgent } from '@midscene/android/mcp-server';
+import { mcpKitForAgent } from '@sqaitech/android/mcp-server';
 ```
 
 **Computer 平台**
 ```typescript
-import { mcpKitForAgent } from '@midscene/computer/mcp-server';
+import { mcpKitForAgent } from '@sqaitech/computer/mcp-server';
 ```
 
 ### 集成到自定义 MCP 服务
@@ -205,7 +205,7 @@ import { mcpKitForAgent } from '@midscene/computer/mcp-server';
 
 ```typescript
 import { McpServer } from '@modelcontextprotocol/sdk/server/mcp.js';
-import { mcpKitForAgent } from '@midscene/web/mcp-server';
+import { mcpKitForAgent } from '@sqaitech/web/mcp-server';
 
 const agent = new Agent();
 const { description, tools } = await mcpKitForAgent(agent);

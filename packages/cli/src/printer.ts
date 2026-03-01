@@ -3,8 +3,8 @@ import type {
   MidsceneYamlScriptEnv,
   ScriptPlayerStatusValue,
   ScriptPlayerTaskStatus,
-} from '@midscene/core';
-import type { ScriptPlayer } from '@midscene/core/yaml';
+} from '@sqaitech/core';
+import type { ScriptPlayer } from '@sqaitech/core/yaml';
 import chalk from 'chalk';
 
 export interface MidsceneYamlFileContext {
@@ -12,7 +12,7 @@ export interface MidsceneYamlFileContext {
   player: ScriptPlayer<MidsceneYamlScriptEnv>;
 }
 
-export const isTTY = process.env.MIDSCENE_CLI_LOG_ON_NON_TTY
+export const isTTY = process.env.SQAI_CLI_LOG_ON_NON_TTY
   ? false
   : process.stdout.isTTY;
 export const indent = '  ';

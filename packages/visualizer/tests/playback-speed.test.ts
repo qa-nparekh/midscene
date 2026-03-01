@@ -91,15 +91,15 @@ describe('Playback Speed Store', () => {
 
   describe('localStorage persistence', () => {
     it('should use default speed of 1 when no saved value', () => {
-      const savedSpeed = localStorageMock.getItem('midscene-playback-speed');
+      const savedSpeed = localStorageMock.getItem('sqai-playback-speed');
       const defaultSpeed = Number.parseFloat(savedSpeed || '1');
       expect(defaultSpeed).toBe(1);
     });
 
     it('should parse saved speed correctly', () => {
-      localStorageMock.setItem('midscene-playback-speed', '1.5');
+      localStorageMock.setItem('sqai-playback-speed', '1.5');
       const savedSpeed = Number.parseFloat(
-        localStorageMock.getItem('midscene-playback-speed') || '1',
+        localStorageMock.getItem('sqai-playback-speed') || '1',
       );
       expect(savedSpeed).toBe(1.5);
     });
@@ -108,17 +108,17 @@ describe('Playback Speed Store', () => {
       const allowedSpeeds = [0.5, 1, 1.5, 2];
 
       // Valid speed
-      localStorageMock.setItem('midscene-playback-speed', '2');
+      localStorageMock.setItem('sqai-playback-speed', '2');
       let savedSpeed = Number.parseFloat(
-        localStorageMock.getItem('midscene-playback-speed') || '1',
+        localStorageMock.getItem('sqai-playback-speed') || '1',
       );
       let validatedSpeed = allowedSpeeds.includes(savedSpeed) ? savedSpeed : 1;
       expect(validatedSpeed).toBe(2);
 
       // Invalid speed should fall back to 1
-      localStorageMock.setItem('midscene-playback-speed', '3');
+      localStorageMock.setItem('sqai-playback-speed', '3');
       savedSpeed = Number.parseFloat(
-        localStorageMock.getItem('midscene-playback-speed') || '1',
+        localStorageMock.getItem('sqai-playback-speed') || '1',
       );
       validatedSpeed = allowedSpeeds.includes(savedSpeed) ? savedSpeed : 1;
       expect(validatedSpeed).toBe(1);

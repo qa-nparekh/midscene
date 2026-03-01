@@ -1,7 +1,7 @@
 import { PlayCircleOutlined } from '@ant-design/icons';
-import type { UIContext } from '@midscene/core';
-import { staticAgentFromContext, useEnvConfig } from '@midscene/visualizer';
-import type { WebUIContext } from '@midscene/web';
+import type { UIContext } from '@sqaitech/core';
+import { staticAgentFromContext, useEnvConfig } from '@sqaitech/visualizer';
+import type { WebUIContext } from '@sqaitech/web';
 import {
   Button,
   ConfigProvider,

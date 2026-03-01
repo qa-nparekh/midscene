@@ -3,8 +3,8 @@ import type {
   ExecutionDump,
   IExecutionDump,
   IGroupedActionDump,
-} from '@midscene/core';
-import { paramStr, typeStr } from '@midscene/core/agent';
+} from '@sqaitech/core';
+import { paramStr, typeStr } from '@sqaitech/core/agent';
 import { useCallback } from 'react';
 import { useEnvConfig } from '../store/store';
 import type {

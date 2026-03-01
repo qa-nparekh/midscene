@@ -1,6 +1,6 @@
 /**
- * Windows-specific re-export of @midscene/computer
- * This package provides the same functionality as @midscene/computer
+ * Windows-specific re-export of @sqaitech/computer
+ * This package provides the same functionality as @sqaitech/computer
  * but is specifically for Windows platform.
  */
-export * from '@midscene/computer';
+export * from '@sqaitech/computer';

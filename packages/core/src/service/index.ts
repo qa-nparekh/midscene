@@ -24,12 +24,12 @@ import type {
 import { ServiceError } from '@/types';
 import {
   type IModelConfig,
-  MIDSCENE_FORCE_DEEP_THINK,
+  SQAI_FORCE_DEEP_THINK,
   globalConfigManager,
-} from '@midscene/shared/env';
-import { compositeElementInfoImg, cropByRect } from '@midscene/shared/img';
-import { getDebug } from '@midscene/shared/logger';
-import { assert } from '@midscene/shared/utils';
+} from '@sqaitech/shared/env';
+import { compositeElementInfoImg, cropByRect } from '@sqaitech/shared/img';
+import { getDebug } from '@sqaitech/shared/logger';
+import { assert } from '@sqaitech/shared/utils';
 import type { TMultimodalPrompt } from '../common';
 import { createServiceDump } from './utils';
 
@@ -78,7 +78,7 @@ export default class Service {
     assert(typeof query === 'object', 'query should be an object for locate');
 
     const globalDeepThinkSwitch = globalConfigManager.getEnvConfigInBoolean(
-      MIDSCENE_FORCE_DEEP_THINK,
+      SQAI_FORCE_DEEP_THINK,
     );
     if (globalDeepThinkSwitch) {
       debug('globalDeepThinkSwitch', globalDeepThinkSwitch);

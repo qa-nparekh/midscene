@@ -3,16 +3,16 @@ import http from 'node:http';
 import type { Server } from 'node:http';
 import { dirname, join, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
-import type { ExecutionDump } from '@midscene/core';
-import { GroupedActionDump } from '@midscene/core';
-import type { Agent as PageAgent } from '@midscene/core/agent';
-import { getTmpDir } from '@midscene/core/utils';
-import { PLAYGROUND_SERVER_PORT } from '@midscene/shared/constants';
+import type { ExecutionDump } from '@sqaitech/core';
+import { GroupedActionDump } from '@sqaitech/core';
+import type { Agent as PageAgent } from '@sqaitech/core/agent';
+import { getTmpDir } from '@sqaitech/core/utils';
+import { PLAYGROUND_SERVER_PORT } from '@sqaitech/shared/constants';
 import {
   globalModelConfigManager,
   overrideAIConfig,
-} from '@midscene/shared/env';
-import { uuid } from '@midscene/shared/utils';
+} from '@sqaitech/shared/env';
+import { uuid } from '@sqaitech/shared/utils';
 import express, { type Request, type Response } from 'express';
 import { executeAction, formatErrorMessage } from './common';
 

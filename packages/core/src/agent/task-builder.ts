@@ -18,10 +18,10 @@ import type {
 } from '@/types';
 import { ServiceError } from '@/types';
 import { sleep } from '@/utils';
-import type { IModelConfig } from '@midscene/shared/env';
-import { generateElementByRect } from '@midscene/shared/extractor';
-import { getDebug } from '@midscene/shared/logger';
-import { assert } from '@midscene/shared/utils';
+import type { IModelConfig } from '@sqaitech/shared/env';
+import { generateElementByRect } from '@sqaitech/shared/extractor';
+import { getDebug } from '@sqaitech/shared/logger';
+import { assert } from '@sqaitech/shared/utils';
 import type { TaskCache } from './task-cache';
 import {
   ifPlanLocateParamIsBbox,

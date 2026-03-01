@@ -1,7 +1,7 @@
 import { TaskCache, TaskExecutor } from '@/agent';
 import type { AbstractInterface } from '@/device';
 import { ScreenshotItem } from '@/screenshot-item';
-import { uuid } from '@midscene/shared/utils';
+import { uuid } from '@sqaitech/shared/utils';
 import { beforeEach, describe, expect, it, vi } from 'vitest';
 import type Service from '../../src';
 import { getMidsceneLocationSchema, z } from '../../src';

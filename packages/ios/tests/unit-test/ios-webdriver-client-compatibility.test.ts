@@ -1,4 +1,4 @@
-import { DEFAULT_WDA_PORT } from '@midscene/shared/constants';
+import { DEFAULT_WDA_PORT } from '@sqaitech/shared/constants';
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 import { IOSWebDriverClient } from '../../src/ios-webdriver-client';
 

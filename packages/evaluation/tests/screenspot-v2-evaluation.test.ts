@@ -1,9 +1,9 @@
 import { mkdirSync, readFileSync, rmSync, writeFileSync } from 'node:fs';
 import path, { resolve, join } from 'node:path';
-import Service, { type Rect, MIDSCENE_MODEL_NAME } from '@midscene/core';
-import { sleep } from '@midscene/core/utils';
-import { globalModelConfigManager } from '@midscene/shared/env';
-import { imageInfoOfBase64, saveBase64Image } from '@midscene/shared/img';
+import Service, { type Rect, SQAI_MODEL_NAME } from '@sqaitech/core';
+import { sleep } from '@sqaitech/core/utils';
+import { globalModelConfigManager } from '@sqaitech/shared/env';
+import { imageInfoOfBase64, saveBase64Image } from '@sqaitech/shared/img';
 import dotenv from 'dotenv';
 import sharp from 'sharp';
 import { afterEach, expect, test } from 'vitest';

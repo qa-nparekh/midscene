@@ -2,7 +2,7 @@ import path from 'node:path';
 import { defineConfig, devices } from '@playwright/test';
 import dotenv from 'dotenv';
 
-const MIDSCENE_REPORT = process.env.MIDSCENE_REPORT;
+const SQAI_REPORT = process.env.SQAI_REPORT;
 
 process.env.__VERSION__ = '1.0.0';
 
@@ -42,7 +42,7 @@ export default defineConfig({
 
   /* Configure projects for major browsers */
   projects: [
-    MIDSCENE_REPORT
+    SQAI_REPORT
       ? {
           name: 'report',
           testDir: './ai/web/playwright-reporter-test',
@@ -58,9 +58,9 @@ export default defineConfig({
     [process.env.CI ? 'line' : 'list'],
     // [
     //   'json',
-    //   { outputFile: 'midscene_run/playwright-reporter/test-results.json' },
+    //   { outputFile: 'sqai_run/playwright-reporter/test-results.json' },
     // ],
-    // ['html', { outputFolder: 'midscene_run/playwright-reporter' }],
+    // ['html', { outputFolder: 'sqai_run/playwright-reporter' }],
     [
       '../src/playwright/reporter/index.ts',
       { type: 'merged', outputFormat: 'single-html' },

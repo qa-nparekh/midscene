@@ -1,9 +1,9 @@
-import type { Agent } from '@midscene/core/agent';
+import type { Agent } from '@sqaitech/core/agent';
 import {
   BaseMCPServer,
   type Tool,
   createMCPServerLauncher,
-} from '@midscene/shared/mcp';
+} from '@sqaitech/shared/mcp';
 import { IOSAgent } from './agent';
 import { IOSMidsceneTools } from './mcp-tools.js';
 
@@ -17,7 +17,7 @@ export class IOSMCPServer extends BaseMCPServer {
   constructor(toolsManager?: IOSMidsceneTools) {
     super(
       {
-        name: '@midscene/ios-mcp',
+        name: '@sqaitech/ios-mcp',
         version: __VERSION__,
         description: 'Control the iOS device using natural language commands',
       },

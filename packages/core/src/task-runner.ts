@@ -12,8 +12,8 @@ import {
   type PlanningActionParamError,
   type UIContext,
 } from '@/types';
-import { getDebug } from '@midscene/shared/logger';
-import { assert, uuid } from '@midscene/shared/utils';
+import { getDebug } from '@sqaitech/shared/logger';
+import { assert, uuid } from '@sqaitech/shared/utils';
 
 const debug = getDebug('task-runner');
 const UI_CONTEXT_CACHE_TTL_MS = 300;

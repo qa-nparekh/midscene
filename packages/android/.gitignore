@@ -1,7 +1,7 @@
 
-# Midscene.js dump files
-midscene_run/report
-midscene_run/tmp
+# SQAI dump files
+.sqai/report
+.sqai/tmp
 
 # Binaries (downloaded during build)
 bin/scrcpy-server

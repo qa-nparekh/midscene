@@ -14,25 +14,25 @@ You need to set a default model for Midscene; see [Model strategy](./model-strat
 
 | Name | Description |
 |------|-------------|
-| `MIDSCENE_MODEL_API_KEY` | Model API key, e.g., `"sk-abcd..."` |
-| `MIDSCENE_MODEL_BASE_URL` | API endpoint URL, usually ending with a version (e.g., `/v1`); do not append `/chat/completion` here since the underlying sdk will add it automatically |
-| `MIDSCENE_MODEL_NAME` | Model name |
-| `MIDSCENE_MODEL_FAMILY` | Model family, determine the way of dealing with the coordinates |
+| `SQAI_MODEL_API_KEY` | Model API key, e.g., `"sk-abcd..."` |
+| `SQAI_MODEL_BASE_URL` | API endpoint URL, usually ending with a version (e.g., `/v1`); do not append `/chat/completion` here since the underlying sdk will add it automatically |
+| `SQAI_MODEL_NAME` | Model name |
+| `SQAI_MODEL_FAMILY` | Model family, determine the way of dealing with the coordinates |
 
 ## Advanced settings (optional)
 
 | Name | Description |
 |------|-------------|
-| `MIDSCENE_MODEL_TIMEOUT` | Timeout for AI API calls in milliseconds (default intent). Defaults to OpenAI SDK default (10 minutes) |
-| `MIDSCENE_MODEL_TEMPERATURE` | Sampling temperature for model responses |
-| `MIDSCENE_MODEL_MAX_TOKENS` | `max_tokens` for responses, default 2048 |
-| `MIDSCENE_MODEL_RETRY_COUNT` | Number of retries when AI call fails, default 1 (i.e., retry once after failure) |
-| `MIDSCENE_MODEL_RETRY_INTERVAL` | Interval between retries in milliseconds, default 2000 |
-| `MIDSCENE_MODEL_HTTP_PROXY` | HTTP/HTTPS proxy, e.g., `http://127.0.0.1:8080` or `https://proxy.example.com:8080`. Takes precedence over `MIDSCENE_MODEL_SOCKS_PROXY` |
-| `MIDSCENE_MODEL_SOCKS_PROXY` | SOCKS proxy, e.g., `socks5://127.0.0.1:1080` |
-| `MIDSCENE_MODEL_INIT_CONFIG_JSON` | JSON blob that overrides the OpenAI SDK initialization config |
-| `MIDSCENE_RUN_DIR` | Run artifact directory, like report and logs. Defaults to `midscene_run` in the current working directory; accepts absolute or relative paths |
-| `MIDSCENE_PREFERRED_LANGUAGE` | Optional. Preferred response language. Defaults to `Chinese` if timezone is GMT+8, otherwise `English` |
+| `SQAI_MODEL_TIMEOUT` | Timeout for AI API calls in milliseconds (default intent). Defaults to OpenAI SDK default (10 minutes) |
+| `SQAI_MODEL_TEMPERATURE` | Sampling temperature for model responses |
+| `SQAI_MODEL_MAX_TOKENS` | `max_tokens` for responses, default 2048 |
+| `SQAI_MODEL_RETRY_COUNT` | Number of retries when AI call fails, default 1 (i.e., retry once after failure) |
+| `SQAI_MODEL_RETRY_INTERVAL` | Interval between retries in milliseconds, default 2000 |
+| `SQAI_MODEL_HTTP_PROXY` | HTTP/HTTPS proxy, e.g., `http://127.0.0.1:8080` or `https://proxy.example.com:8080`. Takes precedence over `SQAI_MODEL_SOCKS_PROXY` |
+| `SQAI_MODEL_SOCKS_PROXY` | SOCKS proxy, e.g., `socks5://127.0.0.1:1080` |
+| `SQAI_MODEL_INIT_CONFIG_JSON` | JSON blob that overrides the OpenAI SDK initialization config |
+| `SQAI_RUN_DIR` | Run artifact directory, like report and logs. Defaults to `sqai_run` in the current working directory; accepts absolute or relative paths |
+| `SQAI_PREFERRED_LANGUAGE` | Optional. Preferred response language. Defaults to `Chinese` if timezone is GMT+8, otherwise `English` |
 
 > Note: Control replanning behavior with the agent option `replanningCycleLimit` (defaults to 20, or 40 for `vlm-ui-tars`), not with environment variables.
 
@@ -42,16 +42,16 @@ Set the following if the Insight intent needs a different model:
 
 | Name | Description |
 |------|-------------|
-| `MIDSCENE_INSIGHT_MODEL_API_KEY` | API key |
-| `MIDSCENE_INSIGHT_MODEL_BASE_URL` | API endpoint URL (omit the trailing `/chat/completion`) |
-| `MIDSCENE_INSIGHT_MODEL_NAME` | Model name |
-| `MIDSCENE_INSIGHT_MODEL_TIMEOUT` | Optional; timeout for Insight intent AI API calls in milliseconds |
-| `MIDSCENE_INSIGHT_MODEL_TEMPERATURE` | Optional; sampling temperature for Insight intent responses |
-| `MIDSCENE_INSIGHT_MODEL_RETRY_COUNT` | Optional; same effect as `MIDSCENE_MODEL_RETRY_COUNT` |
-| `MIDSCENE_INSIGHT_MODEL_RETRY_INTERVAL` | Optional; same effect as `MIDSCENE_MODEL_RETRY_INTERVAL` |
-| `MIDSCENE_INSIGHT_MODEL_HTTP_PROXY` | Optional; same effect as `MIDSCENE_MODEL_HTTP_PROXY` |
-| `MIDSCENE_INSIGHT_MODEL_SOCKS_PROXY` | Optional; same effect as `MIDSCENE_MODEL_SOCKS_PROXY` |
-| `MIDSCENE_INSIGHT_MODEL_INIT_CONFIG_JSON` | Optional; same effect as `MIDSCENE_MODEL_INIT_CONFIG_JSON` |
+| `SQAI_INSIGHT_MODEL_API_KEY` | API key |
+| `SQAI_INSIGHT_MODEL_BASE_URL` | API endpoint URL (omit the trailing `/chat/completion`) |
+| `SQAI_INSIGHT_MODEL_NAME` | Model name |
+| `SQAI_INSIGHT_MODEL_TIMEOUT` | Optional; timeout for Insight intent AI API calls in milliseconds |
+| `SQAI_INSIGHT_MODEL_TEMPERATURE` | Optional; sampling temperature for Insight intent responses |
+| `SQAI_INSIGHT_MODEL_RETRY_COUNT` | Optional; same effect as `SQAI_MODEL_RETRY_COUNT` |
+| `SQAI_INSIGHT_MODEL_RETRY_INTERVAL` | Optional; same effect as `SQAI_MODEL_RETRY_INTERVAL` |
+| `SQAI_INSIGHT_MODEL_HTTP_PROXY` | Optional; same effect as `SQAI_MODEL_HTTP_PROXY` |
+| `SQAI_INSIGHT_MODEL_SOCKS_PROXY` | Optional; same effect as `SQAI_MODEL_SOCKS_PROXY` |
+| `SQAI_INSIGHT_MODEL_INIT_CONFIG_JSON` | Optional; same effect as `SQAI_MODEL_INIT_CONFIG_JSON` |
 
 ### Configure a dedicated Planning model
 
@@ -59,16 +59,16 @@ Set the following if the Planning intent needs a different model:
 
 | Name | Description |
 |------|-------------|
-| `MIDSCENE_PLANNING_MODEL_API_KEY` | API key |
-| `MIDSCENE_PLANNING_MODEL_BASE_URL` | API endpoint URL (omit the trailing `/chat/completion`) |
-| `MIDSCENE_PLANNING_MODEL_NAME` | Model name |
-| `MIDSCENE_PLANNING_MODEL_TIMEOUT` | Optional; timeout for Planning intent AI API calls in milliseconds |
-| `MIDSCENE_PLANNING_MODEL_TEMPERATURE` | Optional; sampling temperature for Planning intent responses |
-| `MIDSCENE_PLANNING_MODEL_RETRY_COUNT` | Optional; same effect as `MIDSCENE_MODEL_RETRY_COUNT` |
-| `MIDSCENE_PLANNING_MODEL_RETRY_INTERVAL` | Optional; same effect as `MIDSCENE_MODEL_RETRY_INTERVAL` |
-| `MIDSCENE_PLANNING_MODEL_HTTP_PROXY` | Optional; same effect as `MIDSCENE_MODEL_HTTP_PROXY` |
-| `MIDSCENE_PLANNING_MODEL_SOCKS_PROXY` | Optional; same effect as `MIDSCENE_MODEL_SOCKS_PROXY` |
-| `MIDSCENE_PLANNING_MODEL_INIT_CONFIG_JSON` | Optional; same effect as `MIDSCENE_MODEL_INIT_CONFIG_JSON` |
+| `SQAI_PLANNING_MODEL_API_KEY` | API key |
+| `SQAI_PLANNING_MODEL_BASE_URL` | API endpoint URL (omit the trailing `/chat/completion`) |
+| `SQAI_PLANNING_MODEL_NAME` | Model name |
+| `SQAI_PLANNING_MODEL_TIMEOUT` | Optional; timeout for Planning intent AI API calls in milliseconds |
+| `SQAI_PLANNING_MODEL_TEMPERATURE` | Optional; sampling temperature for Planning intent responses |
+| `SQAI_PLANNING_MODEL_RETRY_COUNT` | Optional; same effect as `SQAI_MODEL_RETRY_COUNT` |
+| `SQAI_PLANNING_MODEL_RETRY_INTERVAL` | Optional; same effect as `SQAI_MODEL_RETRY_INTERVAL` |
+| `SQAI_PLANNING_MODEL_HTTP_PROXY` | Optional; same effect as `SQAI_MODEL_HTTP_PROXY` |
+| `SQAI_PLANNING_MODEL_SOCKS_PROXY` | Optional; same effect as `SQAI_MODEL_SOCKS_PROXY` |
+| `SQAI_PLANNING_MODEL_INIT_CONFIG_JSON` | Optional; same effect as `SQAI_MODEL_INIT_CONFIG_JSON` |
 
 ### Debug logging switches
 
@@ -76,11 +76,11 @@ Enable the following variables to print richer debug logs. Regardless of the swi
 
 | Name | Description |
 |------|-------------|
-| `DEBUG=midscene:ai:profile:stats` | Prints model latency, token usage, etc., comma-separated for easier analysis |
-| `DEBUG=midscene:ai:profile:detail` | Prints detailed token-usage logs |
-| `DEBUG=midscene:ai:call` | Prints AI response details |
-| `DEBUG=midscene:android:adb` | Prints Android adb command details |
-| `DEBUG=midscene:*` | Prints every debug log |
+| `DEBUG=sqai:ai:profile:stats` | Prints model latency, token usage, etc., comma-separated for easier analysis |
+| `DEBUG=sqai:ai:profile:detail` | Prints detailed token-usage logs |
+| `DEBUG=sqai:ai:call` | Prints AI response details |
+| `DEBUG=sqai:android:adb` | Prints Android adb command details |
+| `DEBUG=sqai:*` | Prints every debug log |
 
 ## Still-compatible configs (not recommended)
 
@@ -90,22 +90,22 @@ The following environment variables are deprecated but still compatible. We reco
 
 | Name | Description | New approach |
 |------|-------------|--------------|
-| `MIDSCENE_USE_DOUBAO_VISION` | Deprecated. Enables Doubao vision model | Use `MIDSCENE_MODEL_FAMILY="doubao-vision"` |
-| `MIDSCENE_USE_QWEN3_VL` | Deprecated. Enables Qwen3-VL model | Use `MIDSCENE_MODEL_FAMILY="qwen3-vl"` |
-| `MIDSCENE_USE_QWEN_VL` | Deprecated. Enables Qwen2.5-VL model | Use `MIDSCENE_MODEL_FAMILY="qwen2.5-vl"` |
-| `MIDSCENE_USE_GEMINI` | Deprecated. Enables Gemini model | Use `MIDSCENE_MODEL_FAMILY="gemini"` |
-| `MIDSCENE_USE_VLM_UI_TARS` | Deprecated. Enables UI-TARS model | Use `MIDSCENE_MODEL_FAMILY="vlm-ui-tars"` |
+| `SQAI_USE_DOUBAO_VISION` | Deprecated. Enables Doubao vision model | Use `SQAI_MODEL_FAMILY="doubao-vision"` |
+| `SQAI_USE_QWEN3_VL` | Deprecated. Enables Qwen3-VL model | Use `SQAI_MODEL_FAMILY="qwen3-vl"` |
+| `SQAI_USE_QWEN_VL` | Deprecated. Enables Qwen2.5-VL model | Use `SQAI_MODEL_FAMILY="qwen2.5-vl"` |
+| `SQAI_USE_GEMINI` | Deprecated. Enables Gemini model | Use `SQAI_MODEL_FAMILY="gemini"` |
+| `SQAI_USE_VLM_UI_TARS` | Deprecated. Enables UI-TARS model | Use `SQAI_MODEL_FAMILY="vlm-ui-tars"` |
 
 ### General configuration
 
 | Name | Description | New approach |
 |------|-------------|--------------|
-| `OPENAI_API_KEY` | Deprecated but supported | Prefer `MIDSCENE_MODEL_API_KEY` |
-| `OPENAI_BASE_URL` | Deprecated but supported | Prefer `MIDSCENE_MODEL_BASE_URL` |
-| `MIDSCENE_OPENAI_INIT_CONFIG_JSON` | Deprecated but supported | Prefer `MIDSCENE_MODEL_INIT_CONFIG_JSON` |
-| `MIDSCENE_OPENAI_HTTP_PROXY` | Deprecated but supported | Prefer `MIDSCENE_MODEL_HTTP_PROXY` |
-| `MIDSCENE_OPENAI_SOCKS_PROXY` | Deprecated but supported | Prefer `MIDSCENE_MODEL_SOCKS_PROXY` |
-| `OPENAI_MAX_TOKENS` | Deprecated but supported | Prefer `MIDSCENE_MODEL_MAX_TOKENS` |
+| `OPENAI_API_KEY` | Deprecated but supported | Prefer `SQAI_MODEL_API_KEY` |
+| `OPENAI_BASE_URL` | Deprecated but supported | Prefer `SQAI_MODEL_BASE_URL` |
+| `SQAI_OPENAI_INIT_CONFIG_JSON` | Deprecated but supported | Prefer `SQAI_MODEL_INIT_CONFIG_JSON` |
+| `SQAI_OPENAI_HTTP_PROXY` | Deprecated but supported | Prefer `SQAI_MODEL_HTTP_PROXY` |
+| `SQAI_OPENAI_SOCKS_PROXY` | Deprecated but supported | Prefer `SQAI_MODEL_SOCKS_PROXY` |
+| `OPENAI_MAX_TOKENS` | Deprecated but supported | Prefer `SQAI_MODEL_MAX_TOKENS` |
 
 ## Configure settings via JavaScript
 
@@ -115,8 +115,8 @@ You can configure models for each agent in JavaScript. See the [API reference](.
 const agent = new Agent(page, {
   // Configure via modelConfig
   modelConfig: {
-    MIDSCENE_MODEL_TIMEOUT: '60000', // 60 seconds
-    MIDSCENE_MODEL_NAME: 'qwen3-vl-plus',
+    SQAI_MODEL_TIMEOUT: '60000', // 60 seconds
+    SQAI_MODEL_NAME: 'qwen3-vl-plus',
     // ... other configurations
   }
 });
@@ -126,7 +126,7 @@ const agent = new Agent(page, {
 
 ### How can I monitor token usage?
 
-Set `DEBUG=midscene:ai:profile:stats` to print usage and latency.
+Set `DEBUG=sqai:ai:profile:stats` to print usage and latency.
 
 You can also find usage statistics inside the generated report files.
 
@@ -145,7 +145,7 @@ npm install langsmith
 
 ```bash
 # Enable Midscene's LangSmith auto-integration
-export MIDSCENE_LANGSMITH_DEBUG=1
+export SQAI_LANGSMITH_DEBUG=1
 
 # LangSmith configuration
 export LANGCHAIN_API_KEY="your-langchain-api-key-here"
@@ -197,7 +197,7 @@ sdk.start();
 
 ```bash
 # Enable Midscene's Langfuse auto-integration
-export MIDSCENE_LANGFUSE_DEBUG=1
+export SQAI_LANGFUSE_DEBUG=1
 
 # Langfuse configuration
 export LANGFUSE_PUBLIC_KEY="your-langfuse-public-key-here"

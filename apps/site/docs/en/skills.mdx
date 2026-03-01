@@ -8,11 +8,11 @@ Unlike [MCP integration](./mcp), Skills work by running CLI commands directly in
 
 | Skill | Package | CLI command | Description |
 |-------|---------|-------------|-------------|
-| Browser Automation | `@midscene/web` | `npx @midscene/web` | Headless Chrome via Puppeteer, opens new browser tabs |
-| Chrome Bridge Automation | `@midscene/web` | `npx @midscene/web --bridge` | User's own Chrome browser, preserves cookies and sessions |
-| Desktop Computer Automation | `@midscene/computer` | `npx @midscene/computer` | macOS, Windows, Linux desktop control |
-| Android Device Automation | `@midscene/android` | `npx @midscene/android` | Android device control via ADB |
-| iOS Device Automation | `@midscene/ios` | `npx @midscene/ios` | iOS device control via WebDriverAgent |
+| Browser Automation | `@sqaitech/web` | `npx @sqaitech/web` | Headless Chrome via Puppeteer, opens new browser tabs |
+| Chrome Bridge Automation | `@sqaitech/web` | `npx @sqaitech/web --bridge` | User's own Chrome browser, preserves cookies and sessions |
+| Desktop Computer Automation | `@sqaitech/computer` | `npx @sqaitech/computer` | macOS, Windows, Linux desktop control |
+| Android Device Automation | `@sqaitech/android` | `npx @sqaitech/android` | Android device control via ADB |
+| iOS Device Automation | `@sqaitech/ios` | `npx @sqaitech/ios` | iOS device control via WebDriverAgent |
 
 ## Installation
 
@@ -36,10 +36,10 @@ Skills repository: [github.com/web-infra-dev/midscene-skills](https://github.com
 Midscene skills require a vision model with strong visual grounding capabilities. Configure the following environment variables — either as system environment variables or in a `.env` file in the current working directory (Midscene loads `.env` automatically):
 
 ```bash
-MIDSCENE_MODEL_API_KEY="your-api-key"
-MIDSCENE_MODEL_NAME="model-name"
-MIDSCENE_MODEL_BASE_URL="https://..."
-MIDSCENE_MODEL_FAMILY="family-identifier"
+SQAI_MODEL_API_KEY="your-api-key"
+SQAI_MODEL_NAME="model-name"
+SQAI_MODEL_BASE_URL="https://..."
+SQAI_MODEL_FAMILY="family-identifier"
 ```
 
 For supported models and configuration details, see [Model strategy](./model-strategy) and [Common model configuration](./model-common-config).

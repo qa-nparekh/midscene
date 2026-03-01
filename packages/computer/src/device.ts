@@ -8,7 +8,7 @@ import {
   type Size,
   getMidsceneLocationSchema,
   z,
-} from '@midscene/core';
+} from '@sqaitech/core';
 import {
   type AbstractInterface,
   type ActionHoverParam,
@@ -22,10 +22,10 @@ import {
   defineActionRightClick,
   defineActionScroll,
   defineActionTap,
-} from '@midscene/core/device';
-import { sleep } from '@midscene/core/utils';
-import { createImgBase64ByFormat } from '@midscene/shared/img';
-import { getDebug } from '@midscene/shared/logger';
+} from '@sqaitech/core/device';
+import { sleep } from '@sqaitech/core/utils';
+import { createImgBase64ByFormat } from '@sqaitech/shared/img';
+import { getDebug } from '@sqaitech/shared/logger';
 import screenshot from 'screenshot-desktop';
 
 // Type definitions

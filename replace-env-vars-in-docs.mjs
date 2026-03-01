@@ -1,0 +1,147 @@
+#!/usr/bin/env node
+
+import { readFileSync, writeFileSync, readdirSync, statSync } from 'fs';
+import { join, extname } from 'path';
+
+const envVarReplacements = [
+  // Model configuration
+  ['MIDSCENE_MODEL_INIT_CONFIG_JSON', 'SQAI_MODEL_INIT_CONFIG_JSON'],
+  ['MIDSCENE_MODEL_NAME', 'SQAI_MODEL_NAME'],
+  ['MIDSCENE_DEBUG_MODEL_PROFILE', 'SQAI_DEBUG_MODEL_PROFILE'],
+  ['MIDSCENE_DEBUG_MODEL_RESPONSE', 'SQAI_DEBUG_MODEL_RESPONSE'],
+  ['MIDSCENE_DANGEROUSLY_PRINT_ALL_CONFIG', 'SQAI_DANGEROUSLY_PRINT_ALL_CONFIG'],
+  ['MIDSCENE_DEBUG_MODE', 'SQAI_DEBUG_MODE'],
+  ['MIDSCENE_MCP_USE_PUPPETEER_MODE', 'SQAI_MCP_USE_PUPPETEER_MODE'],
+  ['MIDSCENE_MCP_CHROME_PATH', 'SQAI_MCP_CHROME_PATH'],
+  ['MIDSCENE_MCP_ANDROID_MODE', 'SQAI_MCP_ANDROID_MODE'],
+  ['MIDSCENE_FORCE_DEEP_THINK', 'SQAI_FORCE_DEEP_THINK'],
+  
+  // Observability
+  ['MIDSCENE_LANGSMITH_DEBUG', 'SQAI_LANGSMITH_DEBUG'],
+  ['MIDSCENE_LANGFUSE_DEBUG', 'SQAI_LANGFUSE_DEBUG'],
+  
+  // Proxy
+  ['MIDSCENE_MODEL_SOCKS_PROXY', 'SQAI_MODEL_SOCKS_PROXY'],
+  ['MIDSCENE_MODEL_HTTP_PROXY', 'SQAI_MODEL_HTTP_PROXY'],
+  
+  // Primary API
+  ['MIDSCENE_MODEL_API_KEY', 'SQAI_MODEL_API_KEY'],
+  ['MIDSCENE_MODEL_BASE_URL', 'SQAI_MODEL_BASE_URL'],
+  ['MIDSCENE_MODEL_MAX_TOKENS', 'SQAI_MODEL_MAX_TOKENS'],
+  ['MIDSCENE_MODEL_TIMEOUT', 'SQAI_MODEL_TIMEOUT'],
+  ['MIDSCENE_MODEL_TEMPERATURE', 'SQAI_MODEL_TEMPERATURE'],
+  ['MIDSCENE_MODEL_RETRY_COUNT', 'SQAI_MODEL_RETRY_COUNT'],
+  ['MIDSCENE_MODEL_RETRY_INTERVAL', 'SQAI_MODEL_RETRY_INTERVAL'],
+  
+  // Deprecated OpenAI
+  ['MIDSCENE_OPENAI_INIT_CONFIG_JSON', 'SQAI_OPENAI_INIT_CONFIG_JSON'],
+  ['MIDSCENE_OPENAI_HTTP_PROXY', 'SQAI_OPENAI_HTTP_PROXY'],
+  ['MIDSCENE_OPENAI_SOCKS_PROXY', 'SQAI_OPENAI_SOCKS_PROXY'],
+  
+  // Platform specific
+  ['MIDSCENE_ADB_PATH', 'SQAI_ADB_PATH'],
+  ['MIDSCENE_ADB_REMOTE_HOST', 'SQAI_ADB_REMOTE_HOST'],
+  ['MIDSCENE_ADB_REMOTE_PORT', 'SQAI_ADB_REMOTE_PORT'],
+  ['MIDSCENE_ANDROID_IME_STRATEGY', 'SQAI_ANDROID_IME_STRATEGY'],
+  ['MIDSCENE_IOS_DEVICE_UDID', 'SQAI_IOS_DEVICE_UDID'],
+  ['MIDSCENE_IOS_SIMULATOR_UDID', 'SQAI_IOS_SIMULATOR_UDID'],
+  
+  // Features
+  ['MIDSCENE_CACHE', 'SQAI_CACHE'],
+  ['MIDSCENE_USE_VLM_UI_TARS', 'SQAI_USE_VLM_UI_TARS'],
+  ['MIDSCENE_USE_QWEN_VL', 'SQAI_USE_QWEN_VL'],
+  ['MIDSCENE_USE_QWEN3_VL', 'SQAI_USE_QWEN3_VL'],
+  ['MIDSCENE_USE_DOUBAO_VISION', 'SQAI_USE_DOUBAO_VISION'],
+  ['MIDSCENE_USE_GEMINI', 'SQAI_USE_GEMINI'],
+  ['MIDSCENE_USE_VL_MODEL', 'SQAI_USE_VL_MODEL'],
+  ['MIDSCENE_REPORT_TAG_NAME', 'SQAI_REPORT_TAG_NAME'],
+  ['MIDSCENE_REPORT_QUIET', 'SQAI_REPORT_QUIET'],
+  ['MIDSCENE_PREFERRED_LANGUAGE', 'SQAI_PREFERRED_LANGUAGE'],
+  ['MIDSCENE_CACHE_MAX_FILENAME_LENGTH', 'SQAI_CACHE_MAX_FILENAME_LENGTH'],
+  ['MIDSCENE_REPLANNING_CYCLE_LIMIT', 'SQAI_REPLANNING_CYCLE_LIMIT'],
+  ['MIDSCENE_RUN_DIR', 'SQAI_RUN_DIR'],
+  
+  // INSIGHT
+  ['MIDSCENE_INSIGHT_MODEL_NAME', 'SQAI_INSIGHT_MODEL_NAME'],
+  ['MIDSCENE_INSIGHT_MODEL_SOCKS_PROXY', 'SQAI_INSIGHT_MODEL_SOCKS_PROXY'],
+  ['MIDSCENE_INSIGHT_MODEL_HTTP_PROXY', 'SQAI_INSIGHT_MODEL_HTTP_PROXY'],
+  ['MIDSCENE_INSIGHT_MODEL_BASE_URL', 'SQAI_INSIGHT_MODEL_BASE_URL'],
+  ['MIDSCENE_INSIGHT_MODEL_API_KEY', 'SQAI_INSIGHT_MODEL_API_KEY'],
+  ['MIDSCENE_INSIGHT_MODEL_INIT_CONFIG_JSON', 'SQAI_INSIGHT_MODEL_INIT_CONFIG_JSON'],
+  ['MIDSCENE_INSIGHT_MODEL_TIMEOUT', 'SQAI_INSIGHT_MODEL_TIMEOUT'],
+  ['MIDSCENE_INSIGHT_MODEL_TEMPERATURE', 'SQAI_INSIGHT_MODEL_TEMPERATURE'],
+  ['MIDSCENE_INSIGHT_MODEL_RETRY_COUNT', 'SQAI_INSIGHT_MODEL_RETRY_COUNT'],
+  ['MIDSCENE_INSIGHT_MODEL_RETRY_INTERVAL', 'SQAI_INSIGHT_MODEL_RETRY_INTERVAL'],
+  ['MIDSCENE_INSIGHT_MODEL_FAMILY', 'SQAI_INSIGHT_MODEL_FAMILY'],
+  
+  // PLANNING
+  ['MIDSCENE_PLANNING_MODEL_NAME', 'SQAI_PLANNING_MODEL_NAME'],
+  ['MIDSCENE_PLANNING_MODEL_SOCKS_PROXY', 'SQAI_PLANNING_MODEL_SOCKS_PROXY'],
+  ['MIDSCENE_PLANNING_MODEL_HTTP_PROXY', 'SQAI_PLANNING_MODEL_HTTP_PROXY'],
+  ['MIDSCENE_PLANNING_MODEL_BASE_URL', 'SQAI_PLANNING_MODEL_BASE_URL'],
+  ['MIDSCENE_PLANNING_MODEL_API_KEY', 'SQAI_PLANNING_MODEL_API_KEY'],
+  ['MIDSCENE_PLANNING_MODEL_INIT_CONFIG_JSON', 'SQAI_PLANNING_MODEL_INIT_CONFIG_JSON'],
+  ['MIDSCENE_PLANNING_MODEL_TIMEOUT', 'SQAI_PLANNING_MODEL_TIMEOUT'],
+  ['MIDSCENE_PLANNING_MODEL_TEMPERATURE', 'SQAI_PLANNING_MODEL_TEMPERATURE'],
+  ['MIDSCENE_PLANNING_MODEL_RETRY_COUNT', 'SQAI_PLANNING_MODEL_RETRY_COUNT'],
+  ['MIDSCENE_PLANNING_MODEL_RETRY_INTERVAL', 'SQAI_PLANNING_MODEL_RETRY_INTERVAL'],
+  ['MIDSCENE_PLANNING_MODEL_FAMILY', 'SQAI_PLANNING_MODEL_FAMILY'],
+  ['MIDSCENE_MODEL_FAMILY', 'SQAI_MODEL_FAMILY'],
+];
+
+function getAllFiles(dirPath, arrayOfFiles = []) {
+  const files = readdirSync(dirPath);
+
+  files.forEach((file) => {
+    const fullPath = join(dirPath, file);
+    if (statSync(fullPath).isDirectory()) {
+      if (!['node_modules', 'dist', 'build', '.git'].includes(file)) {
+        arrayOfFiles = getAllFiles(fullPath, arrayOfFiles);
+      }
+    } else {
+      const ext = extname(file);
+      if (ext === '.md' || ext === '.mdx') {
+        arrayOfFiles.push(fullPath);
+      }
+    }
+  });
+
+  return arrayOfFiles;
+}
+
+async function replaceInFiles() {
+  const files = getAllFiles(process.cwd());
+
+  let totalFiles = 0;
+  let totalReplacements = 0;
+
+  for (const file of files) {
+    try {
+      let content = readFileSync(file, 'utf8');
+      const originalContent = content;
+      let fileReplacements = 0;
+
+      for (const [oldVar, newVar] of envVarReplacements) {
+        const regex = new RegExp(oldVar, 'g');
+        const matches = content.match(regex);
+        if (matches) {
+          content = content.replace(regex, newVar);
+          fileReplacements += matches.length;
+        }
+      }
+
+      if (content !== originalContent) {
+        writeFileSync(file, content, 'utf8');
+        totalFiles++;
+        totalReplacements += fileReplacements;
+        console.log(`✓ ${file} (${fileReplacements} replacements)`);
+      }
+    } catch (error) {
+      console.error(`Error processing ${file}:`, error.message);
+    }
+  }
+
+  console.log(`\nCompleted: ${totalReplacements} replacements in ${totalFiles} files`);
+}
+
+replaceInFiles().catch(console.error);

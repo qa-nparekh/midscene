@@ -1,13 +1,13 @@
 'use client';
 import 'pixi.js/unsafe-eval';
-import type { BaseElement, Rect, UIContext } from '@midscene/core';
+import type { BaseElement, Rect, UIContext } from '@sqaitech/core';
 import { Checkbox } from 'antd';
 import type { CheckboxProps } from 'antd';
 import * as PIXI from 'pixi.js';
 import { type ReactElement, useEffect, useMemo, useRef, useState } from 'react';
 import { colorForName, highlightColorForType } from '../../utils/color';
 import './index.less';
-import { treeToList } from '@midscene/shared/extractor';
+import { treeToList } from '@sqaitech/shared/extractor';
 import { DropShadowFilter, GlowFilter } from 'pixi-filters';
 import { useGlobalPreference } from '../../store/store';
 

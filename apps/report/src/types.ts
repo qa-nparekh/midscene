@@ -1,4 +1,4 @@
-import type { GroupedActionDump } from '@midscene/core';
+import type { GroupedActionDump } from '@sqaitech/core';
 
 // Core visualization types
 export interface PlaywrightTaskAttributes {

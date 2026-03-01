@@ -1,4 +1,4 @@
-import { playgroundForAgent } from '@midscene/playground';
+import { playgroundForAgent } from '@sqaitech/playground';
 import dotenv from 'dotenv';
 import { PuppeteerAgent } from '../src/puppeteer';
 import { launchPuppeteerPage } from '../src/puppeteer/agent-launcher';

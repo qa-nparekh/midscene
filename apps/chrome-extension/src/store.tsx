@@ -1,4 +1,4 @@
-import type { ChromeRecordedEvent } from '@midscene/recorder';
+import type { ChromeRecordedEvent } from '@sqaitech/recorder';
 // import { createStore } from 'zustand/vanilla';
 import * as Z from 'zustand';
 import { recordLogger } from './extension/recorder/logger';
@@ -40,9 +40,9 @@ export interface RecordingSession {
 }
 
 // Storage keys
-const RECORDING_SESSIONS_KEY = 'midscene-recording-sessions';
-const CURRENT_SESSION_ID_KEY = 'midscene-current-session-id';
-const RECORDING_STATE_KEY = 'midscene-recording-state';
+const RECORDING_SESSIONS_KEY = 'sqai-recording-sessions';
+const CURRENT_SESSION_ID_KEY = 'sqai-current-session-id';
+const RECORDING_STATE_KEY = 'sqai-recording-state';
 
 // Helper functions for persistence with IndexedDB
 const loadSessionsFromStorage = async (): Promise<RecordingSession[]> => {
@@ -365,7 +365,7 @@ export const useRecordStore = create<{
   },
 }));
 
-const CONFIG_KEY = 'midscene-env-config';
+const CONFIG_KEY = 'sqai-env-config';
 
 /**
  * Service Mode

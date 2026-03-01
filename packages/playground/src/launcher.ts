@@ -1,6 +1,6 @@
 import { spawn } from 'node:child_process';
-import type { Agent, Agent as PageAgent } from '@midscene/core/agent';
-import { PLAYGROUND_SERVER_PORT } from '@midscene/shared/constants';
+import type { Agent, Agent as PageAgent } from '@sqaitech/core/agent';
+import { PLAYGROUND_SERVER_PORT } from '@sqaitech/shared/constants';
 import cors from 'cors';
 import PlaygroundServer from './server';
 
@@ -82,8 +82,8 @@ export interface LaunchPlaygroundResult {
  *
  * @example
  * ```typescript
- * import { playgroundForAgent } from '@midscene/playground';
- * import { SampleDevice, Agent } from '@midscene/core';
+ * import { playgroundForAgent } from '@sqaitech/playground';
+ * import { SampleDevice, Agent } from '@sqaitech/core';
  *
  * const device = new SampleDevice();
  * const agent = new Agent(device);
@@ -129,7 +129,7 @@ export function playgroundForAgent(agent: Agent) {
       }
 
       if (verbose) {
-        console.log('🚀 Starting Midscene Playground...');
+        console.log('🚀 Starting SQAI Playground...');
         console.log(`📱 Agent: ${agent.constructor.name}`);
         console.log(`🖥️ Page: ${webPage.constructor.name}`);
         console.log(`🌐 Port: ${port}`);
@@ -169,7 +169,7 @@ export function playgroundForAgent(agent: Agent) {
         host: '127.0.0.1',
         close: async () => {
           if (verbose) {
-            console.log('🛑 Shutting down Midscene Playground...');
+            console.log('🛑 Shutting down SQAI Playground...');
           }
 
           try {

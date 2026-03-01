@@ -15,17 +15,17 @@ export class AIResponseParseError extends Error {
 }
 import {
   type IModelConfig,
-  MIDSCENE_LANGFUSE_DEBUG,
-  MIDSCENE_LANGSMITH_DEBUG,
-  MIDSCENE_MODEL_MAX_TOKENS,
+  SQAI_LANGFUSE_DEBUG,
+  SQAI_LANGSMITH_DEBUG,
+  SQAI_MODEL_MAX_TOKENS,
   OPENAI_MAX_TOKENS,
   type TModelFamily,
   type UITarsModelVersion,
   globalConfigManager,
-} from '@midscene/shared/env';
+} from '@sqaitech/shared/env';
 
-import { getDebug } from '@midscene/shared/logger';
-import { assert, ifInBrowser } from '@midscene/shared/utils';
+import { getDebug } from '@sqaitech/shared/logger';
+import { assert, ifInBrowser } from '@sqaitech/shared/utils';
 import { jsonrepair } from 'jsonrepair';
 import OpenAI from 'openai';
 import type { ChatCompletionMessageParam } from 'openai/resources/index';
@@ -168,7 +168,7 @@ async function createChatClient({
   // LangSmith wrapper
   if (
     openai &&
-    globalConfigManager.getEnvConfigInBoolean(MIDSCENE_LANGSMITH_DEBUG)
+    globalConfigManager.getEnvConfigInBoolean(SQAI_LANGSMITH_DEBUG)
   ) {
     if (ifInBrowser) {
       throw new Error('langsmith is not supported in browser');
@@ -183,7 +183,7 @@ async function createChatClient({
   // Langfuse wrapper
   if (
     openai &&
-    globalConfigManager.getEnvConfigInBoolean(MIDSCENE_LANGFUSE_DEBUG)
+    globalConfigManager.getEnvConfigInBoolean(SQAI_LANGFUSE_DEBUG)
   ) {
     if (ifInBrowser) {
       throw new Error('langfuse is not supported in browser');
@@ -237,7 +237,7 @@ export async function callAI(
   });
 
   const maxTokens =
-    globalConfigManager.getEnvConfigValueAsNumber(MIDSCENE_MODEL_MAX_TOKENS) ??
+    globalConfigManager.getEnvConfigValueAsNumber(SQAI_MODEL_MAX_TOKENS) ??
     globalConfigManager.getEnvConfigValueAsNumber(OPENAI_MAX_TOKENS);
   const debugCall = getDebug('ai:call');
   const warnCall = getDebug('ai:call', { console: true });

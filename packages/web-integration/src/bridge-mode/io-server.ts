@@ -1,6 +1,6 @@
 import { createServer } from 'node:http';
-import { sleep } from '@midscene/core/utils';
-import { logMsg } from '@midscene/shared/utils';
+import { sleep } from '@sqaitech/core/utils';
+import { logMsg } from '@sqaitech/shared/utils';
 import { Server, type Socket as ServerSocket } from 'socket.io';
 import { io as ClientIO } from 'socket.io-client';
 

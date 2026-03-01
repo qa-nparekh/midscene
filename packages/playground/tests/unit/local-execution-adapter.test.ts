@@ -1,6 +1,6 @@
-import type { DeviceAction } from '@midscene/core';
-import { ExecutionDump } from '@midscene/core';
-import { overrideAIConfig } from '@midscene/shared/env';
+import type { DeviceAction } from '@sqaitech/core';
+import { ExecutionDump } from '@sqaitech/core';
+import { overrideAIConfig } from '@sqaitech/shared/env';
 import { beforeEach, describe, expect, it, vi } from 'vitest';
 import { LocalExecutionAdapter } from '../../src/adapters/local-execution';
 import * as common from '../../src/common';
@@ -11,7 +11,7 @@ import type {
 } from '../../src/types';
 
 // Mock dependencies
-vi.mock('@midscene/shared/env');
+vi.mock('@sqaitech/shared/env');
 
 // Import the real parseStructuredParams function for use in adapter
 vi.mock('../../src/common', async (importOriginal) => {
@@ -103,7 +103,7 @@ describe('LocalExecutionAdapter', () => {
     it('should handle params without locate field', async () => {
       // Mock findAllMidsceneLocatorField to return empty array
       const { findAllMidsceneLocatorField } = await import(
-        '@midscene/core/ai-model'
+        '@sqaitech/core/ai-model'
       );
       vi.mocked(findAllMidsceneLocatorField).mockReturnValue([]);
 

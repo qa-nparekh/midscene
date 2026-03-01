@@ -1,4 +1,4 @@
-import { CLIError, runToolsCLI } from '@midscene/shared/cli';
+import { CLIError, runToolsCLI } from '@sqaitech/shared/cli';
 import { ComputerMidsceneTools } from './mcp-tools';
 
 const tools = new ComputerMidsceneTools();

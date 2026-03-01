@@ -16,7 +16,7 @@ const injectReportTemplate = () => ({
       // Only inject if the report template exists
       if (!fs.existsSync(reportTplPath)) {
         console.warn(
-          '[@midscene/core] Report template not found. Run "pnpm run build" to generate it.',
+          '[@sqaitech/core] Report template not found. Run "pnpm run build" to generate it.',
         );
         return;
       }
@@ -64,13 +64,13 @@ const injectReportTemplate = () => ({
 
       if (injectedCount > 0) {
         console.log(
-          `[@midscene/core] Report template injected into ${injectedCount} file(s)`,
+          `[@sqaitech/core] Report template injected into ${injectedCount} file(s)`,
         );
       }
 
       // Warning to help users find the solution when they encounter build issues
       console.warn(
-        'If you see "REPLACE_ME_WITH_REPORT_HTML" error in the Midscene report file, please rebuild the entire project with "pnpm run build:skip-cache". Reference: https://github.com/web-infra-dev/midscene/blob/main/CONTRIBUTING.md#replace_me_with_report_html-error-in-the-report-file',
+        'If you see "REPLACE_ME_WITH_REPORT_HTML" error in the SQAI report file, please rebuild the entire project with "pnpm run build:skip-cache".',
       );
     });
   },

@@ -1,5 +1,5 @@
-import { parseBase64 } from '@midscene/shared/img';
-import { getDebug } from '@midscene/shared/logger';
+import { parseBase64 } from '@sqaitech/shared/img';
+import { getDebug } from '@sqaitech/shared/logger';
 import type { McpServer } from '@modelcontextprotocol/sdk/server/mcp.js';
 import {
   generateCommonTools,

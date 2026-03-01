@@ -1,4 +1,4 @@
-import { sleep } from '@midscene/core/utils';
+import { sleep } from '@sqaitech/core/utils';
 import { beforeAll, describe, it, vi } from 'vitest';
 import {
   type IOSAgent,

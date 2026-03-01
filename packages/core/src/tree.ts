@@ -1,11 +1,11 @@
-import type { BaseElement, ElementTreeNode } from '@midscene/shared/types';
+import type { BaseElement, ElementTreeNode } from '@sqaitech/shared/types';
 
 import {
   descriptionOfTree as sharedDescriptionOfTree,
   treeToList,
   trimAttributes,
   truncateText,
-} from '@midscene/shared/extractor';
+} from '@sqaitech/shared/extractor';
 
 const ELEMENT_COUNT_WARNING_THRESHOLD = 5000;
 const TREE_SIZE_WARNING_MESSAGE =

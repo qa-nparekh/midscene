@@ -3,7 +3,7 @@ import type { AbstractInterface } from '@/types';
 import { describe, expect, it, vi } from 'vitest';
 
 // Mock dependencies
-vi.mock('@midscene/core/utils', () => ({
+vi.mock('@sqaitech/core/utils', () => ({
   writeLogFile: vi.fn(() => null),
   reportHTMLContent: vi.fn(() => ''),
   stringifyDumpData: vi.fn(() => '{}'),
@@ -12,13 +12,13 @@ vi.mock('@midscene/core/utils', () => ({
   sleep: vi.fn(() => Promise.resolve()),
 }));
 
-vi.mock('@midscene/shared/logger', () => ({
+vi.mock('@sqaitech/shared/logger', () => ({
   getDebug: vi.fn(() => vi.fn()),
   logMsg: vi.fn(),
 }));
 
-vi.mock('@midscene/core', async () => {
-  const actual = await vi.importActual('@midscene/core');
+vi.mock('@sqaitech/core', async () => {
+  const actual = await vi.importActual('@sqaitech/core');
   return {
     ...actual,
     Insight: vi.fn().mockImplementation(() => ({})),
@@ -26,9 +26,9 @@ vi.mock('@midscene/core', async () => {
 });
 
 const mockedModelConfig = {
-  MIDSCENE_MODEL_NAME: 'gpt-4o',
-  MIDSCENE_MODEL_API_KEY: 'mock-api-key',
-  MIDSCENE_MODEL_BASE_URL: 'mock-base-url',
+  SQAI_MODEL_NAME: 'gpt-4o',
+  SQAI_MODEL_API_KEY: 'mock-api-key',
+  SQAI_MODEL_BASE_URL: 'mock-base-url',
 };
 
 const createMockInterface = (
@@ -114,10 +114,10 @@ describe('VL Model Check for Different Interface Types', () => {
     const mockPage = createMockInterface('android');
 
     const modelConfigWithVL = {
-      MIDSCENE_MODEL_NAME: 'gemini-2.0-flash-exp',
-      MIDSCENE_MODEL_API_KEY: 'mock-api-key',
-      MIDSCENE_MODEL_BASE_URL: 'mock-base-url',
-      MIDSCENE_MODEL_FAMILY: 'gemini',
+      SQAI_MODEL_NAME: 'gemini-2.0-flash-exp',
+      SQAI_MODEL_API_KEY: 'mock-api-key',
+      SQAI_MODEL_BASE_URL: 'mock-base-url',
+      SQAI_MODEL_FAMILY: 'gemini',
     };
 
     expect(() => {

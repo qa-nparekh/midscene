@@ -1,11 +1,11 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { getKeyCommands } from '@/web-page';
-import { getCurrentExecutionFile } from '@midscene/core/agent';
+import { getCurrentExecutionFile } from '@sqaitech/core/agent';
 import {
   buildDetailedLocateParam,
   buildDetailedLocateParamAndRestParams,
-} from '@midscene/core/yaml';
+} from '@sqaitech/core/yaml';
 import { describe, expect, it } from 'vitest';
 
 describe('TaskCache', () => {
@@ -23,12 +23,12 @@ describe('TaskCache', () => {
 
   it('extract trace from puppeteer', () => {
     const trace = `
-        at getCurrentExecutionFile (/Users/user/workspace/midscene-example/puppeteer-demo/node_modules/@midscene/web/dist/es/puppeteer.js:561:11)
-    at generateCacheId (/Users/user/workspace/midscene-example/puppeteer-demo/node_modules/@midscene/web/dist/es/puppeteer.js:568:32)
-    at TaskCache (/Users/user/workspace/midscene-example/puppeteer-demo/node_modules/@midscene/web/dist/es/puppeteer.js:590:24)
-    at TaskExecutor (/Users/user/workspace/midscene-example/puppeteer-demo/node_modules/@midscene/web/dist/es/puppeteer.js:711:26)
-    at PageAgent (/Users/user/workspace/midscene-example/puppeteer-demo/node_modules/@midscene/web/dist/es/puppeteer.js:1147:29)
-    at PuppeteerAgent (/Users/user/workspace/midscene-example/puppeteer-demo/node_modules/@midscene/web/dist/es/puppeteer.js:1352:9)
+        at getCurrentExecutionFile (/Users/user/workspace/midscene-example/puppeteer-demo/node_modules/@sqaitech/web/dist/es/puppeteer.js:561:11)
+    at generateCacheId (/Users/user/workspace/midscene-example/puppeteer-demo/node_modules/@sqaitech/web/dist/es/puppeteer.js:568:32)
+    at TaskCache (/Users/user/workspace/midscene-example/puppeteer-demo/node_modules/@sqaitech/web/dist/es/puppeteer.js:590:24)
+    at TaskExecutor (/Users/user/workspace/midscene-example/puppeteer-demo/node_modules/@sqaitech/web/dist/es/puppeteer.js:711:26)
+    at PageAgent (/Users/user/workspace/midscene-example/puppeteer-demo/node_modules/@sqaitech/web/dist/es/puppeteer.js:1147:29)
+    at PuppeteerAgent (/Users/user/workspace/midscene-example/puppeteer-demo/node_modules/@sqaitech/web/dist/es/puppeteer.js:1352:9)
     at <anonymous> (/Users/user/workspace/midscene-example/puppeteer-demo/demo.ts:24:17)
     `;
     const currentExecutionFile = getCurrentExecutionFile(trace);

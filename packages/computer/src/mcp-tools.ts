@@ -1,6 +1,6 @@
-import { z } from '@midscene/core';
-import { getDebug } from '@midscene/shared/logger';
-import { BaseMidsceneTools, type ToolDefinition } from '@midscene/shared/mcp';
+import { z } from '@sqaitech/core';
+import { getDebug } from '@sqaitech/shared/logger';
+import { BaseMidsceneTools, type ToolDefinition } from '@sqaitech/shared/mcp';
 import { type ComputerAgent, agentFromComputer } from './agent';
 import { ComputerDevice } from './device';
 

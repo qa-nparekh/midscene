@@ -28,7 +28,7 @@
 ### 导入
 
 ```ts
-import { AndroidDevice, getConnectedDevices } from '@midscene/android';
+import { AndroidDevice, getConnectedDevices } from '@sqaitech/android';
 ```
 
 ### 构造函数
@@ -91,7 +91,7 @@ Scrcpy 模式在连接失败时会自动降级到 ADB 截图，无需额外处�
 #### 快速开始
 
 ```ts
-import { AndroidAgent, AndroidDevice, getConnectedDevices } from '@midscene/android';
+import { AndroidAgent, AndroidDevice, getConnectedDevices } from '@sqaitech/android';
 
 const [first] = await getConnectedDevices();
 const device = new AndroidDevice(first.udid);
@@ -124,7 +124,7 @@ await agent.home();
 ### 导入
 
 ```ts
-import { AndroidAgent } from '@midscene/android';
+import { AndroidAgent } from '@sqaitech/android';
 ```
 
 ### 构造函数

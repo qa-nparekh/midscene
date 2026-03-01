@@ -1,10 +1,10 @@
 import { readFileSync } from 'node:fs';
-import { getDebug } from '@midscene/shared/logger';
-import { assert } from '@midscene/shared/utils';
+import { getDebug } from '@sqaitech/shared/logger';
+import { assert } from '@sqaitech/shared/utils';
 
 import { PuppeteerAgent } from '@/puppeteer/index';
-import type { AgentOpt, Cache, MidsceneYamlScriptWebEnv } from '@midscene/core';
-import { DEFAULT_WAIT_FOR_NETWORK_IDLE_TIMEOUT } from '@midscene/shared/constants';
+import type { AgentOpt, Cache, MidsceneYamlScriptWebEnv } from '@sqaitech/core';
+import { DEFAULT_WAIT_FOR_NETWORK_IDLE_TIMEOUT } from '@sqaitech/shared/constants';
 import puppeteer, { type Browser, type Page } from 'puppeteer';
 
 export const defaultUA =
@@ -377,7 +377,7 @@ export async function puppeteerAgentForTarget(
   });
 
   freeFn.push({
-    name: 'midscene_puppeteer_agent',
+    name: 'sqai_puppeteer_agent',
     fn: () => agent.destroy(),
   });
 

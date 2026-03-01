@@ -7,7 +7,7 @@
     "ignore": [
       "static/**",
       "node_modules/**",
-      "**/midscene_run",
+      "**/.sqai",
       "**/extension_output",
       ".nx",
       "**/dist",

@@ -1,5 +1,5 @@
 import { PuppeteerAgent } from '@/puppeteer';
-import { imageInfoOfBase64 } from '@midscene/shared/img';
+import { imageInfoOfBase64 } from '@sqaitech/shared/img';
 import { describe, expect, it } from 'vitest';
 import { launchPage } from './utils';
 

@@ -7,20 +7,20 @@ import type {
   ServiceExtractOption,
   UIContext,
 } from '@/types';
-import type { IModelConfig } from '@midscene/shared/env';
+import type { IModelConfig } from '@sqaitech/shared/env';
 import {
   generateElementByPoint,
   generateElementByRect,
-} from '@midscene/shared/extractor/dom-util';
+} from '@sqaitech/shared/extractor/dom-util';
 import {
   cropByRect,
   paddingToMatchBlockByBase64,
   preProcessImageUrl,
   scaleImage,
-} from '@midscene/shared/img';
-import { getDebug } from '@midscene/shared/logger';
-import type { LocateResultElement } from '@midscene/shared/types';
-import { assert } from '@midscene/shared/utils';
+} from '@sqaitech/shared/img';
+import { getDebug } from '@sqaitech/shared/logger';
+import type { LocateResultElement } from '@sqaitech/shared/types';
+import { assert } from '@sqaitech/shared/utils';
 import type {
   ChatCompletionSystemMessageParam,
   ChatCompletionUserMessageParam,

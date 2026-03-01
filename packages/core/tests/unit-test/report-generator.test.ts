@@ -72,7 +72,7 @@ function buildIncrementalDump(
 }
 
 function getTmpDir(prefix: string): string {
-  const dir = join(tmpdir(), `midscene-test-${prefix}-${Date.now()}`);
+  const dir = join(tmpdir(), `sqai-test-${prefix}-${Date.now()}`);
   mkdirSync(dir, { recursive: true });
   return dir;
 }
@@ -252,7 +252,7 @@ describe('ReportGenerator — constant memory guarantees', () => {
       // The parseDumpScript function returns first match which may be template JS
       // So we manually find the last dump script tag
       const dumpRegex =
-        /<script type="midscene_web_dump"[^>]*>([\s\S]*?)<\/script>/g;
+        /<script type="sqai_web_dump"[^>]*>([\s\S]*?)<\/script>/g;
       const dumpMatches = [...html.matchAll(dumpRegex)];
       const lastDumpMatch =
         dumpMatches.length > 0 ? dumpMatches[dumpMatches.length - 1] : null;

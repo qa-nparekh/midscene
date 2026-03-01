@@ -22,14 +22,14 @@ Integrate Vitest for testing: [https://github.com/web-infra-dev/midscene-example
 
 ## Try Playground (no code)
 
-Playground is the fastest way to validate the connection and observe AI-driven steps without writing code. It shares the same core as `@midscene/ios`, so anything that works here will behave the same once scripted.
+Playground is the fastest way to validate the connection and observe AI-driven steps without writing code. It shares the same core as `@sqaitech/ios`, so anything that works here will behave the same once scripted.
 
 <video src="https://lf3-static.bytednsdoc.com/obj/eden-cn/nupipfups/Midscene/1.0-showcases/x2.mp4" controls/>
 
 1. Launch the Playground CLI:
 
 ```bash
-npx --yes @midscene/ios-playground
+npx --yes @sqaitech/ios-playground
 ```
 
 2. Click the gear button to enter the configuration page and paste your API key config. Refer back to [Model configuration](./model-config) if you still need credentials.
@@ -46,7 +46,7 @@ Once Playground works, move to a repeatable script with the JavaScript SDK.
 
 ### Step 1. Install dependencies
 
-<PackageManagerTabs command="install @midscene/ios --save-dev" />
+<PackageManagerTabs command="install @sqaitech/ios --save-dev" />
 
 ### Step 2. Write scripts
 
@@ -57,7 +57,7 @@ import {
   IOSAgent,
   IOSDevice,
   agentFromWebDriverAgent,
-} from '@midscene/ios';
+} from '@sqaitech/ios';
 
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 Promise.resolve(

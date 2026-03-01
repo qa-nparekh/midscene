@@ -9,12 +9,12 @@ import type {
   ExecutionTaskPlanning,
   ExecutionTaskPlanningApply,
   LocateResultElement,
-} from '@midscene/core';
-import { extractInsightParam, paramStr, typeStr } from '@midscene/core/agent';
+} from '@sqaitech/core';
+import { extractInsightParam, paramStr, typeStr } from '@sqaitech/core/agent';
 import {
   highlightColorForType,
   timeCostStrElement,
-} from '@midscene/visualizer';
+} from '@sqaitech/visualizer';
 import { Tag, Tooltip } from 'antd';
 import { fullTimeStrWithMilliseconds } from '../../../../../packages/visualizer/src/utils';
 import { isElementField, useExecutionDump } from '../store';

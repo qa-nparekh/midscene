@@ -1,6 +1,6 @@
-import type { DeviceAction } from '@midscene/core';
-import { findAllMidsceneLocatorField } from '@midscene/core/ai-model';
-import { buildDetailedLocateParam } from '@midscene/core/yaml';
+import type { DeviceAction } from '@sqaitech/core';
+import { findAllMidsceneLocatorField } from '@sqaitech/core/ai-model';
+import { buildDetailedLocateParam } from '@sqaitech/core/yaml';
 import type {
   ExecutionOptions,
   FormValue,
@@ -111,7 +111,7 @@ export function validateStructuredParams(
       locatorFieldKeys.forEach((key: string) => {
         if (typeof paramsForValidation[key] === 'string') {
           paramsForValidation[key] = {
-            midscene_location_field_flag: true,
+            SQAI_location_field_flag: true,
             prompt: paramsForValidation[key],
             center: [0, 0],
             rect: { left: 0, top: 0, width: 0, height: 0 },
@@ -133,7 +133,7 @@ export function validateStructuredParams(
           return (
             !path.includes('center') &&
             !path.includes('rect') &&
-            !path.includes('midscene_location_field_flag')
+            !path.includes('SQAI_location_field_flag')
           );
         })
         .map((err) => {

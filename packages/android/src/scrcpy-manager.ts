@@ -1,7 +1,7 @@
 import { createReadStream } from 'node:fs';
 import { createRequire } from 'node:module';
 import path from 'node:path';
-import { getDebug } from '@midscene/shared/logger';
+import { getDebug } from '@sqaitech/shared/logger';
 import type { Adb } from '@yume-chan/adb';
 
 const debugScrcpy = getDebug('android:scrcpy');
@@ -224,7 +224,7 @@ export class ScrcpyScreenshotManager {
    */
   private resolveServerBinPath(): string {
     const androidPkgJson = createRequire(import.meta.url).resolve(
-      '@midscene/android/package.json',
+      '@sqaitech/android/package.json',
     );
     return path.join(path.dirname(androidPkgJson), 'bin', 'scrcpy-server');
   }

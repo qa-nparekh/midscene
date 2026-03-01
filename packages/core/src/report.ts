@@ -1,7 +1,7 @@
 import { appendFileSync, existsSync, unlinkSync } from 'node:fs';
 import * as path from 'node:path';
-import { getMidsceneRunSubDir } from '@midscene/shared/common';
-import { logMsg } from '@midscene/shared/utils';
+import { getMidsceneRunSubDir } from '@sqaitech/shared/common';
+import { logMsg } from '@sqaitech/shared/utils';
 import { getReportFileName } from './agent';
 import {
   extractLastDumpScriptSync,

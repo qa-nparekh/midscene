@@ -4,18 +4,18 @@ import { dirname, join } from 'node:path';
 import { isDeepStrictEqual } from 'node:util';
 import type { TUserPrompt } from '@/ai-model';
 import type { ElementCacheFeature } from '@/types';
-import { getMidsceneRunSubDir } from '@midscene/shared/common';
+import { getMidsceneRunSubDir } from '@sqaitech/shared/common';
 import {
-  MIDSCENE_CACHE_MAX_FILENAME_LENGTH,
+  SQAI_CACHE_MAX_FILENAME_LENGTH,
   globalConfigManager,
-} from '@midscene/shared/env';
-import { getDebug } from '@midscene/shared/logger';
-import { ifInBrowser, ifInWorker } from '@midscene/shared/utils';
-import { generateHashId } from '@midscene/shared/utils';
-import { replaceIllegalPathCharsAndSpace } from '@midscene/shared/utils';
+} from '@sqaitech/shared/env';
+import { getDebug } from '@sqaitech/shared/logger';
+import { ifInBrowser, ifInWorker } from '@sqaitech/shared/utils';
+import { generateHashId } from '@sqaitech/shared/utils';
+import { replaceIllegalPathCharsAndSpace } from '@sqaitech/shared/utils';
 import yaml from 'js-yaml';
 import semver from 'semver';
-import { getMidsceneVersion } from './utils';
+import { getSqaiVersion } from './utils';
 
 const DEFAULT_CACHE_MAX_FILENAME_LENGTH = 200;
 
@@ -41,12 +41,12 @@ export interface MatchCacheResult<T extends PlanningCache | LocateCache> {
 }
 
 export type CacheFileContent = {
-  midsceneVersion: string;
+  sqaiVersion: string;
   cacheId: string;
   caches: Array<PlanningCache | LocateCache>;
 };
 
-const lowestSupportedMidsceneVersion = '0.16.10';
+const lowestSupportedSqaiVersion = '0.16.10';
 export const cacheFileExt = '.cache.yaml';
 
 export class TaskCache {
@@ -75,7 +75,7 @@ export class TaskCache {
     let safeCacheId = replaceIllegalPathCharsAndSpace(cacheId);
     const cacheMaxFilenameLength =
       globalConfigManager.getEnvConfigValueAsNumber(
-        MIDSCENE_CACHE_MAX_FILENAME_LENGTH,
+        SQAI_CACHE_MAX_FILENAME_LENGTH,
       ) ?? DEFAULT_CACHE_MAX_FILENAME_LENGTH;
     if (Buffer.byteLength(safeCacheId, 'utf8') > cacheMaxFilenameLength) {
       const prefix = safeCacheId.slice(0, 32);
@@ -106,7 +106,7 @@ export class TaskCache {
     }
     if (!cacheContent) {
       cacheContent = {
-        midsceneVersion: getMidsceneVersion(),
+        sqaiVersion: getSqaiVersion(),
         cacheId: this.cacheId,
         caches: [],
       };
@@ -232,18 +232,18 @@ export class TaskCache {
       const data = readFileSync(cacheFile, 'utf8');
       const jsonData = yaml.load(data) as CacheFileContent;
 
-      const version = getMidsceneVersion();
+      const version = getSqaiVersion();
       if (!version) {
-        debug('no midscene version info, will not read cache from file');
+        debug('no sqai version info, will not read cache from file');
         return undefined;
       }
 
       if (
-        semver.lt(jsonData.midsceneVersion, lowestSupportedMidsceneVersion) &&
-        !jsonData.midsceneVersion.includes('beta') // for internal test
+        semver.lt(jsonData.sqaiVersion, lowestSupportedSqaiVersion) &&
+        !jsonData.sqaiVersion.includes('beta') // for internal test
       ) {
         console.warn(
-          `You are using an old version of Midscene cache file, and we cannot match any info from it. Starting from Midscene v0.17, we changed our strategy to use xpath for cache info, providing better performance.\nPlease delete the existing cache and rebuild it. Sorry for the inconvenience.\ncache file: ${cacheFile}`,
+          `You are using an old version of SQAI cache file, and we cannot match any info from it. Starting from SQAI v0.17, we changed our strategy to use xpath for cache info, providing better performance.\nPlease delete the existing cache and rebuild it. Sorry for the inconvenience.\ncache file: ${cacheFile}`,
         );
         return undefined;
       }
@@ -251,10 +251,10 @@ export class TaskCache {
       debug(
         'cache loaded from file, path: %s, cache version: %s, record length: %s',
         cacheFile,
-        jsonData.midsceneVersion,
+        jsonData.sqaiVersion,
         jsonData.caches.length,
       );
-      jsonData.midsceneVersion = getMidsceneVersion(); // update the version
+      jsonData.sqaiVersion = getSqaiVersion(); // update the version
       return jsonData;
     } catch (err) {
       debug(
@@ -267,7 +267,7 @@ export class TaskCache {
   }
 
   flushCacheToFile(options?: { cleanUnused?: boolean }) {
-    const version = getMidsceneVersion();
+    const version = getSqaiVersion();
     if (!version) {
       debug('no midscene version info, will not write cache to file');
       return;

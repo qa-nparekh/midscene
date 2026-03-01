@@ -3,8 +3,8 @@ import * as Z from 'zustand';
 const { create } = Z;
 
 // Use a new key to avoid conflicts with the old data structure.
-const HISTORY_KEY = 'midscene-prompt-history-v2';
-const LAST_SELECTED_TYPE_KEY = 'midscene-last-selected-type';
+const HISTORY_KEY = 'sqai-prompt-history-v2';
+const LAST_SELECTED_TYPE_KEY = 'sqai-last-selected-type';
 
 export interface HistoryItem {
   type: string;

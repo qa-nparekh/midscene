@@ -1,5 +1,5 @@
 {
-  "name": "@midscene/computer-mcp",
+  "name": "@sqaitech/computer-mcp",
   "version": "1.4.6",
   "description": "Midscene MCP Server for Computer desktop automation",
   "bin": "dist/index.js",
@@ -12,10 +12,10 @@
     "test": "vitest run"
   },
   "devDependencies": {
-    "@midscene/computer": "workspace:*",
-    "@midscene/core": "workspace:*",
-    "@midscene/report": "workspace:*",
-    "@midscene/shared": "workspace:*",
+    "@sqaitech/computer": "workspace:*",
+    "@sqaitech/core": "workspace:*",
+    "@sqaitech/report": "workspace:*",
+    "@sqaitech/shared": "workspace:*",
     "@modelcontextprotocol/inspector": "^0.16.3",
     "@modelcontextprotocol/sdk": "1.10.2",
     "@rslib/core": "^0.18.3",

@@ -1,6 +1,6 @@
 import fs from 'node:fs';
-import * as CoreUtils from '@midscene/core/utils';
-import * as ImgUtils from '@midscene/shared/img';
+import * as CoreUtils from '@sqaitech/core/utils';
+import * as ImgUtils from '@sqaitech/shared/img';
 import { ADB } from 'appium-adb';
 import {
   type Mock,
@@ -44,8 +44,8 @@ vi.mock('appium-adb', () => {
   };
 });
 
-vi.mock('@midscene/core/utils');
-vi.mock('@midscene/shared/img');
+vi.mock('@sqaitech/core/utils');
+vi.mock('@sqaitech/shared/img');
 vi.mock('node:fs', async (importOriginal) => {
   const original = (await importOriginal()) as {
     default: Record<string, unknown>;

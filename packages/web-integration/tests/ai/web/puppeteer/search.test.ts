@@ -1,6 +1,6 @@
 import { PuppeteerAgent } from '@/puppeteer';
-import { sleep } from '@midscene/core/utils';
-import { globalModelConfigManager } from '@midscene/shared/env';
+import { sleep } from '@sqaitech/core/utils';
+import { globalModelConfigManager } from '@sqaitech/shared/env';
 import { describe, it } from 'vitest';
 import {
   DEFAULT_TEST_TIMEOUT,

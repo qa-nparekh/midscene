@@ -5,7 +5,7 @@ test.beforeEach(async ({ page }) => {
   await page.goto('https://todomvc.com/examples/react/dist/');
 });
 
-const CACHE_TIME_OUT = process.env.MIDSCENE_CACHE;
+const CACHE_TIME_OUT = process.env.SQAI_CACHE;
 
 test.describe('ai todo describe', () => {
   test.beforeEach(async ({ page }) => {

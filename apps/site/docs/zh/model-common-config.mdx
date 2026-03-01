@@ -14,10 +14,10 @@ import TroubleshootingLLMConnectivity from './common/troubleshooting-llm-connect
 
 ```bash
 # 替换为你自己的 API Key
-export MIDSCENE_MODEL_BASE_URL="https://.../compatible-mode/v1"
-export MIDSCENE_MODEL_API_KEY="sk-abcde..."
-export MIDSCENE_MODEL_NAME="qwen3-vl-plus"
-export MIDSCENE_MODEL_FAMILY="qwen3-vl"
+export SQAI_MODEL_BASE_URL="https://.../compatible-mode/v1"
+export SQAI_MODEL_API_KEY="sk-abcde..."
+export SQAI_MODEL_NAME="qwen3-vl-plus"
+export SQAI_MODEL_FAMILY="qwen3-vl"
 ```
 
 ### 方法二：编写 `.env` 文件（适用于命令行工具）
@@ -25,10 +25,10 @@ export MIDSCENE_MODEL_FAMILY="qwen3-vl"
 在项目的运行路径下创建一个 `.env` 文件，并添加以下内容，Midscene 的命令行工具默认会读取这个文件。
 
 ```bash
-MIDSCENE_MODEL_BASE_URL="https://.../compatible-mode/v1"
-MIDSCENE_MODEL_API_KEY="sk-abcdefghijklmnopqrstuvwxyz"
-MIDSCENE_MODEL_NAME="qwen3-vl-plus"
-MIDSCENE_MODEL_FAMILY="qwen3-vl"
+SQAI_MODEL_BASE_URL="https://.../compatible-mode/v1"
+SQAI_MODEL_API_KEY="sk-abcdefghijklmnopqrstuvwxyz"
+SQAI_MODEL_NAME="qwen3-vl-plus"
+SQAI_MODEL_FAMILY="qwen3-vl"
 ```
 
 请注意：
@@ -49,7 +49,7 @@ npm install dotenv --save
 在项目根目录下创建一个 `.env` 文件，并添加以下内容。注意这里不需要在每一行前添加 `export`。
 
 ```bash
-MIDSCENE_MODEL_API_KEY="sk-abcdefghijklmnopqrstuvwxyz"
+SQAI_MODEL_API_KEY="sk-abcdefghijklmnopqrstuvwxyz"
 ```
 
 在脚本中导入 dotenv 模块，导入后它会自动读取 `.env` 文件中的环境变量。
@@ -70,10 +70,10 @@ import 'dotenv/config';
 从 [火山引擎](https://volcengine.com) 获取 API 密钥，然后补充以下环境变量：
 
 ```bash
-MIDSCENE_MODEL_BASE_URL="https://ark.cn-beijing.volces.com/api/v3"
-MIDSCENE_MODEL_API_KEY="...."
-MIDSCENE_MODEL_NAME="ep-..." # 来自火山引擎的推理接入点 ID 或模型名称
-MIDSCENE_MODEL_FAMILY="doubao-seed" # 也兼容 "doubao-vision"
+SQAI_MODEL_BASE_URL="https://ark.cn-beijing.volces.com/api/v3"
+SQAI_MODEL_API_KEY="...."
+SQAI_MODEL_NAME="ep-..." # 来自火山引擎的推理接入点 ID 或模型名称
+SQAI_MODEL_FAMILY="doubao-seed" # 也兼容 "doubao-vision"
 ```
 
 ### 千问 Qwen3.5 {#qwen35}
@@ -81,10 +81,10 @@ MIDSCENE_MODEL_FAMILY="doubao-seed" # 也兼容 "doubao-vision"
 以[阿里云](https://www.aliyun.com/)的 `qwen3.5-plus` 模型为例，它的环境变量配置如下：
 
 ```bash
-MIDSCENE_MODEL_BASE_URL="https://dashscope.aliyuncs.com/compatible-mode/v1"
-MIDSCENE_MODEL_API_KEY="......"
-MIDSCENE_MODEL_NAME="qwen3.5-plus"
-MIDSCENE_MODEL_FAMILY="qwen3.5"
+SQAI_MODEL_BASE_URL="https://dashscope.aliyuncs.com/compatible-mode/v1"
+SQAI_MODEL_API_KEY="......"
+SQAI_MODEL_NAME="qwen3.5-plus"
+SQAI_MODEL_FAMILY="qwen3.5"
 ```
 
 Qwen3.5 的运行时行为与 Qwen3-VL 一致。
@@ -94,10 +94,10 @@ Qwen3.5 的运行时行为与 Qwen3-VL 一致。
 以[阿里云](https://www.aliyun.com/)的 `qwen3-vl-plus` 模型为例，它的环境变量配置如下：
 
 ```bash
-MIDSCENE_MODEL_BASE_URL="https://dashscope.aliyuncs.com/compatible-mode/v1"
-MIDSCENE_MODEL_API_KEY="......"
-MIDSCENE_MODEL_NAME="qwen3-vl-plus"
-MIDSCENE_MODEL_FAMILY="qwen3-vl"
+SQAI_MODEL_BASE_URL="https://dashscope.aliyuncs.com/compatible-mode/v1"
+SQAI_MODEL_API_KEY="......"
+SQAI_MODEL_NAME="qwen3-vl-plus"
+SQAI_MODEL_FAMILY="qwen3-vl"
 ```
 
 ### 千问 Qwen2.5-VL {#qwen25-vl}
@@ -105,10 +105,10 @@ MIDSCENE_MODEL_FAMILY="qwen3-vl"
 以阿里云 `qwen-vl-max-latest` 模型为例，它的环境变量配置如下：
 
 ```bash
-MIDSCENE_MODEL_BASE_URL="https://dashscope.aliyuncs.com/compatible-mode/v1"
-MIDSCENE_MODEL_API_KEY="......"
-MIDSCENE_MODEL_NAME="qwen-vl-max-latest"
-MIDSCENE_MODEL_FAMILY="qwen2.5-vl"
+SQAI_MODEL_BASE_URL="https://dashscope.aliyuncs.com/compatible-mode/v1"
+SQAI_MODEL_API_KEY="......"
+SQAI_MODEL_NAME="qwen-vl-max-latest"
+SQAI_MODEL_FAMILY="qwen2.5-vl"
 ```
 
 ### 智谱 GLM-V {#glm-v}
@@ -118,10 +118,10 @@ MIDSCENE_MODEL_FAMILY="qwen2.5-vl"
 从 [Z.AI（国际）](https://z.ai/manage-apikey/apikey-list)或 [BigModel（国内）](https://bigmodel.cn/usercenter/proj-mgmt/apikeys)获取 API 密钥，然后设置：
 
 ```bash
-MIDSCENE_MODEL_BASE_URL="https://open.bigmodel.cn/api/paas/v4" # 或 https://api.z.ai/api/paas/v4
-MIDSCENE_MODEL_API_KEY="......"
-MIDSCENE_MODEL_NAME="glm-4.6v"
-MIDSCENE_MODEL_FAMILY="glm-v"
+SQAI_MODEL_BASE_URL="https://open.bigmodel.cn/api/paas/v4" # 或 https://api.z.ai/api/paas/v4
+SQAI_MODEL_API_KEY="......"
+SQAI_MODEL_NAME="glm-4.6v"
+SQAI_MODEL_FAMILY="glm-v"
 ```
 
 **了解更多关于智谱 GLM-V**
@@ -137,15 +137,15 @@ MIDSCENE_MODEL_FAMILY="glm-v"
 从 [Z.AI（国际）](https://z.ai/manage-apikey/apikey-list)或 [BigModel（国内）](https://bigmodel.cn/usercenter/proj-mgmt/apikeys)获取 API 密钥后，可以使用以下配置：
 
 ```bash
-MIDSCENE_MODEL_BASE_URL="https://open.bigmodel.cn/api/paas/v4" # 或 https://api.z.ai/api/paas/v4
-MIDSCENE_MODEL_API_KEY="......"
-MIDSCENE_MODEL_NAME="autoglm-phone" # 模型名以平台实际模型名为准
-MIDSCENE_MODEL_FAMILY="auto-glm" # 或 "auto-glm-multilingual"
+SQAI_MODEL_BASE_URL="https://open.bigmodel.cn/api/paas/v4" # 或 https://api.z.ai/api/paas/v4
+SQAI_MODEL_API_KEY="......"
+SQAI_MODEL_NAME="autoglm-phone" # 模型名以平台实际模型名为准
+SQAI_MODEL_FAMILY="auto-glm" # 或 "auto-glm-multilingual"
 ```
 
-**关于 `MIDSCENE_MODEL_FAMILY` 配置**
+**关于 `SQAI_MODEL_FAMILY` 配置**
 
-AutoGLM 提供了两个版本的模型，通过 `MIDSCENE_MODEL_FAMILY` 区分：
+AutoGLM 提供了两个版本的模型，通过 `SQAI_MODEL_FAMILY` 区分：
 
 - `auto-glm` - 对应 AutoGLM-Phone-9B，针对**中文环境**优化
 - `auto-glm-multilingual` - 对应 AutoGLM-Phone-9B-Multilingual，支持**英语等其他语言**场景
@@ -163,13 +163,13 @@ AutoGLM 更适合移动端的交互与操作流程。如果要使用 `aiAssert`�
 
 ### Gemini-3-Pro and Gemini-3-Flash {#gemini-3-pro}
 
-在 [Google Gemini](https://gemini.google.com/) 上申请 API 密钥后，可以使用以下配置。`MIDSCENE_MODEL_NAME` 请填写你使用的 Gemini-3-Pro 或 Gemini-3-Flash 具体模型名：
+在 [Google Gemini](https://gemini.google.com/) 上申请 API 密钥后，可以使用以下配置。`SQAI_MODEL_NAME` 请填写你使用的 Gemini-3-Pro 或 Gemini-3-Flash 具体模型名：
 
 ```bash
-MIDSCENE_MODEL_BASE_URL="https://generativelanguage.googleapis.com/v1beta/openai/"
-MIDSCENE_MODEL_API_KEY="......"
-MIDSCENE_MODEL_NAME="gemini-3.0-pro" # 或 gemini-3-flash 的具体模型名
-MIDSCENE_MODEL_FAMILY="gemini"
+SQAI_MODEL_BASE_URL="https://generativelanguage.googleapis.com/v1beta/openai/"
+SQAI_MODEL_API_KEY="......"
+SQAI_MODEL_NAME="gemini-3.0-pro" # 或 gemini-3-flash 的具体模型名
+SQAI_MODEL_FAMILY="gemini"
 ```
 
 ### UI-TARS {#ui-tars}
@@ -177,27 +177,27 @@ MIDSCENE_MODEL_FAMILY="gemini"
 你可以在 [火山引擎](https://volcengine.com) 上使用已部署的 `doubao-1.5-ui-tars`。
 
 ```bash
-MIDSCENE_MODEL_BASE_URL="https://ark.cn-beijing.volces.com/api/v3"
-MIDSCENE_MODEL_API_KEY="...."
-MIDSCENE_MODEL_NAME="ep-2025..." # 来自火山引擎的推理接入点 ID 或模型名称
-MIDSCENE_MODEL_FAMILY="vlm-ui-tars-doubao-1.5"
+SQAI_MODEL_BASE_URL="https://ark.cn-beijing.volces.com/api/v3"
+SQAI_MODEL_API_KEY="...."
+SQAI_MODEL_NAME="ep-2025..." # 来自火山引擎的推理接入点 ID 或模型名称
+SQAI_MODEL_FAMILY="vlm-ui-tars-doubao-1.5"
 ```
 
-**关于 `MIDSCENE_MODEL_FAMILY` 配置**
+**关于 `SQAI_MODEL_FAMILY` 配置**
 
-`MIDSCENE_MODEL_FAMILY` 用于指定 UI-TARS 版本，使用以下值之一：
+`SQAI_MODEL_FAMILY` 用于指定 UI-TARS 版本，使用以下值之一：
 - `vlm-ui-tars` - 用于模型版本 `1.0`
 - `vlm-ui-tars-doubao` - 用于在火山引擎上部署的模型版本 `1.5`（与 `vlm-ui-tars-doubao-1.5` 等效）
 - `vlm-ui-tars-doubao-1.5` - 用于在火山引擎上部署的模型版本 `1.5`
 
 :::tip
 
-旧版本使用 `MIDSCENE_USE_VLM_UI_TARS=DOUBAO` 或 `MIDSCENE_USE_VLM_UI_TARS=1.5` 配置，该配置仍然兼容但已废弃，建议迁移到 `MIDSCENE_MODEL_FAMILY`。
+旧版本使用 `SQAI_USE_VLM_UI_TARS=DOUBAO` 或 `SQAI_USE_VLM_UI_TARS=1.5` 配置，该配置仍然兼容但已废弃，建议迁移到 `SQAI_MODEL_FAMILY`。
 
 迁移对应关系：
-- `MIDSCENE_USE_VLM_UI_TARS=1.0` → `MIDSCENE_MODEL_FAMILY="vlm-ui-tars"`
-- `MIDSCENE_USE_VLM_UI_TARS=1.5` → `MIDSCENE_MODEL_FAMILY="vlm-ui-tars-doubao-1.5"`
-- `MIDSCENE_USE_VLM_UI_TARS=DOUBAO` → `MIDSCENE_MODEL_FAMILY="vlm-ui-tars-doubao"`
+- `SQAI_USE_VLM_UI_TARS=1.0` → `SQAI_MODEL_FAMILY="vlm-ui-tars"`
+- `SQAI_USE_VLM_UI_TARS=1.5` → `SQAI_MODEL_FAMILY="vlm-ui-tars-doubao-1.5"`
+- `SQAI_USE_VLM_UI_TARS=DOUBAO` → `SQAI_MODEL_FAMILY="vlm-ui-tars-doubao"`
 
 :::
 
@@ -213,20 +213,20 @@ MIDSCENE_MODEL_FAMILY="vlm-ui-tars-doubao-1.5"
 
 ```bash
 # 默认视觉模型：Qwen3-VL
-export MIDSCENE_MODEL_BASE_URL="https://..."       # Qwen3-VL 接口地址
-export MIDSCENE_MODEL_API_KEY="..."                # 你的 Qwen3-VL API Key
-export MIDSCENE_MODEL_NAME="qwen3-vl-plus"
-export MIDSCENE_MODEL_FAMILY="qwen3-vl"
+export SQAI_MODEL_BASE_URL="https://..."       # Qwen3-VL 接口地址
+export SQAI_MODEL_API_KEY="..."                # 你的 Qwen3-VL API Key
+export SQAI_MODEL_NAME="qwen3-vl-plus"
+export SQAI_MODEL_FAMILY="qwen3-vl"
 
 # Planning 模型：GPT-5.1
-export MIDSCENE_PLANNING_MODEL_API_KEY="sk-..."    # 你的 GPT-5.1 API Key
-export MIDSCENE_PLANNING_MODEL_BASE_URL="https://..."
-export MIDSCENE_PLANNING_MODEL_NAME="gpt-5.1"
+export SQAI_PLANNING_MODEL_API_KEY="sk-..."    # 你的 GPT-5.1 API Key
+export SQAI_PLANNING_MODEL_BASE_URL="https://..."
+export SQAI_PLANNING_MODEL_NAME="gpt-5.1"
 
 # Insight 模型：GPT-5.1
-export MIDSCENE_INSIGHT_MODEL_API_KEY="sk-..."     # 你的 GPT-5.1 API Key
-export MIDSCENE_INSIGHT_MODEL_BASE_URL="https://..."
-export MIDSCENE_INSIGHT_MODEL_NAME="gpt-5.1"
+export SQAI_INSIGHT_MODEL_API_KEY="sk-..."     # 你的 GPT-5.1 API Key
+export SQAI_INSIGHT_MODEL_BASE_URL="https://..."
+export SQAI_INSIGHT_MODEL_NAME="gpt-5.1"
 ```
 
 ## 更多

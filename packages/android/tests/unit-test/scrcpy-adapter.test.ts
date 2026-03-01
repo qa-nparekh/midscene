@@ -36,7 +36,7 @@ vi.mock('../../src/scrcpy-manager', async (importOriginal) => {
   };
 });
 
-vi.mock('@midscene/shared/img', () => ({
+vi.mock('@sqaitech/shared/img', () => ({
   createImgBase64ByFormat: vi
     .fn()
     .mockReturnValue('data:image/png;base64,test'),

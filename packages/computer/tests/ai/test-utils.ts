@@ -1,4 +1,4 @@
-import { sleep } from '@midscene/core/utils';
+import { sleep } from '@sqaitech/core/utils';
 import type { ComputerAgent } from '../../src';
 
 const IS_MAC = process.platform === 'darwin';

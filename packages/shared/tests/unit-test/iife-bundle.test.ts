@@ -4,7 +4,7 @@ import vm from 'node:vm';
 import { describe, expect, test } from 'vitest';
 
 interface GlobalWithMidscene {
-  midscene_element_inspector?: {
+  sqai_element_inspector?: {
     webExtractNodeTree: unknown;
     getNodeInfoByXpath: unknown;
     treeToList: unknown;
@@ -42,20 +42,20 @@ describe('IIFE bundle runtime behavior', () => {
   }
 
   describe('Window global assignment', () => {
-    test('should set window.midscene_element_inspector to a non-undefined value', () => {
+    test('should set window.sqai_element_inspector to a non-undefined value', () => {
       const globalObj = executeBundleInVM();
 
-      expect(globalObj.midscene_element_inspector).toBeDefined();
-      expect(globalObj.midscene_element_inspector).not.toBeNull();
+      expect(globalObj.sqai_element_inspector).toBeDefined();
+      expect(globalObj.sqai_element_inspector).not.toBeNull();
     });
 
-    test('should set window.midscene_element_inspector to an object with properties', () => {
+    test('should set window.sqai_element_inspector to an object with properties', () => {
       const globalObj = executeBundleInVM();
 
-      expect(typeof globalObj.midscene_element_inspector).toBe('object');
+      expect(typeof globalObj.sqai_element_inspector).toBe('object');
       expect(
-        globalObj.midscene_element_inspector &&
-          Object.keys(globalObj.midscene_element_inspector).length,
+        globalObj.sqai_element_inspector &&
+          Object.keys(globalObj.sqai_element_inspector).length,
       ).toBeGreaterThan(0);
     });
   });
@@ -63,7 +63,7 @@ describe('IIFE bundle runtime behavior', () => {
   describe('Export completeness', () => {
     test('should export all required functions', () => {
       const globalObj = executeBundleInVM();
-      const exports = globalObj.midscene_element_inspector;
+      const exports = globalObj.sqai_element_inspector;
 
       expect(exports).toBeDefined();
 
@@ -124,28 +124,28 @@ describe('IIFE bundle runtime behavior', () => {
       expect(hasIIFEEnd).toBe(true);
     });
 
-    test('should assign to window.midscene_element_inspector at the end of the bundle', () => {
+    test('should assign to window.sqai_element_inspector at the end of the bundle', () => {
       const script = fs.readFileSync(bundlePath, 'utf-8');
 
       // Should contain the window assignment
       const hasWindowAssignment = script.includes(
-        'window.midscene_element_inspector',
+        'window.sqai_element_inspector',
       );
 
       expect(
         hasWindowAssignment,
-        'Bundle does not assign to window.midscene_element_inspector',
+        'Bundle does not assign to window.sqai_element_inspector',
       ).toBe(true);
 
       // The assignment should be near the end of the file (within last 500 chars)
       const lastChars = script.slice(-500);
       const assignmentNearEnd = lastChars.includes(
-        'window.midscene_element_inspector',
+        'window.sqai_element_inspector',
       );
 
       expect(
         assignmentNearEnd,
-        'window.midscene_element_inspector assignment should be at the end of the bundle',
+        'window.sqai_element_inspector assignment should be at the end of the bundle',
       ).toBe(true);
     });
   });

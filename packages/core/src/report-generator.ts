@@ -6,12 +6,12 @@ import {
   writeFileSync,
 } from 'node:fs';
 import { dirname, join } from 'node:path';
-import { getMidsceneRunSubDir } from '@midscene/shared/common';
+import { getMidsceneRunSubDir } from '@sqaitech/shared/common';
 import {
-  MIDSCENE_REPORT_QUIET,
+  SQAI_REPORT_QUIET,
   globalConfigManager,
-} from '@midscene/shared/env';
-import { ifInBrowser, logMsg } from '@midscene/shared/utils';
+} from '@sqaitech/shared/env';
+import { ifInBrowser, logMsg } from '@sqaitech/shared/utils';
 import {
   generateDumpScriptTag,
   generateImageScriptTag,
@@ -128,15 +128,15 @@ export class ReportGenerator implements IReportGenerator {
 
   private printReportPath(verb: string): void {
     if (!this.autoPrint || !this.reportPath) return;
-    if (globalConfigManager.getEnvConfigInBoolean(MIDSCENE_REPORT_QUIET))
+    if (globalConfigManager.getEnvConfigInBoolean(SQAI_REPORT_QUIET))
       return;
 
     if (this.screenshotMode === 'directory') {
       logMsg(
-        `Midscene - report ${verb}: npx serve ${dirname(this.reportPath)}`,
+        `SQAI - report ${verb}: npx serve ${dirname(this.reportPath)}`,
       );
     } else {
-      logMsg(`Midscene - report ${verb}: ${this.reportPath}`);
+      logMsg(`SQAI - report ${verb}: ${this.reportPath}`);
     }
   }
 

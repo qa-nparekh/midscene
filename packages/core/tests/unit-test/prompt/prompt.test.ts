@@ -16,7 +16,7 @@ import {
 import { mockNonChinaTimeZone, restoreIntl } from '../mocks/intl-mock';
 
 // Mock getPreferredLanguage to ensure consistent test output
-vi.mock('@midscene/shared/env', () => ({
+vi.mock('@sqaitech/shared/env', () => ({
   getPreferredLanguage: vi.fn().mockReturnValue('English'),
 }));
 

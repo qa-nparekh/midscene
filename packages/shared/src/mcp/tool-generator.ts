@@ -1,4 +1,4 @@
-import { parseBase64 } from '@midscene/shared/img';
+import { parseBase64 } from '@sqaitech/shared/img';
 import { z } from 'zod';
 import { getZodDescription, getZodTypeName } from '../zod-schema-utils';
 import type {

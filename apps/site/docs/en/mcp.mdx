@@ -32,7 +32,7 @@ The report includes detailed interaction information such as screenshots, operat
 
 ### Browser Bridge Mode
 
-`@midscene/web-bridge-mcp` exposes the [Chrome extension Bridge Mode](./bridge-mode) as an MCP service.
+`@sqaitech/web-bridge-mcp` exposes the [Chrome extension Bridge Mode](./bridge-mode) as an MCP service.
 
 **Environment preparation**
 
@@ -44,19 +44,19 @@ With background bridge mode enabled, the MCP service can connect at any time wit
 
 **Configuration**
 
-Add the Midscene Web Bridge MCP server (`@midscene/web-bridge-mcp`) in your MCP client. For model configuration parameters, see [Model strategy](./model-strategy).
+Add the Midscene Web Bridge MCP server (`@sqaitech/web-bridge-mcp`) in your MCP client. For model configuration parameters, see [Model strategy](./model-strategy).
 
 ```json
 {
   "mcpServers": {
     "midscene-web": {
       "command": "npx",
-      "args": ["-y", "@midscene/web-bridge-mcp"],
+      "args": ["-y", "@sqaitech/web-bridge-mcp"],
       "env": {
-        "MIDSCENE_MODEL_BASE_URL": "replace with your model service URL",
-        "MIDSCENE_MODEL_API_KEY": "replace with your API Key",
-        "MIDSCENE_MODEL_NAME": "replace with your model name",
-        "MIDSCENE_MODEL_FAMILY": "replace with your model family",
+        "SQAI_MODEL_BASE_URL": "replace with your model service URL",
+        "SQAI_MODEL_API_KEY": "replace with your API Key",
+        "SQAI_MODEL_NAME": "replace with your model name",
+        "SQAI_MODEL_FAMILY": "replace with your model family",
         "MCP_SERVER_REQUEST_TIMEOUT": "600000"
       }
     }
@@ -73,19 +73,19 @@ Add the Midscene Web Bridge MCP server (`@midscene/web-bridge-mcp`) in your MCP 
 
 **Configuration**
 
-Add the Midscene iOS MCP server (`@midscene/ios-mcp`) in your MCP client. For model configuration parameters, see [Model strategy](./model-strategy).
+Add the Midscene iOS MCP server (`@sqaitech/ios-mcp`) in your MCP client. For model configuration parameters, see [Model strategy](./model-strategy).
 
 ```json
 {
   "mcpServers": {
     "midscene-ios": {
       "command": "npx",
-      "args": ["-y", "@midscene/ios-mcp"],
+      "args": ["-y", "@sqaitech/ios-mcp"],
       "env": {
-        "MIDSCENE_MODEL_BASE_URL": "replace with your model service URL",
-        "MIDSCENE_MODEL_API_KEY": "replace with your API Key",
-        "MIDSCENE_MODEL_NAME": "replace with your model name",
-        "MIDSCENE_MODEL_FAMILY": "replace with your model family",
+        "SQAI_MODEL_BASE_URL": "replace with your model service URL",
+        "SQAI_MODEL_API_KEY": "replace with your API Key",
+        "SQAI_MODEL_NAME": "replace with your model name",
+        "SQAI_MODEL_FAMILY": "replace with your model family",
         "MCP_SERVER_REQUEST_TIMEOUT": "800000"
       }
     }
@@ -103,19 +103,19 @@ Add the Midscene iOS MCP server (`@midscene/ios-mcp`) in your MCP client. For mo
 
 **Configuration**
 
-Add the Midscene Android MCP server (`@midscene/android-mcp`) in your MCP client. For model configuration parameters, see [Model strategy](./model-strategy).
+Add the Midscene Android MCP server (`@sqaitech/android-mcp`) in your MCP client. For model configuration parameters, see [Model strategy](./model-strategy).
 
 ```json
 {
   "mcpServers": {
     "midscene-android": {
       "command": "npx",
-      "args": ["-y", "@midscene/android-mcp"],
+      "args": ["-y", "@sqaitech/android-mcp"],
       "env": {
-        "MIDSCENE_MODEL_BASE_URL": "replace with your model service URL",
-        "MIDSCENE_MODEL_API_KEY": "replace with your API Key",
-        "MIDSCENE_MODEL_NAME": "replace with your model name",
-        "MIDSCENE_MODEL_FAMILY": "replace with your model family",
+        "SQAI_MODEL_BASE_URL": "replace with your model service URL",
+        "SQAI_MODEL_API_KEY": "replace with your API Key",
+        "SQAI_MODEL_NAME": "replace with your model name",
+        "SQAI_MODEL_FAMILY": "replace with your model family",
         "MCP_SERVER_REQUEST_TIMEOUT": "800000"
       }
     }
@@ -125,7 +125,7 @@ Add the Midscene Android MCP server (`@midscene/android-mcp`) in your MCP client
 
 ### Computer Desktop MCP service
 
-`@midscene/computer-mcp` exposes the computer desktop automation capabilities as an MCP service, allowing AI to control your computer through mouse, keyboard, and screenshot operations.
+`@sqaitech/computer-mcp` exposes the computer desktop automation capabilities as an MCP service, allowing AI to control your computer through mouse, keyboard, and screenshot operations.
 
 **Environment preparation**
 
@@ -134,19 +134,19 @@ Add the Midscene Android MCP server (`@midscene/android-mcp`) in your MCP client
 
 **Configuration**
 
-Add the Midscene Computer MCP server (`@midscene/computer-mcp`) in your MCP client. For model configuration parameters, see [Model strategy](./model-strategy).
+Add the Midscene Computer MCP server (`@sqaitech/computer-mcp`) in your MCP client. For model configuration parameters, see [Model strategy](./model-strategy).
 
 ```json
 {
   "mcpServers": {
     "midscene-computer": {
       "command": "npx",
-      "args": ["-y", "@midscene/computer-mcp"],
+      "args": ["-y", "@sqaitech/computer-mcp"],
       "env": {
-        "MIDSCENE_MODEL_BASE_URL": "replace with your model service URL",
-        "MIDSCENE_MODEL_API_KEY": "replace with your API Key",
-        "MIDSCENE_MODEL_NAME": "replace with your model name",
-        "MIDSCENE_MODEL_FAMILY": "replace with your model family",
+        "SQAI_MODEL_BASE_URL": "replace with your model service URL",
+        "SQAI_MODEL_API_KEY": "replace with your API Key",
+        "SQAI_MODEL_NAME": "replace with your model name",
+        "SQAI_MODEL_FAMILY": "replace with your model family",
         "MCP_SERVER_REQUEST_TIMEOUT": "800000"
       }
     }
@@ -165,8 +165,8 @@ The tools provided by `mcpKitForAgent` include screenshots and every Action in t
 The `mcpKitForAgent` function takes an Agent instance and returns an object containing description and tools list:
 
 ```typescript
-import { mcpKitForAgent } from '@midscene/web/mcp-server';
-import { Agent } from '@midscene/core/agent';
+import { mcpKitForAgent } from '@sqaitech/web/mcp-server';
+import { Agent } from '@sqaitech/core/agent';
 
 const agent = new Agent();
 const { description, tools } = await mcpKitForAgent(agent);
@@ -181,22 +181,22 @@ Each platform provides its corresponding `mcpKitForAgent` function:
 
 **Web platform**
 ```typescript
-import { mcpKitForAgent } from '@midscene/web/mcp-server';
+import { mcpKitForAgent } from '@sqaitech/web/mcp-server';
 ```
 
 **iOS platform**
 ```typescript
-import { mcpKitForAgent } from '@midscene/ios/mcp-server';
+import { mcpKitForAgent } from '@sqaitech/ios/mcp-server';
 ```
 
 **Android platform**
 ```typescript
-import { mcpKitForAgent } from '@midscene/android/mcp-server';
+import { mcpKitForAgent } from '@sqaitech/android/mcp-server';
 ```
 
 **Computer platform**
 ```typescript
-import { mcpKitForAgent } from '@midscene/computer/mcp-server';
+import { mcpKitForAgent } from '@sqaitech/computer/mcp-server';
 ```
 
 ### Integrate into custom MCP service
@@ -205,7 +205,7 @@ You can integrate the obtained tools into your own MCP service:
 
 ```typescript
 import { McpServer } from '@modelcontextprotocol/sdk/server/mcp.js';
-import { mcpKitForAgent } from '@midscene/web/mcp-server';
+import { mcpKitForAgent } from '@sqaitech/web/mcp-server';
 
 const agent = new Agent();
 const { description, tools } = await mcpKitForAgent(agent);

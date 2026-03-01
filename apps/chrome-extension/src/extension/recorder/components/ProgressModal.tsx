@@ -11,9 +11,9 @@ import {
   PushpinOutlined,
   ReloadOutlined,
 } from '@ant-design/icons';
-import type { CodeGenerationChunk, StreamingCallback } from '@midscene/core';
-import type { ChromeRecordedEvent } from '@midscene/recorder';
-import { globalModelConfigManager } from '@midscene/shared/env';
+import type { CodeGenerationChunk, StreamingCallback } from '@sqaitech/core';
+import type { ChromeRecordedEvent } from '@sqaitech/recorder';
+import { globalModelConfigManager } from '@sqaitech/shared/env';
 import { Button, Select, Tooltip, Typography, message } from 'antd';
 import type React from 'react';
 import { useEffect, useState } from 'react';
@@ -66,7 +66,7 @@ export const ProgressModal: React.FC<ProgressModalProps> = ({
   // Initialize defaultType from localStorage
   const [defaultType, setDefaultType] = useState<CodeGenerationType>(() => {
     try {
-      const stored = localStorage.getItem('midscene-default-code-type');
+      const stored = localStorage.getItem('sqai-default-code-type');
       if (stored && ['yaml', 'playwright', 'none'].includes(stored)) {
         return stored as CodeGenerationType;
       }
@@ -100,7 +100,7 @@ export const ProgressModal: React.FC<ProgressModalProps> = ({
   const updateDefaultType = (newType: CodeGenerationType) => {
     setDefaultType(newType);
     try {
-      localStorage.setItem('midscene-default-code-type', newType);
+      localStorage.setItem('sqai-default-code-type', newType);
     } catch (error) {
       console.warn('Failed to save default code type to localStorage:', error);
     }

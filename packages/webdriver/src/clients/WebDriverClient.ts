@@ -1,5 +1,5 @@
-import { DEFAULT_WDA_PORT } from '@midscene/shared/constants';
-import { getDebug } from '@midscene/shared/logger';
+import { DEFAULT_WDA_PORT } from '@sqaitech/shared/constants';
+import { getDebug } from '@sqaitech/shared/logger';
 import { makeWebDriverRequest } from '../utils/request';
 import type { DeviceInfo, Size, WDASession, WebDriverOptions } from './types';
 

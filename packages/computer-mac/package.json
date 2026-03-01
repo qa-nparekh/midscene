@@ -1,5 +1,5 @@
 {
-  "name": "@midscene/computer-mac",
+  "name": "@sqaitech/computer-mac",
   "version": "1.4.6",
   "description": "Midscene.js Computer Desktop Automation for macOS",
   "license": "MIT",
@@ -24,7 +24,7 @@
     "dev": "rslib build --watch"
   },
   "dependencies": {
-    "@midscene/computer": "workspace:*"
+    "@sqaitech/computer": "workspace:*"
   },
   "devDependencies": {
     "@rslib/core": "^0.18.3",

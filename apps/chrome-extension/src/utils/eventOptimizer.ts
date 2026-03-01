@@ -1,8 +1,8 @@
-import Service from '@midscene/core';
-import type { Rect, UIContext } from '@midscene/core';
-import type { RecordedEvent } from '@midscene/recorder';
-import { globalModelConfigManager } from '@midscene/shared/env';
-import { compositeElementInfoImg } from '@midscene/shared/img';
+import Service from '@sqaitech/core';
+import type { Rect, UIContext } from '@sqaitech/core';
+import type { RecordedEvent } from '@sqaitech/recorder';
+import { globalModelConfigManager } from '@sqaitech/shared/env';
+import { compositeElementInfoImg } from '@sqaitech/shared/img';
 
 // Caches for element descriptions and boxed screenshots to improve performance
 const MAX_CACHE_SIZE = 100;

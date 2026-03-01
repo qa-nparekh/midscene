@@ -7,23 +7,23 @@ import type {
   Rect,
   Size,
   UIContext,
-} from '@midscene/core';
-import type { AbstractInterface } from '@midscene/core/device';
-import { sleep } from '@midscene/core/utils';
+} from '@sqaitech/core';
+import type { AbstractInterface } from '@sqaitech/core/device';
+import { sleep } from '@sqaitech/core/utils';
 import {
   DEFAULT_WAIT_FOR_NAVIGATION_TIMEOUT,
   DEFAULT_WAIT_FOR_NETWORK_IDLE_CONCURRENCY,
   DEFAULT_WAIT_FOR_NETWORK_IDLE_TIMEOUT,
-} from '@midscene/shared/constants';
-import type { ElementInfo } from '@midscene/shared/extractor';
-import { treeToList } from '@midscene/shared/extractor';
-import { createImgBase64ByFormat } from '@midscene/shared/img';
-import { type DebugFunction, getDebug } from '@midscene/shared/logger';
+} from '@sqaitech/shared/constants';
+import type { ElementInfo } from '@sqaitech/shared/extractor';
+import { treeToList } from '@sqaitech/shared/extractor';
+import { createImgBase64ByFormat } from '@sqaitech/shared/img';
+import { type DebugFunction, getDebug } from '@sqaitech/shared/logger';
 import {
   getElementInfosScriptContent,
   getExtraReturnLogic,
-} from '@midscene/shared/node';
-import { assert } from '@midscene/shared/utils';
+} from '@sqaitech/shared/node';
+import { assert } from '@sqaitech/shared/utils';
 import type { Page as PlaywrightPage } from 'playwright';
 import type { CDPSession, Protocol, Page as PuppeteerPage } from 'puppeteer';
 import {
@@ -179,7 +179,7 @@ export class Page<
     const elementInfosScriptContent = getElementInfosScriptContent();
 
     return this.evaluateJavaScript(
-      `${elementInfosScriptContent}midscene_element_inspector.getXpathsByPoint({left: ${point.left}, top: ${point.top}}, ${isOrderSensitive})`,
+      `${elementInfosScriptContent}sqai_element_inspector.getXpathsByPoint({left: ${point.left}, top: ${point.top}}, ${isOrderSensitive})`,
     );
   }
 
@@ -187,7 +187,7 @@ export class Page<
     const elementInfosScriptContent = getElementInfosScriptContent();
 
     return this.evaluateJavaScript(
-      `${elementInfosScriptContent}midscene_element_inspector.getElementInfoByXpath(${JSON.stringify(xpath)})`,
+      `${elementInfosScriptContent}sqai_element_inspector.getElementInfoByXpath(${JSON.stringify(xpath)})`,
     );
   }
 
@@ -655,7 +655,7 @@ export class Page<
 
   async registerFileChooserListener(
     handler: (
-      chooser: import('@midscene/core/device').FileChooserHandler,
+      chooser: import('@sqaitech/core/device').FileChooserHandler,
     ) => Promise<void>,
   ): Promise<{ dispose: () => void; getError: () => Error | undefined }> {
     if (this.interfaceType !== 'puppeteer') {
@@ -788,7 +788,7 @@ select {
     appearance: base-select !important;
   }
 }`;
-  const styleId = 'midscene-force-select-rendering';
+  const styleId = 'sqai-force-select-rendering';
 
   const injectStyle = async () => {
     try {
@@ -804,11 +804,11 @@ select {
         styleContent,
       );
       debugPage(
-        'Midscene - Added base-select appearance style for select elements because of forceChromeSelectRendering is enabled',
+        'SQAI - Added base-select appearance style for select elements because of forceChromeSelectRendering is enabled',
       );
     } catch (err) {
       console.log(
-        'Midscene - Failed to add base-select appearance style:',
+        'SQAI - Failed to add base-select appearance style:',
         err,
       );
     }

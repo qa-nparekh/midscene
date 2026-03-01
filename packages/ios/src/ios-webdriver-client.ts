@@ -1,5 +1,5 @@
-import { getDebug } from '@midscene/shared/logger';
-import { WebDriverClient } from '@midscene/webdriver';
+import { getDebug } from '@sqaitech/shared/logger';
+import { WebDriverClient } from '@sqaitech/webdriver';
 
 const debugIOS = getDebug('webdriver:ios');
 
@@ -456,7 +456,7 @@ export class IOSWebDriverClient extends WebDriverClient {
       ]);
 
       // Get screenshot dimensions from base64
-      const { imageInfoOfBase64 } = await import('@midscene/shared/img');
+      const { imageInfoOfBase64 } = await import('@sqaitech/shared/img');
       const { width: screenshotWidth, height: screenshotHeight } =
         await imageInfoOfBase64(screenshotBase64);
 

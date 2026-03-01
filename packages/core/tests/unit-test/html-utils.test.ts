@@ -50,11 +50,11 @@ describe('html-utils', () => {
     describe('integration with real reports', () => {
       const realInlineReport = join(
         __dirname,
-        '../../../web-integration/midscene_run/report/puppeteer-2026-02-03_10-38-58-f3167a8e.html',
+        '../../../web-integration/sqai_run/report/puppeteer-2026-02-03_10-38-58-f3167a8e.html',
       );
       const realFolderReport = join(
         __dirname,
-        '../../../web-integration/midscene_run/report/puppeteer-2026-02-03_10-39-07-1afa62d2',
+        '../../../web-integration/sqai_run/report/puppeteer-2026-02-03_10-39-07-1afa62d2',
       );
 
       const realInlineExists = existsSync(realInlineReport);
@@ -137,7 +137,7 @@ describe('html-utils', () => {
 <head><title>Test</title></head>
 <body>
 ${hugeContent}
-<script type="midscene_web_dump" type="application/json">
+<script type="sqai_web_dump" type="application/json">
 test
 </script>
 </body>
@@ -160,9 +160,9 @@ test
         `<!DOCTYPE html>
 <html>
 <body>
-<script type="midscene_web_dump">first</script>
-<script type="midscene_web_dump">second</script>
-<script type="midscene_web_dump">last</script>
+<script type="sqai_web_dump">first</script>
+<script type="sqai_web_dump">second</script>
+<script type="sqai_web_dump">last</script>
 </body>
 </html>
 `,
@@ -209,7 +209,7 @@ test
 <body>
 ${imageTag1}
 ${imageTag2}
-<script type="midscene_web_dump">{"test":true}</script>
+<script type="sqai_web_dump">{"test":true}</script>
 </body>
 </html>
 `,

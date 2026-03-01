@@ -65,7 +65,7 @@ export function getDebug(
       const baseFn = getDebug(topic);
       const wrapper = (...args: unknown[]): void => {
         baseFn(...args);
-        console.warn('[Midscene]', ...args);
+        console.warn('[SQAI]', ...args);
       };
       debugInstances.set(cacheKey, wrapper);
     } else {

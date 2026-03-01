@@ -2,7 +2,10 @@
   <img alt="Midscene.js"  width="260" src="https://github.com/user-attachments/assets/f60de3c1-dd6f-4213-97a1-85bf7c6e79e4">
 </p>
 
-<h1 align="center">Midscene.js</h1>
+<h1 align="center">SQAI</h1>
+
+> **注意：** 这是 [Midscene.js](https://github.com/web-infra-dev/midscene) 的定制分支 SQAI。原项目采用 MIT 许可证。
+
 <div align="center">
 
 [English](./README.md) | 简体中文
@@ -18,9 +21,9 @@
 </p>
 
 <p align="center">
-  <a href="https://www.npmjs.com/package/@midscene/web"><img src="https://img.shields.io/npm/v/@midscene/web?style=flat-square&color=00a8f0" alt="npm version" /></a>
+  <a href="https://www.npmjs.com/package/@sqaitech/web"><img src="https://img.shields.io/npm/v/@sqaitech/web?style=flat-square&color=00a8f0" alt="npm version" /></a>
   <a href="https://huggingface.co/ByteDance-Seed/UI-TARS-1.5-7B"><img src="https://img.shields.io/badge/%F0%9F%A4%97-UI%20TARS%20Models-yellow" alt="hugging face model" /></a>
-  <a href="https://npm-compare.com/@midscene/web/#timeRange=THREE_YEARS"><img src="https://img.shields.io/npm/dm/@midscene/web.svg?style=flat-square&color=00a8f0" alt="downloads" /></a>
+  <a href="https://npm-compare.com/@sqaitech/web/#timeRange=THREE_YEARS"><img src="https://img.shields.io/npm/dm/@sqaitech/web.svg?style=flat-square&color=00a8f0" alt="downloads" /></a>
   <img src="https://img.shields.io/badge/License-MIT-blue.svg?style=flat-square&color=00a8f0" alt="License" />
   <a href="https://discord.gg/2JyBHxszE4"><img src="https://img.shields.io/discord/1328277792730779648?style=flat-square&color=7289DA&label=Discord&logo=discord&logoColor=white" alt="discord" /></a>
   <a href="https://x.com/midscene_ai"><img src="https://img.shields.io/twitter/follow/midscene_ai?style=flat-square" alt="twitter" /></a>

@@ -1,5 +1,5 @@
 import { PuppeteerAgent } from '@/puppeteer';
-import { sleep } from '@midscene/core/utils';
+import { sleep } from '@sqaitech/core/utils';
 import { describe, expect, it } from 'vitest';
 import {
   LONG_TEST_TIMEOUT,

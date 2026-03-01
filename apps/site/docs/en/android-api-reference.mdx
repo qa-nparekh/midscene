@@ -28,7 +28,7 @@ Create a connection to an adb-managed device that an AndroidAgent can drive.
 ### Import
 
 ```ts
-import { AndroidDevice, getConnectedDevices } from '@midscene/android';
+import { AndroidDevice, getConnectedDevices } from '@sqaitech/android';
 ```
 
 ### Constructor
@@ -92,7 +92,7 @@ Scrcpy mode automatically falls back to ADB screenshots if the connection fails.
 #### Quick start
 
 ```ts
-import { AndroidAgent, AndroidDevice, getConnectedDevices } from '@midscene/android';
+import { AndroidAgent, AndroidDevice, getConnectedDevices } from '@sqaitech/android';
 
 const [first] = await getConnectedDevices();
 const device = new AndroidDevice(first.udid);
@@ -125,7 +125,7 @@ Wire Midscene's AI planner to an AndroidDevice for UI automation.
 ### Import
 
 ```ts
-import { AndroidAgent } from '@midscene/android';
+import { AndroidAgent } from '@sqaitech/android';
 ```
 
 ### Constructor

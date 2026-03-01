@@ -1,6 +1,6 @@
 import { adaptBbox, pointToBbox } from '@/common';
 import type { PlanningAction } from '@/types';
-import { getDebug } from '@midscene/shared/logger';
+import { getDebug } from '@sqaitech/shared/logger';
 
 const debug = getDebug('auto-glm-actions');
 

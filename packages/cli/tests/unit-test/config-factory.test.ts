@@ -16,7 +16,7 @@ vi.mock('@/cli-utils', () => ({
   matchYamlFiles: vi.fn(),
 }));
 
-vi.mock('@midscene/core/yaml', () => ({
+vi.mock('@sqaitech/core/yaml', () => ({
   interpolateEnvVars: vi.fn((content) => content),
 }));
 
@@ -25,7 +25,7 @@ vi.mock('js-yaml', () => ({
 }));
 
 import { matchYamlFiles } from '@/cli-utils';
-import { interpolateEnvVars } from '@midscene/core/yaml';
+import { interpolateEnvVars } from '@sqaitech/core/yaml';
 import { load as yamlLoad } from 'js-yaml';
 import merge from 'lodash.merge';
 

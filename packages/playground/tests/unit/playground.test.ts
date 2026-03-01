@@ -1,5 +1,5 @@
-import type { DeviceAction } from '@midscene/core';
-import { ExecutionDump } from '@midscene/core';
+import type { DeviceAction } from '@sqaitech/core';
+import { ExecutionDump } from '@sqaitech/core';
 import { beforeEach, describe, expect, it } from 'vitest';
 import { LocalExecutionAdapter } from '../../src/adapters/local-execution';
 import { RemoteExecutionAdapter } from '../../src/adapters/remote-execution';

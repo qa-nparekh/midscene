@@ -8,14 +8,14 @@ import {
   writeFileSync,
 } from 'node:fs';
 import { join } from 'node:path';
-import type { NodeType } from '@midscene/shared/constants';
-import type { CreateOpenAIClientFn, TModelConfig } from '@midscene/shared/env';
+import type { NodeType } from '@sqaitech/shared/constants';
+import type { CreateOpenAIClientFn, TModelConfig } from '@sqaitech/shared/env';
 import type {
   BaseElement,
   LocateResultElement,
   Rect,
   Size,
-} from '@midscene/shared/types';
+} from '@sqaitech/shared/types';
 import type { z } from 'zod';
 import type { TUserPrompt } from './common';
 import { restoreImageReferences } from './dump/image-restoration';
@@ -32,7 +32,7 @@ export type {
   Rect,
   Size,
   Point,
-} from '@midscene/shared/types';
+} from '@sqaitech/shared/types';
 export * from './yaml';
 
 export type AIUsageInfo = Record<string, any> & {
@@ -1022,7 +1022,7 @@ export interface AgentOpt {
   /**
    * Maximum number of replanning cycles for aiAct.
    * Defaults to 20 (40 for `vlm-ui-tars`) when not provided.
-   * If omitted, the agent will also read `MIDSCENE_REPLANNING_CYCLE_LIMIT` for backward compatibility.
+   * If omitted, the agent will also read `SQAI_REPLANNING_CYCLE_LIMIT` for backward compatibility.
    */
   replanningCycleLimit?: number;
 

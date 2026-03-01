@@ -1,5 +1,5 @@
-import { getDebug } from '@midscene/shared/logger';
-import { BaseMidsceneTools, type ToolDefinition } from '@midscene/shared/mcp';
+import { getDebug } from '@sqaitech/shared/logger';
+import { BaseMidsceneTools, type ToolDefinition } from '@sqaitech/shared/mcp';
 import { type IOSAgent, agentFromWebDriverAgent } from './agent';
 import { IOSDevice } from './device';
 

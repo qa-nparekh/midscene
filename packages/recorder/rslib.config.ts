@@ -23,12 +23,12 @@ export default defineConfig({
       },
       resolve: {
         alias: {
-          '@midscene/shared/extractor': '../shared/src/extractor/index.ts',
+          '@sqaitech/shared/extractor': '../shared/src/extractor/index.ts',
         },
       },
     },
   ],
-  // externals: ['@midscene/shared'],
+  // externals: ['@sqaitech/shared'],
   output: {
     target: 'web',
   },

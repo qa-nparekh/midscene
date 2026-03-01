@@ -57,14 +57,14 @@ import type { AbstractInterface } from '@/device';
 import type { TaskRunner } from '@/task-runner';
 import {
   type IModelConfig,
-  MIDSCENE_REPLANNING_CYCLE_LIMIT,
+  SQAI_REPLANNING_CYCLE_LIMIT,
   ModelConfigManager,
   globalConfigManager,
   globalModelConfigManager,
-} from '@midscene/shared/env';
-import { imageInfoOfBase64, resizeImgBase64 } from '@midscene/shared/img';
-import { getDebug } from '@midscene/shared/logger';
-import { assert, ifInBrowser, uuid } from '@midscene/shared/utils';
+} from '@sqaitech/shared/env';
+import { imageInfoOfBase64, resizeImgBase64 } from '@sqaitech/shared/img';
+import { getDebug } from '@sqaitech/shared/logger';
+import { assert, ifInBrowser, uuid } from '@sqaitech/shared/utils';
 import { defineActionSleep } from '../device';
 import { TaskCache } from './task-cache';
 import {
@@ -315,7 +315,7 @@ export class Agent<
 
     const envReplanningCycleLimit =
       globalConfigManager.getEnvConfigValueAsNumber(
-        MIDSCENE_REPLANNING_CYCLE_LIMIT,
+        SQAI_REPLANNING_CYCLE_LIMIT,
       );
 
     this.opts = Object.assign(
@@ -400,8 +400,10 @@ export class Agent<
             }
           }
 
-          // Fire and forget - don't block task execution
-          this.writeOutActionDumps();
+          // Only write report dumps on completion or error to avoid excessive I/O
+          if (runner.status === 'completed' || runner.status === 'error') {
+            this.writeOutActionDumps();
+          }
         },
       },
     });

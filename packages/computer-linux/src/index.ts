@@ -1,6 +1,6 @@
 /**
- * Linux-specific re-export of @midscene/computer
- * This package provides the same functionality as @midscene/computer
+ * Linux-specific re-export of @sqaitech/computer
+ * This package provides the same functionality as @sqaitech/computer
  * but is specifically for Linux platform.
  */
-export * from '@midscene/computer';
+export * from '@sqaitech/computer';

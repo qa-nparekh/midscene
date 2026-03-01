@@ -1,6 +1,6 @@
 import { parseArgs } from 'node:util';
-import { type CLIArgs, CLI_ARGS_CONFIG } from '@midscene/shared/mcp';
-import { WebMCPServer } from '@midscene/web/mcp-server';
+import { type CLIArgs, CLI_ARGS_CONFIG } from '@sqaitech/shared/mcp';
+import { WebMCPServer } from '@sqaitech/web/mcp-server';
 
 const { values } = parseArgs({ options: CLI_ARGS_CONFIG });
 const args = values as CLIArgs;

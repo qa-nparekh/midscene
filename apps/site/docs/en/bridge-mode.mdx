@@ -28,14 +28,14 @@ Install [Midscene extension from Chrome web store](https://chromewebstore.google
 
 ### Step 2. Install dependencies
 
-<PackageManagerTabs command="install @midscene/web tsx --save-dev" />
+<PackageManagerTabs command="install @sqaitech/web tsx --save-dev" />
 
 ### Step 3. Write scripts
 
 Write and save the following code as `./demo-new-tab.ts`.
 
 ```typescript
-import { AgentOverChromeBridge } from "@midscene/web/bridge-mode";
+import { AgentOverChromeBridge } from "@sqaitech/web/bridge-mode";
 
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 Promise.resolve(
@@ -153,7 +153,7 @@ When remote access is enabled, the Bridge Server will be exposed on the network.
 
 ## FAQ
 
-* Where should I config the model parameters (like `MIDSCENE_MODEL_API_KEY`), in the browser or in the terminal?
+* Where should I config the model parameters (like `SQAI_MODEL_API_KEY`), in the browser or in the terminal?
 
 When using bridge mode, you should config the model parameters in the terminal. For more configuration details, please refer to [Model strategy](./model-strategy).
 

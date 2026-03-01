@@ -2,7 +2,7 @@ import { existsSync } from 'node:fs';
 import path from 'node:path';
 import { ScreenshotItem } from '@/screenshot-item';
 import type { UIContext } from '@/types';
-import { imageInfoOfBase64, localImg2Base64 } from '@midscene/shared/img';
+import { imageInfoOfBase64, localImg2Base64 } from '@sqaitech/shared/img';
 
 export async function buildContext(targetDir: string): Promise<UIContext> {
   const originalInputImgP = path.join(

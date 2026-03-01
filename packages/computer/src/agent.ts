@@ -1,4 +1,4 @@
-import { type AgentOpt, Agent as PageAgent } from '@midscene/core/agent';
+import { type AgentOpt, Agent as PageAgent } from '@sqaitech/core/agent';
 import { ComputerDevice, type ComputerDeviceOpt } from './device';
 
 export type ComputerAgentOpt = AgentOpt & ComputerDeviceOpt;

@@ -2,7 +2,7 @@
 // This ensures process object exists before shared/us-keyboard-layout.ts is imported
 
 export default function setup() {
-  // Setup process object for Node.js APIs used by @midscene/shared
+  // Setup process object for Node.js APIs used by @sqaitech/shared
   if (typeof process === 'undefined') {
     (global as any).process = {
       platform: 'darwin',

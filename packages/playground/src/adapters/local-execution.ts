@@ -1,7 +1,7 @@
-import type { DeviceAction, ExecutionDump } from '@midscene/core';
-import { GroupedActionDump } from '@midscene/core';
-import { overrideAIConfig } from '@midscene/shared/env';
-import { uuid } from '@midscene/shared/utils';
+import type { DeviceAction, ExecutionDump } from '@sqaitech/core';
+import { GroupedActionDump } from '@sqaitech/core';
+import { overrideAIConfig } from '@sqaitech/shared/env';
+import { uuid } from '@sqaitech/shared/utils';
 import { executeAction, parseStructuredParams } from '../common';
 import type {
   AgentFactory,

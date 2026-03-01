@@ -1,7 +1,7 @@
 {
-  "name": "@midscene/mcp",
+  "name": "@sqaitech/mcp",
   "version": "1.4.6",
-  "description": "Deprecated - Use @midscene/web-bridge-mcp, @midscene/android-mcp, or @midscene/ios-mcp",
+  "description": "Deprecated - Use @sqaitech/web-bridge-mcp, @sqaitech/android-mcp, or @sqaitech/ios-mcp",
   "bin": "dist/index.js",
   "files": ["dist"],
   "scripts": {
@@ -13,11 +13,11 @@
   },
   "dependencies": {},
   "devDependencies": {
-    "@midscene/android": "workspace:*",
-    "@midscene/core": "workspace:*",
-    "@midscene/report": "workspace:*",
-    "@midscene/shared": "workspace:*",
-    "@midscene/web": "workspace:*",
+    "@sqaitech/android": "workspace:*",
+    "@sqaitech/core": "workspace:*",
+    "@sqaitech/report": "workspace:*",
+    "@sqaitech/shared": "workspace:*",
+    "@sqaitech/web": "workspace:*",
     "@modelcontextprotocol/inspector": "^0.16.3",
     "@modelcontextprotocol/sdk": "1.10.2",
     "@rslib/core": "^0.18.3",

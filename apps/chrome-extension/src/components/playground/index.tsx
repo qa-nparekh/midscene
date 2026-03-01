@@ -1,6 +1,6 @@
-import { PlaygroundSDK } from '@midscene/playground';
-import { UniversalPlayground } from '@midscene/visualizer';
-import { useEnvConfig } from '@midscene/visualizer';
+import { PlaygroundSDK } from '@sqaitech/playground';
+import { UniversalPlayground } from '@sqaitech/visualizer';
+import { useEnvConfig } from '@sqaitech/visualizer';
 import { useEffect, useMemo, useState } from 'react';
 import { getExtensionVersion } from '../../utils/chrome';
 import './index.less';

@@ -1,5 +1,5 @@
 /// <reference types="chrome" />
-import { globalThemeConfig } from '@midscene/visualizer';
+import { globalThemeConfig } from '@sqaitech/visualizer';
 import { Button, Checkbox, ConfigProvider } from 'antd';
 import { useEffect, useState } from 'react';
 import { createRoot } from 'react-dom/client';

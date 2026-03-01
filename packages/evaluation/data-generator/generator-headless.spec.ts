@@ -1,4 +1,4 @@
-import { PlaywrightWebPage } from '@midscene/web/playwright';
+import { PlaywrightWebPage } from '@sqaitech/web/playwright';
 import { test } from './fixture';
 import { generateExtractData, generateTestDataPath } from './utils';
 

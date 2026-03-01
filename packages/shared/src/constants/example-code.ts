@@ -28,8 +28,8 @@ aiQuery<T>(queryObject: Record<string, string>): Promise<T> // Extracts data fro
 // The following is test code for Midscene AI, for reference
 // The following is Playwright syntax, you can use Playwright to assist in test generation
 import { test as base } from '@playwright/test';
-import type { PlayWrightAiFixtureType } from '@midscene/web/playwright';
-import { PlaywrightAiFixture } from '@midscene/web/playwright';
+import type { PlayWrightAiFixtureType } from '@sqaitech/web/playwright';
+import { PlaywrightAiFixture } from '@sqaitech/web/playwright';
 
 const test = base.extend<PlayWrightAiFixtureType>(PlaywrightAiFixture({
   waitForNetworkIdleTimeout: 2000, // optional, the timeout for waiting for network idle between each action, default is 2000ms

@@ -23,7 +23,7 @@
  * - Adapted prompts for Midscene.js integration
  */
 
-import type { TModelFamily } from '@midscene/shared/env';
+import type { TModelFamily } from '@sqaitech/shared/env';
 
 /**
  * Get formatted date string for system prompts

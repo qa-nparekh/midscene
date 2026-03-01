@@ -2,11 +2,11 @@ import {
   IndexedDBManager,
   createCleanupFunction,
   withErrorHandling,
-} from '@midscene/shared/baseDB';
+} from '@sqaitech/shared/baseDB';
 import type { InfoListItem, StorageProvider } from '../../../types';
 
 // Database configuration
-const DB_NAME = 'midscene_playground';
+const DB_NAME = 'sqai_playground';
 const DB_VERSION = 1;
 const MESSAGES_STORE = 'playground_messages';
 const RESULTS_STORE = 'playground_results';

@@ -2,12 +2,12 @@ import { describe, expect, it } from 'vitest';
 import { decideModelConfigFromIntentConfig } from '../../../src/env/parse-model-config';
 
 const baseConfig = {
-  MIDSCENE_MODEL_NAME: 'default-model',
-  MIDSCENE_MODEL_BASE_URL: 'https://api.example.com',
-  MIDSCENE_MODEL_API_KEY: 'base-key',
-  MIDSCENE_INSIGHT_MODEL_NAME: 'insight-model',
-  MIDSCENE_INSIGHT_MODEL_BASE_URL: 'https://insight.example.com',
-  MIDSCENE_INSIGHT_MODEL_API_KEY: 'insight-key',
+  SQAI_MODEL_NAME: 'default-model',
+  SQAI_MODEL_BASE_URL: 'https://api.example.com',
+  SQAI_MODEL_API_KEY: 'base-key',
+  SQAI_INSIGHT_MODEL_NAME: 'insight-model',
+  SQAI_INSIGHT_MODEL_BASE_URL: 'https://insight.example.com',
+  SQAI_INSIGHT_MODEL_API_KEY: 'insight-key',
 };
 
 describe('decideModelConfigFromIntentConfig', () => {

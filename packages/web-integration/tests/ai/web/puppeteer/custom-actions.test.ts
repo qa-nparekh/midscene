@@ -1,6 +1,6 @@
 import { PuppeteerAgent } from '@/puppeteer';
-import { z } from '@midscene/core';
-import { defineAction } from '@midscene/core/device';
+import { z } from '@sqaitech/core';
+import { defineAction } from '@sqaitech/core/device';
 import { describe, expect, it, vi } from 'vitest';
 import {
   DEFAULT_TEST_TIMEOUT,

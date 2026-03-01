@@ -4,7 +4,7 @@ import type { PlaywrightTasks } from '../../types';
 import { PlaywrightCaseSelector } from '../playwright-case-selector';
 
 import './index.less';
-import { iconForStatus } from '@midscene/visualizer';
+import { iconForStatus } from '@sqaitech/visualizer';
 
 const ReportOverview = (props: {
   title: string;

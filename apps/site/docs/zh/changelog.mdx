@@ -8,7 +8,7 @@ v1.4 版本推出了 Midscene Skills —— 一套可安装到 Claude Code、Ope
 
 Midscene Skills 是一套可安装到 Claude Code、OpenClaw 等 AI 助手中的技能包。安装后，AI 助手可以通过自然语言直接操控浏览器、桌面、Android 和 iOS 设备。
 
-各平台包（`@midscene/android`、`@midscene/ios`、`@midscene/web` 等）现在各自暴露了独立的 CLI 入口，Skills 正是基于此能力构建。
+各平台包（`@sqaitech/android`、`@sqaitech/ios`、`@sqaitech/web` 等）现在各自暴露了独立的 CLI 入口，Skills 正是基于此能力构建。
 
 **覆盖平台：**
 - 浏览器（Puppeteer 无头模式）
@@ -21,7 +21,7 @@ Midscene Skills 是一套可安装到 Claude Code、OpenClaw 等 AI 助手中的
 
 ### 独立桌面自动化 MCP 包
 
-新增 `@midscene/computer-mcp` 包，将 PC 桌面自动化能力以独立 MCP 服务的形式提供。开发者可以直接在 Cursor、Trae 等支持 MCP 的工具中使用桌面自动化能力，无需额外集成。
+新增 `@sqaitech/computer-mcp` 包，将 PC 桌面自动化能力以独立 MCP 服务的形式提供。开发者可以直接在 Cursor、Trae 等支持 MCP 的工具中使用桌面自动化能力，无需额外集成。
 
 详见文档：[PC 桌面自动化](./computer-introduction)
 
@@ -190,7 +190,7 @@ await agent.aiAct('如果界面上展示“添加收货地址”按钮，那么�
 
 ### CLI 与配置增强
 - **文件参数支持**: 修复 CLI 在同时指定 `--config` 时未正确处理 `--files` 参数的问题，现在可灵活组合使用
-- **动态配置**: 修复 Playground 中环境变量 `MIDSCENE_REPLANNING_CYCLE_LIMIT` 未正确读取的问题
+- **动态配置**: 修复 Playground 中环境变量 `SQAI_REPLANNING_CYCLE_LIMIT` 未正确读取的问题
 
 ### iOS Agent兼容性提升
 - 优化 `getWindowSize` 方法，在新版本 API 不可用时自动回退到 legacy endpoint，提升对 WebDriverAgent 版本的兼容性
@@ -289,20 +289,20 @@ Midscene v1.0 已发布！欢迎体验，看看它如何帮助你自动化你的
 - 改名 `logScreenshot()` → `recordToReport()`（旧方法保留，有弃用警告）
 
 环境变量重命名（向后兼容）
-- 改名 `OPENAI_API_KEY` → `MIDSCENE_MODEL_API_KEY`（新变量优先，旧变量作为备选）
-- 改名 `OPENAI_BASE_URL` → `MIDSCENE_MODEL_BASE_URL`（新变量优先，旧变量作为备选）
+- 改名 `OPENAI_API_KEY` → `SQAI_MODEL_API_KEY`（新变量优先，旧变量作为备选）
+- 改名 `OPENAI_BASE_URL` → `SQAI_MODEL_BASE_URL`（新变量优先，旧变量作为备选）
 
 ### ⬆️ 升级到最新版
 
 升级项目中的依赖，例如：
 
-`npm install @midscene/web@latest --save-dev`
-`npm install @midscene/android@latest --save-dev`
-`npm install @midscene/ios@latest --save-dev`
+`npm install @sqaitech/web@latest --save-dev`
+`npm install @sqaitech/android@latest --save-dev`
+`npm install @sqaitech/ios@latest --save-dev`
 
 如果使用全局安装的命令行版本：
 
-`npm i -g @midscene/cli`
+`npm i -g @sqaitech/cli`
 
 ## V0.30 - 缓存管理升级与移动端体验优化
 
@@ -551,11 +551,11 @@ v0.28 版本推出了与任意界面集成的功能。定义符合 `AbstractInte
 - 支持存储更复杂的数据结构，为未来功能扩展奠定基础
 
 #### 自定义重新规划循环限制
-- 设置 `MIDSCENE_REPLANNING_CYCLE_LIMIT` 环境变量，可以自定义在执行操作(aiAct)时允许的最大重新规划循环次数
+- 设置 `SQAI_REPLANNING_CYCLE_LIMIT` 环境变量，可以自定义在执行操作(aiAct)时允许的最大重新规划循环次数
 - 默认值为 10，当 AI 需要重新规划超过这个限制时，会抛出错误建议将任务拆分
 - 提供更灵活的任务执行控制，适应不同复杂度的自动化场景
 ```bash
-export MIDSCENE_REPLANNING_CYCLE_LIMIT=10 # 默认值为 10
+export SQAI_REPLANNING_CYCLE_LIMIT=10 # 默认值为 10
 ```
 
 ### Android 功能增强
@@ -969,8 +969,8 @@ UI-TARS 模型在 GUI 任务中有以下优势：
 全新支持调用豆包模型调用，参考下方环境变量即可体验。
 
 ```bash
-MIDSCENE_OPENAI_INIT_CONFIG_JSON='{"baseURL":"https://xxx.net/api/v3","apiKey":"xxx"}'
-MIDSCENE_MODEL_NAME='ep-20240925111815-mpfz8'
+SQAI_OPENAI_INIT_CONFIG_JSON='{"baseURL":"https://xxx.net/api/v3","apiKey":"xxx"}'
+SQAI_MODEL_NAME='ep-20240925111815-mpfz8'
 MIDSCENE_MODEL_TEXT_ONLY='true'
 ```
 
@@ -1064,7 +1064,7 @@ Midscene 现已支持命中 GPT-4o prompt caching 特性，待公司 GPT 平台�
 ```diff
 - playwright test --config=playwright.config.ts
 # 开启缓存
-+ MIDSCENE_CACHE=true playwright test --config=playwright.config.ts
++ SQAI_CACHE=true playwright test --config=playwright.config.ts
 ```
 
 * 支持了  azure openAI 的调用方式
@@ -1100,10 +1100,10 @@ puppeteerPage.screenshot = async (options) => {
 
 ```bash
 # headed 模式（即可见浏览器）访问 baidu.com 并搜索“天气”
-npx @midscene/cli --headed --url https://www.baidu.com --action "输入 '天气', 敲回车" --sleep 3000
+npx @sqaitech/cli --headed --url https://www.baidu.com --action "输入 '天气', 敲回车" --sleep 3000
 
 # 访问 Github 状态页面并将状态保存到 ./status.json
-npx @midscene/cli --url https://www.githubstatus.com/ \
+npx @sqaitech/cli --url https://www.githubstatus.com/ \
   --query-output status.json \
   --query '{serviceName: string, status: string}[], github 页面的服务状态，返回服务名称'
 ```

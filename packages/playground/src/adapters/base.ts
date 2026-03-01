@@ -1,5 +1,5 @@
-import type { DeviceAction } from '@midscene/core';
-import { findAllMidsceneLocatorField } from '@midscene/core/ai-model';
+import type { DeviceAction } from '@sqaitech/core';
+import { findAllMidsceneLocatorField } from '@sqaitech/core/ai-model';
 import type { ExecutionOptions, FormValue, ValidationResult } from '../types';
 
 export abstract class BasePlaygroundAdapter {
@@ -133,7 +133,7 @@ export abstract class BasePlaygroundAdapter {
       locatorFieldKeys.forEach((key: string) => {
         if (typeof paramsForValidation[key] === 'string') {
           paramsForValidation[key] = {
-            midscene_location_field_flag: true,
+            SQAI_location_field_flag: true,
             prompt: paramsForValidation[key],
             center: [0, 0], // dummy values for validation
             rect: { left: 0, top: 0, width: 0, height: 0 },
@@ -158,7 +158,7 @@ export abstract class BasePlaygroundAdapter {
           return (
             !path.includes('center') &&
             !path.includes('rect') &&
-            !path.includes('midscene_location_field_flag')
+            !path.includes('SQAI_location_field_flag')
           );
         })
         .map((err) => {

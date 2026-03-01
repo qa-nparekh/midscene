@@ -9,10 +9,10 @@ import {
 import type {
   ExecutionTaskPlanning,
   ExecutionTaskPlanningLocate,
-} from '@midscene/core';
-import { filterBase64Value } from '@midscene/visualizer';
-import { Blackboard, Player } from '@midscene/visualizer';
-import type { WebUIContext } from '@midscene/web';
+} from '@sqaitech/core';
+import { filterBase64Value } from '@sqaitech/visualizer';
+import { Blackboard, Player } from '@sqaitech/visualizer';
+import type { WebUIContext } from '@sqaitech/web';
 import { Segmented } from 'antd';
 import { useEffect, useState } from 'react';
 import { fullTimeStrWithMilliseconds } from '../../../../../packages/visualizer/src/utils';

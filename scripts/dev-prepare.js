@@ -8,7 +8,7 @@ const root = path.join(__dirname, '..');
 const reportHtml = path.join(root, 'apps/report/dist/index.html');
 if (!fs.existsSync(reportHtml)) {
   console.log('[dev-prepare] Building report...');
-  execSync('npx nx build @midscene/report', { cwd: root, stdio: 'inherit' });
+  execSync('npx nx build @sqaitech/report', { cwd: root, stdio: 'inherit' });
 }
 
 // 2. Build playground if dist doesn't exist

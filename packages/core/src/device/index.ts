@@ -4,10 +4,10 @@ import type {
   DeviceAction,
   LocateResultElement,
 } from '@/types';
-import type { IModelConfig } from '@midscene/shared/env';
-import type { ElementNode } from '@midscene/shared/extractor';
-import { getDebug } from '@midscene/shared/logger';
-import { _keyDefinitions } from '@midscene/shared/us-keyboard-layout';
+import type { IModelConfig } from '@sqaitech/shared/env';
+import type { ElementNode } from '@sqaitech/shared/extractor';
+import { getDebug } from '@sqaitech/shared/logger';
+import { _keyDefinitions } from '@sqaitech/shared/us-keyboard-layout';
 import { z } from 'zod';
 import type { ElementCacheFeature, Rect, Size, UIContext } from '../types';
 

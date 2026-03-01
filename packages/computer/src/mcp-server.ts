@@ -1,9 +1,9 @@
-import type { Agent } from '@midscene/core/agent';
+import type { Agent } from '@sqaitech/core/agent';
 import {
   BaseMCPServer,
   type Tool,
   createMCPServerLauncher,
-} from '@midscene/shared/mcp';
+} from '@sqaitech/shared/mcp';
 import { ComputerAgent } from './agent';
 import { ComputerMidsceneTools } from './mcp-tools.js';
 
@@ -17,7 +17,7 @@ export class ComputerMCPServer extends BaseMCPServer {
   constructor(toolsManager?: ComputerMidsceneTools) {
     super(
       {
-        name: '@midscene/computer-mcp',
+        name: '@sqaitech/computer-mcp',
         version: __VERSION__,
         description:
           'Control the computer desktop using natural language commands',

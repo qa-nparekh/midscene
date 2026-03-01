@@ -1,5 +1,5 @@
 {
-  "name": "@midscene/evaluation",
+  "name": "@sqaitech/evaluation",
   "private": true,
   "scripts": {
     "update-page-data:headless": "playwright test ./data-generator/generator-headless.spec.ts && npm run format",
@@ -18,9 +18,9 @@
   },
   "files": ["dist", "README.md"],
   "dependencies": {
-    "@midscene/core": "workspace:*",
-    "@midscene/shared": "workspace:*",
-    "@midscene/web": "workspace:*"
+    "@sqaitech/core": "workspace:*",
+    "@sqaitech/shared": "workspace:*",
+    "@sqaitech/web": "workspace:*"
   },
   "devDependencies": {
     "@playwright/test": "^1.45.0",

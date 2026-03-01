@@ -1,5 +1,5 @@
-import { type AgentFactory, PlaygroundSDK } from '@midscene/playground';
-import { PLAYGROUND_SERVER_PORT } from '@midscene/shared/constants';
+import { type AgentFactory, PlaygroundSDK } from '@sqaitech/playground';
+import { PLAYGROUND_SERVER_PORT } from '@sqaitech/shared/constants';
 
 export type ServiceModeType = 'Server' | 'In-Browser' | 'In-Browser-Extension';
 

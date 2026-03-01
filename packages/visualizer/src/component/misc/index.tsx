@@ -74,11 +74,11 @@ export const errorMessageServerNotReady = (
   <span>
     Don&apos;t worry, just one more step to launch the playground server.
     <br />
-    Please run one of the commands under the midscene project directory:
+    Please run one of the commands under the SQAI project directory:
     <br />
-    a. <strong>npx midscene-playground</strong>
+    a. <strong>npx sqai-playground</strong>
     <br />
-    b. <strong>npx --yes @midscene/web</strong>
+    b. <strong>npx --yes @sqaitech/web</strong>
   </span>
 );
 

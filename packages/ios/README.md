@@ -215,10 +215,10 @@ Set environment variables for default behavior:
 
 ```bash
 # Default device UDID
-export MIDSCENE_IOS_DEVICE_UDID=your-device-udid
+export SQAI_IOS_DEVICE_UDID=your-device-udid
 
 # Default simulator UDID
-export MIDSCENE_IOS_SIMULATOR_UDID=your-simulator-udid
+export SQAI_IOS_SIMULATOR_UDID=your-simulator-udid
 ```
 
 ## Supported iOS Actions

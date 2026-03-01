@@ -31,14 +31,14 @@ import { PackageManagerTabs } from '@theme';
 
 ## 试用 Playground（零代码）
 
-Playground 是验证连接、观察 AI Agent 的最快方式，无需编写代码。它与 `@midscene/computer` 共享相同的代码实现，因此在 Playground 上验证通过的流程，用脚本运行时也完全一致。
+Playground 是验证连接、观察 AI Agent 的最快方式，无需编写代码。它与 `@sqaitech/computer` 共享相同的代码实现，因此在 Playground 上验证通过的流程，用脚本运行时也完全一致。
 
 <video src="https://lf3-static.bytednsdoc.com/obj/eden-cn/nupipfups/Midscene/pc-twitter2.mp4" controls/>
 
 1. 启动 Playground CLI：
 
 ```bash
-npx --yes @midscene/computer-playground
+npx --yes @sqaitech/computer-playground
 ```
 
 2. 点击 Playground 窗口中的齿轮按钮，粘贴你的 API Key 配置。如果还没有 API Key，请回到 [模型配置](./model-config) 获取。
@@ -53,14 +53,14 @@ npx --yes @midscene/computer-playground
 
 ### 步骤 1. 安装依赖
 
-<PackageManagerTabs command="install @midscene/computer" />
+<PackageManagerTabs command="install @sqaitech/computer" />
 
 ### 步骤 2. 编写您的第一个脚本
 
 创建 `example.ts`：
 
 ```typescript
-import { agentFromComputer } from '@midscene/computer';
+import { agentFromComputer } from '@sqaitech/computer';
 
 (async () => {
   // 创建 agent
@@ -95,7 +95,7 @@ npx tsx example.ts
 如果您有多个显示器，可以控制特定的显示器：
 
 ```typescript
-import { ComputerDevice, agentFromComputer } from '@midscene/computer';
+import { ComputerDevice, agentFromComputer } from '@sqaitech/computer';
 
 // 列出所有显示器
 const displays = await ComputerDevice.listDisplays();
@@ -178,7 +178,7 @@ await agent.aiAssert('存在名为 "我的项目" 的文件夹');
 您可以检查系统是否正确配置：
 
 ```typescript
-import { checkComputerEnvironment } from '@midscene/computer';
+import { checkComputerEnvironment } from '@sqaitech/computer';
 
 const env = await checkComputerEnvironment();
 console.log('平台:', env.platform);

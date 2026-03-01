@@ -20,7 +20,7 @@ All agents share these base options:
 - `autoPrintReportMsg: boolean`: If true, report messages will be printed. (Default: true)
 - `cacheId: string | undefined`: If provided, this cacheId will be used to save or match the cache. (Default: undefined, means cache feature is disabled)
 - `aiActContext: string`: Some background knowledge that should be sent to the AI model when calling `agent.aiAct()`, like 'close the cookie consent dialog first if it exists' (Default: undefined). Previously exposed as `aiActionContext`; the legacy name is still accepted for backward compatibility.
-- `replanningCycleLimit: number`: The maximum number of `aiAct` replanning cycles. Default is 20 (40 for UI-TARS models). Prefer setting this via the agent option; reading `MIDSCENE_REPLANNING_CYCLE_LIMIT` is only for backward compatibility.
+- `replanningCycleLimit: number`: The maximum number of `aiAct` replanning cycles. Default is 20 (40 for UI-TARS models). Prefer setting this via the agent option; reading `SQAI_REPLANNING_CYCLE_LIMIT` is only for backward compatibility.
 - `waitAfterAction: number`: Wait time in milliseconds after each action execution. This allows the UI to settle and stabilize before the next action. Default is 300ms.
 - `onTaskStartTip: (tip: string) => void | Promise<void>`: Optional hook that fires before each execution task begins with a human-readable summary of the task (Default: undefined)
 - `outputFormat: 'single-html' | 'html-and-external-assets'`: Controls how the report is generated. `'single-html'` (default) embeds all screenshots as base64 in a single HTML file. `'html-and-external-assets'` saves screenshots as separate PNG files in a subdirectory, useful when report files become too large. **Note**: When using `'html-and-external-assets'`, the report must be accessed via an HTTP server or CDN URL - it cannot be opened directly using the `file://` protocol. This is because browser CORS (Cross-Origin Resource Sharing) restrictions prevent loading local images from relative paths when using the file protocol. For local testing, start a simple HTTP server in the report directory. Navigate to the report directory and run one of these commands:
@@ -39,10 +39,10 @@ Use `modelConfig: Record<string, string | number>` to configure models directly 
 ```typescript
 const agent = new PuppeteerAgent(page, {
   modelConfig: {
-    MIDSCENE_MODEL_NAME: 'qwen3-vl-plus',
-    MIDSCENE_MODEL_BASE_URL: 'https://dashscope.aliyuncs.com/compatible-mode/v1',
-    MIDSCENE_MODEL_API_KEY: 'sk-...',
-    MIDSCENE_MODEL_FAMILY: 'qwen3-vl'
+    SQAI_MODEL_NAME: 'qwen3-vl-plus',
+    SQAI_MODEL_BASE_URL: 'https://dashscope.aliyuncs.com/compatible-mode/v1',
+    SQAI_MODEL_API_KEY: 'sk-...',
+    SQAI_MODEL_FAMILY: 'qwen3-vl'
   }
 });
 ```
@@ -52,19 +52,19 @@ const agent = new PuppeteerAgent(page, {
 const agent = new PuppeteerAgent(page, {
   modelConfig: {
     // default
-    MIDSCENE_MODEL_NAME: 'qwen3-vl-plus',
-    MIDSCENE_MODEL_API_KEY: 'sk-default-key',
-    MIDSCENE_MODEL_BASE_URL: '.....',
-    MIDSCENE_MODEL_FAMILY: 'qwen3-vl',
+    SQAI_MODEL_NAME: 'qwen3-vl-plus',
+    SQAI_MODEL_API_KEY: 'sk-default-key',
+    SQAI_MODEL_BASE_URL: '.....',
+    SQAI_MODEL_FAMILY: 'qwen3-vl',
 
     // planning intent
-    MIDSCENE_PLANNING_MODEL_NAME: 'gpt-5.1',
-    MIDSCENE_PLANNING_MODEL_API_KEY: 'sk-planning-key',
-    MIDSCENE_PLANNING_MODEL_BASE_URL: '...',
+    SQAI_PLANNING_MODEL_NAME: 'gpt-5.1',
+    SQAI_PLANNING_MODEL_API_KEY: 'sk-planning-key',
+    SQAI_PLANNING_MODEL_BASE_URL: '...',
     
     // insight intent
-    MIDSCENE_INSIGHT_MODEL_NAME: 'qwen-vl-plus',
-    MIDSCENE_INSIGHT_MODEL_API_KEY: 'sk-insight-key'
+    SQAI_INSIGHT_MODEL_NAME: 'qwen-vl-plus',
+    SQAI_INSIGHT_MODEL_API_KEY: 'sk-insight-key'
   }
 });
 ```
@@ -147,7 +147,7 @@ function ai(prompt: string): Promise<void>; // shorthand form
   - `prompt: string` - A natural language description of the UI steps.
   - `options?: Object` - Optional, a configuration object containing:
     - `cacheable?: boolean` - Whether cacheable when enabling [caching feature](./caching.mdx). True by default.
-    - `deepThink?: 'unset' | true | false` - Whether to enable deep thinking during planning when the model supports it (depends on MIDSCENE_MODEL_FAMILY). Default is `'unset'` (same as omitting) and follows the model provider's default strategy. [Learn more about deepThink](./model-strategy#about-the-deepthink-option-in-aiact).
+    - `deepThink?: 'unset' | true | false` - Whether to enable deep thinking during planning when the model supports it (depends on SQAI_MODEL_FAMILY). Default is `'unset'` (same as omitting) and follows the model provider's default strategy. [Learn more about deepThink](./model-strategy#about-the-deepthink-option-in-aiact).
     - `fileChooserAccept?: string | string[]` - When a file chooser pops up, specify the file path(s) to accept. Can be a single file path or an array of paths. Only available in web pages (Playwright, Puppeteer).
       - **Note**: If the file input does not support multiple files (no `multiple` attribute) but multiple files are provided, an error will be thrown.
       - **Note**: If a file chooser is triggered but no `fileChooserAccept` parameter is provided, the file chooser will be ignored and the page can continue to operate normally.
@@ -1132,7 +1132,7 @@ Create a report merging tool instance.
 - Example:
 
 ```typescript
-import { ReportMergingTool } from '@midscene/core/report';
+import { ReportMergingTool } from '@sqaitech/core/report';
 
 const reportMergingTool = new ReportMergingTool();
 ```
@@ -1271,8 +1271,8 @@ Below is a complete example of using `ReportMergingTool` in a Vitest suite:
 
 ```typescript
 import { describe, it, beforeEach, afterEach, afterAll } from 'vitest';
-import { AndroidAgent, AndroidDevice } from '@midscene/android';
-import { ReportMergingTool } from '@midscene/core/report';
+import { AndroidAgent, AndroidDevice } from '@sqaitech/android';
+import { ReportMergingTool } from '@sqaitech/core/report';
 
 describe('Android settings automation', () => {
   let device: AndroidDevice;

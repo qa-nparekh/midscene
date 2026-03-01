@@ -1,5 +1,5 @@
-import { z } from '@midscene/core';
-import { BaseMidsceneTools, type ToolDefinition } from '@midscene/shared/mcp';
+import { z } from '@sqaitech/core';
+import { BaseMidsceneTools, type ToolDefinition } from '@sqaitech/shared/mcp';
 import { AgentOverChromeBridge } from './bridge-mode';
 import { StaticPage } from './static';
 

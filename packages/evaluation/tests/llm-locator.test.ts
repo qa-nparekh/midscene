@@ -1,8 +1,8 @@
 import { writeFileSync } from 'node:fs';
-import Service, { type Rect } from '@midscene/core';
-import { sleep } from '@midscene/core/utils';
-import { globalModelConfigManager } from '@midscene/shared/env';
-import { saveBase64Image } from '@midscene/shared/img';
+import Service, { type Rect } from '@sqaitech/core';
+import { sleep } from '@sqaitech/core/utils';
+import { globalModelConfigManager } from '@sqaitech/shared/env';
+import { saveBase64Image } from '@sqaitech/shared/img';
 
 import dotenv from 'dotenv';
 import { afterAll, beforeAll, expect, test } from 'vitest';

@@ -13,16 +13,16 @@ vi.stubGlobal('chrome', {
 });
 
 // Mock dependencies
-vi.mock('@midscene/core/ai-model', () => ({
+vi.mock('@sqaitech/core/ai-model', () => ({
   AiJudgeOrderSensitive: vi.fn(),
   callAIWithObjectResponse: vi.fn(),
 }));
 
-vi.mock('@midscene/shared/logger', () => ({
+vi.mock('@sqaitech/shared/logger', () => ({
   getDebug: vi.fn(() => vi.fn()),
 }));
 
-import { AiJudgeOrderSensitive } from '@midscene/core/ai-model';
+import { AiJudgeOrderSensitive } from '@sqaitech/core/ai-model';
 import ChromeExtensionProxyPage from '../../src/chrome-extension/page';
 
 describe('ChromeExtensionProxyPage cache methods', () => {

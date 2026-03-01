@@ -1,4 +1,4 @@
-import { CLIError, runToolsCLI } from '@midscene/shared/cli';
+import { CLIError, runToolsCLI } from '@sqaitech/shared/cli';
 import { AndroidMidsceneTools } from './mcp-tools';
 
 const tools = new AndroidMidsceneTools();

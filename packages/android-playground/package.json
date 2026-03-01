@@ -1,5 +1,5 @@
 {
-  "name": "@midscene/android-playground",
+  "name": "@sqaitech/android-playground",
   "version": "1.4.6",
   "description": "Android playground for Midscene",
   "main": "./dist/lib/index.js",
@@ -7,8 +7,8 @@
   "module": "./dist/es/index.mjs",
   "files": ["dist", "static", "bin", "README.md"],
   "bin": {
-    "midscene-android-playground": "./bin/android-playground",
-    "@midscene/android-playground": "./bin/android-playground"
+    "sqai-android-playground": "./bin/android-playground",
+    "@sqaitech/android-playground": "./bin/android-playground"
   },
   "scripts": {
     "dev": "npm run build:watch",
@@ -19,10 +19,10 @@
     "prepack": "node scripts/download-scrcpy-server.mjs --target=bin/scrcpy-server"
   },
   "dependencies": {
-    "@midscene/android": "workspace:*",
-    "@midscene/core": "workspace:*",
-    "@midscene/playground": "workspace:*",
-    "@midscene/shared": "workspace:*",
+    "@sqaitech/android": "workspace:*",
+    "@sqaitech/core": "workspace:*",
+    "@sqaitech/playground": "workspace:*",
+    "@sqaitech/shared": "workspace:*",
     "@yume-chan/adb": "^1.1.0",
     "@yume-chan/adb-scrcpy": "^1.1.0",
     "@yume-chan/adb-server-node-tcp": "^1.1.0",

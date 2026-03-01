@@ -1,6 +1,6 @@
 import type { WebPageAgentOpt } from '@/web-element';
-import { Agent as PageAgent } from '@midscene/core/agent';
-import { getDebug } from '@midscene/shared/logger';
+import { Agent as PageAgent } from '@sqaitech/core/agent';
+import { getDebug } from '@sqaitech/shared/logger';
 import type { Page as PuppeteerPage } from 'puppeteer';
 import semver from 'semver';
 import { getWebpackRequire } from '../utils';
@@ -52,7 +52,7 @@ export class PuppeteerAgent extends PageAgent<PuppeteerWebPage> {
   }
 }
 
-export { overrideAIConfig } from '@midscene/shared/env';
+export { overrideAIConfig } from '@sqaitech/shared/env';
 
 // Do NOT export this since it requires puppeteer
 // export { puppeteerAgentForTarget } from './agent-launcher';

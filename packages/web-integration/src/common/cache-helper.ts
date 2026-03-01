@@ -1,10 +1,10 @@
-import type { ElementCacheFeature, Point, Rect } from '@midscene/core';
+import type { ElementCacheFeature, Point, Rect } from '@sqaitech/core';
 import {
   AiJudgeOrderSensitive,
   callAIWithObjectResponse,
-} from '@midscene/core/ai-model';
-import type { IModelConfig } from '@midscene/shared/env';
-import type { DebugFunction } from '@midscene/shared/logger';
+} from '@sqaitech/core/ai-model';
+import type { IModelConfig } from '@sqaitech/shared/env';
+import type { DebugFunction } from '@sqaitech/shared/logger';
 
 // Shared type for web element cache feature
 export type WebElementCacheFeature = ElementCacheFeature & {

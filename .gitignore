@@ -107,10 +107,10 @@ __ai_responses__/
 nx-native-file-cache-*/
 jiti/
 node-compile-cache/
-# Midscene.js dump files
-midscene_run
-midscene_run/report
-midscene_run/dump
+# SQAI dump files
+.sqai
+.sqai/report
+.sqai/dump
 
 local-benchmark
 

@@ -1,6 +1,6 @@
 import './index.less';
 import { MobileOutlined } from '@ant-design/icons';
-import { useServerValid } from '@midscene/visualizer';
+import { useServerValid } from '@sqaitech/visualizer';
 import { message } from 'antd';
 import { useCallback } from 'react';
 import type { RefObject } from 'react';

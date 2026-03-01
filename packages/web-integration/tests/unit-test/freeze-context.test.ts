@@ -1,8 +1,8 @@
 import type { WebPage } from '@/web-element';
 import { WebPageContextParser } from '@/web-element';
-import { ScreenshotItem } from '@midscene/core';
-import { Agent as PageAgent } from '@midscene/core/agent';
-import { globalConfigManager } from '@midscene/shared/env';
+import { ScreenshotItem } from '@sqaitech/core';
+import { Agent as PageAgent } from '@sqaitech/core/agent';
+import { globalConfigManager } from '@sqaitech/shared/env';
 import { beforeEach, describe, expect, it, vi } from 'vitest';
 import type { WebUIContext } from '../../src';
 
@@ -23,9 +23,9 @@ const mockPage = {
 } as unknown as WebPage;
 
 const mockedModelConfig = {
-  MIDSCENE_MODEL_NAME: 'mock-model',
-  MIDSCENE_MODEL_API_KEY: 'mock-api-key',
-  MIDSCENE_MODEL_BASE_URL: 'mock-base-url',
+  SQAI_MODEL_NAME: 'mock-model',
+  SQAI_MODEL_API_KEY: 'mock-api-key',
+  SQAI_MODEL_BASE_URL: 'mock-base-url',
 };
 
 describe('PageAgent freeze/unfreeze page context', () => {

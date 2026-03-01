@@ -7,20 +7,20 @@ import { promisify } from 'node:util';
 import {
   defaultRunDirName,
   getMidsceneRunSubDir,
-} from '@midscene/shared/common';
+} from '@sqaitech/shared/common';
 import {
-  MIDSCENE_CACHE,
-  MIDSCENE_DEBUG_MODE,
+  SQAI_CACHE,
+  SQAI_DEBUG_MODE,
   globalConfigManager,
-} from '@midscene/shared/env';
-import { getRunningPkgInfo } from '@midscene/shared/node';
-import { assert, logMsg } from '@midscene/shared/utils';
+} from '@sqaitech/shared/env';
+import { getRunningPkgInfo } from '@sqaitech/shared/node';
+import { assert, logMsg } from '@sqaitech/shared/utils';
 import {
   escapeScriptTag,
   ifInBrowser,
   ifInWorker,
   uuid,
-} from '@midscene/shared/utils';
+} from '@sqaitech/shared/utils';
 import type { Cache, Rect, ReportDumpWithAttributes } from './types';
 
 let logEnvReady = false;
@@ -35,7 +35,7 @@ export const groupedActionDumpFileExt = 'web-dump.json';
  * @param cache - The original cache configuration
  * @param cacheId - The cache ID to use as:
  *   1. Fallback ID when cache is true or cache object has no ID
- *   2. Legacy cacheId when cache is undefined (requires MIDSCENE_CACHE env var)
+ *   2. Legacy cacheId when cache is undefined (requires SQAI_CACHE env var)
  * @returns Processed cache configuration
  */
 export function processCacheConfig(
@@ -66,7 +66,7 @@ export function processCacheConfig(
 
   // 2. Backward compatibility: support old cacheId (requires environment variable)
   // When cache is undefined, check if legacy cacheId mode is enabled via env var
-  const envEnabled = globalConfigManager.getEnvConfigInBoolean(MIDSCENE_CACHE);
+  const envEnabled = globalConfigManager.getEnvConfigInBoolean(SQAI_CACHE);
 
   if (envEnabled && cacheId) {
     return { id: cacheId };
@@ -146,7 +146,7 @@ export function reportHTMLContent(
     // do not use template string here, will cause bundle error
     dumpContent =
       // biome-ignore lint/style/useTemplate: <explanation>
-      '<script type="midscene_web_dump" type="application/json">\n' +
+      '<script type="sqai_web_dump" type="application/json">\n' +
       escapeScriptTag(dumpData) +
       '\n</script>';
   } else {
@@ -158,7 +158,7 @@ export function reportHTMLContent(
     dumpContent =
       // do not use template string here, will cause bundle error
       // biome-ignore lint/style/useTemplate: <explanation>
-      '<script type="midscene_web_dump" type="application/json" ' +
+      '<script type="sqai_web_dump" type="application/json" ' +
       attributesArr.join(' ') +
       '>\n' +
       escapeScriptTag(dumpString) +
@@ -200,7 +200,7 @@ export function writeDumpReport(
 
   reportHTMLContent(dumpData, reportPath, appendReport);
 
-  if (process.env.MIDSCENE_DEBUG_LOG_JSON) {
+  if (process.env.SQAI_DEBUG_LOG_JSON) {
     const jsonPath = `${reportPath}.json`;
     let data;
 
@@ -340,7 +340,7 @@ export function getVersion() {
 function debugLog(...message: any[]) {
   // always read from process.env, and cannot be override by modelConfig, overrideAIConfig, etc.
   // also avoid circular dependency
-  const debugMode = process.env[MIDSCENE_DEBUG_MODE];
+  const debugMode = process.env[SQAI_DEBUG_MODE];
   if (debugMode) {
     console.log('[Midscene]', ...message);
   }

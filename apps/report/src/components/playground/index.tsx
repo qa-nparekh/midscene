@@ -1,8 +1,8 @@
-import type { DeviceAction, ExecutionDump, UIContext } from '@midscene/core';
-import { GroupedActionDump } from '@midscene/core';
-import { paramStr, typeStr } from '@midscene/core/agent';
-import { type PlaygroundSDK, noReplayAPIs } from '@midscene/playground';
-import type { ServerResponse } from '@midscene/playground';
+import type { DeviceAction, ExecutionDump, UIContext } from '@sqaitech/core';
+import { GroupedActionDump } from '@sqaitech/core';
+import { paramStr, typeStr } from '@sqaitech/core/agent';
+import { type PlaygroundSDK, noReplayAPIs } from '@sqaitech/playground';
+import type { ServerResponse } from '@sqaitech/playground';
 import {
   ContextPreview,
   Logo,
@@ -15,8 +15,8 @@ import {
   safeOverrideAIConfig,
   useEnvConfig,
   useServerValid,
-} from '@midscene/visualizer';
-import type { StaticPageAgent } from '@midscene/web/static';
+} from '@sqaitech/visualizer';
+import type { StaticPageAgent } from '@sqaitech/web/static';
 import { Form, message } from 'antd';
 import { useCallback, useEffect, useRef, useState } from 'react';
 import { Panel, PanelGroup, PanelResizeHandle } from 'react-resizable-panels';

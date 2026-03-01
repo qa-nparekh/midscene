@@ -1,5 +1,5 @@
-import type { DeviceAction } from '@midscene/core';
-import { PLAYGROUND_SERVER_PORT } from '@midscene/shared/constants';
+import type { DeviceAction } from '@sqaitech/core';
+import { PLAYGROUND_SERVER_PORT } from '@sqaitech/shared/constants';
 import type { BasePlaygroundAdapter } from '../adapters/base';
 import { LocalExecutionAdapter } from '../adapters/local-execution';
 import { RemoteExecutionAdapter } from '../adapters/remote-execution';

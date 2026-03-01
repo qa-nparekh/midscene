@@ -67,7 +67,7 @@ describe('circular dependency detection', () => {
   it('should properly export all public APIs', async () => {
     // This test verifies that all expected exports are available
     const { PlaywrightAgent, PuppeteerAgent, PageAgent, StaticPageAgent } =
-      await import('@midscene/web');
+      await import('@sqaitech/web');
 
     expect(PlaywrightAgent).toBeDefined();
     expect(PuppeteerAgent).toBeDefined();

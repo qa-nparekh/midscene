@@ -1,4 +1,4 @@
-import { getDebug } from '@midscene/shared/logger';
+import { getDebug } from '@sqaitech/shared/logger';
 import type { ParsedAction } from './actions';
 
 const debug = getDebug('auto-glm-parser');

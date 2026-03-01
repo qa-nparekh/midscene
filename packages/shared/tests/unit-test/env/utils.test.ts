@@ -2,7 +2,7 @@ import { getBasicEnvValue } from 'src/env/basic';
 import { afterEach, describe, expect, it, vi } from 'vitest';
 import {
   type DeviceWithTimestamp,
-  MIDSCENE_RUN_DIR,
+  SQAI_RUN_DIR,
   getCurrentTime,
 } from '../../../src/env';
 
@@ -11,8 +11,8 @@ describe('getBasicEnvValue', () => {
     vi.unstubAllEnvs();
   });
   it('should return the value of the given env key', () => {
-    vi.stubEnv(MIDSCENE_RUN_DIR, '<test-run-dir>');
-    expect(getBasicEnvValue(MIDSCENE_RUN_DIR)).toBe('<test-run-dir>');
+    vi.stubEnv(SQAI_RUN_DIR, '<test-run-dir>');
+    expect(getBasicEnvValue(SQAI_RUN_DIR)).toBe('<test-run-dir>');
   });
 
   it('should throw if key is not in BASIC_ENV_KEYS', () => {

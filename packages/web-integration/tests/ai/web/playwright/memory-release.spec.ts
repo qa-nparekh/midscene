@@ -1,4 +1,4 @@
-import { sleep } from '@midscene/core/utils';
+import { sleep } from '@sqaitech/core/utils';
 import { expect } from '@playwright/test';
 import { test } from './fixture';
 

@@ -1,6 +1,6 @@
 import { DownOutlined, SearchOutlined, UpOutlined } from '@ant-design/icons';
-import type { GroupedActionDump } from '@midscene/core';
-import { iconForStatus, timeCostStrElement } from '@midscene/visualizer';
+import type { GroupedActionDump } from '@sqaitech/core';
+import { iconForStatus, timeCostStrElement } from '@sqaitech/visualizer';
 import { Input, Select } from 'antd';
 import type React from 'react';
 import { useEffect, useMemo, useRef, useState } from 'react';

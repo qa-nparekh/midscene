@@ -38,18 +38,18 @@ If you are unsure of your browser's pixel ratio, you can press F12 on any page t
 data:text/html,<script>alert(`deviceScaleFactor of your browser: ${devicePixelRatio}`)</script>
 ```
 
-## How do I configure the midscene_run directory?
+## How do I configure the .sqai directory?
 
-Midscene saves runtime artifacts (reports, logs, cache, etc.) in the `midscene_run` directory. By default, this directory is created in the current working directory.
+SQAI saves runtime artifacts (reports, logs, cache, etc.) in the `.sqai` directory. By default, this directory is created in the current working directory.
 
-You can customize the directory location using the `MIDSCENE_RUN_DIR` environment variable, which accepts both relative and absolute paths:
+You can customize the directory location using the `SQAI_RUN_DIR` environment variable, which accepts both relative and absolute paths:
 
 ```bash
 # Using a relative path
-export MIDSCENE_RUN_DIR="./my_custom_dir"
+export SQAI_RUN_DIR="./my_custom_dir"
 
 # Using an absolute path
-export MIDSCENE_RUN_DIR="/tmp/midscene_output"
+export SQAI_RUN_DIR="/tmp/sqai_output"
 ```
 
 The directory contains the following subdirectories:
@@ -110,7 +110,7 @@ For more model selection suggestions, please refer to [Model Strategy](./model-s
 
 ### 3. Check Model Family Configuration
 
-Verify that the `MIDSCENE_MODEL_FAMILY` parameter is set correctly in your model configuration. Incorrect `MIDSCENE_MODEL_FAMILY` configuration will affect Midscene's adaptation logic for the model. See [Model Configuration](./model-config) for details.
+Verify that the `SQAI_MODEL_FAMILY` parameter is set correctly in your model configuration. Incorrect `SQAI_MODEL_FAMILY` configuration will affect Midscene's adaptation logic for the model. See [Model Configuration](./model-config) for details.
 
 ### 4. Analyze the Cause of Positioning Offset
 

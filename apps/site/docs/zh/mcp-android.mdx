@@ -23,18 +23,18 @@ Midscene 提供了专门的 MCP 服务，允许 AI 助手通过自然语言命�
 
 ### 配置
 
-将 Midscene MCP 服务器添加到你的 MCP 配置中，注意不要遗漏 `MIDSCENE_MCP_ANDROID_MODE` 环境变量：
+将 Midscene MCP 服务器添加到你的 MCP 配置中，注意不要遗漏 `SQAI_MCP_ANDROID_MODE` 环境变量：
 
 ```json
 {
   "mcpServers": {
     "mcp-midscene": {
       "command": "npx",
-      "args": ["-y", "@midscene/mcp"],
+      "args": ["-y", "@sqaitech/mcp"],
       "env": {
-        "MIDSCENE_MODEL_NAME": "REPLACE_WITH_YOUR_MODEL_NAME",
+        "SQAI_MODEL_NAME": "REPLACE_WITH_YOUR_MODEL_NAME",
         "OPENAI_API_KEY": "REPLACE_WITH_YOUR_OPENAI_API_KEY",
-        "MIDSCENE_MCP_ANDROID_MODE": "true",
+        "SQAI_MCP_ANDROID_MODE": "true",
         "MCP_SERVER_REQUEST_TIMEOUT": "800000"
       }
     }

@@ -1,4 +1,4 @@
-import type { ChromeRecordedEvent } from '@midscene/recorder';
+import type { ChromeRecordedEvent } from '@sqaitech/recorder';
 import { recordLogger } from '../../logger';
 import type {
   EventCounts,

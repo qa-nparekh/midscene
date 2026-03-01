@@ -1,6 +1,6 @@
 import fs from 'node:fs';
 import { PuppeteerAgent } from '@/puppeteer';
-import { sleep } from '@midscene/core/utils';
+import { sleep } from '@sqaitech/core/utils';
 import { afterEach, describe, expect, it, vi } from 'vitest';
 import { launchPage } from './utils';
 
@@ -150,10 +150,10 @@ describe('Cache Configuration Tests', () => {
     expect(agent.taskCache?.readOnlyMode).toBe(false);
   });
 
-  it('should support backward compatibility with legacy cacheId when MIDSCENE_CACHE is enabled', async () => {
+  it('should support backward compatibility with legacy cacheId when SQAI_CACHE is enabled', async () => {
     // Mock environment variable
-    const originalEnv = process.env.MIDSCENE_CACHE;
-    process.env.MIDSCENE_CACHE = 'true';
+    const originalEnv = process.env.SQAI_CACHE;
+    process.env.SQAI_CACHE = 'true';
 
     try {
       const { originPage, reset } = await launchPage('https://example.com/');
@@ -176,17 +176,17 @@ describe('Cache Configuration Tests', () => {
     } finally {
       // Restore original environment
       if (originalEnv !== undefined) {
-        process.env.MIDSCENE_CACHE = originalEnv;
+        process.env.SQAI_CACHE = originalEnv;
       } else {
-        process.env.MIDSCENE_CACHE = undefined;
+        process.env.SQAI_CACHE = undefined;
       }
     }
   });
 
-  it('should not create cache with legacy cacheId when MIDSCENE_CACHE is disabled', async () => {
+  it('should not create cache with legacy cacheId when SQAI_CACHE is disabled', async () => {
     // Mock environment variable
-    const originalEnv = process.env.MIDSCENE_CACHE;
-    process.env.MIDSCENE_CACHE = 'false';
+    const originalEnv = process.env.SQAI_CACHE;
+    process.env.SQAI_CACHE = 'false';
 
     try {
       const { originPage, reset } = await launchPage('https://example.com/');
@@ -210,9 +210,9 @@ describe('Cache Configuration Tests', () => {
     } finally {
       // Restore original environment
       if (originalEnv !== undefined) {
-        process.env.MIDSCENE_CACHE = originalEnv;
+        process.env.SQAI_CACHE = originalEnv;
       } else {
-        process.env.MIDSCENE_CACHE = undefined;
+        process.env.SQAI_CACHE = undefined;
       }
     }
   });
@@ -333,7 +333,7 @@ describe('Cache Operation Tests', () => {
       // Check if cache file might exist (it may or may not be written yet)
       if (fs.existsSync(cacheFilePath)) {
         const cacheContent = fs.readFileSync(cacheFilePath, 'utf-8');
-        expect(cacheContent).toContain('midsceneVersion');
+        expect(cacheContent).toContain('sqaiVersion');
         expect(cacheContent).toContain(cacheId);
         expect(cacheContent).toContain('caches:');
       }

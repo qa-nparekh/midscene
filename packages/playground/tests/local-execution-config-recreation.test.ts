@@ -2,7 +2,7 @@ import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 import { LocalExecutionAdapter } from '../src/adapters/local-execution';
 import type { PlaygroundAgent } from '../src/types';
 
-const MIDSCENE_REPLANNING_CYCLE_LIMIT = 'MIDSCENE_REPLANNING_CYCLE_LIMIT';
+const SQAI_REPLANNING_CYCLE_LIMIT = 'SQAI_REPLANNING_CYCLE_LIMIT';
 
 describe('LocalExecutionAdapter - Config Recreation', () => {
   let mockAgent: PlaygroundAgent;
@@ -53,7 +53,7 @@ describe('LocalExecutionAdapter - Config Recreation', () => {
 
     // Override config - does not trigger recreation
     await adapter.overrideConfig({
-      [MIDSCENE_REPLANNING_CYCLE_LIMIT]: '25',
+      [SQAI_REPLANNING_CYCLE_LIMIT]: '25',
     });
 
     // Agent should NOT be destroyed yet
@@ -77,7 +77,7 @@ describe('LocalExecutionAdapter - Config Recreation', () => {
 
     // Override config - should not crash
     await adapter.overrideConfig({
-      [MIDSCENE_REPLANNING_CYCLE_LIMIT]: '25',
+      [SQAI_REPLANNING_CYCLE_LIMIT]: '25',
     });
 
     // Factory should not be called yet (only on execution)
@@ -89,7 +89,7 @@ describe('LocalExecutionAdapter - Config Recreation', () => {
 
     // Override config - should not crash even without factory
     await adapter.overrideConfig({
-      [MIDSCENE_REPLANNING_CYCLE_LIMIT]: '25',
+      [SQAI_REPLANNING_CYCLE_LIMIT]: '25',
     });
 
     // Agent should not be destroyed without factory
@@ -106,7 +106,7 @@ describe('LocalExecutionAdapter - Config Recreation', () => {
     // Override config - should not throw
     await expect(
       adapter.overrideConfig({
-        [MIDSCENE_REPLANNING_CYCLE_LIMIT]: '25',
+        [SQAI_REPLANNING_CYCLE_LIMIT]: '25',
       }),
     ).resolves.not.toThrow();
 
@@ -133,7 +133,7 @@ describe('LocalExecutionAdapter - Config Recreation', () => {
 
     // First config change
     await adapter.overrideConfig({
-      [MIDSCENE_REPLANNING_CYCLE_LIMIT]: '25',
+      [SQAI_REPLANNING_CYCLE_LIMIT]: '25',
     });
     expect(agentFactoryCallCount).toBe(0);
 
@@ -148,7 +148,7 @@ describe('LocalExecutionAdapter - Config Recreation', () => {
 
     // Second config change
     await adapter.overrideConfig({
-      [MIDSCENE_REPLANNING_CYCLE_LIMIT]: '30',
+      [SQAI_REPLANNING_CYCLE_LIMIT]: '30',
     });
 
     // Execute - destroys the agent created in first execution and creates new one
@@ -162,7 +162,7 @@ describe('LocalExecutionAdapter - Config Recreation', () => {
 
     // Third config change
     await adapter.overrideConfig({
-      [MIDSCENE_REPLANNING_CYCLE_LIMIT]: '35',
+      [SQAI_REPLANNING_CYCLE_LIMIT]: '35',
     });
 
     // Execute - destroys and creates again

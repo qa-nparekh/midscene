@@ -11,7 +11,7 @@ export interface LaunchMCPServerOptions extends HttpLaunchOptions {
 }
 
 /**
- * Generic agent type (avoid importing from @midscene/core to prevent circular deps)
+ * Generic agent type (avoid importing from @sqaitech/core to prevent circular deps)
  */
 export interface GenericAgent<TDevice = any> {
   interface: TDevice;
@@ -64,8 +64,8 @@ export interface MCPServerLauncherConfig<
  *
  * @example
  * ```typescript
- * import { createMCPServerLauncher } from '@midscene/shared/mcp';
- * import { Agent } from '@midscene/core/agent';
+ * import { createMCPServerLauncher } from '@sqaitech/shared/mcp';
+ * import { Agent } from '@sqaitech/core/agent';
  * import { WebMidsceneTools } from './web-tools';
  * import { WebMCPServer } from './server';
  *
@@ -132,7 +132,7 @@ Solution: Check that your agent constructor properly sets the interface property
     additionalInfo?: StartupInfo,
   ): void {
     const device = agent.interface;
-    console.log(`Starting Midscene ${platformName} MCP Server (${mode})...`);
+    console.log(`Starting SQAI ${platformName} MCP Server (${mode})...`);
     console.log(`Agent: ${agent.constructor.name}`);
     console.log(`Device: ${device.constructor.name}`);
 

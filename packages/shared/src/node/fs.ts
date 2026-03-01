@@ -78,7 +78,7 @@ export async function getExtraReturnLogic(tree = false) {
   const elementInfosScriptContent = `${getElementInfosScriptContent()};`;
 
   if (tree) {
-    return `${elementInfosScriptContent}midscene_element_inspector.webExtractNodeTree()`;
+    return `${elementInfosScriptContent}sqai_element_inspector.webExtractNodeTree()`;
   }
-  return `${elementInfosScriptContent}midscene_element_inspector.webExtractTextWithPosition()`;
+  return `${elementInfosScriptContent}sqai_element_inspector.webExtractTextWithPosition()`;
 }

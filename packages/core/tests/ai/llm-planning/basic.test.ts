@@ -2,7 +2,7 @@ import { ConversationHistory, plan } from '@/ai-model';
 import {
   globalConfigManager,
   globalModelConfigManager,
-} from '@midscene/shared/env';
+} from '@sqaitech/shared/env';
 import { mockActionSpace } from 'tests/common';
 import { getContextFromFixture } from 'tests/evaluation';
 import { beforeAll, describe, expect, it, vi } from 'vitest';

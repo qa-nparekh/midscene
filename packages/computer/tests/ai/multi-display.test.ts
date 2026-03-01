@@ -1,4 +1,4 @@
-import { sleep } from '@midscene/core/utils';
+import { sleep } from '@sqaitech/core/utils';
 import { describe, it, vi } from 'vitest';
 import { ComputerDevice, agentFromComputer } from '../../src';
 

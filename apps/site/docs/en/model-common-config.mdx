@@ -12,10 +12,10 @@ Midscene reads all model configuration from environment variables. Below are com
 
 ```bash
 # Replace with your own API key
-export MIDSCENE_MODEL_BASE_URL="https://.../compatible-mode/v1"
-export MIDSCENE_MODEL_API_KEY="sk-abcde..."
-export MIDSCENE_MODEL_NAME="qwen3-vl-plus"
-export MIDSCENE_MODEL_FAMILY="qwen3-vl"
+export SQAI_MODEL_BASE_URL="https://.../compatible-mode/v1"
+export SQAI_MODEL_API_KEY="sk-abcde..."
+export SQAI_MODEL_NAME="qwen3-vl-plus"
+export SQAI_MODEL_FAMILY="qwen3-vl"
 ```
 
 ### Method 2: Create a `.env` file (for CLI tools)
@@ -23,10 +23,10 @@ export MIDSCENE_MODEL_FAMILY="qwen3-vl"
 Create a `.env` file in the directory where you run the project. Midscene CLI tools load this file automatically.
 
 ```bash
-MIDSCENE_MODEL_BASE_URL="https://.../compatible-mode/v1"
-MIDSCENE_MODEL_API_KEY="sk-abcdefghijklmnopqrstuvwxyz"
-MIDSCENE_MODEL_NAME="qwen3-vl-plus"
-MIDSCENE_MODEL_FAMILY="qwen3-vl"
+SQAI_MODEL_BASE_URL="https://.../compatible-mode/v1"
+SQAI_MODEL_API_KEY="sk-abcdefghijklmnopqrstuvwxyz"
+SQAI_MODEL_NAME="qwen3-vl-plus"
+SQAI_MODEL_FAMILY="qwen3-vl"
 ```
 
 Keep in mind:
@@ -47,7 +47,7 @@ npm install dotenv --save
 Create a `.env` file in the project root and add (no `export` prefix):
 
 ```bash
-MIDSCENE_MODEL_API_KEY="sk-abcdefghijklmnopqrstuvwxyz"
+SQAI_MODEL_API_KEY="sk-abcdefghijklmnopqrstuvwxyz"
 ```
 
 Import dotenv in your script; it will read `.env` automatically:
@@ -67,20 +67,20 @@ Doubao-Seed-2.0-Lite is the recommended model. Doubao-Seed-1.6-Vision and Doubao
 Obtain an API key from [Volcano Engine](https://volcengine.com) and set:
 
 ```bash
-MIDSCENE_MODEL_BASE_URL="https://ark.cn-beijing.volces.com/api/v3"
-MIDSCENE_MODEL_API_KEY="...."
-MIDSCENE_MODEL_NAME="ep-..." # Inference endpoint ID or model name from Volcano Engine
-MIDSCENE_MODEL_FAMILY="doubao-seed" # "doubao-vision" is also supported
+SQAI_MODEL_BASE_URL="https://ark.cn-beijing.volces.com/api/v3"
+SQAI_MODEL_API_KEY="...."
+SQAI_MODEL_NAME="ep-..." # Inference endpoint ID or model name from Volcano Engine
+SQAI_MODEL_FAMILY="doubao-seed" # "doubao-vision" is also supported
 ```
 ### Qwen3.5 {#qwen35}
 
 Using Alibaba Cloud's `qwen3.5-plus` as an example:
 
 ```bash
-MIDSCENE_MODEL_BASE_URL="https://dashscope.aliyuncs.com/compatible-mode/v1"
-MIDSCENE_MODEL_API_KEY="......"
-MIDSCENE_MODEL_NAME="qwen3.5-plus"
-MIDSCENE_MODEL_FAMILY="qwen3.5"
+SQAI_MODEL_BASE_URL="https://dashscope.aliyuncs.com/compatible-mode/v1"
+SQAI_MODEL_API_KEY="......"
+SQAI_MODEL_NAME="qwen3.5-plus"
+SQAI_MODEL_FAMILY="qwen3.5"
 ```
 
 You can also use Qwen3.5 from [OpenRouter](https://openrouter.ai/qwen).
@@ -90,10 +90,10 @@ You can also use Qwen3.5 from [OpenRouter](https://openrouter.ai/qwen).
 Using Alibaba Cloud's `qwen3-vl-plus` as an example:
 
 ```bash
-MIDSCENE_MODEL_BASE_URL="https://dashscope.aliyuncs.com/compatible-mode/v1"
-MIDSCENE_MODEL_API_KEY="......"
-MIDSCENE_MODEL_NAME="qwen3-vl-plus"
-MIDSCENE_MODEL_FAMILY="qwen3-vl"
+SQAI_MODEL_BASE_URL="https://dashscope.aliyuncs.com/compatible-mode/v1"
+SQAI_MODEL_API_KEY="......"
+SQAI_MODEL_NAME="qwen3-vl-plus"
+SQAI_MODEL_FAMILY="qwen3-vl"
 ```
 
 You can also use Qwen3-VL from [OpenRouter](https://openrouter.ai/qwen).
@@ -103,10 +103,10 @@ You can also use Qwen3-VL from [OpenRouter](https://openrouter.ai/qwen).
 Using Alibaba Cloud's `qwen-vl-max-latest` as an example:
 
 ```bash
-MIDSCENE_MODEL_BASE_URL="https://dashscope.aliyuncs.com/compatible-mode/v1"
-MIDSCENE_MODEL_API_KEY="......"
-MIDSCENE_MODEL_NAME="qwen-vl-max-latest"
-MIDSCENE_MODEL_FAMILY="qwen2.5-vl"
+SQAI_MODEL_BASE_URL="https://dashscope.aliyuncs.com/compatible-mode/v1"
+SQAI_MODEL_API_KEY="......"
+SQAI_MODEL_NAME="qwen-vl-max-latest"
+SQAI_MODEL_FAMILY="qwen2.5-vl"
 ```
 
 ### Zhipu GLM-V {#glm-v}
@@ -116,10 +116,10 @@ Zhipu GLM-V is an open-source vision model from Zhipu AI. Using `GLM-4.6V` as an
 Obtain an API key from [Z.AI (Global)](https://z.ai/manage-apikey/apikey-list) or [BigModel (CN)](https://bigmodel.cn/usercenter/proj-mgmt/apikeys), and set:
 
 ```bash
-MIDSCENE_MODEL_BASE_URL="https://api.z.ai/api/paas/v4" # Or https://open.bigmodel.cn/api/paas/v4
-MIDSCENE_MODEL_API_KEY="......"
-MIDSCENE_MODEL_NAME="glm-4.6v"
-MIDSCENE_MODEL_FAMILY="glm-v"
+SQAI_MODEL_BASE_URL="https://api.z.ai/api/paas/v4" # Or https://open.bigmodel.cn/api/paas/v4
+SQAI_MODEL_API_KEY="......"
+SQAI_MODEL_NAME="glm-4.6v"
+SQAI_MODEL_FAMILY="glm-v"
 ```
 
 **Learn more about Zhipu GLM-V**
@@ -134,15 +134,15 @@ Zhipu AutoGLM is an open-source mobile UI automation model (9B parameters) from 
 After obtaining an API key from [Z.AI (Global)](https://z.ai/manage-apikey/apikey-list) or [BigModel (CN)](https://bigmodel.cn/usercenter/proj-mgmt/apikeys), configure:
 
 ```bash
-MIDSCENE_MODEL_BASE_URL="https://api.z.ai/api/paas/v4" # Or https://open.bigmodel.cn/api/paas/v4
-MIDSCENE_MODEL_API_KEY="......"
-MIDSCENE_MODEL_NAME="autoglm-phone"
-MIDSCENE_MODEL_FAMILY="auto-glm" # Or "auto-glm-multilingual"
+SQAI_MODEL_BASE_URL="https://api.z.ai/api/paas/v4" # Or https://open.bigmodel.cn/api/paas/v4
+SQAI_MODEL_API_KEY="......"
+SQAI_MODEL_NAME="autoglm-phone"
+SQAI_MODEL_FAMILY="auto-glm" # Or "auto-glm-multilingual"
 ```
 
-**About `MIDSCENE_MODEL_FAMILY` Configuration**
+**About `SQAI_MODEL_FAMILY` Configuration**
 
-AutoGLM provides two model versions, distinguished by `MIDSCENE_MODEL_FAMILY`:
+AutoGLM provides two model versions, distinguished by `SQAI_MODEL_FAMILY`:
 
 - `auto-glm` - Corresponds to AutoGLM-Phone-9B, optimized for **Chinese mobile applications**
 - `auto-glm-multilingual` - Corresponds to AutoGLM-Phone-9B-Multilingual, supports **English and other languages**
@@ -160,13 +160,13 @@ AutoGLM is best suited for mobile interactions and operations. If you need to us
 
 ### Gemini-3-Pro and Gemini-3-Flash {#gemini-3-pro}
 
-After requesting an API key from [Google Gemini](https://gemini.google.com/), configure. Use your specific Gemini-3-Pro or Gemini-3-Flash release name for `MIDSCENE_MODEL_NAME`:
+After requesting an API key from [Google Gemini](https://gemini.google.com/), configure. Use your specific Gemini-3-Pro or Gemini-3-Flash release name for `SQAI_MODEL_NAME`:
 
 ```bash
-MIDSCENE_MODEL_BASE_URL="https://generativelanguage.googleapis.com/v1beta/openai/"
-MIDSCENE_MODEL_API_KEY="......"
-MIDSCENE_MODEL_NAME="gemini-3.0-pro-preview" # Or a gemini-3-flash release name
-MIDSCENE_MODEL_FAMILY="gemini"
+SQAI_MODEL_BASE_URL="https://generativelanguage.googleapis.com/v1beta/openai/"
+SQAI_MODEL_API_KEY="......"
+SQAI_MODEL_NAME="gemini-3.0-pro-preview" # Or a gemini-3-flash release name
+SQAI_MODEL_FAMILY="gemini"
 ```
 
 ### UI-TARS {#ui-tars}
@@ -174,13 +174,13 @@ MIDSCENE_MODEL_FAMILY="gemini"
 Use the deployed `doubao-1.5-ui-tars` on [Volcano Engine](https://volcengine.com):
 
 ```bash
-MIDSCENE_MODEL_BASE_URL="https://ark.cn-beijing.volces.com/api/v3"
-MIDSCENE_MODEL_API_KEY="...."
-MIDSCENE_MODEL_NAME="ep-2025..." # Inference endpoint ID or model name from Volcano Engine
-MIDSCENE_MODEL_FAMILY="vlm-ui-tars-doubao-1.5"
+SQAI_MODEL_BASE_URL="https://ark.cn-beijing.volces.com/api/v3"
+SQAI_MODEL_API_KEY="...."
+SQAI_MODEL_NAME="ep-2025..." # Inference endpoint ID or model name from Volcano Engine
+SQAI_MODEL_FAMILY="vlm-ui-tars-doubao-1.5"
 ```
 
-**About `MIDSCENE_MODEL_FAMILY`**
+**About `SQAI_MODEL_FAMILY`**
 
 This variable selects the UI-TARS version. Supported values:
 - `vlm-ui-tars` – for the 1.0 release
@@ -189,12 +189,12 @@ This variable selects the UI-TARS version. Supported values:
 
 :::tip
 
-The legacy configurations `MIDSCENE_USE_VLM_UI_TARS=DOUBAO` or `MIDSCENE_USE_VLM_UI_TARS=1.5` are still supported but deprecated. Please migrate to `MIDSCENE_MODEL_FAMILY`.
+The legacy configurations `SQAI_USE_VLM_UI_TARS=DOUBAO` or `SQAI_USE_VLM_UI_TARS=1.5` are still supported but deprecated. Please migrate to `SQAI_MODEL_FAMILY`.
 
 Migration mapping:
-- `MIDSCENE_USE_VLM_UI_TARS=1.0` → `MIDSCENE_MODEL_FAMILY="vlm-ui-tars"`
-- `MIDSCENE_USE_VLM_UI_TARS=1.5` → `MIDSCENE_MODEL_FAMILY="vlm-ui-tars-doubao-1.5"`
-- `MIDSCENE_USE_VLM_UI_TARS=DOUBAO` → `MIDSCENE_MODEL_FAMILY="vlm-ui-tars-doubao"`
+- `SQAI_USE_VLM_UI_TARS=1.0` → `SQAI_MODEL_FAMILY="vlm-ui-tars"`
+- `SQAI_USE_VLM_UI_TARS=1.5` → `SQAI_MODEL_FAMILY="vlm-ui-tars-doubao-1.5"`
+- `SQAI_USE_VLM_UI_TARS=DOUBAO` → `SQAI_MODEL_FAMILY="vlm-ui-tars-doubao"`
 
 :::
 
@@ -210,20 +210,20 @@ Below is an example using GPT-5.1 for Planning/Insight and Qwen3-VL for vision. 
 
 ```bash
 # Default vision model: Qwen3-VL
-export MIDSCENE_MODEL_BASE_URL="https://..."       # Qwen3-VL endpoint
-export MIDSCENE_MODEL_API_KEY="..."                # Your Qwen3-VL API key
-export MIDSCENE_MODEL_NAME="qwen3-vl-plus"
-export MIDSCENE_MODEL_FAMILY="qwen3-vl"
+export SQAI_MODEL_BASE_URL="https://..."       # Qwen3-VL endpoint
+export SQAI_MODEL_API_KEY="..."                # Your Qwen3-VL API key
+export SQAI_MODEL_NAME="qwen3-vl-plus"
+export SQAI_MODEL_FAMILY="qwen3-vl"
 
 # Planning model: GPT-5.1
-export MIDSCENE_PLANNING_MODEL_API_KEY="sk-..."    # Your GPT-5.1 API key
-export MIDSCENE_PLANNING_MODEL_BASE_URL="https://..." 
-export MIDSCENE_PLANNING_MODEL_NAME="gpt-5.1"
+export SQAI_PLANNING_MODEL_API_KEY="sk-..."    # Your GPT-5.1 API key
+export SQAI_PLANNING_MODEL_BASE_URL="https://..." 
+export SQAI_PLANNING_MODEL_NAME="gpt-5.1"
 
 # Insight model: GPT-5.1
-export MIDSCENE_INSIGHT_MODEL_API_KEY="sk-..."     # Your GPT-5.1 API key
-export MIDSCENE_INSIGHT_MODEL_BASE_URL="https://..."
-export MIDSCENE_INSIGHT_MODEL_NAME="gpt-5.1"
+export SQAI_INSIGHT_MODEL_API_KEY="sk-..."     # Your GPT-5.1 API key
+export SQAI_INSIGHT_MODEL_BASE_URL="https://..."
+export SQAI_INSIGHT_MODEL_NAME="gpt-5.1"
 ```
 
 ## More

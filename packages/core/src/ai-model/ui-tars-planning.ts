@@ -4,10 +4,10 @@ import type {
   Size,
   UIContext,
 } from '@/types';
-import { type IModelConfig, UITarsModelVersion } from '@midscene/shared/env';
-import { getDebug } from '@midscene/shared/logger';
-import { transformHotkeyInput } from '@midscene/shared/us-keyboard-layout';
-import { assert } from '@midscene/shared/utils';
+import { type IModelConfig, UITarsModelVersion } from '@sqaitech/shared/env';
+import { getDebug } from '@sqaitech/shared/logger';
+import { transformHotkeyInput } from '@sqaitech/shared/us-keyboard-layout';
+import { assert } from '@sqaitech/shared/utils';
 import { actionParser } from '@ui-tars/action-parser';
 import type { ConversationHistory } from './conversation-history';
 import { getSummary, getUiTarsPlanningPrompt } from './prompt/ui-tars-planning';

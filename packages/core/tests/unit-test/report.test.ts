@@ -208,7 +208,7 @@ describe('reportMergingTool', () => {
 
           const content = `${getReportTpl()}
 ${imageScripts}
-<script type="midscene_web_dump">{"groupName":"test-${r}","executions":[]}</script>`;
+<script type="sqai_web_dump">{"groupName":"test-${r}","executions":[]}</script>`;
 
           writeFileSync(reportPath, content);
 

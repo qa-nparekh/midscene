@@ -1,5 +1,5 @@
 import path from 'node:path';
-import { sleep } from '@midscene/core/utils';
+import { sleep } from '@sqaitech/core/utils';
 import { expect } from '@playwright/test';
 import { test } from './fixture';
 
@@ -7,7 +7,7 @@ test.beforeEach(async ({ page }) => {
   await page.goto('https://github.com/web-infra-dev/midscene');
 });
 
-const CACHE_TIME_OUT = process.env.MIDSCENE_CACHE;
+const CACHE_TIME_OUT = process.env.SQAI_CACHE;
 
 test('prompting with images', async ({
   aiBoolean,

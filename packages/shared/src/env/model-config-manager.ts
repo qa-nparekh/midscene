@@ -49,7 +49,7 @@ export class ModelConfigManager {
     );
     if (!defaultConfig) {
       throw new Error(
-        'Model configuration is incomplete: model name (MIDSCENE_MODEL_NAME) is required. See https://midscenejs.com/model-strategy.html',
+        'Model configuration is incomplete: model name (SQAI_MODEL_NAME) is required.',
       );
     }
 
@@ -142,7 +142,8 @@ export class ModelConfigManager {
 
     if (!modelConfig.modelFamily) {
       throw new Error(
-        'MIDSCENE_MODEL_FAMILY is not set to a visual language model (VL model), the element localization can not be achieved. Check your model configuration. See https://midscenejs.com/model-strategy.html',
+        'SQAI_MODEL_FAMILY is not set to a visual language model (VL model), the element localization can not be achieved. Check your model configuration.',
+
       );
     }
   }

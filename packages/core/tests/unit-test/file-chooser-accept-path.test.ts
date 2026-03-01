@@ -22,8 +22,8 @@ describe('fileChooserAccept relative path support', () => {
     writeFileSync(testFilePath, 'path test content');
     agent = new Agent(createMockInterface(), {
       modelConfig: {
-        MIDSCENE_MODEL_NAME: 'test-model',
-        MIDSCENE_MODEL_API_KEY: 'test-key',
+        SQAI_MODEL_NAME: 'test-model',
+        SQAI_MODEL_API_KEY: 'test-key',
       },
     });
   });

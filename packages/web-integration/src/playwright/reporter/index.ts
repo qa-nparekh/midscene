@@ -9,14 +9,14 @@ import { dirname, join } from 'node:path';
 import {
   GroupedActionDump,
   type ReportDumpWithAttributes,
-} from '@midscene/core';
-import { getReportFileName, printReportMsg } from '@midscene/core/agent';
-import { getReportTpl } from '@midscene/core/utils';
-import { getMidsceneRunSubDir } from '@midscene/shared/common';
+} from '@sqaitech/core';
+import { getReportFileName, printReportMsg } from '@sqaitech/core/agent';
+import { getReportTpl } from '@sqaitech/core/utils';
+import { getMidsceneRunSubDir } from '@sqaitech/shared/common';
 import {
   escapeScriptTag,
   replaceIllegalPathCharsAndSpace,
-} from '@midscene/shared/utils';
+} from '@sqaitech/shared/utils';
 import type {
   FullConfig,
   Reporter,
@@ -187,12 +187,12 @@ class MidsceneReporter implements Reporter {
       const tpl = getReportTpl();
       if (!tpl) {
         throw new Error(
-          'Report template not found. Ensure @midscene/core is built correctly.',
+          'Report template not found. Ensure @sqaitech/core is built correctly.',
         );
       }
 
       // Parse the dump string and generate dump script tag
-      let dumpScript = `<script type="midscene_web_dump">\n${escapeScriptTag(testData.dumpString)}\n</script>`;
+      let dumpScript = `<script type="sqai_web_dump">\n${escapeScriptTag(testData.dumpString)}\n</script>`;
 
       // Add attributes to the dump script if this is merged report
       if (this.mode === 'merged' && testData.attributes) {
@@ -201,8 +201,8 @@ class MidsceneReporter implements Reporter {
         });
         // Add attributes to the script tag
         dumpScript = dumpScript.replace(
-          '<script type="midscene_web_dump"',
-          `<script type="midscene_web_dump" ${attributesArr.join(' ')}`,
+          '<script type="sqai_web_dump"',
+          `<script type="sqai_web_dump" ${attributesArr.join(' ')}`,
         );
       }
 
@@ -238,7 +238,7 @@ class MidsceneReporter implements Reporter {
 
   onTestEnd(test: TestCase, result: TestResult) {
     const dumpAnnotation = test.annotations.find((annotation) => {
-      return annotation.type === 'MIDSCENE_DUMP_ANNOTATION';
+      return annotation.type === 'SQAI_DUMP_ANNOTATION';
     });
     if (!dumpAnnotation?.description) return;
 
@@ -338,21 +338,21 @@ class MidsceneReporter implements Reporter {
     ) {
       const reportPath = this.getReportPath();
       const reportDir = dirname(reportPath);
-      console.log('[Midscene] Directory report generated.');
+      console.log('[SQAI] Directory report generated.');
       console.log(
-        '[Midscene] Note: This report must be served via HTTP server due to CORS restrictions.',
+        '[SQAI] Note: This report must be served via HTTP server due to CORS restrictions.',
       );
-      console.log(`[Midscene] Example: npx serve ${reportDir}`);
+      console.log(`[SQAI] Example: npx serve ${reportDir}`);
     } else if (
       this.outputFormat === 'html-and-external-assets' &&
       this.mode === 'separate'
     ) {
       const reportBaseDir = getMidsceneRunSubDir('report');
-      console.log('[Midscene] Directory reports generated.');
+      console.log('[SQAI] Directory reports generated.');
       console.log(
-        '[Midscene] Note: Reports must be served via HTTP server due to CORS restrictions.',
+        '[SQAI] Note: Reports must be served via HTTP server due to CORS restrictions.',
       );
-      console.log(`[Midscene] Example: npx serve ${reportBaseDir}`);
+      console.log(`[SQAI] Example: npx serve ${reportBaseDir}`);
     }
 
     // Clean up any remaining temp files that weren't deleted in onTestEnd

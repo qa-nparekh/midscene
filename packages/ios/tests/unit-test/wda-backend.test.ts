@@ -1,4 +1,4 @@
-import { DEFAULT_WDA_PORT } from '@midscene/shared/constants';
+import { DEFAULT_WDA_PORT } from '@sqaitech/shared/constants';
 import { describe, expect, it } from 'vitest';
 
 describe('IOSWebDriverClient - Simple Tests', () => {

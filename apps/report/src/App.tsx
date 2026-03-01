@@ -8,14 +8,14 @@ import {
   GroupedActionDump,
   parseImageScripts,
   restoreImageReferences,
-} from '@midscene/core';
-import { antiEscapeScriptTag } from '@midscene/shared/utils';
+} from '@sqaitech/core';
+import { antiEscapeScriptTag } from '@sqaitech/shared/utils';
 import {
   Logo,
   Player,
   globalThemeConfig,
   useGlobalPreference,
-} from '@midscene/visualizer';
+} from '@sqaitech/visualizer';
 import DetailPanel from './components/detail-panel';
 import DetailSide from './components/detail-side';
 import GlobalHoverPreview from './components/global-hover-preview';
@@ -286,7 +286,7 @@ function Visualizer(props: VisualizerProps): JSX.Element {
 export function App() {
   function getDumpElements(): PlaywrightTasks[] {
     const dumpElements = document.querySelectorAll(
-      'script[type="midscene_web_dump"]',
+      'script[type="sqai_web_dump"]',
     );
     const reportDump: PlaywrightTasks[] = [];
     Array.from(dumpElements)
@@ -371,7 +371,7 @@ export function App() {
 
     const loadDumpElements = () => {
       const currentElements = document.querySelectorAll(
-        'script[type="midscene_web_dump"]',
+        'script[type="sqai_web_dump"]',
       );
 
       // If it has been loaded and the number of elements has not changed, skip it.
@@ -430,7 +430,7 @@ export function App() {
         }}
       >
         <Alert
-          message="Midscene.js - Error"
+          message="SQAI - Error"
           description={error}
           type="error"
           showIcon

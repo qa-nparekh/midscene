@@ -32,14 +32,14 @@ import type {
   ServiceExtractParam,
 } from '@/types';
 import { ServiceError } from '@/types';
-import { type IModelConfig, getCurrentTime } from '@midscene/shared/env';
-import { getDebug } from '@midscene/shared/logger';
-import { assert } from '@midscene/shared/utils';
+import { type IModelConfig, getCurrentTime } from '@sqaitech/shared/env';
+import { getDebug } from '@sqaitech/shared/logger';
+import { assert } from '@sqaitech/shared/utils';
 import { ExecutionSession } from './execution-session';
 import { TaskBuilder } from './task-builder';
 import type { TaskCache } from './task-cache';
 export { locatePlanForLocate } from './task-builder';
-import { descriptionOfTree } from '@midscene/shared/extractor';
+import { descriptionOfTree } from '@sqaitech/shared/extractor';
 import { taskTitleStr } from './ui-utils';
 import { parsePrompt } from './utils';
 
@@ -502,7 +502,7 @@ export class TaskExecutor {
       ++replanCount;
 
       if (replanCount > replanningCycleLimit) {
-        const errorMsg = `Replanned ${replanningCycleLimit} times, exceeding the limit. Please configure a larger value for replanningCycleLimit (or use MIDSCENE_REPLANNING_CYCLE_LIMIT) to handle more complex tasks.`;
+        const errorMsg = `Replanned ${replanningCycleLimit} times, exceeding the limit. Please configure a larger value for replanningCycleLimit (or use SQAI_REPLANNING_CYCLE_LIMIT) to handle more complex tasks.`;
         return session.appendErrorPlan(errorMsg);
       }
 

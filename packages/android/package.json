@@ -1,5 +1,5 @@
 {
-  "name": "@midscene/android",
+  "name": "@sqaitech/android",
   "version": "1.4.6",
   "description": "Android automation library for Midscene",
   "keywords": [
@@ -13,7 +13,7 @@
   "module": "./dist/es/index.mjs",
   "types": "./dist/types/index.d.ts",
   "bin": {
-    "midscene-android": "./bin/midscene-android"
+    "sqai-android": "./bin/midscene-android"
   },
   "files": ["bin", "dist", "README.md"],
   "exports": {
@@ -42,8 +42,8 @@
     "test:ai:cache": "MIDSCENE_CACHE=true AI_TEST_TYPE=android npm run test"
   },
   "dependencies": {
-    "@midscene/core": "workspace:*",
-    "@midscene/shared": "workspace:*",
+    "@sqaitech/core": "workspace:*",
+    "@sqaitech/shared": "workspace:*",
     "@yume-chan/adb": "^1.1.0",
     "@yume-chan/adb-scrcpy": "^1.1.0",
     "@yume-chan/adb-server-node-tcp": "^1.1.0",
@@ -56,7 +56,7 @@
     "@ffmpeg-installer/ffmpeg": "^1.1.0"
   },
   "devDependencies": {
-    "@midscene/playground": "workspace:*",
+    "@sqaitech/playground": "workspace:*",
     "@rslib/core": "^0.18.3",
     "@types/node": "^18.0.0",
     "dotenv": "^16.4.5",

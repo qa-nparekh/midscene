@@ -1,5 +1,5 @@
 import path from 'node:path';
-import { commonIgnoreWarnings } from '@midscene/shared';
+import { commonIgnoreWarnings } from '@sqaitech/shared';
 import { defineConfig } from '@rsbuild/core';
 import { pluginLess } from '@rsbuild/plugin-less';
 import { pluginNodePolyfill } from '@rsbuild/plugin-node-polyfill';
@@ -117,7 +117,7 @@ export default defineConfig({
     pluginTypeCheck(),
     pluginWorkspaceDev({
       projects: {
-        '@midscene/report': {
+        '@sqaitech/report': {
           skip: true,
         },
       },

@@ -1,4 +1,4 @@
-import type { IModelConfig } from '@midscene/shared/env';
+import type { IModelConfig } from '@sqaitech/shared/env';
 /**
  * Proxy Configuration Tests
  *

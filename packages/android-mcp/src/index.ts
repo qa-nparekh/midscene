@@ -1,6 +1,6 @@
 import { parseArgs } from 'node:util';
-import { AndroidMCPServer } from '@midscene/android/mcp-server';
-import { type CLIArgs, CLI_ARGS_CONFIG } from '@midscene/shared/mcp';
+import { AndroidMCPServer } from '@sqaitech/android/mcp-server';
+import { type CLIArgs, CLI_ARGS_CONFIG } from '@sqaitech/shared/mcp';
 
 const { values } = parseArgs({ options: CLI_ARGS_CONFIG });
 const args = values as CLIArgs;

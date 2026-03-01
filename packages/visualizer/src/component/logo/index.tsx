@@ -2,12 +2,12 @@ import { useTheme } from '../../hooks/useTheme';
 import './index.less';
 
 export const LogoUrl =
-  'https://lf3-static.bytednsdoc.com/obj/eden-cn/vhaeh7vhabf/Midscene.png';
+  'https://sqai.tech/logo.png';
 
 const LogoUrlLight =
-  'https://lf3-static.bytednsdoc.com/obj/eden-cn/nupipfups/Midscene/midscene_with_text_light.png';
+  'https://sqai.tech/sqai_with_text_light.png';
 const LogoUrlDark =
-  'https://lf3-static.bytednsdoc.com/obj/eden-cn/nupipfups/Midscene/midscene_with_text_dark.png';
+  'https://sqai.tech/sqai_with_text_dark.png';
 
 export const Logo = ({ hideLogo = false }: { hideLogo?: boolean }) => {
   const { isDarkMode } = useTheme();
@@ -16,13 +16,19 @@ export const Logo = ({ hideLogo = false }: { hideLogo?: boolean }) => {
     return null;
   }
 
-  const logoSrc = isDarkMode ? LogoUrlDark : LogoUrlLight;
-
   return (
     <div className="logo">
-      <a href="https://midscenejs.com/" target="_blank" rel="noreferrer">
-        <img alt="Midscene_logo" src={logoSrc} />
-      </a>
+      <div
+        style={{
+          fontSize: '24px',
+          fontWeight: 'bold',
+          color: isDarkMode ? '#ffffff' : '#1a1a1a',
+          letterSpacing: '2px',
+          fontFamily: 'system-ui, -apple-system, sans-serif',
+        }}
+      >
+        SQAI
+      </div>
     </div>
   );
 };

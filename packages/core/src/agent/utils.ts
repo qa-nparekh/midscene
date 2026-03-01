@@ -9,14 +9,14 @@ import type {
 } from '@/types';
 import { uploadTestInfoToServer } from '@/utils';
 import {
-  MIDSCENE_REPORT_QUIET,
-  MIDSCENE_REPORT_TAG_NAME,
+  SQAI_REPORT_QUIET,
+  SQAI_REPORT_TAG_NAME,
   globalConfigManager,
-} from '@midscene/shared/env';
-import { generateElementByRect } from '@midscene/shared/extractor';
-import { getDebug } from '@midscene/shared/logger';
-import { _keyDefinitions } from '@midscene/shared/us-keyboard-layout';
-import { assert, logMsg, uuid } from '@midscene/shared/utils';
+} from '@sqaitech/shared/env';
+import { generateElementByRect } from '@sqaitech/shared/extractor';
+import { getDebug } from '@sqaitech/shared/logger';
+import { _keyDefinitions } from '@sqaitech/shared/us-keyboard-layout';
+import { assert, logMsg, uuid } from '@sqaitech/shared/utils';
 import dayjs from 'dayjs';
 import type { TaskCache } from './task-cache';
 import { debug as cacheDebug } from './task-cache';
@@ -57,7 +57,7 @@ export async function commonContextParser(
 
 export function getReportFileName(tag = 'web') {
   const reportTagName = globalConfigManager.getEnvConfigValue(
-    MIDSCENE_REPORT_TAG_NAME,
+    SQAI_REPORT_TAG_NAME,
   );
   const dateTimeInFileName = dayjs().format('YYYY-MM-DD_HH-mm-ss');
   // ensure uniqueness at the same time
@@ -66,7 +66,7 @@ export function getReportFileName(tag = 'web') {
 }
 
 export function printReportMsg(filepath: string) {
-  if (globalConfigManager.getEnvConfigInBoolean(MIDSCENE_REPORT_QUIET)) {
+  if (globalConfigManager.getEnvConfigInBoolean(SQAI_REPORT_QUIET)) {
     return;
   }
   logMsg(`Midscene - report file updated: ${filepath}`);
@@ -228,6 +228,8 @@ export const getMidsceneVersion = (): string => {
   }
   throw new Error('__VERSION__ inject failed during build');
 };
+
+export const getSqaiVersion = getMidsceneVersion;
 
 export const parsePrompt = (
   prompt: TUserPrompt,

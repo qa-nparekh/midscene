@@ -23,7 +23,7 @@ You can find an example project of direct Playwright integration here: [https://
 
 ### Step 1: Install dependencies
 
-<PackageManagerTabs command="install @midscene/web playwright @playwright/test tsx --save-dev" />
+<PackageManagerTabs command="install @sqaitech/web playwright @playwright/test tsx --save-dev" />
 
 ### Step 2: Write the script
 
@@ -31,7 +31,7 @@ Save the following code as `./demo.ts`:
 
 ```typescript
 import { chromium } from 'playwright';
-import { PlaywrightAgent } from '@midscene/web/playwright';
+import { PlaywrightAgent } from '@sqaitech/web/playwright';
 import 'dotenv/config'; // read environment variables from .env file
 
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
@@ -138,7 +138,7 @@ You can find an example project of Playwright test integration here: [https://gi
 
 Add dependencies
 
-<PackageManagerTabs command="install @midscene/web --save-dev" />
+<PackageManagerTabs command="install @sqaitech/web --save-dev" />
 
 Update playwright.config.ts
 
@@ -146,7 +146,7 @@ Update playwright.config.ts
 export default defineConfig({
   testDir: './e2e',
 + timeout: 90 * 1000,
-+ reporter: [["list"], ["@midscene/web/playwright-reporter", { type: "merged" }]], // type optional, default is "merged", means multiple test cases generate one report, optional value is "separate", means one report for each test case
++ reporter: [["list"], ["@sqaitech/web/playwright-reporter", { type: "merged" }]], // type optional, default is "merged", means multiple test cases generate one report, optional value is "separate", means one report for each test case
 });
 ```
 
@@ -164,8 +164,8 @@ Save the following code as `./e2e/fixture.ts`:
 
 ```typescript
 import { test as base } from '@playwright/test';
-import type { PlayWrightAiFixtureType } from '@midscene/web/playwright';
-import { PlaywrightAiFixture } from '@midscene/web/playwright';
+import type { PlayWrightAiFixtureType } from '@sqaitech/web/playwright';
+import { PlaywrightAiFixture } from '@sqaitech/web/playwright';
 
 export const test = base.extend<PlayWrightAiFixtureType>(
   PlaywrightAiFixture({
@@ -284,7 +284,7 @@ Connect to a remote Playwright browser when you already run browsers in your own
 
 #### Prerequisites
 
-<PackageManagerTabs command="install playwright @playwright/test @midscene/web --save-dev" />
+<PackageManagerTabs command="install playwright @playwright/test @sqaitech/web --save-dev" />
 
 <GetCdpUrl />
 
@@ -292,7 +292,7 @@ Connect to a remote Playwright browser when you already run browsers in your own
 
 ```typescript
 import { chromium } from 'playwright';
-import { PlaywrightAgent } from '@midscene/web/playwright';
+import { PlaywrightAgent } from '@sqaitech/web/playwright';
 
 // CDP WebSocket URL from your remote browser service
 const cdpWsUrl = 'ws://your-remote-browser.com/devtools/browser/your-session-id';
@@ -322,8 +322,8 @@ Once connected, keep using `PlaywrightAgent` the same way you would with a local
 Use the `customActions` option to extend the agent's action space with your own actions defined via `defineAction`. When provided, these actions will be appended to the built-in ones so the agent can call them during planning.
 
 ```typescript
-import { getMidsceneLocationSchema, z } from '@midscene/core';
-import { defineAction } from '@midscene/core/device';
+import { getMidsceneLocationSchema, z } from '@sqaitech/core';
+import { defineAction } from '@sqaitech/core/device';
 
 const ContinuousClick = defineAction({
   name: 'continuousClick',

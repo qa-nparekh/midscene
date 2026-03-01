@@ -5,7 +5,7 @@ test.beforeEach(async ({ page }) => {
   await page.setViewportSize({ width: 1920, height: 1080 });
 });
 
-const CACHE_TIME_OUT = process.env.MIDSCENE_CACHE;
+const CACHE_TIME_OUT = process.env.SQAI_CACHE;
 
 test('ai shop', async ({
   ai,

@@ -10,7 +10,7 @@ Promise.resolve(
   (async () => {
     const { options, path, files: cmdFiles } = await parseProcessArgs();
 
-    const welcome = `\nWelcome to @midscene/cli v${version}\n`;
+    const welcome = `\nWelcome to @sqaitech/cli v${version}\n`;
     console.log(welcome);
 
     if (options.url) {

@@ -1,5 +1,5 @@
 import { closeSync, openSync, readSync, statSync } from 'node:fs';
-import { antiEscapeScriptTag, escapeScriptTag } from '@midscene/shared/utils';
+import { antiEscapeScriptTag, escapeScriptTag } from '@sqaitech/shared/utils';
 
 export const escapeContent = escapeScriptTag;
 export const unescapeContent = antiEscapeScriptTag;
@@ -146,7 +146,7 @@ export function streamImageScriptsToFile(
  * @returns The dump script content (trimmed), or empty string if not found
  */
 export function extractLastDumpScriptSync(filePath: string): string {
-  const openTagPrefix = '<script type="midscene_web_dump"';
+  const openTagPrefix = '<script type="sqai_web_dump"';
   const closeTag = '</script>';
 
   let lastContent = '';
@@ -236,7 +236,7 @@ export function parseImageScripts(html: string): Record<string, string> {
 export function parseDumpScript(html: string): string {
   // Use string search instead of regex to avoid ReDoS vulnerability
   // Find the LAST dump script tag (template may contain similar patterns in bundled JS)
-  const scriptOpenTag = '<script type="midscene_web_dump"';
+  const scriptOpenTag = '<script type="sqai_web_dump"';
   const scriptCloseTag = '</script>';
 
   // Find the last occurrence of the opening tag
@@ -265,7 +265,7 @@ export function parseDumpScript(html: string): string {
 export function parseDumpScriptAttributes(
   html: string,
 ): Record<string, string> {
-  const regex = /<script type="midscene_web_dump"([^>]*)>/;
+  const regex = /<script type="sqai_web_dump"([^>]*)>/;
   const match = regex.exec(html);
 
   if (!match) {
@@ -317,7 +317,7 @@ export function generateDumpScriptTag(
   // Do not use template string here, will cause bundle error with <script
   return (
     // biome-ignore lint/style/useTemplate: <explanation>
-    '<script type="midscene_web_dump"' +
+    '<script type="sqai_web_dump"' +
     attrString +
     '>' +
     escapeContent(json) +
